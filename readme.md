@@ -5,7 +5,7 @@ GradientProgressBar
 
 A gradient progress bar (UIProgressView). Inspired by [iOS Style Gradient Progress Bar with Pure CSS/CSS3](http://www.cssscript.com/ios-style-gradient-progress-bar-with-pure-css-css3/).
 
-![Sample](http://felix.hamburg/files/github/gradient-progress-bar/screen.jpg)
+![Sample](http://felix.hamburg/files/github/gradient-progress-bar/screen.png)
 
 
 ### Integration

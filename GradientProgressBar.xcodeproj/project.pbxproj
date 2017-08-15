@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		975AE9281F4341D900336A42 /* CGRect+Adjustments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975AE9251F4341D900336A42 /* CGRect+Adjustments.swift */; };
+		975AE9291F4341D900336A42 /* UIColor+Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975AE9271F4341D900336A42 /* UIColor+Initializers.swift */; };
 		97F9D4841E6ABC2700EC7D0E /* GradientProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F9D47A1E6ABC2700EC7D0E /* GradientProgressBar.framework */; };
 		97F9D4891E6ABC2700EC7D0E /* GradientProgressBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9D4881E6ABC2700EC7D0E /* GradientProgressBarTests.swift */; };
 		97F9D48B1E6ABC2700EC7D0E /* GradientProgressBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 97F9D47D1E6ABC2700EC7D0E /* GradientProgressBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		97F9D49E1E6ABC3F00EC7D0E /* GradientProgressBarDefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9D4961E6ABC3F00EC7D0E /* GradientProgressBarDefaultValues.swift */; };
-		97F9D49F1E6ABC3F00EC7D0E /* CGRect+sizeByPercentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9D4981E6ABC3F00EC7D0E /* CGRect+sizeByPercentage.swift */; };
-		97F9D4A01E6ABC3F00EC7D0E /* UIColor+Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9D4991E6ABC3F00EC7D0E /* UIColor+Initializers.swift */; };
-		97F9D4A11E6ABC3F00EC7D0E /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9D49B1E6ABC3F00EC7D0E /* Types.swift */; };
 		97F9D4A21E6ABC3F00EC7D0E /* GradientProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9D49D1E6ABC3F00EC7D0E /* GradientProgressBar.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		975AE9251F4341D900336A42 /* CGRect+Adjustments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Adjustments.swift"; sourceTree = "<group>"; };
+		975AE9271F4341D900336A42 /* UIColor+Initializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Initializers.swift"; sourceTree = "<group>"; };
 		97F9D47A1E6ABC2700EC7D0E /* GradientProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GradientProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F9D47D1E6ABC2700EC7D0E /* GradientProgressBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientProgressBar.h; sourceTree = "<group>"; };
 		97F9D47E1E6ABC2700EC7D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,9 +36,6 @@
 		97F9D4881E6ABC2700EC7D0E /* GradientProgressBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientProgressBarTests.swift; sourceTree = "<group>"; };
 		97F9D48A1E6ABC2700EC7D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97F9D4961E6ABC3F00EC7D0E /* GradientProgressBarDefaultValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressBarDefaultValues.swift; sourceTree = "<group>"; };
-		97F9D4981E6ABC3F00EC7D0E /* CGRect+sizeByPercentage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+sizeByPercentage.swift"; sourceTree = "<group>"; };
-		97F9D4991E6ABC3F00EC7D0E /* UIColor+Initializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Initializers.swift"; sourceTree = "<group>"; };
-		97F9D49B1E6ABC3F00EC7D0E /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		97F9D49D1E6ABC3F00EC7D0E /* GradientProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +58,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		975AE9241F4341D900336A42 /* CGRect */ = {
+			isa = PBXGroup;
+			children = (
+				975AE9251F4341D900336A42 /* CGRect+Adjustments.swift */,
+			);
+			path = CGRect;
+			sourceTree = "<group>";
+		};
+		975AE9261F4341D900336A42 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				975AE9271F4341D900336A42 /* UIColor+Initializers.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		97F9D4701E6ABC2700EC7D0E = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +117,6 @@
 			children = (
 				97F9D4951E6ABC3F00EC7D0E /* Constants */,
 				97F9D4971E6ABC3F00EC7D0E /* Extensions */,
-				97F9D49A1E6ABC3F00EC7D0E /* Types */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -119,18 +132,10 @@
 		97F9D4971E6ABC3F00EC7D0E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				97F9D4981E6ABC3F00EC7D0E /* CGRect+sizeByPercentage.swift */,
-				97F9D4991E6ABC3F00EC7D0E /* UIColor+Initializers.swift */,
+				975AE9241F4341D900336A42 /* CGRect */,
+				975AE9261F4341D900336A42 /* UIColor */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		97F9D49A1E6ABC3F00EC7D0E /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				97F9D49B1E6ABC3F00EC7D0E /* Types.swift */,
-			);
-			path = Types;
 			sourceTree = "<group>";
 		};
 		97F9D49C1E6ABC3F00EC7D0E /* Views */ = {
@@ -198,7 +203,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Felix Mau";
 				TargetAttributes = {
 					97F9D4791E6ABC2700EC7D0E = {
@@ -251,11 +256,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				975AE9291F4341D900336A42 /* UIColor+Initializers.swift in Sources */,
 				97F9D49E1E6ABC3F00EC7D0E /* GradientProgressBarDefaultValues.swift in Sources */,
-				97F9D49F1E6ABC3F00EC7D0E /* CGRect+sizeByPercentage.swift in Sources */,
-				97F9D4A01E6ABC3F00EC7D0E /* UIColor+Initializers.swift in Sources */,
 				97F9D4A21E6ABC3F00EC7D0E /* GradientProgressBar.swift in Sources */,
-				97F9D4A11E6ABC3F00EC7D0E /* Types.swift in Sources */,
+				975AE9281F4341D900336A42 /* CGRect+Adjustments.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +300,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -319,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -349,6 +354,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -366,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

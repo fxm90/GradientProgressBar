@@ -11,78 +11,103 @@ import UIKit
 
 public class GradientProgressBar : UIProgressView {
     
-    lazy private var gradientLayer: CAGradientLayer! = self.initGradientLayer()
-    lazy private var alphaLayer: CALayer! = self.initAlphaLayer()
+    private var alphaMaskLayer: CALayer = CALayer()
+    private var gradientLayer:  CAGradientLayer = CAGradientLayer()
+    
+    // Workaround to handle orientation change, as "layoutSubviews()" gets triggered each time
+    // the progress value is changed.
+    override public var bounds: CGRect {
+        didSet {
+            updateAlphaMaskLayerWidth()
+        }
+    }
+    
+    // Update layer mask on direct changes to progress value.
+    override public var progress: Float {
+        didSet {
+            updateAlphaMaskLayerWidth()
+        }
+    }
     
     override init (frame : CGRect) {
         super.init(frame : frame)
         
-        self.initColors()
-        self.layer.insertSublayer(self.gradientLayer, at: 0)
+        setupProgressViewColors()
+        setupAlphaMaskLayer()
+        setupGradientLayer()
+        
+        layer.insertSublayer(gradientLayer, at: 0)
+        updateAlphaMaskLayerWidth()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.initColors()
-        self.layer.insertSublayer(self.gradientLayer, at: 0)
-    }
-    
-    func initColors() {
-        self.backgroundColor = GradientProgressBarDefaultValues.backgroundColor
+        setupProgressViewColors()
+        setupAlphaMaskLayer()
+        setupGradientLayer()
         
-        self.trackTintColor = UIColor.clear
-        self.progressTintColor = UIColor.clear
+        layer.insertSublayer(gradientLayer, at: 0)
+        updateAlphaMaskLayerWidth()
     }
     
-    // MARK: Lazy initializers
+    func setupProgressViewColors() {
+        backgroundColor =
+            GradientProgressBarDefaultValues.backgroundColor
+        
+        trackTintColor = .clear
+        progressTintColor = .clear
+    }
     
-    func initGradientLayer() -> CAGradientLayer {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.bounds
+    // MARK: - Setup layers
+    
+    func setupAlphaMaskLayer()  {
+        alphaMaskLayer.frame = bounds
+        
+        alphaMaskLayer.anchorPoint = CGPoint(x: 0, y: 0)
+        alphaMaskLayer.position    = CGPoint(x: 0, y: 0)
+        
+        alphaMaskLayer.backgroundColor = UIColor.white.cgColor
+    }
+    
+    func setupGradientLayer() {
+        gradientLayer.frame = bounds
         
         gradientLayer.anchorPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.position = CGPoint(x: 0, y: 0)
+        gradientLayer.position    = CGPoint(x: 0, y: 0)
         
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0);
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0);
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint   = CGPoint(x: 1.0, y: 0.0)
         
-        gradientLayer.colors = GradientProgressBarDefaultValues.gradientColors
+        gradientLayer.colors =
+            GradientProgressBarDefaultValues.gradientColors
         
-        gradientLayer.mask = self.alphaLayer
-        
-        return gradientLayer
+        // Apply "alphaMaskLayer" as a mask to the gradient layer in order to show only parts of the current "progress"
+        gradientLayer.mask = alphaMaskLayer
     }
     
-    func initAlphaLayer() -> CALayer {
-        let alphaLayer = CALayer()
-        alphaLayer.frame = self.bounds
-        
-        alphaLayer.anchorPoint = CGPoint(x: 0, y: 0)
-        alphaLayer.position = CGPoint(x: 0, y: 0)
-        
-        alphaLayer.backgroundColor = UIColor.white.cgColor
-        
-        return alphaLayer
-    }
+    // MARK: - Update gradient
     
-    // MARK: Layout
-    
-    func updateAlphaLayerWidth() {
-        self.alphaLayer.frame =
-            self.bounds.sizeByPercentage(width: CGFloat(self.progress))
-    }
-    
-    override public func layoutSubviews() {
-        super.layoutSubviews()
+    func updateAlphaMaskLayerWidth(animated: Bool = false) {
+        CATransaction.begin()
         
-        self.gradientLayer.frame = self.bounds
-        self.updateAlphaLayerWidth()
+        // Workaround for non animated progress change: Remove CALayer default animation duration of 0.25
+        // Source: https://stackoverflow.com/a/16381287/3532505
+        if !animated {
+            CATransaction.setAnimationDuration(0.0)
+        }
+        
+        alphaMaskLayer.frame =
+            bounds.updateWidth(percentage: CGFloat(progress))
+        
+        CATransaction.commit()
     }
     
     override public func setProgress(_ progress: Float, animated: Bool) {
         super.setProgress(progress, animated: animated)
         
-        self.updateAlphaLayerWidth()
+        updateAlphaMaskLayerWidth(
+            animated: animated
+        )
     }
 }

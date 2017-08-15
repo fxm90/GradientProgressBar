@@ -31,7 +31,10 @@ Create an `IBOutlet` of the progress view in your view controller source file.
 ```
 After that you can set the progress programmatically as you would do on a normal UIProgressView.
 ```swift
-self.progressView.setProgress(0.75, animated: true)
+progressView.setProgress(0.75, animated: true)
+```
+```swift
+progressView.progress = 0.75
 ```
 
 ### Version

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension CGRect {
-    func updateWidth(percentage: CGFloat) -> CGRect {
+    func updateWidth(byPercentage percentage: CGFloat) -> CGRect {
         return CGRect(
             x: origin.x,
             y: origin.y,

@@ -12,7 +12,6 @@
 		97F9D4841E6ABC2700EC7D0E /* GradientProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F9D47A1E6ABC2700EC7D0E /* GradientProgressBar.framework */; };
 		97F9D4891E6ABC2700EC7D0E /* GradientProgressBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9D4881E6ABC2700EC7D0E /* GradientProgressBarTests.swift */; };
 		97F9D48B1E6ABC2700EC7D0E /* GradientProgressBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 97F9D47D1E6ABC2700EC7D0E /* GradientProgressBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		97F9D49E1E6ABC3F00EC7D0E /* GradientProgressBarDefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9D4961E6ABC3F00EC7D0E /* GradientProgressBarDefaultValues.swift */; };
 		97F9D4A21E6ABC3F00EC7D0E /* GradientProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9D49D1E6ABC3F00EC7D0E /* GradientProgressBar.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +34,6 @@
 		97F9D4831E6ABC2700EC7D0E /* GradientProgressBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradientProgressBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F9D4881E6ABC2700EC7D0E /* GradientProgressBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientProgressBarTests.swift; sourceTree = "<group>"; };
 		97F9D48A1E6ABC2700EC7D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97F9D4961E6ABC3F00EC7D0E /* GradientProgressBarDefaultValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressBarDefaultValues.swift; sourceTree = "<group>"; };
 		97F9D49D1E6ABC3F00EC7D0E /* GradientProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,18 +113,9 @@
 		97F9D4941E6ABC3F00EC7D0E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				97F9D4951E6ABC3F00EC7D0E /* Constants */,
 				97F9D4971E6ABC3F00EC7D0E /* Extensions */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		97F9D4951E6ABC3F00EC7D0E /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				97F9D4961E6ABC3F00EC7D0E /* GradientProgressBarDefaultValues.swift */,
-			);
-			path = Constants;
 			sourceTree = "<group>";
 		};
 		97F9D4971E6ABC3F00EC7D0E /* Extensions */ = {
@@ -168,6 +157,7 @@
 				97F9D4761E6ABC2700EC7D0E /* Frameworks */,
 				97F9D4771E6ABC2700EC7D0E /* Headers */,
 				97F9D4781E6ABC2700EC7D0E /* Resources */,
+				975AE92A1F44B09100336A42 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -251,13 +241,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		975AE92A1F44B09100336A42 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		97F9D4751E6ABC2700EC7D0E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				975AE9291F4341D900336A42 /* UIColor+Initializers.swift in Sources */,
-				97F9D49E1E6ABC3F00EC7D0E /* GradientProgressBarDefaultValues.swift in Sources */,
 				97F9D4A21E6ABC3F00EC7D0E /* GradientProgressBar.swift in Sources */,
 				975AE9281F4341D900336A42 /* CGRect+Adjustments.swift in Sources */,
 			);

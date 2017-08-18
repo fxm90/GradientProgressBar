@@ -37,8 +37,15 @@ progressView.setProgress(0.75, animated: true)
 progressView.progress = 0.75
 ```
 
+### Configuration
+As of version 1.1.0 you can adjust the animation duration:
+```
+progressView.animationDuration = 2.0
+progressView.setProgress(progress, animated: true)
+```
+
 ### Version
-1.0.0
+1.1.0
 
 ### Author
 Felix Mau (contact(@)felix.hamburg)

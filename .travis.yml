@@ -10,6 +10,7 @@ language: objective-c
 
 xcode_project: GradientProgressBar.xcodeproj
 xcode_scheme: GradientProgressBar
+xcode_sdk: iphonesimulator10.3
 
 osx_image: xcode8.3
 

@@ -1,7 +1,7 @@
 GradientProgressBar
 ====================
 
-![Swift3.0](https://img.shields.io/badge/Swift-3.0-green.svg?style=flat) ![Version](https://img.shields.io/cocoapods/v/GradientProgressBar.svg)
+![Swift3.0](https://img.shields.io/badge/Swift-3.0-green.svg?style=flat) ![Version](https://img.shields.io/cocoapods/v/GradientProgressBar.svg) ![Master branch build status](https://travis-ci.org/fxm90/GradientProgressBar.svg?branch=master)
 
 A gradient progress bar (UIProgressView). Inspired by [iOS Style Gradient Progress Bar with Pure CSS/CSS3](http://www.cssscript.com/ios-style-gradient-progress-bar-with-pure-css-css3/).
 

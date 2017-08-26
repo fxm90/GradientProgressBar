@@ -12,3 +12,6 @@ xcode_project: GradientProgressBar.xcodeproj
 xcode_scheme: GradientProgressBar
 
 osx_image: xcode8.3
+
+script:
+ - xcodebuild clean build test -project GradientProgressBar.xcodeproj -scheme GradientProgressBar

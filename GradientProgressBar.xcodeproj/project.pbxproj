@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		975AE9281F4341D900336A42 /* CGRect+Adjustments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975AE9251F4341D900336A42 /* CGRect+Adjustments.swift */; };
 		975AE9291F4341D900336A42 /* UIColor+Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975AE9271F4341D900336A42 /* UIColor+Initializers.swift */; };
+		97CDC6D11F51C775006249FE /* CGRect+AdjustmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CDC6CE1F51C775006249FE /* CGRect+AdjustmentsTests.swift */; };
+		97CDC6D21F51C775006249FE /* UIColor+InitializersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CDC6D01F51C775006249FE /* UIColor+InitializersTests.swift */; };
 		97F9D4841E6ABC2700EC7D0E /* GradientProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F9D47A1E6ABC2700EC7D0E /* GradientProgressBar.framework */; };
-		97F9D4891E6ABC2700EC7D0E /* GradientProgressBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9D4881E6ABC2700EC7D0E /* GradientProgressBarTests.swift */; };
 		97F9D48B1E6ABC2700EC7D0E /* GradientProgressBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 97F9D47D1E6ABC2700EC7D0E /* GradientProgressBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		97F9D4A21E6ABC3F00EC7D0E /* GradientProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F9D49D1E6ABC3F00EC7D0E /* GradientProgressBar.swift */; };
 /* End PBXBuildFile section */
@@ -28,11 +29,12 @@
 /* Begin PBXFileReference section */
 		975AE9251F4341D900336A42 /* CGRect+Adjustments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Adjustments.swift"; sourceTree = "<group>"; };
 		975AE9271F4341D900336A42 /* UIColor+Initializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Initializers.swift"; sourceTree = "<group>"; };
+		97CDC6CE1F51C775006249FE /* CGRect+AdjustmentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+AdjustmentsTests.swift"; sourceTree = "<group>"; };
+		97CDC6D01F51C775006249FE /* UIColor+InitializersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+InitializersTests.swift"; sourceTree = "<group>"; };
 		97F9D47A1E6ABC2700EC7D0E /* GradientProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GradientProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F9D47D1E6ABC2700EC7D0E /* GradientProgressBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientProgressBar.h; sourceTree = "<group>"; };
 		97F9D47E1E6ABC2700EC7D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97F9D4831E6ABC2700EC7D0E /* GradientProgressBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradientProgressBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		97F9D4881E6ABC2700EC7D0E /* GradientProgressBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientProgressBarTests.swift; sourceTree = "<group>"; };
 		97F9D48A1E6ABC2700EC7D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97F9D49D1E6ABC3F00EC7D0E /* GradientProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +74,31 @@
 			path = UIColor;
 			sourceTree = "<group>";
 		};
+		97CDC6CC1F51C775006249FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				97CDC6CD1F51C775006249FE /* CGRect */,
+				97CDC6CF1F51C775006249FE /* UIColor */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		97CDC6CD1F51C775006249FE /* CGRect */ = {
+			isa = PBXGroup;
+			children = (
+				97CDC6CE1F51C775006249FE /* CGRect+AdjustmentsTests.swift */,
+			);
+			path = CGRect;
+			sourceTree = "<group>";
+		};
+		97CDC6CF1F51C775006249FE /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				97CDC6D01F51C775006249FE /* UIColor+InitializersTests.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
 		97F9D4701E6ABC2700EC7D0E = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +131,7 @@
 		97F9D4871E6ABC2700EC7D0E /* GradientProgressBarTests */ = {
 			isa = PBXGroup;
 			children = (
-				97F9D4881E6ABC2700EC7D0E /* GradientProgressBarTests.swift */,
+				97CDC6CC1F51C775006249FE /* Extensions */,
 				97F9D48A1E6ABC2700EC7D0E /* Info.plist */,
 			);
 			path = GradientProgressBarTests;
@@ -272,7 +299,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97F9D4891E6ABC2700EC7D0E /* GradientProgressBarTests.swift in Sources */,
+				97CDC6D21F51C775006249FE /* UIColor+InitializersTests.swift in Sources */,
+				97CDC6D11F51C775006249FE /* CGRect+AdjustmentsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,14 @@
+#
+# Travic CI configuration
+#
+# Based on:
+#  - https://docs.travis-ci.com/user/languages/objective-c/#Default-Test-Script
+#  - http://szulctomasz.com/2015/06/29/integrating-travis-ci-with-swift-project.html
+#
+
+language: objective-c
+
+xcode_project: GradientProgressBar.xcodeproj
+xcode_scheme: GradientProgressBarTests
+
+osx_image: xcode8.3

@@ -1,6 +1,6 @@
 //
 //  UIColor+InitializersTests.swift
-//  GradientProgressBar
+//  GradientProgressBarTests
 //
 //  Created by Felix Mau on 26.08.17.
 //  Copyright © 2017 Felix Mau. All rights reserved.

@@ -9,6 +9,6 @@
 language: objective-c
 
 xcode_project: GradientProgressBar.xcodeproj
-xcode_scheme: GradientProgressBarTests
+xcode_scheme: GradientProgressBar
 
 osx_image: xcode8.3

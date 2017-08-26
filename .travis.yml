@@ -3,7 +3,7 @@
 #
 # Based on:
 #  - https://docs.travis-ci.com/user/languages/objective-c/#Default-Test-Script
-#  - https://www.raywenderlich.com/109418/travis-ci-tutorial
+#  - https://medium.com/@johnsundell/adding-continuous-integration-to-a-swift-project-4c99252eedb0
 #
 
 language: objective-c
@@ -13,3 +13,6 @@ osx_image: xcode8.3
 xcode_project: GradientProgressBar.xcodeproj
 xcode_scheme: GradientProgressBar
 xcode_sdk: iphonesimulator10.3
+
+script:
+ - xcodebuild clean test -project GradientProgressBar.xcodeproj -scheme GradientProgressBar -destination "platform=iOS Simulator,name=iPhone 7,OS=10.3" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet

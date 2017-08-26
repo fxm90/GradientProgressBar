@@ -3,16 +3,13 @@
 #
 # Based on:
 #  - https://docs.travis-ci.com/user/languages/objective-c/#Default-Test-Script
-#  - http://szulctomasz.com/2015/06/29/integrating-travis-ci-with-swift-project.html
+#  - https://www.raywenderlich.com/109418/travis-ci-tutorial
 #
 
 language: objective-c
 
+osx_image: xcode8.3
+
 xcode_project: GradientProgressBar.xcodeproj
 xcode_scheme: GradientProgressBar
 xcode_sdk: iphonesimulator10.3
-
-osx_image: xcode8.3
-
-script:
- - xcodebuild clean build test -project GradientProgressBar.xcodeproj -scheme GradientProgressBar

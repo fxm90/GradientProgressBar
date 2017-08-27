@@ -45,7 +45,7 @@ progressView.setProgress(progress, animated: true)
 ```
 
 ### Version
-1.1.0
+1.1.1
 
 ### Author
 Felix Mau (contact(@)felix.hamburg)

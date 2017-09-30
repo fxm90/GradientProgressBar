@@ -4,9 +4,9 @@
 
 osx_image: xcode8.3
 language: objective-c
-# cache: cocoapods
+cache: cocoapods
 podfile: Example/Podfile
-# before_install:
+before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=Example
 script:

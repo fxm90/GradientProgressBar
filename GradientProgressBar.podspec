@@ -1,16 +1,43 @@
+#
+# Be sure to run `pod lib lint GradientProgressBar.podspec' to ensure this is a
+# valid spec before submitting.
+#
+# Any lines starting with a # are optional, but their use is encouraged
+# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
+#
+
 Pod::Spec.new do |s|
-  s.name = 'GradientProgressBar'
-  s.version = '1.1.1'
-  s.license = { :type => 'MIT', :file => 'LICENSE' }
-  s.summary = 'A gradient progress bar (UIProgressView).'
-  s.description = 'A gradient progress bar (UIProgressView). Inspired by http://www.cssscript.com/ios-style-gradient-progress-bar-with-pure-css-css3/'
-  s.homepage = 'https://github.com/fxm90/GradientProgressBar'
-  s.screenshot  = 'http://felix.hamburg/files/github/gradient-progress-bar/screen.png'
-  s.author = { 'Felix Mau' => 'contact@felix.hamburg' }
+  s.name             = 'GradientProgressBar'
+  s.version          = '1.1.1'
+  s.summary          = 'A gradient progress bar (UIProgressView).'
 
-  s.source       = { :git => 'https://github.com/fxm90/GradientProgressBar.git', :tag => '1.1.1' }
-  s.source_files = 'GradientProgressBar', 'GradientProgressBar/**/*.swift'
+# This description is used to generate tags and improve search results.
+#   * Think: What does it do? Why did you write it? What is the focus?
+#   * Try to keep it short, snappy and to the point.
+#   * Write the description between the DESC delimiters below.
+#   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.platform     = :ios, '9.0'
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
+  s.description      = <<-DESC
+A gradient progress bar (UIProgressView).
+Inspired by http://www.cssscript.com/ios-style-gradient-progress-bar-with-pure-css-css3/
+                       DESC
+
+  s.homepage         = 'https://github.com/fxm90/GradientProgressBar'
+  s.screenshots      = 'http://felix.hamburg/files/github/gradient-progress-bar/screen.png'
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.author           = { 'fxm90' => 'contact@felix.hamburg' }
+  s.source           = { :git => 'https://github.com/fxm90/GradientProgressBar.git', :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+
+  s.ios.deployment_target = '9.0'
+
+  s.source_files = 'GradientProgressBar/Classes/**/*'
+
+  # s.resource_bundles = {
+  #   'GradientProgressBar' => ['GradientProgressBar/Assets/*.png']
+  # }
+
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.frameworks = 'UIKit', 'MapKit'
+  # s.dependency 'AFNetworking', '~> 2.3'
 end

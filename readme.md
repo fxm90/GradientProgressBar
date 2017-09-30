@@ -1,11 +1,13 @@
 GradientProgressBar
 ====================
 
-![Swift3.0](https://img.shields.io/badge/Swift-3.0-green.svg?style=flat) ![Version](https://img.shields.io/cocoapods/v/GradientProgressBar.svg) ![Master branch build status](https://travis-ci.org/fxm90/GradientProgressBar.svg?branch=master)
+![Swift3.0](https://img.shields.io/badge/Swift-3.0-green.svg?style=flat) ![Version](https://img.shields.io/cocoapods/v/GradientProgressBar.svg) [![CI Status](http://img.shields.io/travis/fxm90/GradientProgressBar.svg?style=flat)](https://travis-ci.org/fxm90/GradientProgressBar) [![Version](https://img.shields.io/cocoapods/v/GradientProgressBar.svg?style=flat)](http://cocoapods.org/pods/GradientProgressBar) [![License](https://img.shields.io/cocoapods/l/GradientProgressBar.svg?style=flat)](http://cocoapods.org/pods/GradientProgressBar) [![Platform](https://img.shields.io/cocoapods/p/GradientProgressBar.svg?style=flat)](http://cocoapods.org/pods/GradientProgressBar)
 
+### Example
 A gradient progress bar (UIProgressView). Inspired by [iOS Style Gradient Progress Bar with Pure CSS/CSS3](http://www.cssscript.com/ios-style-gradient-progress-bar-with-pure-css-css3/).
 
 ![Sample](http://felix.hamburg/files/github/gradient-progress-bar/screen.png)
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 
 ### Integration
@@ -49,3 +51,6 @@ progressView.setProgress(progress, animated: true)
 
 ### Author
 Felix Mau (contact(@)felix.hamburg)
+
+### License
+GradientProgressBar is available under the MIT license. See the LICENSE file for more info.

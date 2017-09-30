@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="GradientProgressBar_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gradient Progress Bar Sample" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFi-XA-Bcc">
+                                <rect key="frame" x="24" y="36" width="327" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="center" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="JwT-NR-AiH" userLabel="Bottom Stack View">
+                                <rect key="frame" x="24" y="611" width="327" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T00-si-WvA">
+                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                        <state key="normal" title="Skip Animation"/>
+                                        <connections>
+                                            <action selector="onSkipAnimationButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AjS-bs-UKk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpE-gY-Vd8">
+                                        <rect key="frame" x="171.5" y="0.0" width="155.5" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                        <state key="normal" title="Set to 0.33"/>
+                                        <connections>
+                                            <action selector="onSetButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mvg-X9-gcQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KhH-9g-fA8"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="center" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hdo-b9-maM">
+                                <rect key="frame" x="24" y="563" width="327" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKY-W4-0gr">
+                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                        <state key="normal" title="Animate Slow"/>
+                                        <connections>
+                                            <action selector="onSlowAnimationButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ae0-f1-C7r"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uZ-O1-Zke">
+                                        <rect key="frame" x="171.5" y="0.0" width="155.5" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                        <state key="normal" title="Animate Fast"/>
+                                        <connections>
+                                            <action selector="onFastAnimationButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eLH-7q-WUf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Pu8-ly-Znj"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6j-bm-EVQ" userLabel="Container View">
+                                <rect key="frame" x="24" y="68" width="327" height="487"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vfo-UE-JmZ" userLabel="GradientProgressBar" customClass="GradientProgressBar" customModule="GradientProgressBar">
+                                        <rect key="frame" x="0.0" y="242.5" width="327" height="2"/>
+                                    </progressView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="vfo-UE-JmZ" firstAttribute="leading" secondItem="s6j-bm-EVQ" secondAttribute="leading" id="S2k-ai-59O"/>
+                                    <constraint firstAttribute="trailing" secondItem="vfo-UE-JmZ" secondAttribute="trailing" id="TDr-Fy-GUs"/>
+                                    <constraint firstItem="vfo-UE-JmZ" firstAttribute="centerY" secondItem="s6j-bm-EVQ" secondAttribute="centerY" id="ZeJ-hO-98v"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hdo-b9-maM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="8" id="6Xx-kS-kaB"/>
+                            <constraint firstItem="JwT-NR-AiH" firstAttribute="top" secondItem="Hdo-b9-maM" secondAttribute="bottom" constant="8" id="9Ok-QR-f7i"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JwT-NR-AiH" secondAttribute="bottom" constant="16" id="B8B-ir-rhW"/>
+                            <constraint firstItem="DFi-XA-Bcc" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="Exs-uD-H4y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s6j-bm-EVQ" secondAttribute="trailing" constant="8" id="Gfh-J4-xxc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DFi-XA-Bcc" secondAttribute="trailing" constant="8" id="JSp-0p-3tU"/>
+                            <constraint firstItem="Hdo-b9-maM" firstAttribute="top" secondItem="s6j-bm-EVQ" secondAttribute="bottom" constant="8" id="XFm-Ya-oUK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hdo-b9-maM" secondAttribute="trailing" constant="8" id="XOa-nN-XaY"/>
+                            <constraint firstItem="DFi-XA-Bcc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="8" id="ehJ-S9-DNg"/>
+                            <constraint firstItem="s6j-bm-EVQ" firstAttribute="top" secondItem="DFi-XA-Bcc" secondAttribute="bottom" constant="8" id="hGa-2v-0l8"/>
+                            <constraint firstItem="JwT-NR-AiH" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="8" id="hyj-dV-ecK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JwT-NR-AiH" secondAttribute="trailing" constant="8" id="pcV-7B-vnp"/>
+                            <constraint firstItem="s6j-bm-EVQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="8" id="wQJ-yw-Tbv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fastAnimationButton" destination="4uZ-O1-Zke" id="1or-OY-88X"/>
+                        <outlet property="progressView" destination="vfo-UE-JmZ" id="3RA-2V-Jga"/>
+                        <outlet property="setButton" destination="ZpE-gY-Vd8" id="W5H-qL-1Ph"/>
+                        <outlet property="skipAnimationButton" destination="T00-si-WvA" id="xaF-7O-kpv"/>
+                        <outlet property="slowAnimationButton" destination="ZKY-W4-0gr" id="IJh-qo-naJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

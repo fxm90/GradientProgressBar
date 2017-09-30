@@ -19,19 +19,19 @@ class CGRectAdjustmentsTests: XCTestCase {
         let rect = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 123.4)
         let rectWidthUpdateBy10Percent = rect.updateWidth(byPercentage: 1.1)
 
-        XCTAssertEqualWithAccuracy(rectWidthUpdateBy10Percent.origin.x, 0.0, accuracy: accuracy)
-        XCTAssertEqualWithAccuracy(rectWidthUpdateBy10Percent.origin.y, 0.0, accuracy: accuracy)
-        XCTAssertEqualWithAccuracy(rectWidthUpdateBy10Percent.width, 110.0, accuracy: accuracy)
-        XCTAssertEqualWithAccuracy(rectWidthUpdateBy10Percent.height, 123.4, accuracy: accuracy)
+        XCTAssertEqual(rectWidthUpdateBy10Percent.origin.x, 0.0, accuracy: accuracy)
+        XCTAssertEqual(rectWidthUpdateBy10Percent.origin.y, 0.0, accuracy: accuracy)
+        XCTAssertEqual(rectWidthUpdateBy10Percent.width, 110.0, accuracy: accuracy)
+        XCTAssertEqual(rectWidthUpdateBy10Percent.height, 123.4, accuracy: accuracy)
     }
 
     func testUpdateWidthByMinus10Percent() {
         let rect = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 123.4)
         let rectWidthUpdateBy10Percent = rect.updateWidth(byPercentage: 0.9)
 
-        XCTAssertEqualWithAccuracy(rectWidthUpdateBy10Percent.origin.x, 0.0, accuracy: accuracy)
-        XCTAssertEqualWithAccuracy(rectWidthUpdateBy10Percent.origin.y, 0.0, accuracy: accuracy)
-        XCTAssertEqualWithAccuracy(rectWidthUpdateBy10Percent.width, 90.0, accuracy: accuracy)
-        XCTAssertEqualWithAccuracy(rectWidthUpdateBy10Percent.height, 123.4, accuracy: accuracy)
+        XCTAssertEqual(rectWidthUpdateBy10Percent.origin.x, 0.0, accuracy: accuracy)
+        XCTAssertEqual(rectWidthUpdateBy10Percent.origin.y, 0.0, accuracy: accuracy)
+        XCTAssertEqual(rectWidthUpdateBy10Percent.width, 90.0, accuracy: accuracy)
+        XCTAssertEqual(rectWidthUpdateBy10Percent.height, 123.4, accuracy: accuracy)
     }
 }

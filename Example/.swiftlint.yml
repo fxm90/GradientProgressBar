@@ -1,0 +1,4 @@
+line_length: 160
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - GradientProgressBar/AppDelegate.swift

@@ -11,5 +11,5 @@ language: objective-c
 osx_image: xcode8.3
 
 script:
- - xcodebuild clean test -project Example/GradientLoadingBar.xcodeproj -scheme GradientLoadingBar -destination "platform=iOS Simulator,name=iPhone 7,OS=10.3.1" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+ - xcodebuild clean test -project Example/GradientProgressBar.xcodeproj -scheme GradientProgressBar-Example -destination "platform=iOS Simulator,name=iPhone 7,OS=10.3.1" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
  - pod lib lint

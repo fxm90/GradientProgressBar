@@ -1,5 +1,5 @@
 PODS:
-  - GradientProgressBar (0.1.0)
+  - GradientProgressBar (1.1.1)
   - SwiftLint (0.22.0)
 
 DEPENDENCIES:
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  GradientProgressBar: 4f6b75a9a52f15e2b2922cd7e043e70f441220f4
+  GradientProgressBar: 9196993d308d70318c268c69c1f272a089e47fa3
   SwiftLint: 1134786caedd2caab0560d2f36b76414a5a56808
 
 PODFILE CHECKSUM: 458caf3af48c842f1085e4474725b943ea370601

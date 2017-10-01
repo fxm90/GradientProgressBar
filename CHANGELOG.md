@@ -7,6 +7,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.1.2] - 2017-01-09
+### Added
+ - Refactored project structure to match "pod lib create" / TravisCI integration
+ - Added example project
+
 ## [1.1.1] - 2017-27-08
 ### Added
  - Basic tests / TravisCI integration
@@ -28,10 +33,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
  - Refactor entire code
 
 ## [1.0.0] - 2017-04-03
-- initial release
+- Initial release
 
 
-[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.1.1...master
+[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.1.2...master
+[1.1.2]: https://github.com/fxm90/GradientProgressBar/compare/1.1.1...1.1.2
 [1.1.1]: https://github.com/fxm90/GradientProgressBar/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/fxm90/GradientProgressBar/compare/1.0.1...1.1.0
 [1.0.1]: https://github.com/fxm90/GradientProgressBar/compare/1.0.0...1.0.1

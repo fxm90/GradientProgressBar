@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
-## [1.1.2] - 2017-01-09
+## [1.1.2] - 2017-01-10
 ### Added
  - Refactored project structure to match "pod lib create" / TravisCI integration
  - Added example project

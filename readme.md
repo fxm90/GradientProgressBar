@@ -47,9 +47,6 @@ progressView.animationDuration = 2.0
 progressView.setProgress(progress, animated: true)
 ```
 
-### Version
-1.1.1
-
 ### Author
 Felix Mau (contact(@)felix.hamburg)
 

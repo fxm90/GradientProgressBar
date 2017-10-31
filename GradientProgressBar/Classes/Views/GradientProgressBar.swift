@@ -9,13 +9,19 @@
 import Foundation
 import UIKit
 
+/// `UIProgressView` with a gradient.
 open class GradientProgressBar: UIProgressView {
 
+    /// Struct containing the default configuration.
     private struct DefaultValues {
+
+        /// Background color for the progress view.
         static let backgroundColor = UIColor(hexString:"#e5e9eb")
 
-        // iOS color palette
-        // From: http://www.cssscript.com/ios-style-gradient-progress-bar-with-pure-css-css3/
+        /// Gradient colors for the progress view.
+        ///
+        /// Note:
+        ///  - Based on http://www.cssscript.com/ios-style-gradient-progress-bar-with-pure-css-css3/
         static let gradientColors = [
             UIColor(hexString:"#4cd964").cgColor,
             UIColor(hexString:"#5ac8fa").cgColor,
@@ -25,29 +31,37 @@ open class GradientProgressBar: UIProgressView {
             UIColor(hexString:"#ff2d55").cgColor
         ]
 
-        static let animationDuration = 0.25 // CALayer default animation duration
+        /// Animation duration for call to `setProgress(x, animated: true)`.
+        ///
+        /// Note: Equals to CALayer default animation duration
+        static let animationDuration = 0.25
     }
 
-    // Alpha mask for visible part of gradient.
-    private var alphaMaskLayer: CALayer = CALayer()
+    /// Layer with the gradient .
+    open var gradientLayer = CAGradientLayer()
 
-    // Gradient layer.
-    open var gradientLayer: CAGradientLayer = CAGradientLayer()
+    /// Alpha mask for visible part of gradient layer.
+    public private(set) var alphaMaskLayer = CALayer()
 
-    // Duration for "setProgress(animated: true)"
+    /// Animation duration for call to `setProgress(x, animated: true)`.
     open var animationDuration = DefaultValues.animationDuration
 
-    // Workaround to handle orientation change, as "layoutSubviews()" gets triggered each time
-    // the progress value is changed.
+    /// The bounds rectangle, which describes the view’s location and size in its own coordinate system.
     override open var bounds: CGRect {
         didSet {
+            // Workaround to handle orientation change, as `layoutSubviews()` gets triggered each time
+            // the progress value is changed.
+            alphaMaskLayer.frame = bounds
+            gradientLayer.frame = bounds
+
             updateAlphaMaskLayerWidth()
         }
     }
 
-    // Update layer mask on direct changes to progress value.
+    /// The current progress.
     override open var progress: Float {
         didSet {
+            // Update layer mask on direct changes to progress value.
             updateAlphaMaskLayerWidth()
         }
     }
@@ -57,33 +71,30 @@ open class GradientProgressBar: UIProgressView {
     override public init(frame: CGRect) {
         super.init(frame: frame)
 
-        setupProgressViewColors()
-        setupAlphaMaskLayer()
-        setupGradientLayer()
-
-        layer.insertSublayer(gradientLayer, at: 0)
-        updateAlphaMaskLayerWidth()
+        setupProgressView()
     }
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
-        setupProgressViewColors()
+        setupProgressView()
+    }
+
+    // MARK: - Setup UIProgressView
+
+    private func setupProgressView() {
+        backgroundColor =
+            DefaultValues.backgroundColor
+
+        // Clear tint and progress colors, we'll use the gradient layer for showing progress instead
+        trackTintColor = .clear
+        progressTintColor = .clear
+
         setupAlphaMaskLayer()
         setupGradientLayer()
 
         layer.insertSublayer(gradientLayer, at: 0)
         updateAlphaMaskLayerWidth()
-    }
-
-    // MARK: - Setup UIProgressView
-
-    private func setupProgressViewColors() {
-        backgroundColor =
-            DefaultValues.backgroundColor
-
-        trackTintColor = .clear
-        progressTintColor = .clear
     }
 
     // MARK: - Setup layers
@@ -115,6 +126,10 @@ open class GradientProgressBar: UIProgressView {
 
     // MARK: - Update gradient
 
+    /// Updates the alpha mask of the gradient layer.
+    ///
+    /// Parameters:
+    ///  - animated: `true` if the change should be animated, `false` if the change should happen immediately.
     open func updateAlphaMaskLayerWidth(animated: Bool = false) {
         CATransaction.begin()
 
@@ -125,7 +140,7 @@ open class GradientProgressBar: UIProgressView {
         )
 
         alphaMaskLayer.frame =
-            bounds.updateWidth(byPercentage: CGFloat(progress))
+            bounds.updateWidth(byFactor: CGFloat(progress))
 
         CATransaction.commit()
     }

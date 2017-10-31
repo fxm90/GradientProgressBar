@@ -16,6 +16,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		97244F661F7FE26B00F4E795 /* CGRect+AdjustmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97244F631F7FE26600F4E795 /* CGRect+AdjustmentsTests.swift */; };
 		97244F671F7FE26B00F4E795 /* UIColor+InitializersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97244F651F7FE26600F4E795 /* UIColor+InitializersTests.swift */; };
+		97909BB91FA76F8500595663 /* GradientProgressBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97909BB71FA76F4A00595663 /* GradientProgressBarTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97244F631F7FE26600F4E795 /* CGRect+AdjustmentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+AdjustmentsTests.swift"; sourceTree = "<group>"; };
 		97244F651F7FE26600F4E795 /* UIColor+InitializersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+InitializersTests.swift"; sourceTree = "<group>"; };
+		97909BB71FA76F4A00595663 /* GradientProgressBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientProgressBarTests.swift; sourceTree = "<group>"; };
 		99AF8B41726EDDA3CC894825 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9A75FF2D96B47071144BF54E /* Pods-GradientProgressBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientProgressBar_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradientProgressBar_Example/Pods-GradientProgressBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AE30979BE3AE75A2B375F353 /* GradientProgressBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GradientProgressBar.podspec; path = ../GradientProgressBar.podspec; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				97244F611F7FE26600F4E795 /* Extensions */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				97909BB71FA76F4A00595663 /* GradientProgressBarTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97244F671F7FE26B00F4E795 /* UIColor+InitializersTests.swift in Sources */,
+				97909BB91FA76F8500595663 /* GradientProgressBarTests.swift in Sources */,
 				97244F661F7FE26B00F4E795 /* CGRect+AdjustmentsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

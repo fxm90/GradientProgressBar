@@ -11,13 +11,12 @@ import XCTest
 
 class CGRectAdjustmentsTests: XCTestCase {
 
-    // "Float.ulpOfOne" - The positive difference between 1.0 and the next greater representable number.
-    // Source: https://developer.apple.com/documentation/swift/float/2886872-ulpofone
+    /// Accuracy used for floating value comparison.
     let accuracy = CGFloat(Float.ulpOfOne)
 
     func testUpdateWidthBy10Percent() {
         let rect = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 123.4)
-        let rectWidthUpdateBy10Percent = rect.updateWidth(byPercentage: 1.1)
+        let rectWidthUpdateBy10Percent = rect.updateWidth(byFactor: 1.1)
 
         XCTAssertEqual(rectWidthUpdateBy10Percent.origin.x, 0.0, accuracy: accuracy)
         XCTAssertEqual(rectWidthUpdateBy10Percent.origin.y, 0.0, accuracy: accuracy)
@@ -27,7 +26,7 @@ class CGRectAdjustmentsTests: XCTestCase {
 
     func testUpdateWidthByMinus10Percent() {
         let rect = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 123.4)
-        let rectWidthUpdateBy10Percent = rect.updateWidth(byPercentage: 0.9)
+        let rectWidthUpdateBy10Percent = rect.updateWidth(byFactor: 0.9)
 
         XCTAssertEqual(rectWidthUpdateBy10Percent.origin.x, 0.0, accuracy: accuracy)
         XCTAssertEqual(rectWidthUpdateBy10Percent.origin.y, 0.0, accuracy: accuracy)

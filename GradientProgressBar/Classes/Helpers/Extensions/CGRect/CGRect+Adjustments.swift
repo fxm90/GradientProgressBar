@@ -10,11 +10,18 @@ import Foundation
 import UIKit
 
 extension CGRect {
-    func updateWidth(byPercentage percentage: CGFloat) -> CGRect {
+
+    /// Updates width of a `CGRect` by a given factor.
+    ///
+    /// Parameters:
+    ///  - factor: Multiplier for the width
+    ///
+    /// Returns: `CGRect` with updated width.
+    public func updateWidth(byFactor factor: CGFloat) -> CGRect {
         return CGRect(
             x: origin.x,
             y: origin.y,
-            width: size.width * percentage,
+            width: size.width * factor,
             height: size.height
         )
     }

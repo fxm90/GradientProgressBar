@@ -20,38 +20,32 @@ class ViewController: UIViewController {
     let buttonTintColor = UIColor.white
     let buttonBackgroundColor = UIColor(hexString: "#4990e2")
 
-    let increasePercentage: Float = 0.1
+    /// Value progress view is increased by on each button touch up inside
+    let increaseValue: Float = 0.1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        slowAnimationButton.layer.cornerRadius = 4.0
-        slowAnimationButton.tintColor = buttonTintColor
-        slowAnimationButton.backgroundColor = buttonBackgroundColor
-
-        fastAnimationButton.layer.cornerRadius = 4.0
-        fastAnimationButton.tintColor = buttonTintColor
-        fastAnimationButton.backgroundColor = buttonBackgroundColor
-
-        skipAnimationButton.layer.cornerRadius = 4.0
-        skipAnimationButton.tintColor = buttonTintColor
-        skipAnimationButton.backgroundColor = buttonBackgroundColor
-
-        setButton.layer.cornerRadius = 4.0
-        setButton.tintColor = buttonTintColor
-        setButton.backgroundColor = buttonBackgroundColor
+        // Layout buttons
+        [slowAnimationButton, fastAnimationButton, skipAnimationButton, setButton].forEach { (button: UIButton) in
+            button.layer.cornerRadius = 4.0
+            button.tintColor = buttonTintColor
+            button.backgroundColor = buttonBackgroundColor
+        }
     }
 
     // MARK: - Helper
 
     func increasedProgressValue() -> Float {
-        var progress = progressView.progress + increasePercentage
-        if progress > 1.01 {
-            progress = 0.0
+        let nextProgress = progressView.progress + increaseValue
+
+        let maxProgress = 1.0 + Float.ulpOfOne
+        if nextProgress > maxProgress {
+            return 0.0
         }
 
-        return progress
+        return nextProgress
     }
 
     // MARK: - User interaction

@@ -67,7 +67,7 @@ class GradientProgressBarTests: XCTestCase {
 ///
 /// Notes:
 ///  - Based on: http://www.seemuapps.com/generating-a-random-number-in-swift
-fileprivate class Random {
+private class Random {
 
     static func double(min: Double, max: Double) -> Double {
         return (Double(arc4random()) / 0xFFFFFFFF) * (max - min) + min

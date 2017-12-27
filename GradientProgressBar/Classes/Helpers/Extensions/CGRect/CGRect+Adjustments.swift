@@ -17,12 +17,10 @@ extension CGRect {
     ///  - factor: Multiplier for the width
     ///
     /// Returns: `CGRect` with updated width.
-    public func updateWidth(byFactor factor: CGFloat) -> CGRect {
-        return CGRect(
-            x: origin.x,
-            y: origin.y,
-            width: size.width * factor,
-            height: size.height
-        )
+    public func update(widthByFactor factor: CGFloat) -> CGRect {
+        return CGRect(x: origin.x,
+                      y: origin.y,
+                      width: size.width * factor,
+                      height: size.height)
     }
 }

@@ -41,11 +41,31 @@ progressView.progress = 0.75
 ```
 
 ### Configuration
-As of version 1.1.0 you can adjust the animation duration:
+As of version __1.1.0__ you can adjust the animation duration:
 ```
 progressView.animationDuration = 2.0
 progressView.setProgress(progress, animated: true)
 ```
+
+As of version __1.2.0__ you can also adjust the gradient colors as well as the animation timing function:
+
+__Custom gradient colors__
+```
+progressView.gradientColorList = [
+    UIColor(hex:"#f2526e"),
+    UIColor(hex:"#f17a97"),
+    UIColor(hex:"#f3bcc8"),
+    UIColor(hex:"#6dddf2"),
+    UIColor(hex:"#c1f0f4")
+]
+```
+
+__Custom timing function__
+```
+progressView.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
+```
+
+Please have a look at the example application for further details :)
 
 ### Author
 Felix Mau (contact(@)felix.hamburg)

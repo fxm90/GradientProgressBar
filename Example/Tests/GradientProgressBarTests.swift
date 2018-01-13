@@ -17,23 +17,25 @@ class GradientProgressBarTests: XCTestCase {
     func testInitialization() {
         let gradientProgressBar = GradientProgressBar(frame: .zero)
 
-        if let sublayers = gradientProgressBar.layer.sublayers, let firstSublayer = sublayers.first {
-            // Check `gradientLayer`
-            XCTAssertEqual(firstSublayer, gradientProgressBar.gradientLayer, "Gradientlayer should be added as first sublayer.")
-
-            // Check `alphaMaskLayer`
-            XCTAssertEqual(firstSublayer.mask, gradientProgressBar.alphaMaskLayer, "Gradientlayer should have an alpha mask.")
-        } else {
+        guard let firstSublayer = gradientProgressBar.layer.sublayers?.first as? CAGradientLayer else {
             XCTFail("No sublayers added during initialization!")
+            return
         }
+
+        // Check `gradientLayer`
+        XCTAssertEqual(firstSublayer, gradientProgressBar.gradientLayer, "`gradientlayer` should be added as first sublayer.")
+
+        // Check `alphaMaskLayer`
+        XCTAssertEqual(firstSublayer.mask, gradientProgressBar.alphaMaskLayer, "`gradientlayer` should have an alpha mask .")
     }
 
     func testSetProgressViaVariable() {
         // Generate `GradientLoadingBar` with a random width
         let width = Random.double(min: 1.0, max: 100.0)
-        let gradientProgressBar = GradientProgressBar(
-            frame: CGRect(x: 0.0, y: 0.0, width: width, height: 1.0)
-        )
+        let gradientProgressBar = GradientProgressBar(frame: CGRect(x: 0.0,
+                                                                    y: 0.0,
+                                                                    width: width,
+                                                                    height: 1.0))
 
         // Test five different percentages. Each should set correct alpha mask width.
         for _ in 1...5 {
@@ -48,9 +50,10 @@ class GradientProgressBarTests: XCTestCase {
     func testSetProgressViaMethodCall() {
         // Generate `GradientLoadingBar` with a random width
         let width = Random.double(min: 1.0, max: 100.0)
-        let gradientProgressBar = GradientProgressBar(
-            frame: CGRect(x: 0.0, y: 0.0, width: width, height: 1.0)
-        )
+        let gradientProgressBar = GradientProgressBar(frame: CGRect(x: 0.0,
+                                                                    y: 0.0,
+                                                                    width: width,
+                                                                    height: 1.0))
 
         // Test five different percentages. Each should set correct alpha mask width.
         for _ in 1...5 {
@@ -60,6 +63,27 @@ class GradientProgressBarTests: XCTestCase {
             let alphaMaskLayerFrame = gradientProgressBar.alphaMaskLayer.frame
             XCTAssertEqual(Double(alphaMaskLayerFrame.width), width * Double(percentage), accuracy: accuracy)
         }
+    }
+
+    func testCustomGradientColorList() {
+        let gradientColorList = [
+            UIColor.red,
+            UIColor.yellow,
+            UIColor.green
+        ]
+
+        let gradientProgressBar = GradientProgressBar(frame: .zero)
+        gradientProgressBar.gradientColorList = gradientColorList
+
+        guard let firstSublayer = gradientProgressBar.layer.sublayers?.first as? CAGradientLayer,
+              let sublayerColorList = firstSublayer.colors as? [CGColor]
+        else {
+            XCTFail("Could not get gradient color list")
+            return
+        }
+
+        // Verify colors of sublayer
+        XCTAssertEqual(sublayerColorList, gradientColorList.map({ $0.cgColor }))
     }
 }
 

@@ -14,26 +14,26 @@ public class GradientProgressBar: UIProgressView {
     // MARK: - Types
 
     /// Struct containing the default configuration.
-    private struct DefaultValues {
+    struct DefaultValues {
 
         /// Default background color for the progress view.
-        static let backgroundColor = UIColor(hexString:"#e5e9eb")
+        static let backgroundColor = UIColor(hex: "#e5e9eb")
 
         /// Default gradient colors for the progress view.
         ///
         /// Note:
-        ///  - Has to be of type `UIColor` for Objective-C compability
         ///  - Based on http://www.cssscript.com/ios-style-gradient-progress-bar-with-pure-css-css3/
-        static let gradientColors = [
-            UIColor(hexString:"#4cd964"),
-            UIColor(hexString:"#5ac8fa"),
-            UIColor(hexString:"#007aff"),
-            UIColor(hexString:"#34aadc"),
-            UIColor(hexString:"#5856d6"),
-            UIColor(hexString:"#ff2d55")
+        static let gradientColorList = [
+            UIColor(hex:"#4cd964"),
+            UIColor(hex:"#5ac8fa"),
+            UIColor(hex:"#007aff"),
+            UIColor(hex:"#34aadc"),
+            UIColor(hex:"#5856d6"),
+            UIColor(hex:"#ff2d55")
         ]
 
-        /// Animation duration for call to `setProgress(x, animated: true)`.
+
+        /// Default animation duration for call to `setProgress(x, animated: true)`.
         ///
         /// Note: Equals to CALayer default animation duration
         static let animationDuration = 0.25
@@ -50,10 +50,20 @@ public class GradientProgressBar: UIProgressView {
     // MARK: - Public properties
 
     /// Gradient colors for the progress view.
-    public var gradientColors = DefaultValues.gradientColors
+    //
+    /// Note:
+    ///  - Has to be of type `UIColor` for Objective-C compability
+    public var gradientColorList: [UIColor]? {
+        didSet {
+            updateGradientLayerColors()
+        }
+    }
 
     /// Animation duration for call to `setProgress(x, animated: true)`.
-    public var animationDuration = DefaultValues.animationDuration
+    public var animationDuration: TimeInterval?
+
+    /// Animation timing function for call to `setProgress(x, animated: true)`.
+    public var timingFunction: CAMediaTimingFunction?
 
     override public var bounds: CGRect {
         didSet {
@@ -92,18 +102,20 @@ public class GradientProgressBar: UIProgressView {
     private func setupProgressView() {
         backgroundColor = DefaultValues.backgroundColor
 
-        // Clear tint and progress colors, we'll use the gradient layer for showing progress instead
+        // Clear tint and progress colors, we'll use our `gradientLayer` for showing progress instead
         trackTintColor = .clear
         progressTintColor = .clear
 
         setupAlphaMaskLayer()
         setupGradientLayer()
 
+        // After finished setting up, we'll apply the gradient colors. As these might already have been overwritten,
+        // do not apply the gradient colors from default values!
+        updateGradientLayerColors()
+
         layer.insertSublayer(gradientLayer, at: 0)
         updateAlphaMaskLayer()
     }
-
-    // MARK: - Setup layers
 
     private func setupAlphaMaskLayer() {
         alphaMaskLayer.frame = bounds
@@ -123,13 +135,16 @@ public class GradientProgressBar: UIProgressView {
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint   = CGPoint(x: 1.0, y: 0.0)
 
-        gradientLayer.colors = gradientColors.map({ $0.cgColor })
-
-        // Apply "alphaMaskLayer" as a mask to the gradient layer in order to show only parts of the current "progress"
+        // Apply `alphaMaskLayer"` as a mask to the gradient layer in order to show only the current "progress" of the `gradientLayer`.
         gradientLayer.mask = alphaMaskLayer
     }
 
     // MARK: - Update gradient
+
+    private func updateGradientLayerColors() {
+        let gradientColorList = self.gradientColorList ?? DefaultValues.gradientColorList
+        gradientLayer.colors = gradientColorList.map({ $0.cgColor })
+    }
 
     /// Updates the alpha mask of the gradient layer.
     ///
@@ -137,12 +152,16 @@ public class GradientProgressBar: UIProgressView {
     ///  - animated: `true` if the change should be animated, `false` if the change should happen immediately.
     private func updateAlphaMaskLayer(animated: Bool = false) {
         CATransaction.begin()
+        CATransaction.setAnimationTimingFunction(timingFunction)
 
-        // Workaround for non animated progress change
-        // Source: https://stackoverflow.com/a/16381287/3532505
-        CATransaction.setAnimationDuration(
-            animated ? animationDuration : 0.0
-        )
+        if animated {
+            let animationDuration = self.animationDuration ?? DefaultValues.animationDuration
+            CATransaction.setAnimationDuration(animationDuration)
+        } else {
+            // Workaround for non animated progress change
+            // Source: https://stackoverflow.com/a/16381287/3532505
+            CATransaction.setAnimationDuration(0.0)
+        }
 
         alphaMaskLayer.frame = bounds.update(widthByFactor: CGFloat(progress))
 

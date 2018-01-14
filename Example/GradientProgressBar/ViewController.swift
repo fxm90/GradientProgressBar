@@ -29,16 +29,11 @@ class ViewController: UIViewController {
 
     // MARK: - Types
 
-    enum GradientColorSchemeList: Int {
+    enum GradientColorSchemeList: Int, InfiniteIteration {
         case `default`
         case pinkFlamingo
 
         static let first: GradientColorSchemeList = .`default`
-
-        var nextValue: GradientColorSchemeList {
-            let enumType = type(of: self)
-            return enumType.init(rawValue: rawValue + 1) ?? enumType.first
-        }
 
         var asColorList: [UIColor]? {
             switch self {
@@ -58,17 +53,12 @@ class ViewController: UIViewController {
         }
     }
 
-    enum TimingFunctionList: Int {
+    enum TimingFunctionList: Int, InfiniteIteration {
         case `default`
         case easeInCubic
         case easeInBack
 
         static let first: TimingFunctionList = .`default`
-
-        var nextValue: TimingFunctionList {
-            let enumType = type(of: self)
-            return enumType.init(rawValue: rawValue + 1) ?? enumType.first
-        }
 
         var asTimingFunction: CAMediaTimingFunction? {
             switch self {
@@ -245,6 +235,19 @@ class ViewController: UIViewController {
 
     @objc func onResetButtonTouchUpInside(_ sender: Any) {
         progressView.progress = 0.00
+    }
+}
+
+// MARK: - Helper: Loop through enum values
+
+// Based on: https://stackoverflow.com/a/35741424
+protocol InfiniteIteration {
+    static var first: Self { get }
+}
+
+extension InfiniteIteration where Self: RawRepresentable, Self.RawValue == Int {
+    var nextValue: Self {
+        return Self(rawValue: rawValue + 1) ?? Self.first
     }
 }
 

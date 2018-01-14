@@ -7,6 +7,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.2.0] - 2018-14-01
+### Added
+ - Allow setting custom gradient colors
+ - Allow setting custom animation timing function
+
 ## [1.1.4] - 2017-27-12
 ### Changed
  - Updated to Swift 4.0
@@ -18,7 +23,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
  - Fix frame not updated correctly
 ### Changed
  - Updated documentation
-
 
 ## [1.1.2] - 2017-01-10
 ### Added
@@ -49,7 +53,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Initial release
 
 
-[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.1.4...master
+[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.2.0...master
+[1.1.4]: https://github.com/fxm90/GradientProgressBar/compare/1.1.4...1.2.0
 [1.1.4]: https://github.com/fxm90/GradientProgressBar/compare/1.1.3...1.1.4
 [1.1.3]: https://github.com/fxm90/GradientProgressBar/compare/1.1.2...1.1.3
 [1.1.2]: https://github.com/fxm90/GradientProgressBar/compare/1.1.1...1.1.2

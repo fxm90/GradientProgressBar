@@ -22,7 +22,7 @@ public class GradientProgressBar: UIProgressView {
         /// Default gradient colors for the progress view.
         ///
         /// Note:
-        ///  - Based on http://www.cssscript.com/ios-style-gradient-progress-bar-with-pure-css-css3/
+        ///  - Based on https://codepen.io/marcobiedermann/pen/LExXWW
         static let gradientColorList = [
             UIColor(hex:"#4cd964"),
             UIColor(hex:"#5ac8fa"),

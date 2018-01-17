@@ -52,11 +52,11 @@ As of version __1.2.0__ you can also adjust the gradient colors as well as the a
 __Custom gradient colors__
 ```
 progressView.gradientColorList = [
-    UIColor(hex:"#f2526e"),
-    UIColor(hex:"#f17a97"),
-    UIColor(hex:"#f3bcc8"),
-    UIColor(hex:"#6dddf2"),
-    UIColor(hex:"#c1f0f4")
+    UIColor(hex: "#f2526e"),
+    UIColor(hex: "#f17a97"),
+    UIColor(hex: "#f3bcc8"),
+    UIColor(hex: "#6dddf2"),
+    UIColor(hex: "#c1f0f4")
 ]
 ```
 ![Sample](http://felix.hamburg/files/github/gradient-progress-bar/screen-custom-colors.jpg)

@@ -24,12 +24,12 @@ public class GradientProgressBar: UIProgressView {
         /// Note:
         ///  - Based on https://codepen.io/marcobiedermann/pen/LExXWW
         static let gradientColorList = [
-            UIColor(hex:"#4cd964"),
-            UIColor(hex:"#5ac8fa"),
-            UIColor(hex:"#007aff"),
-            UIColor(hex:"#34aadc"),
-            UIColor(hex:"#5856d6"),
-            UIColor(hex:"#ff2d55")
+            UIColor(hex: "#4cd964"),
+            UIColor(hex: "#5ac8fa"),
+            UIColor(hex: "#007aff"),
+            UIColor(hex: "#34aadc"),
+            UIColor(hex: "#5856d6"),
+            UIColor(hex: "#ff2d55")
         ]
 
 

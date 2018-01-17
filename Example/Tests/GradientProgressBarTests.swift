@@ -12,7 +12,7 @@ import XCTest
 class GradientProgressBarTests: XCTestCase {
 
     /// Accuracy used for floating value comparison.
-    let accuracy = Double(Float.ulpOfOne)
+    let accuracy = Double.ulpOfOne
 
     func testInitialization() {
         let gradientProgressBar = GradientProgressBar(frame: .zero)
@@ -31,7 +31,7 @@ class GradientProgressBarTests: XCTestCase {
 
     func testSetProgressViaVariable() {
         // Generate `GradientLoadingBar` with a random width
-        let width = Random.double(min: 1.0, max: 100.0)
+        let width = Double.random(min: 1.0, max: 100.0)
         let gradientProgressBar = GradientProgressBar(frame: CGRect(x: 0.0,
                                                                     y: 0.0,
                                                                     width: width,
@@ -39,17 +39,20 @@ class GradientProgressBarTests: XCTestCase {
 
         // Test five different percentages. Each should set correct alpha mask width.
         for _ in 1...5 {
-            let percentage = Random.float(min: 0.0, max: 1.0)
+            let percentage = Float.random(min: 0.0, max: 1.0)
             gradientProgressBar.progress = percentage
 
             let alphaMaskLayerFrame = gradientProgressBar.alphaMaskLayer.frame
-            XCTAssertEqual(Double(alphaMaskLayerFrame.width), width * Double(percentage), accuracy: accuracy)
+            let actualWidth = Double(alphaMaskLayerFrame.width)
+
+            let expectedWidth = width * Double(percentage)
+            XCTAssertEqual(actualWidth, expectedWidth, accuracy: accuracy)
         }
     }
 
     func testSetProgressViaMethodCall() {
         // Generate `GradientLoadingBar` with a random width
-        let width = Random.double(min: 1.0, max: 100.0)
+        let width = Double.random(min: 1.0, max: 100.0)
         let gradientProgressBar = GradientProgressBar(frame: CGRect(x: 0.0,
                                                                     y: 0.0,
                                                                     width: width,
@@ -57,11 +60,14 @@ class GradientProgressBarTests: XCTestCase {
 
         // Test five different percentages. Each should set correct alpha mask width.
         for _ in 1...5 {
-            let percentage = Random.float(min: 0.0, max: 1.0)
+            let percentage = Float.random(min: 0.0, max: 1.0)
             gradientProgressBar.setProgress(percentage, animated: false)
 
             let alphaMaskLayerFrame = gradientProgressBar.alphaMaskLayer.frame
-            XCTAssertEqual(Double(alphaMaskLayerFrame.width), width * Double(percentage), accuracy: accuracy)
+            let actualWidth = Double(alphaMaskLayerFrame.width)
+
+            let expectedWidth = width * Double(percentage)
+            XCTAssertEqual(actualWidth, expectedWidth, accuracy: accuracy)
         }
     }
 
@@ -91,13 +97,14 @@ class GradientProgressBarTests: XCTestCase {
 ///
 /// Notes:
 ///  - Based on: http://www.seemuapps.com/generating-a-random-number-in-swift
-private class Random {
-
-    static func double(min: Double, max: Double) -> Double {
+private extension Double {
+    static func random(min: Double, max: Double) -> Double {
         return (Double(arc4random()) / 0xFFFFFFFF) * (max - min) + min
     }
+}
 
-    static func float(min: Float, max: Float) -> Float {
+private extension Float {
+    static func random(min: Float, max: Float) -> Float {
         return (Float(arc4random()) / 0xFFFFFFFF) * (max - min) + min
     }
 }

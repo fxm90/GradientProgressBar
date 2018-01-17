@@ -14,8 +14,8 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		97244F661F7FE26B00F4E795 /* CGRect+AdjustmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97244F631F7FE26600F4E795 /* CGRect+AdjustmentsTests.swift */; };
-		97244F671F7FE26B00F4E795 /* UIColor+InitializersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97244F651F7FE26600F4E795 /* UIColor+InitializersTests.swift */; };
+		97081BBA200F55100005913C /* UIColor+InitializersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97081BB7200F55100005913C /* UIColor+InitializersTests.swift */; };
+		97081BBB200F55100005913C /* CGRect+AdjustmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97081BB9200F55100005913C /* CGRect+AdjustmentsTests.swift */; };
 		97909BB91FA76F8500595663 /* GradientProgressBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97909BB71FA76F4A00595663 /* GradientProgressBarTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +42,8 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* GradientProgressBar_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradientProgressBar_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97244F631F7FE26600F4E795 /* CGRect+AdjustmentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+AdjustmentsTests.swift"; sourceTree = "<group>"; };
-		97244F651F7FE26600F4E795 /* UIColor+InitializersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+InitializersTests.swift"; sourceTree = "<group>"; };
+		97081BB7200F55100005913C /* UIColor+InitializersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+InitializersTests.swift"; sourceTree = "<group>"; };
+		97081BB9200F55100005913C /* CGRect+AdjustmentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+AdjustmentsTests.swift"; sourceTree = "<group>"; };
 		97909BB71FA76F4A00595663 /* GradientProgressBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientProgressBarTests.swift; sourceTree = "<group>"; };
 		99AF8B41726EDDA3CC894825 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9A75FF2D96B47071144BF54E /* Pods-GradientProgressBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientProgressBar_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradientProgressBar_Example/Pods-GradientProgressBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				97244F611F7FE26600F4E795 /* Extensions */,
+				97081BB4200F55030005913C /* Helpers */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				97909BB71FA76F4A00595663 /* GradientProgressBarTests.swift */,
 			);
@@ -144,29 +144,37 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		97244F611F7FE26600F4E795 /* Extensions */ = {
+		97081BB4200F55030005913C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				97244F621F7FE26600F4E795 /* CGRect */,
-				97244F641F7FE26600F4E795 /* UIColor */,
+				97081BB5200F55100005913C /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		97081BB5200F55100005913C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				97081BB6200F55100005913C /* UIColor */,
+				97081BB8200F55100005913C /* CGRect */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		97244F621F7FE26600F4E795 /* CGRect */ = {
+		97081BB6200F55100005913C /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
-				97244F631F7FE26600F4E795 /* CGRect+AdjustmentsTests.swift */,
-			);
-			path = CGRect;
-			sourceTree = "<group>";
-		};
-		97244F641F7FE26600F4E795 /* UIColor */ = {
-			isa = PBXGroup;
-			children = (
-				97244F651F7FE26600F4E795 /* UIColor+InitializersTests.swift */,
+				97081BB7200F55100005913C /* UIColor+InitializersTests.swift */,
 			);
 			path = UIColor;
+			sourceTree = "<group>";
+		};
+		97081BB8200F55100005913C /* CGRect */ = {
+			isa = PBXGroup;
+			children = (
+				97081BB9200F55100005913C /* CGRect+AdjustmentsTests.swift */,
+			);
+			path = CGRect;
 			sourceTree = "<group>";
 		};
 		D91CF1FC4E693F065D5250E1 /* Frameworks */ = {
@@ -424,9 +432,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97244F671F7FE26B00F4E795 /* UIColor+InitializersTests.swift in Sources */,
+				97081BBB200F55100005913C /* CGRect+AdjustmentsTests.swift in Sources */,
+				97081BBA200F55100005913C /* UIColor+InitializersTests.swift in Sources */,
 				97909BB91FA76F8500595663 /* GradientProgressBarTests.swift in Sources */,
-				97244F661F7FE26B00F4E795 /* CGRect+AdjustmentsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

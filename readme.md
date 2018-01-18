@@ -8,7 +8,7 @@ A gradient progress bar (UIProgressView). Inspired by [iOS 7 Progress Bar from C
 
 ![Sample](http://felix.hamburg/files/github/gradient-progress-bar/screen.jpg)
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo and open `Example/GradientProgressBar.xcworkspace`.
 
 
 ### Integration

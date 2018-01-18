@@ -5,9 +5,6 @@ use_frameworks!
 target 'GradientProgressBar_Example' do
   pod 'GradientProgressBar', :path => '../'
 
-  # Dev Dependecies
-  pod 'SwiftLint'
-
   target 'GradientProgressBar_Tests' do
     inherit! :search_paths
 

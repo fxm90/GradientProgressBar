@@ -43,11 +43,11 @@ class ViewController: UIViewController {
             case .pinkFlamingo:
                 // Source: https://color.adobe.com/Pink-Flamingo-color-theme-10343714/
                 return [
-                    UIColor(hex:"#f2526e"),
-                    UIColor(hex:"#f17a97"),
-                    UIColor(hex:"#f3bcc8"),
-                    UIColor(hex:"#6dddf2"),
-                    UIColor(hex:"#c1f0f4")
+                    UIColor(hex: "#f2526e"),
+                    UIColor(hex: "#f17a97"),
+                    UIColor(hex: "#f3bcc8"),
+                    UIColor(hex: "#6dddf2"),
+                    UIColor(hex: "#c1f0f4")
                 ]
             }
         }

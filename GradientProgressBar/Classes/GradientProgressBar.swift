@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// `UIProgressView` with a gradient.
+/// `UIProgressView` with a customizable gradient.
 public class GradientProgressBar: UIProgressView {
 
     // MARK: - Types
@@ -41,11 +41,32 @@ public class GradientProgressBar: UIProgressView {
 
     // MARK: - Private properties
 
-    /// Layer with the gradient.
-    public private(set) var gradientLayer = CAGradientLayer()
+    /// Viewmodel containing logic for gradient view.
+    private var viewModel = GradientProgressBarViewModel()
 
-    /// Alpha mask for visible part of gradient layer.
-    public private(set) var alphaMaskLayer = CALayer()
+    /// Layer containing the gradient.
+    private var gradientLayer: CAGradientLayer = {
+        let layer = CAGradientLayer()
+
+        layer.anchorPoint = CGPoint(x: 0, y: 0)
+        layer.position = CGPoint(x: 0, y: 0)
+
+        layer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        layer.endPoint = CGPoint(x: 1.0, y: 0.0)
+
+        return layer
+    }()
+
+    /// Alpha mask for showing only "progress"-part of gradient layer.
+    private var alphaMaskLayer: CALayer = {
+        let layer = CALayer()
+
+        layer.anchorPoint = CGPoint(x: 0, y: 0)
+        layer.position = CGPoint(x: 0, y: 0)
+        layer.backgroundColor = UIColor.white.cgColor
+
+        return layer
+    }()
 
     // MARK: - Public properties
 
@@ -54,32 +75,43 @@ public class GradientProgressBar: UIProgressView {
     /// Note:
     ///  - Has to be of type `UIColor` for Objective-C compability
     public var gradientColorList: [UIColor]? {
-        didSet {
-            updateGradientLayerColors()
+        get {
+            return viewModel.gradientColorList
+        }
+        set {
+            viewModel.gradientColorList = newValue
         }
     }
 
     /// Animation duration for call to `setProgress(x, animated: true)`.
-    public var animationDuration: TimeInterval?
+    public var animationDuration: TimeInterval?  {
+        get {
+            return viewModel.animationDuration
+        }
+        set {
+            viewModel.animationDuration = newValue
+        }
+    }
 
     /// Animation timing function for call to `setProgress(x, animated: true)`.
-    public var timingFunction: CAMediaTimingFunction?
+    public var timingFunction: CAMediaTimingFunction? {
+        get {
+            return viewModel.timingFunction
+        }
+        set {
+            viewModel.timingFunction = newValue
+        }
+    }
 
     override public var bounds: CGRect {
         didSet {
-            // Workaround to handle orientation change, as `layoutSubviews()` gets triggered each time
-            // the progress value is changed.
-            alphaMaskLayer.frame = bounds
-            gradientLayer.frame = bounds
-
-            updateAlphaMaskLayer()
+            viewModel.bounds = bounds
         }
     }
 
     override public var progress: Float {
         didSet {
-            // Update layer mask on direct changes to progress value.
-            updateAlphaMaskLayer()
+            viewModel.progress = progress
         }
     }
 
@@ -89,15 +121,15 @@ public class GradientProgressBar: UIProgressView {
         super.init(frame: frame)
 
         setupProgressView()
+        setupViewModel()
     }
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         setupProgressView()
+        setupViewModel()
     }
-
-    // MARK: - Setup UIProgressView
 
     private func setupProgressView() {
         backgroundColor = DefaultValues.backgroundColor
@@ -106,71 +138,52 @@ public class GradientProgressBar: UIProgressView {
         trackTintColor = .clear
         progressTintColor = .clear
 
-        setupAlphaMaskLayer()
-        setupGradientLayer()
-
-        // After finished setting up, we'll apply the gradient colors. As these might already have been overwritten,
-        // do not apply the gradient colors from default values!
-        updateGradientLayerColors()
+        // Apply mask to the gradient layer in order to show only the current "progress" of the gradient.
+        gradientLayer.mask = alphaMaskLayer
 
         layer.insertSublayer(gradientLayer, at: 0)
-        updateAlphaMaskLayer()
     }
 
-    private func setupAlphaMaskLayer() {
-        alphaMaskLayer.frame = bounds
-
-        alphaMaskLayer.anchorPoint = CGPoint(x: 0, y: 0)
-        alphaMaskLayer.position    = CGPoint(x: 0, y: 0)
-
-        alphaMaskLayer.backgroundColor = UIColor.white.cgColor
+    private func setupViewModel() {
+        viewModel.delegate = self
+        viewModel.setup(forBounds: bounds)
     }
 
-    private func setupGradientLayer() {
-        gradientLayer.frame = bounds
-
-        gradientLayer.anchorPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.position    = CGPoint(x: 0, y: 0)
-
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-        gradientLayer.endPoint   = CGPoint(x: 1.0, y: 0.0)
-
-        // Apply `alphaMaskLayer"` as a mask to the gradient layer in order to show only the current "progress" of the `gradientLayer`.
-        gradientLayer.mask = alphaMaskLayer
-    }
-
-    // MARK: - Update gradient
-
-    private func updateGradientLayerColors() {
-        let gradientColorList = self.gradientColorList ?? DefaultValues.gradientColorList
-        gradientLayer.colors = gradientColorList.map({ $0.cgColor })
-    }
-
-    /// Updates the alpha mask of the gradient layer.
-    ///
-    /// Parameters:
-    ///  - animated: `true` if the change should be animated, `false` if the change should happen immediately.
-    private func updateAlphaMaskLayer(animated: Bool = false) {
-        CATransaction.begin()
-        CATransaction.setAnimationTimingFunction(timingFunction)
-
-        if animated {
-            let animationDuration = self.animationDuration ?? DefaultValues.animationDuration
-            CATransaction.setAnimationDuration(animationDuration)
-        } else {
-            // Workaround for non animated progress change
-            // Source: https://stackoverflow.com/a/16381287/3532505
-            CATransaction.setAnimationDuration(0.0)
-        }
-
-        alphaMaskLayer.frame = bounds.update(widthByFactor: CGFloat(progress))
-
-        CATransaction.commit()
-    }
+    // MARK: - Public methods
 
     override public func setProgress(_ progress: Float, animated: Bool) {
         super.setProgress(progress, animated: animated)
 
-        updateAlphaMaskLayer(animated: animated)
+        viewModel.setProgress(progress, animated: animated)
+    }
+}
+
+// MARK: - GradientProgressBarViewModelDelegate
+
+extension GradientProgressBar: GradientProgressBarViewModelDelegate {
+    func viewModel(_: GradientProgressBarViewModel, didUpdateAlphaLayerFrame frame: CGRect,
+                   animationDuration: TimeInterval?, timingFunction: CAMediaTimingFunction?)
+    {
+        guard let animationDuration = animationDuration, animationDuration > 0.0 else {
+            // We didn't get any (valid) duration so update frame immediately
+            alphaMaskLayer.frame = frame
+            return
+        }
+
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(animationDuration)
+        CATransaction.setAnimationTimingFunction(timingFunction)
+
+        alphaMaskLayer.frame = frame
+
+        CATransaction.commit()
+    }
+
+    func viewModel(_: GradientProgressBarViewModel, didUpdateGradientLayerFrame frame: CGRect) {
+        gradientLayer.frame = frame
+    }
+
+    func viewModel(_: GradientProgressBarViewModel, didUpdateGradientLayerColorList colorList: [UIColor]) {
+        gradientLayer.colors = colorList.map({ $0.cgColor })
     }
 }

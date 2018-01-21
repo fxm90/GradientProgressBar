@@ -15,7 +15,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		97081BBA200F55100005913C /* UIColor+InitializersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97081BB7200F55100005913C /* UIColor+InitializersTests.swift */; };
-		97081BBB200F55100005913C /* CGRect+AdjustmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97081BB9200F55100005913C /* CGRect+AdjustmentsTests.swift */; };
+		971B9F9A2013C17700A72B4E /* GradientProgressBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971B9F982013C0C100A72B4E /* GradientProgressBarViewModelTests.swift */; };
 		97909BB91FA76F8500595663 /* GradientProgressBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97909BB71FA76F4A00595663 /* GradientProgressBarTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +43,7 @@
 		607FACE51AFB9204008FA782 /* GradientProgressBar_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradientProgressBar_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97081BB7200F55100005913C /* UIColor+InitializersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+InitializersTests.swift"; sourceTree = "<group>"; };
-		97081BB9200F55100005913C /* CGRect+AdjustmentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+AdjustmentsTests.swift"; sourceTree = "<group>"; };
+		971B9F982013C0C100A72B4E /* GradientProgressBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientProgressBarViewModelTests.swift; sourceTree = "<group>"; };
 		97909BB71FA76F4A00595663 /* GradientProgressBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientProgressBarTests.swift; sourceTree = "<group>"; };
 		99AF8B41726EDDA3CC894825 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9A75FF2D96B47071144BF54E /* Pods-GradientProgressBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientProgressBar_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradientProgressBar_Example/Pods-GradientProgressBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +121,7 @@
 			children = (
 				97081BB4200F55030005913C /* Helpers */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				971B9F972013C09F00A72B4E /* ViewModel */,
 				97909BB71FA76F4A00595663 /* GradientProgressBarTests.swift */,
 			);
 			path = Tests;
@@ -156,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				97081BB6200F55100005913C /* UIColor */,
-				97081BB8200F55100005913C /* CGRect */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -169,12 +169,12 @@
 			path = UIColor;
 			sourceTree = "<group>";
 		};
-		97081BB8200F55100005913C /* CGRect */ = {
+		971B9F972013C09F00A72B4E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				97081BB9200F55100005913C /* CGRect+AdjustmentsTests.swift */,
+				971B9F982013C0C100A72B4E /* GradientProgressBarViewModelTests.swift */,
 			);
-			path = CGRect;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D91CF1FC4E693F065D5250E1 /* Frameworks */ = {
@@ -447,7 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97081BBB200F55100005913C /* CGRect+AdjustmentsTests.swift in Sources */,
+				971B9F9A2013C17700A72B4E /* GradientProgressBarViewModelTests.swift in Sources */,
 				97081BBA200F55100005913C /* UIColor+InitializersTests.swift in Sources */,
 				97909BB91FA76F8500595663 /* GradientProgressBarTests.swift in Sources */,
 			);

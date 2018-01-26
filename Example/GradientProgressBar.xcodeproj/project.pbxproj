@@ -210,6 +210,7 @@
 				607FACCE1AFB9204008FA782 /* Resources */,
 				2B6490026C0D707569BCAF85 /* [CP] Embed Pods Frameworks */,
 				97F2903B7D903BD9AD5C44F5 /* [CP] Copy Pods Resources */,
+				970D1F17201BB73D00F90864 /* Swiftformat */,
 				97081BBC2010A2630005913C /* Swiftlint */,
 			);
 			buildRules = (
@@ -371,6 +372,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		970D1F17201BB73D00F90864 /* Swiftformat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftformat;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat \"${SRCROOT}\" --disable \"trailingCommas\" --indent 4\nfi";
 		};
 		97244F681F7FE8C200F4E795 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;

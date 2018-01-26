@@ -6,15 +6,15 @@
 //  Copyright (c) 2017 fxm90. All rights reserved.
 //
 
-import UIKit
 import GradientProgressBar
+import UIKit
 
 class ViewController: UIViewController {
 
     // MARK: - UIElements
 
-    @IBOutlet weak var progressView: GradientProgressBar!
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet var progressView: GradientProgressBar!
+    @IBOutlet var stackView: UIStackView!
 
     let colorSchemeLabel = UILabel()
     let timingFunctionLabel = UILabel()
@@ -33,11 +33,11 @@ class ViewController: UIViewController {
         case `default`
         case pinkFlamingo
 
-        static let first: GradientColorSchemeList = .`default`
+        static let first: GradientColorSchemeList = .default
 
         var asColorList: [UIColor]? {
             switch self {
-            case .`default`:
+            case .default:
                 return nil
 
             case .pinkFlamingo:
@@ -58,11 +58,11 @@ class ViewController: UIViewController {
         case easeInCubic
         case easeInBack
 
-        static let first: TimingFunctionList = .`default`
+        static let first: TimingFunctionList = .default
 
         var asTimingFunction: CAMediaTimingFunction? {
             switch self {
-            case .`default`:
+            case .default:
                 return nil
 
             case .easeInCubic:
@@ -77,14 +77,14 @@ class ViewController: UIViewController {
     // MARK: - Properties
 
     /// Current color scheme
-    var gradientColorScheme: GradientColorSchemeList = .`default` {
+    var gradientColorScheme: GradientColorSchemeList = .default {
         didSet {
             updateColorSchemeLabel()
         }
     }
 
     /// Current timing function
-    var timingFunction: TimingFunctionList = .`default` {
+    var timingFunction: TimingFunctionList = .default {
         didSet {
             updateTimingFunctionLabel()
         }
@@ -201,7 +201,7 @@ class ViewController: UIViewController {
 
     // MARK: - User interaction
 
-    @objc func onSlowAnimationButtonTouchUpInside(_ sender: Any) {
+    @objc func onSlowAnimationButtonTouchUpInside(_: Any) {
         let backupAnimationDuration = progressView.animationDuration
         defer {
             progressView.animationDuration = backupAnimationDuration
@@ -211,29 +211,29 @@ class ViewController: UIViewController {
         progressView.setProgress(nextProgressValue, animated: true)
     }
 
-    @objc func onFastAnimationButtonTouchUpInside(_ sender: Any) {
+    @objc func onFastAnimationButtonTouchUpInside(_: Any) {
         progressView.setProgress(nextProgressValue, animated: true)
     }
 
-    @objc func onSkipAnimationButtonTouchUpInside(_ sender: Any) {
+    @objc func onSkipAnimationButtonTouchUpInside(_: Any) {
         progressView.setProgress(nextProgressValue, animated: false)
     }
 
-    @objc func onChangeColorsButtonTouchUpInside(_ sender: Any) {
+    @objc func onChangeColorsButtonTouchUpInside(_: Any) {
         // Update state with next color scheme (which will also updates corresponding label)
         gradientColorScheme = gradientColorScheme.nextValue
 
         progressView.gradientColorList = gradientColorScheme.asColorList
     }
 
-    @objc func onChangeTimingFunctionButtonTouchUpInside(_ sender: Any) {
+    @objc func onChangeTimingFunctionButtonTouchUpInside(_: Any) {
         // Update state with next timing function (which will also updates corresponding label)
         timingFunction = timingFunction.nextValue
 
         progressView.timingFunction = timingFunction.asTimingFunction
     }
 
-    @objc func onResetButtonTouchUpInside(_ sender: Any) {
+    @objc func onResetButtonTouchUpInside(_: Any) {
         progressView.progress = 0.00
     }
 }
@@ -257,7 +257,7 @@ extension InfiniteIteration where Self: RawRepresentable, Self.RawValue == Int {
 extension NSMutableAttributedString {
     @discardableResult func bold(_ text: String, size: CGFloat) -> NSMutableAttributedString {
         let boldString = NSMutableAttributedString(string: text,
-                                                   attributes: [ NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: size) ])
+                                                   attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: size)])
         append(boldString)
 
         return self
@@ -265,7 +265,7 @@ extension NSMutableAttributedString {
 
     @discardableResult func normal(_ text: String, size: CGFloat) -> NSMutableAttributedString {
         let normal = NSAttributedString(string: text,
-                                        attributes: [ NSAttributedStringKey.font: UIFont.systemFont(ofSize: size) ])
+                                        attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: size)])
         append(normal)
 
         return self

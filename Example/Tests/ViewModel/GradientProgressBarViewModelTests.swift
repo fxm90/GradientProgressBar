@@ -6,8 +6,8 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-import XCTest
 @testable import GradientProgressBar
+import XCTest
 
 // MARK: - Test case
 
@@ -41,7 +41,7 @@ class GradientProgressBarViewModelTests: XCTestCase {
         let animationDuration = 1.23
         viewModel.animationDuration = animationDuration
 
-        let timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseIn)
+        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
         viewModel.timingFunction = timingFunction
 
         let bounds = CGRect(x: 0.0, y: 0.0, width: 71.0, height: 3.0)
@@ -72,7 +72,7 @@ class GradientProgressBarViewModelTests: XCTestCase {
         let animationDuration = 4.56
         viewModel.animationDuration = animationDuration
 
-        let timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         viewModel.timingFunction = timingFunction
 
         let bounds = CGRect(x: 0.0, y: 0.0, width: 89.0, height: 5.0)
@@ -117,7 +117,7 @@ class GradientProgressBarViewModelTests: XCTestCase {
         let animationDuration = 7.89
         viewModel.animationDuration = animationDuration
 
-        let timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
+        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         viewModel.timingFunction = timingFunction
 
         let bounds = CGRect(x: 0.0, y: 0.0, width: 97.0, height: 3.0)
@@ -148,7 +148,7 @@ class GradientProgressBarViewModelTests: XCTestCase {
         let animationDuration = 1.23
         viewModel.animationDuration = animationDuration
 
-        let timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseIn)
+        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
         viewModel.timingFunction = timingFunction
 
         let bounds = CGRect(x: 0.0, y: 0.0, width: 67.0, height: 5.0)
@@ -177,7 +177,7 @@ class GradientProgressBarViewModelTests: XCTestCase {
         let animationDuration = 4.56
         viewModel.animationDuration = animationDuration
 
-        let timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseIn)
+        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
         viewModel.timingFunction = timingFunction
 
         let bounds = CGRect(x: 0.0, y: 0.0, width: 59.0, height: 3.0)

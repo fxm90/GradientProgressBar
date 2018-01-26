@@ -6,8 +6,8 @@
 //  Copyright © 2017 CocoaPods. All rights reserved.
 //
 
-import XCTest
 @testable import GradientProgressBar
+import XCTest
 
 class GradientProgressBarTests: XCTestCase {
 
@@ -47,7 +47,7 @@ class GradientProgressBarTests: XCTestCase {
     }
 
     func testSetTimingFunction() {
-        let timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
+        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 
         let gradientProgressBar = GradientProgressBar(frame: .zero)
         gradientProgressBar.timingFunction = timingFunction

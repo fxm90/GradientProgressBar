@@ -3,20 +3,9 @@
 # Created by Felix Mau (http://felix.hamburg)
 #
 
-function SWIFT_FORMAT()
-{
-   echo "$(swiftformat . --dryrun --verbose --disable "trailingCommas")"
-}
+# Run swiftformat without touching files
+SWIFT_FORMAT_RESULT="$(swiftformat . --dryrun --verbose --disable "trailingCommas")"
+echo "$SWIFT_FORMAT_RESULT"
 
-function NUMBER_OF_WARNINGS()
-{
-   echo $1 | grep "would have updated" -c;
-}
-
-SWIFT_FORMAT_RES=$(SWIFT_FORMAT)
-echo "$SWIFT_FORMAT_RES"
-
-if [ $(NUMBER_OF_WARNINGS "$SWIFT_FORMAT_RES") -gt 0 ]; then
-  exit 1
-fi
-exit 0
+# Break build on any found warning
+echo $SWIFT_FORMAT_RESULT | grep "would have updated" --quiet --invert-match

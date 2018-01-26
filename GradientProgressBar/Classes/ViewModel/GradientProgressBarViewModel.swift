@@ -44,14 +44,14 @@ private extension GradientProgressBarViewModelDelegate {
     ///
     /// Note:
     ///  - Same as defined in protocol, but with default parameters
-    func viewModel(_ vm: GradientProgressBarViewModel,
+    func viewModel(_ viewModel: GradientProgressBarViewModel,
                    didUpdateAlphaLayerFrame frame: CGRect,
                    animationDuration: TimeInterval? = nil,
                    timingFunction: CAMediaTimingFunction? = nil) {
-        viewModel(vm,
-                  didUpdateAlphaLayerFrame: frame,
-                  animationDuration: animationDuration,
-                  timingFunction: timingFunction)
+        self.viewModel(viewModel,
+                      didUpdateAlphaLayerFrame: frame,
+                      animationDuration: animationDuration,
+                      timingFunction: timingFunction)
     }
 }
 

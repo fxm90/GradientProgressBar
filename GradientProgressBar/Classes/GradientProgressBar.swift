@@ -32,7 +32,6 @@ public class GradientProgressBar: UIProgressView {
             UIColor(hex: "#ff2d55")
         ]
 
-
         /// Default animation duration for call to `setProgress(x, animated: true)`.
         ///
         /// Note: Equals to CALayer default animation duration
@@ -84,7 +83,7 @@ public class GradientProgressBar: UIProgressView {
     }
 
     /// Animation duration for call to `setProgress(x, animated: true)`.
-    public var animationDuration: TimeInterval?  {
+    public var animationDuration: TimeInterval? {
         get {
             return viewModel.animationDuration
         }
@@ -162,8 +161,7 @@ public class GradientProgressBar: UIProgressView {
 
 extension GradientProgressBar: GradientProgressBarViewModelDelegate {
     func viewModel(_: GradientProgressBarViewModel, didUpdateAlphaLayerFrame frame: CGRect,
-                   animationDuration: TimeInterval?, timingFunction: CAMediaTimingFunction?)
-    {
+                   animationDuration: TimeInterval?, timingFunction: CAMediaTimingFunction?) {
         guard let animationDuration = animationDuration, animationDuration > 0.0 else {
             // We didn't get any (valid) duration so update frame immediately
             alphaMaskLayer.frame = frame

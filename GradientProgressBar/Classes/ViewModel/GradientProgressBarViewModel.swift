@@ -49,9 +49,9 @@ private extension GradientProgressBarViewModelDelegate {
                    animationDuration: TimeInterval? = nil,
                    timingFunction: CAMediaTimingFunction? = nil) {
         self.viewModel(viewModel,
-                      didUpdateAlphaLayerFrame: frame,
-                      animationDuration: animationDuration,
-                      timingFunction: timingFunction)
+                       didUpdateAlphaLayerFrame: frame,
+                       animationDuration: animationDuration,
+                       timingFunction: timingFunction)
     }
 }
 

@@ -385,7 +385,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat \"${SRCROOT}\" --disable \"trailingCommas\" --indent 4\nfi";
+			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat ../ --disable \"trailingCommas\"\nfi";
 		};
 		97244F681F7FE8C200F4E795 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;

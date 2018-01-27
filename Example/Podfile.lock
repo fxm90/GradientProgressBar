@@ -1,16 +1,22 @@
 PODS:
-  - GradientProgressBar (1.2.0)
+  - GradientProgressBar (1.2.1)
+  - SwiftFormat/CLI (0.32.2)
+  - SwiftLint (0.24.2)
 
 DEPENDENCIES:
   - GradientProgressBar (from `../`)
+  - SwiftFormat/CLI
+  - SwiftLint
 
 EXTERNAL SOURCES:
   GradientProgressBar:
     :path: ../
 
 SPEC CHECKSUMS:
-  GradientProgressBar: 7e6649663849a3b779b24016a714253cef6063b2
+  GradientProgressBar: 5e3d78d6fe9106692fbb24293fcfc563da2f1f09
+  SwiftFormat: 9db2ffa51139d7aea21a4eb90a7f7158a34cb6b5
+  SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
 
-PODFILE CHECKSUM: 31a00ce6db94e2ec8264c6b4d43b7f30840e243d
+PODFILE CHECKSUM: 5e1594ff360bdeea487280fd19bc31d92a5ab6ba
 
 COCOAPODS: 1.3.1

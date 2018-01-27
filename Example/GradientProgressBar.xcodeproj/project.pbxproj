@@ -232,6 +232,7 @@
 				607FACE31AFB9204008FA782 /* Resources */,
 				C5E6791B66C9DCA0C85F8E15 /* [CP] Embed Pods Frameworks */,
 				F76DF9C0880534CBA6B60C05 /* [CP] Copy Pods Resources */,
+				970D1F1A201C6F9500F90864 /* Swiftformat */,
 				97244F681F7FE8C200F4E795 /* Swiftlint */,
 			);
 			buildRules = (
@@ -371,7 +372,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "SWIFTLINT=\"${PODS_ROOT}/SwiftLint/swiftlint\"\nif [ ! -f \"$SWIFTLINT\" ]; then\n    echo \"warning: SwiftLint not installed!\"\n    exit 1\nfi\n\n$SWIFTLINT";
 		};
 		970D1F17201BB73D00F90864 /* Swiftformat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -385,7 +386,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat ../ --disable \"trailingCommas\"\nfi";
+			shellScript = "SWIFTFORMAT=\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\"\nif [ ! -f \"$SWIFTFORMAT\" ]; then\n    echo \"warning: SwiftFormat not installed!\"\n    exit 1\nfi\n\nswiftformat ../ --disable \"trailingCommas\"";
+		};
+		970D1F1A201C6F9500F90864 /* Swiftformat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftformat;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SWIFTFORMAT=\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\"\nif [ ! -f \"$SWIFTFORMAT\" ]; then\n    echo \"warning: SwiftFormat not installed!\"\n    exit 1\nfi\n\nswiftformat ../ --disable \"trailingCommas\"";
 		};
 		97244F681F7FE8C200F4E795 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -399,7 +414,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "SWIFTLINT=\"${PODS_ROOT}/SwiftLint/swiftlint\"\nif [ ! -f \"$SWIFTLINT\" ]; then\n    echo \"warning: SwiftLint not installed!\"\n    exit 1\nfi\n\n$SWIFTLINT";
 		};
 		97F2903B7D903BD9AD5C44F5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

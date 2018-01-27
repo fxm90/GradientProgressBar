@@ -10,9 +10,6 @@ osx_image: xcode9.2
 language: objective-c
 podfile: Example/Podfile
 before_install:
-- brew update
-- brew install swiftformat
-- brew install swiftlint
 - pod install --project-directory=Example
 script:
 - ./Scripts/swift-format.sh

@@ -1,7 +1,11 @@
+opt_in_rules:
+  - empty_count
+
 line_length: 160
 
 included:
+  - ./
   - ../GradientProgressBar
 
 excluded:
-  - Example/GradientProgressBar/AppDelegate.swift
+  - GradientProgressBar/AppDelegate.swift

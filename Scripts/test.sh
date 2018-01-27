@@ -8,8 +8,11 @@
 #  - https://www.objc.io/issues/6-build-tools/travis-ci/
 #
 
+#!/bin/bash
+cd Example/
+
 xcodebuild \
-  -workspace Example/GradientProgressBar.xcworkspace \
+  -workspace GradientProgressBar.xcworkspace \
   -scheme GradientProgressBar-Example \
   -enableCodeCoverage YES \
   -sdk iphonesimulator \

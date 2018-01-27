@@ -7,6 +7,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.2.1] - 2018-27-01
+### Added
+ - Further documentation
+### Changed
+ - Refactor code to use MVVM
+ - Format code
+
 ## [1.2.0] - 2018-14-01
 ### Added
  - Allow setting custom gradient colors
@@ -53,8 +60,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Initial release
 
 
-[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.2.0...master
-[1.1.4]: https://github.com/fxm90/GradientProgressBar/compare/1.1.4...1.2.0
+[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.2.1...master
+[1.2.1]: https://github.com/fxm90/GradientProgressBar/compare/1.2.0...1.2.1
+[1.2.0]: https://github.com/fxm90/GradientProgressBar/compare/1.1.4...1.2.0
 [1.1.4]: https://github.com/fxm90/GradientProgressBar/compare/1.1.3...1.1.4
 [1.1.3]: https://github.com/fxm90/GradientProgressBar/compare/1.1.2...1.1.3
 [1.1.2]: https://github.com/fxm90/GradientProgressBar/compare/1.1.1...1.1.2

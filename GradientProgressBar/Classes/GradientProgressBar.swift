@@ -102,13 +102,13 @@ public class GradientProgressBar: UIProgressView {
         }
     }
 
-    override public var bounds: CGRect {
+    public override var bounds: CGRect {
         didSet {
             viewModel.bounds = bounds
         }
     }
 
-    override public var progress: Float {
+    public override var progress: Float {
         didSet {
             viewModel.progress = progress
         }
@@ -116,14 +116,14 @@ public class GradientProgressBar: UIProgressView {
 
     // MARK: - Initializers
 
-    override public init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
 
         setupProgressView()
         setupViewModel()
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         setupProgressView()
@@ -150,7 +150,7 @@ public class GradientProgressBar: UIProgressView {
 
     // MARK: - Public methods
 
-    override public func setProgress(_ progress: Float, animated: Bool) {
+    public override func setProgress(_ progress: Float, animated: Bool) {
         super.setProgress(progress, animated: animated)
 
         viewModel.setProgress(progress, animated: animated)

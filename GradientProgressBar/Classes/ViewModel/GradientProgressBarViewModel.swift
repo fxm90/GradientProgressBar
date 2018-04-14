@@ -10,7 +10,6 @@ import Foundation
 // MARK: - Delegate
 
 protocol GradientProgressBarViewModelDelegate: class {
-
     /// Informs the delegate about an update of the frame used for the alpha layer.
     ///
     /// - Parameters:
@@ -39,7 +38,6 @@ protocol GradientProgressBarViewModelDelegate: class {
 }
 
 private extension GradientProgressBarViewModelDelegate {
-
     /// Informs the delegate about an update of the frame used for the alpha layer.
     ///
     /// Note:
@@ -58,7 +56,6 @@ private extension GradientProgressBarViewModelDelegate {
 // MARK: - View Model
 
 class GradientProgressBarViewModel {
-
     weak var delegate: GradientProgressBarViewModelDelegate?
 
     /// Bounds for the progress bar.

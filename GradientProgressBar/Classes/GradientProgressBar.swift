@@ -15,7 +15,6 @@ public class GradientProgressBar: UIProgressView {
 
     /// Struct containing the default configuration.
     struct DefaultValues {
-
         /// Default background color for the progress view.
         static let backgroundColor = UIColor(hex: "#e5e9eb")
 

@@ -10,7 +10,6 @@
 import XCTest
 
 class GradientProgressBarTests: XCTestCase {
-
     func testInitialization() {
         let gradientProgressBar = GradientProgressBar(frame: .zero)
 

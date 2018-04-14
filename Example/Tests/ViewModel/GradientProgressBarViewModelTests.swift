@@ -12,7 +12,6 @@ import XCTest
 // MARK: - Test case
 
 class GradientProgressBarViewModelTests: XCTestCase {
-
     /// Accuracy used for floating value comparison.
     let accuracy = CGFloat(Float.ulpOfOne)
 

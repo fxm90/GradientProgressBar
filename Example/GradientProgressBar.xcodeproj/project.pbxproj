@@ -156,17 +156,9 @@
 		97081BB5200F55100005913C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				97081BB6200F55100005913C /* UIColor */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		97081BB6200F55100005913C /* UIColor */ = {
-			isa = PBXGroup;
-			children = (
 				97081BB7200F55100005913C /* UIColor+InitializersTests.swift */,
 			);
-			path = UIColor;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		971B9F972013C09F00A72B4E /* ViewModel */ = {
@@ -314,10 +306,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GradientProgressBar_Example/Pods-GradientProgressBar_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GradientProgressBar/GradientProgressBar.framework",
+				"${BUILT_PRODUCTS_DIR}/Observable/Observable.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GradientProgressBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Observable.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -386,7 +380,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SWIFTFORMAT=\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\"\nif [ ! -f \"$SWIFTFORMAT\" ]; then\n    echo \"warning: SwiftFormat not installed!\"\n    exit 1\nfi\n\n$SWIFTFORMAT ../";
+			shellScript = "SWIFTFORMAT=\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\"\nif [ ! -f \"$SWIFTFORMAT\" ]; then\n    echo \"warning: SwiftFormat not installed!\"\n    exit 1\nfi\n\n$SWIFTFORMAT ../\n";
 		};
 		970D1F1A201C6F9500F90864 /* Swiftformat */ = {
 			isa = PBXShellScriptBuildPhase;

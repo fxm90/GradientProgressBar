@@ -386,7 +386,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SWIFTFORMAT=\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\"\nif [ ! -f \"$SWIFTFORMAT\" ]; then\n    echo \"warning: SwiftFormat not installed!\"\n    exit 1\nfi\n\n$SWIFTFORMAT ../ --disable \"trailingCommas\"";
+			shellScript = "SWIFTFORMAT=\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\"\nif [ ! -f \"$SWIFTFORMAT\" ]; then\n    echo \"warning: SwiftFormat not installed!\"\n    exit 1\nfi\n\n$SWIFTFORMAT ../";
 		};
 		970D1F1A201C6F9500F90864 /* Swiftformat */ = {
 			isa = PBXShellScriptBuildPhase;

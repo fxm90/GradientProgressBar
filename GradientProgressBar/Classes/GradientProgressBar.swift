@@ -45,10 +45,10 @@ public class GradientProgressBar: UIProgressView {
     private var gradientLayer: CAGradientLayer = {
         let layer = CAGradientLayer()
 
-        layer.anchorPoint = CGPoint(x: 0, y: 0)
-        layer.position = CGPoint(x: 0, y: 0)
+        layer.anchorPoint = .zero
+        layer.position = .zero
 
-        layer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        layer.startPoint = .zero
         layer.endPoint = CGPoint(x: 1.0, y: 0.0)
 
         return layer
@@ -58,8 +58,8 @@ public class GradientProgressBar: UIProgressView {
     private var alphaMaskLayer: CALayer = {
         let layer = CALayer()
 
-        layer.anchorPoint = CGPoint(x: 0, y: 0)
-        layer.position = CGPoint(x: 0, y: 0)
+        layer.anchorPoint = .zero
+        layer.position = .zero
         layer.backgroundColor = UIColor.white.cgColor
 
         return layer
@@ -131,7 +131,7 @@ public class GradientProgressBar: UIProgressView {
     private func setupProgressView() {
         backgroundColor = DefaultValues.backgroundColor
 
-        // Clear tint and progress colors, we'll use our `gradientLayer` for showing progress instead
+        // Clear tint and progress colors, we'll use our `gradientLayer` for showing progress instead.
         trackTintColor = .clear
         progressTintColor = .clear
 

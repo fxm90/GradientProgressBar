@@ -10,7 +10,6 @@ import GradientProgressBar
 import UIKit
 
 class ViewController: UIViewController {
-
     // MARK: - UIElements
 
     @IBOutlet var progressView: GradientProgressBar!

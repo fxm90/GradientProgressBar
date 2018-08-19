@@ -10,7 +10,6 @@ import UIKit
 
 /// `UIProgressView` with a customizable gradient.
 public class GradientProgressBar: UIProgressView {
-
     // MARK: - Types
 
     /// Struct containing the default configuration.

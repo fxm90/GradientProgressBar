@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Observable
 
 /// `UIProgressView` with a customizable gradient.
 public class GradientProgressBar: UIProgressView {
@@ -34,36 +35,10 @@ public class GradientProgressBar: UIProgressView {
         ///
         /// Note: Equals to CALayer default animation duration
         static let animationDuration = 0.25
+
+        ///
+        static let timingFunction: CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
     }
-
-    // MARK: - Private properties
-
-    /// Viewmodel containing logic for gradient view.
-    private var viewModel = GradientProgressBarViewModel()
-
-    /// Layer containing the gradient.
-    private var gradientLayer: CAGradientLayer = {
-        let layer = CAGradientLayer()
-
-        layer.anchorPoint = .zero
-        layer.position = .zero
-
-        layer.startPoint = .zero
-        layer.endPoint = CGPoint(x: 1.0, y: 0.0)
-
-        return layer
-    }()
-
-    /// Alpha mask for showing only "progress"-part of gradient layer.
-    private var alphaMaskLayer: CALayer = {
-        let layer = CALayer()
-
-        layer.anchorPoint = .zero
-        layer.position = .zero
-        layer.backgroundColor = UIColor.white.cgColor
-
-        return layer
-    }()
 
     // MARK: - Public properties
 
@@ -71,17 +46,17 @@ public class GradientProgressBar: UIProgressView {
     //
     /// Note:
     ///  - Has to be of type `UIColor` for Objective-C compability
-    public var gradientColorList: [UIColor]? {
+    public var gradientColorList: [UIColor] {
         get {
-            return viewModel.gradientColorList
+            return viewModel.getGradientColorList()
         }
         set {
-            viewModel.gradientColorList = newValue
+            viewModel.setGradientColorList(newValue)
         }
     }
 
     /// Animation duration for call to `setProgress(x, animated: true)`.
-    public var animationDuration: TimeInterval? {
+    public var animationDuration: TimeInterval {
         get {
             return viewModel.animationDuration
         }
@@ -91,7 +66,7 @@ public class GradientProgressBar: UIProgressView {
     }
 
     /// Animation timing function for call to `setProgress(x, animated: true)`.
-    public var timingFunction: CAMediaTimingFunction? {
+    public var timingFunction: CAMediaTimingFunction {
         get {
             return viewModel.timingFunction
         }
@@ -102,6 +77,8 @@ public class GradientProgressBar: UIProgressView {
 
     public override var bounds: CGRect {
         didSet {
+            // Workaround to handle orientation change, as `layoutSubviews()` gets triggered each time
+            // the progress value is changed.
             viewModel.bounds = bounds
         }
     }
@@ -112,21 +89,60 @@ public class GradientProgressBar: UIProgressView {
         }
     }
 
-    // MARK: - Initializers
+    // MARK: - Private properties
+
+    /// Viewmodel containing logic for gradient view.
+    private var viewModel = GradientProgressBarViewModel()
+
+    /// The dispose bag for the observables.
+    private var disposal = Disposal()
+
+    /// Layer containing the gradient.
+    private var gradientLayer: CAGradientLayer = {
+        let layer = CAGradientLayer()
+
+        layer.anchorPoint = .zero
+        layer.startPoint = .zero
+        layer.endPoint = CGPoint(x: 1.0, y: 0.0)
+
+        return layer
+    }()
+
+    /// Alpha mask for showing only visible "progress"-part of gradient layer.
+    private var alphaMaskLayer: CALayer = {
+        let layer = CALayer()
+
+        layer.anchorPoint = .zero
+        layer.position = .zero
+        layer.backgroundColor = UIColor.white.cgColor
+
+        return layer
+    }()
+
+    // MARK: - Constructor
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setupProgressView()
-        setupViewModel()
+        commonInit()
     }
 
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
-        setupProgressView()
-        setupViewModel()
+        commonInit()
     }
+
+    private func commonInit() {
+        setupProgressView()
+        bindViewModelToView()
+
+        // Initialize view model with current properties.
+        viewModel.bounds = bounds
+        viewModel.progress = progress
+    }
+
+    // MARK: - Private methods
 
     private func setupProgressView() {
         backgroundColor = DefaultValues.backgroundColor
@@ -135,15 +151,43 @@ public class GradientProgressBar: UIProgressView {
         trackTintColor = .clear
         progressTintColor = .clear
 
+        layer.insertSublayer(gradientLayer, at: 0)
+
         // Apply mask to the gradient layer in order to show only the current "progress" of the gradient.
         gradientLayer.mask = alphaMaskLayer
-
-        layer.insertSublayer(gradientLayer, at: 0)
     }
 
-    private func setupViewModel() {
-        viewModel.delegate = self
-        viewModel.setup(forBounds: bounds)
+    private func bindViewModelToView() {
+        viewModel.gradientLayerFrame.observeDistinct { [weak self] nextValue, _ in
+            self?.update(gradientLayerFrame: nextValue)
+        }.add(to: &disposal)
+
+        viewModel.alphaLayerFrame.observeDistinct { [weak self] nextValue, _ in
+            self?.update(alphaLayerFrame: nextValue.frame,
+                         animationDuration: nextValue.animationDuration)
+        }.add(to: &disposal)
+
+        viewModel.gradientColorList.observeDistinct { [weak self] nextValue, _ in
+            self?.update(gradientColorList: nextValue)
+        }.add(to: &disposal)
+    }
+
+    private func update(gradientLayerFrame: CGRect) {
+        gradientLayer.frame = gradientLayerFrame
+    }
+
+    private func update(alphaLayerFrame: CGRect, animationDuration: TimeInterval) {
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(animationDuration)
+        CATransaction.setAnimationTimingFunction(viewModel.timingFunction)
+
+        alphaMaskLayer.frame = alphaLayerFrame
+
+        CATransaction.commit()
+    }
+
+    private func update(gradientColorList: [UIColor]) {
+        gradientLayer.colors = gradientColorList.map({ $0.cgColor })
     }
 
     // MARK: - Public methods
@@ -152,34 +196,5 @@ public class GradientProgressBar: UIProgressView {
         super.setProgress(progress, animated: animated)
 
         viewModel.setProgress(progress, animated: animated)
-    }
-}
-
-// MARK: - GradientProgressBarViewModelDelegate
-
-extension GradientProgressBar: GradientProgressBarViewModelDelegate {
-    func viewModel(_: GradientProgressBarViewModel, didUpdateAlphaLayerFrame frame: CGRect,
-                   animationDuration: TimeInterval?, timingFunction: CAMediaTimingFunction?) {
-        guard let animationDuration = animationDuration, animationDuration > 0.0 else {
-            // We didn't get any (valid) duration so update frame immediately
-            alphaMaskLayer.frame = frame
-            return
-        }
-
-        CATransaction.begin()
-        CATransaction.setAnimationDuration(animationDuration)
-        CATransaction.setAnimationTimingFunction(timingFunction)
-
-        alphaMaskLayer.frame = frame
-
-        CATransaction.commit()
-    }
-
-    func viewModel(_: GradientProgressBarViewModel, didUpdateGradientLayerFrame frame: CGRect) {
-        gradientLayer.frame = frame
-    }
-
-    func viewModel(_: GradientProgressBarViewModel, didUpdateGradientLayerColorList colorList: [UIColor]) {
-        gradientLayer.colors = colorList.map({ $0.cgColor })
     }
 }

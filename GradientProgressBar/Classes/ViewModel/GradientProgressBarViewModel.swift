@@ -6,147 +6,116 @@
 //
 
 import Foundation
-
-// MARK: - Delegate
-
-protocol GradientProgressBarViewModelDelegate: class {
-    /// Informs the delegate about an update of the frame used for the alpha layer.
-    ///
-    /// - Parameters:
-    ///   - viewModel: The view model related to the update.
-    ///   - frame: The new frame for the alpha layer.
-    ///   - animationDuration: The time interval the changes should be applied with.
-    ///   - timingFunction: The timing function the changes should be applied with.
-    func viewModel(_: GradientProgressBarViewModel,
-                   didUpdateAlphaLayerFrame frame: CGRect,
-                   animationDuration: TimeInterval?,
-                   timingFunction: CAMediaTimingFunction?)
-
-    /// Informs the delegate about an update of the frame used for the gradient layer.
-    ///
-    /// - Parameters:
-    ///   - viewModel: The view model related to the update.
-    ///   - frame: The new frame for the gradient layer.
-    func viewModel(_: GradientProgressBarViewModel, didUpdateGradientLayerFrame frame: CGRect)
-
-    /// Informs the delegate about an update of the colors for the gradient layer.
-    ///
-    /// - Parameters:
-    ///   - viewModel: The view model related to the update.
-    ///   - colorList: The new color list for the gradient layer.
-    func viewModel(_: GradientProgressBarViewModel, didUpdateGradientLayerColorList colorList: [UIColor])
-}
-
-private extension GradientProgressBarViewModelDelegate {
-    /// Informs the delegate about an update of the frame used for the alpha layer.
-    ///
-    /// Note:
-    ///  - Same as defined in protocol, but with default parameters
-    func viewModel(_ viewModel: GradientProgressBarViewModel,
-                   didUpdateAlphaLayerFrame frame: CGRect,
-                   animationDuration: TimeInterval? = nil,
-                   timingFunction: CAMediaTimingFunction? = nil) {
-        self.viewModel(viewModel,
-                       didUpdateAlphaLayerFrame: frame,
-                       animationDuration: animationDuration,
-                       timingFunction: timingFunction)
-    }
-}
+import Observable
 
 // MARK: - View Model
 
 class GradientProgressBarViewModel {
-    weak var delegate: GradientProgressBarViewModelDelegate?
+    // MARK: - Types
+
+    struct AnimatedFrameUpdate: Equatable {
+        static let zero = AnimatedFrameUpdate(frame: .zero, animationDuration: 0.0)
+
+        let frame: CGRect
+        let animationDuration: TimeInterval
+    }
+
+    // MARK: - Public properties
+
+    ///
+    let gradientLayerFrame: Observable<CGRect> = Observable(.zero)
+
+    ///
+    let alphaLayerFrame: Observable<AnimatedFrameUpdate> = Observable(.zero)
+
+    /// Gradient colors for the progress view.
+    let gradientColorList: Observable = Observable(GradientProgressBar.DefaultValues.gradientColorList)
 
     /// Bounds for the progress bar.
     var bounds = CGRect.zero {
         didSet {
-            // Workaround to handle orientation change, as `layoutSubviews()` gets triggered each time
-            // the progress value is changed.
-            delegate?.viewModel(self, didUpdateGradientLayerFrame: bounds)
-            delegate?.viewModel(self, didUpdateAlphaLayerFrame: alphaLayerFrameForProgress)
+            gradientLayerFrame.value = bounds
+
+            setAlphaLayerFrame(for: progress, animated: false)
         }
     }
 
     /// Current progress value.
     var progress: Float = 0.0 {
         didSet {
-            // Update layer mask on direct changes to progress value.
-            delegate?.viewModel(self, didUpdateAlphaLayerFrame: alphaLayerFrameForProgress)
-        }
-    }
+            guard shouldInformListeners else { return }
 
-    /// Gradient colors for the progress view.
-    var gradientColorList: [UIColor]? {
-        didSet {
-            updateGradientColors()
+            setAlphaLayerFrame(for: progress, animated: false)
         }
     }
 
     /// Animation duration for animated progress change.
-    public var animationDuration: TimeInterval?
+    var animationDuration = GradientProgressBar.DefaultValues.animationDuration
 
     /// Animation timing function for animated progress change.
-    public var timingFunction: CAMediaTimingFunction?
+    var timingFunction = GradientProgressBar.DefaultValues.timingFunction
 
-    // MARK: - Private helper
+    // MARK: - Private properties
 
-    /// Frame for alpha layer based on current progress value.
-    private var alphaLayerFrameForProgress: CGRect {
-        var frame = bounds
-        frame.size.width *= CGFloat(progress)
+    /// Boolean flag, whether setting the `progress` property should inform the listeners.
+    private var shouldInformListeners = true
 
-        return frame
+    // MARK: - Private methods
+
+    private func alphaLayerFrame(for progress: Float) -> CGRect {
+        var alphaLayerFrame = bounds
+        alphaLayerFrame.size.width *= CGFloat(progress)
+
+        return alphaLayerFrame
     }
 
-    /// Determines current gradient colors and informs the delegate to update them.
-    private func updateGradientColors() {
-        let gradientColorList = self.gradientColorList ?? GradientProgressBar.DefaultValues.gradientColorList
-        delegate?.viewModel(self, didUpdateGradientLayerColorList: gradientColorList)
-    }
+    private func setAlphaLayerFrame(for progress: Float, animated: Bool) {
+        let frame = alphaLayerFrame(for: progress)
 
-    /// Bypass the delegate until completion call is finished.
-    private func bypassDelegate(completion: () -> Void) {
-        let backupDelegate = delegate
-        defer {
-            delegate = backupDelegate
+        let animationDuration: TimeInterval
+        if animated {
+            animationDuration = self.animationDuration
+        } else {
+            animationDuration = 0.0
         }
 
-        delegate = nil
-        completion()
+        alphaLayerFrame.value = AnimatedFrameUpdate(frame: frame,
+                                                    animationDuration: animationDuration)
+    }
+
+    private func setProgress(_ progress: Float, shouldInformListeners: Bool) {
+        let backedUpShouldInformListeners = self.shouldInformListeners
+        defer {
+            self.shouldInformListeners = backedUpShouldInformListeners
+        }
+
+        self.shouldInformListeners = shouldInformListeners
+
+        self.progress = progress
     }
 
     // MARK: - Public methods
 
-    /// Initializes view model for given bounds.
     ///
-    /// Note:
-    ///  - This method has to be called after setting a valid delegate!
-    func setup(forBounds bounds: CGRect) {
-        self.bounds = bounds
+    ///
+    /// Note: This is just a public setter for hiding the oberservable implementation.
+    func setGradientColorList(_ gradientColorList: [UIColor]) {
+        self.gradientColorList.value = gradientColorList
+    }
 
-        updateGradientColors()
+    ///
+    ///
+    /// Note: This is just a public getter for hiding the oberservable implementation.
+    func getGradientColorList() -> [UIColor] {
+        return gradientColorList.value
     }
 
     /// Adjusts the current progress.
     func setProgress(_ progress: Float, animated: Bool) {
-        guard animated else {
-            // Changes should be applied immediately, therefore set progress directly and
-            // inform delegate via `didSet` property observer.
-            self.progress = progress
-            return
-        }
+        // Keep track of our internal progress property without updating the view. E.g. if we rotate the device afterwards,
+        // we have to adjust the frame to our current progress property.
+        setProgress(progress, shouldInformListeners: false)
 
-        // Changes should be applied WITH animation, therefore prevent calling the delegate via progress `didSet` property observer,
-        // as this would lead to an direct update.
-        bypassDelegate {
-            self.progress = progress
-        }
-
-        let animationDuration = self.animationDuration ?? GradientProgressBar.DefaultValues.animationDuration
-        delegate?.viewModel(self,
-                            didUpdateAlphaLayerFrame: alphaLayerFrameForProgress,
-                            animationDuration: animationDuration,
-                            timingFunction: timingFunction)
+        setAlphaLayerFrame(for: progress, animated: animated)
     }
 }

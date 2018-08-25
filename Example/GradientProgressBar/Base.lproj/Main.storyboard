@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="x3C-0W-Nfd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Basic Example-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="GradientProgressBar_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="BasicExampleViewController" customModule="GradientProgressBar_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -22,54 +21,178 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gradient Progress Bar Sample" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFi-XA-Bcc">
-                                <rect key="frame" x="24" y="36" width="327" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6j-bm-EVQ" userLabel="Container View">
-                                <rect key="frame" x="24" y="68" width="327" height="535"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyT-bH-MJF" userLabel="Wrapper View">
+                                <rect key="frame" x="0.0" y="150" width="375" height="473"/>
                                 <subviews>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vfo-UE-JmZ" userLabel="GradientProgressBar" customClass="GradientProgressBar" customModule="GradientProgressBar">
-                                        <rect key="frame" x="0.0" y="267" width="327" height="2"/>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mId-Y2-jaz" customClass="GradientProgressBar" customModule="GradientProgressBar">
+                                        <rect key="frame" x="20" y="235" width="335" height="2"/>
                                     </progressView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="vfo-UE-JmZ" firstAttribute="leading" secondItem="s6j-bm-EVQ" secondAttribute="leading" id="S2k-ai-59O"/>
-                                    <constraint firstAttribute="trailing" secondItem="vfo-UE-JmZ" secondAttribute="trailing" id="TDr-Fy-GUs"/>
-                                    <constraint firstItem="vfo-UE-JmZ" firstAttribute="centerY" secondItem="s6j-bm-EVQ" secondAttribute="centerY" id="ZeJ-hO-98v"/>
+                                    <constraint firstAttribute="trailing" secondItem="mId-Y2-jaz" secondAttribute="trailing" constant="20" id="Zdk-De-Hne"/>
+                                    <constraint firstItem="mId-Y2-jaz" firstAttribute="centerY" secondItem="iyT-bH-MJF" secondAttribute="centerY" id="uEf-CF-MID"/>
+                                    <constraint firstItem="mId-Y2-jaz" firstAttribute="leading" secondItem="iyT-bH-MJF" secondAttribute="leading" constant="20" id="xls-J4-U7T"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="center" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hdo-b9-maM">
-                                <rect key="frame" x="24" y="611" width="327" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="255-p6-29l" userLabel="Button Stack View">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAz-ki-O4J">
+                                        <rect key="frame" x="0.0" y="7" width="111.5" height="30"/>
+                                        <state key="normal" title="Animate"/>
+                                        <connections>
+                                            <action selector="onAnimateButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="O8V-bQ-Ilx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06F-hP-RAe">
+                                        <rect key="frame" x="131.5" y="7" width="112" height="30"/>
+                                        <state key="normal" title="Set Progress"/>
+                                        <connections>
+                                            <action selector="onSetProgressButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="g3C-r0-26T"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBz-Y4-LoE">
+                                        <rect key="frame" x="263.5" y="7" width="111.5" height="30"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                        <state key="normal" title="Reset">
+                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onResetButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KjT-pw-v1C"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" priority="250" constant="40" id="VR5-Gd-yIY"/>
+                                    <constraint firstAttribute="height" constant="44" id="hHd-Jb-C7U"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Hdo-b9-maM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="8" id="6Xx-kS-kaB"/>
-                            <constraint firstItem="DFi-XA-Bcc" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="Exs-uD-H4y"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Hdo-b9-maM" secondAttribute="bottom" constant="16" id="F3g-YW-Vat"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="s6j-bm-EVQ" secondAttribute="trailing" constant="8" id="Gfh-J4-xxc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DFi-XA-Bcc" secondAttribute="trailing" constant="8" id="JSp-0p-3tU"/>
-                            <constraint firstItem="s6j-bm-EVQ" firstAttribute="bottom" secondItem="Hdo-b9-maM" secondAttribute="top" constant="-8" id="X2A-7R-XAc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hdo-b9-maM" secondAttribute="trailing" constant="8" id="XOa-nN-XaY"/>
-                            <constraint firstItem="DFi-XA-Bcc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="8" id="ehJ-S9-DNg"/>
-                            <constraint firstItem="s6j-bm-EVQ" firstAttribute="top" secondItem="DFi-XA-Bcc" secondAttribute="bottom" constant="8" id="hGa-2v-0l8"/>
-                            <constraint firstItem="s6j-bm-EVQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="8" id="wQJ-yw-Tbv"/>
+                            <constraint firstItem="iyT-bH-MJF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="4fF-bu-e0c"/>
+                            <constraint firstItem="iyT-bH-MJF" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Ajd-BQ-F3L"/>
+                            <constraint firstAttribute="trailing" secondItem="iyT-bH-MJF" secondAttribute="trailing" id="CdI-4M-fbK"/>
+                            <constraint firstItem="255-p6-29l" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="MMi-TP-ma5"/>
+                            <constraint firstAttribute="trailing" secondItem="255-p6-29l" secondAttribute="trailing" id="Ogr-Q0-rcR"/>
+                            <constraint firstItem="iyT-bH-MJF" firstAttribute="bottom" secondItem="255-p6-29l" secondAttribute="top" id="Uwk-iY-swu"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="255-p6-29l" secondAttribute="bottom" id="sY6-TW-unE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Basic Example" prompt="Gradient Progress Bar" largeTitleDisplayMode="always" id="Z7n-YK-yp8">
+                        <barButtonItem key="rightBarButtonItem" title="Advanced Example" id="MSW-Ye-ZLF">
+                            <connections>
+                                <segue destination="4ad-Yc-uw7" kind="show" id="X8Z-Q2-3vO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="progressView" destination="vfo-UE-JmZ" id="3RA-2V-Jga"/>
-                        <outlet property="stackView" destination="Hdo-b9-maM" id="QJB-oh-oor"/>
+                        <outlet property="gradientProgressBar" destination="mId-Y2-jaz" id="jOT-uC-Z2R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1298" y="-593"/>
+        </scene>
+        <!--Advanced Example-->
+        <scene sceneID="yZ4-pT-hFn">
+            <objects>
+                <viewController id="4ad-Yc-uw7" customClass="AdvancedExampleViewController" customModule="GradientProgressBar_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fQD-Nl-DHU"/>
+                        <viewControllerLayoutGuide type="bottom" id="xlf-V1-taZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HUH-hK-y1D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdN-O6-x0x" userLabel="Wrapper View">
+                                <rect key="frame" x="0.0" y="150" width="375" height="473"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TB5-yb-pAn" customClass="GradientProgressBar" customModule="GradientProgressBar">
+                                        <rect key="frame" x="20" y="235" width="335" height="2"/>
+                                    </progressView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TB5-yb-pAn" firstAttribute="leading" secondItem="bdN-O6-x0x" secondAttribute="leading" constant="20" id="DHA-y1-Rl3"/>
+                                    <constraint firstItem="TB5-yb-pAn" firstAttribute="centerY" secondItem="bdN-O6-x0x" secondAttribute="centerY" id="hFB-WJ-Ha0"/>
+                                    <constraint firstAttribute="trailing" secondItem="TB5-yb-pAn" secondAttribute="trailing" constant="20" id="xru-Km-aqf"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MmE-Bl-iPI" userLabel="Button Stack View">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dy0-yk-F8b">
+                                        <rect key="frame" x="0.0" y="7" width="111.5" height="30"/>
+                                        <state key="normal" title="Animate"/>
+                                        <connections>
+                                            <action selector="onAnimateButtonTouchUpInside:" destination="4ad-Yc-uw7" eventType="touchUpInside" id="7Pw-gU-bhi"/>
+                                            <action selector="onAnimateButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YvY-QQ-e9d"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLj-kf-dMp">
+                                        <rect key="frame" x="131.5" y="7" width="112" height="30"/>
+                                        <state key="normal" title="Set Progress"/>
+                                        <connections>
+                                            <action selector="onSetProgressButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="URH-Jm-dsa"/>
+                                            <action selector="onSetProgressButtonTouchUpInside:" destination="4ad-Yc-uw7" eventType="touchUpInside" id="n3n-eG-1Il"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDa-vI-80V">
+                                        <rect key="frame" x="263.5" y="7" width="111.5" height="30"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                        <state key="normal" title="Reset">
+                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onResetButtonTouchUpInside:" destination="4ad-Yc-uw7" eventType="touchUpInside" id="ROn-SM-fps"/>
+                                            <action selector="onResetButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bKU-lb-JBs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="19V-1W-vad"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bdN-O6-x0x" secondAttribute="trailing" id="0LS-kd-0eN"/>
+                            <constraint firstAttribute="trailing" secondItem="MmE-Bl-iPI" secondAttribute="trailing" id="3kK-cu-mJv"/>
+                            <constraint firstItem="bdN-O6-x0x" firstAttribute="leading" secondItem="HUH-hK-y1D" secondAttribute="leading" id="3mL-st-pus"/>
+                            <constraint firstItem="MmE-Bl-iPI" firstAttribute="leading" secondItem="HUH-hK-y1D" secondAttribute="leading" id="HyC-fc-aOy"/>
+                            <constraint firstItem="bdN-O6-x0x" firstAttribute="bottom" secondItem="MmE-Bl-iPI" secondAttribute="top" id="K75-l2-Fm4"/>
+                            <constraint firstItem="bdN-O6-x0x" firstAttribute="top" secondItem="fQD-Nl-DHU" secondAttribute="bottom" id="foz-yY-V70"/>
+                            <constraint firstItem="xlf-V1-taZ" firstAttribute="top" secondItem="MmE-Bl-iPI" secondAttribute="bottom" id="sab-NX-bdd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Advanced Example" prompt="Gradient Progress Bar" largeTitleDisplayMode="always" id="3sL-EA-bQc"/>
+                    <connections>
+                        <outlet property="gradientProgressBar" destination="TB5-yb-pAn" id="DxS-Dq-oZg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQ4-9w-baT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015" y="-591"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="56v-4j-2jv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x3C-0W-Nfd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="t33-eO-Q58">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="c7K-2j-RwH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUE-e3-Xth" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="-593"/>
         </scene>
     </scenes>
 </document>

@@ -1,15 +1,14 @@
 //
-//  UIColor+InitializersTests.swift
-//  GradientProgressBarTests
+//  UIColor+InitializersTestCase.swift
+//  GradientProgressBar_Example
 //
 //  Created by Felix Mau on 26.08.17.
 //  Copyright © 2017 Felix Mau. All rights reserved.
 //
 
-@testable import GradientProgressBar
 import XCTest
 
-class UIColorInitializersTests: XCTestCase {
+class UIColorInitializersTestCase: XCTestCase {
     func testColorFromAbsoluteRGB() {
         let red = 10
         let green = 20

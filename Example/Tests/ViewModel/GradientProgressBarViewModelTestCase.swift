@@ -67,10 +67,10 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         viewModel.bounds = bounds
 
         // Then
-        var expectedBounds = bounds
-        expectedBounds.size.width *= CGFloat(progress)
+        var expectedFrame = bounds
+        expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedBounds,
+        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
                                                                 animationDuration: 0.0)
 
         XCTAssertEqual(viewModel.alphaLayerFrame.value, expectedAlphaLayerFrameUpdate)
@@ -88,10 +88,10 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         viewModel.progress = progress
 
         // Then
-        var expectedBounds = bounds
-        expectedBounds.size.width *= CGFloat(progress)
+        var expectedFrame = bounds
+        expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedBounds,
+        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
                                                                 animationDuration: 0.0)
 
         XCTAssertEqual(viewModel.alphaLayerFrame.value, expectedAlphaLayerFrameUpdate)
@@ -136,10 +136,10 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         viewModel.setProgress(progress, animated: false)
 
         // Then
-        var expectedBounds = bounds
-        expectedBounds.size.width *= CGFloat(progress)
+        var expectedFrame = bounds
+        expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedBounds,
+        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
                                                                 animationDuration: 0.0)
 
         XCTAssertEqual(viewModel.alphaLayerFrame.value, expectedAlphaLayerFrameUpdate)
@@ -158,10 +158,10 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         viewModel.setProgress(progress, animated: true)
 
         // Then
-        var expectedBounds = bounds
-        expectedBounds.size.width *= CGFloat(progress)
+        var expectedFrame = bounds
+        expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedBounds,
+        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
                                                                 animationDuration: animationDuration)
 
         XCTAssertEqual(viewModel.alphaLayerFrame.value, expectedAlphaLayerFrameUpdate)
@@ -180,10 +180,10 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         viewModel.bounds = bounds
 
         // Then
-        var expectedBounds = bounds
-        expectedBounds.size.width *= CGFloat(progress)
+        var expectedFrame = bounds
+        expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedBounds,
+        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
                                                                 animationDuration: 0.0)
 
         XCTAssertEqual(viewModel.alphaLayerFrame.value, expectedAlphaLayerFrameUpdate)

@@ -40,8 +40,8 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.alphaLayerFrame.value, .zero)
     }
 
-    func testGradientColorListShouldBeInitializedWithDefaultValues() {
-        XCTAssertEqual(viewModel.gradientColorList.value, GradientProgressBar.DefaultValues.gradientColorList)
+    func testGradientColorListShouldBeInitializedWithDefaultValue() {
+        XCTAssertEqual(viewModel.gradientColorList.value, UIColor.defaultGradientColorList)
     }
 
     // MARK: - Test setting property `bounds`

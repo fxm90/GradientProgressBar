@@ -11,12 +11,27 @@ import Observable
 // MARK: - View Model
 
 class GradientProgressBarViewModel {
+    // MARK: - Config
+
+    /// Default animation duration for call to `setProgress(x, animated: true)`.
+    ///
+    /// Note: Equals to CALayer default animation duration
+    static let defaultAnimationDuration = 0.25
+
+    /// Default animation timing function for animated progress change.
+    static let defaultTimingFunction: CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+
     // MARK: - Types
 
+    ///
     struct AnimatedFrameUpdate: Equatable {
+        ///
         static let zero = AnimatedFrameUpdate(frame: .zero, animationDuration: 0.0)
 
+        ///
         let frame: CGRect
+
+        ///
         let animationDuration: TimeInterval
     }
 
@@ -29,7 +44,7 @@ class GradientProgressBarViewModel {
     let alphaLayerFrame: Observable<AnimatedFrameUpdate> = Observable(.zero)
 
     /// Gradient colors for the progress view.
-    let gradientColorList: Observable = Observable(GradientProgressBar.DefaultValues.gradientColorList)
+    let gradientColorList: Observable = Observable(UIColor.defaultGradientColorList)
 
     /// Bounds for the progress bar.
     var bounds = CGRect.zero {
@@ -50,10 +65,10 @@ class GradientProgressBarViewModel {
     }
 
     /// Animation duration for animated progress change.
-    var animationDuration = GradientProgressBar.DefaultValues.animationDuration
+    var animationDuration = GradientProgressBarViewModel.defaultAnimationDuration
 
     /// Animation timing function for animated progress change.
-    var timingFunction = GradientProgressBar.DefaultValues.timingFunction
+    var timingFunction = GradientProgressBarViewModel.defaultTimingFunction
 
     // MARK: - Private properties
 

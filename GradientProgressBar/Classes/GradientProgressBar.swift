@@ -11,35 +11,6 @@ import Observable
 
 /// `UIProgressView` with a customizable gradient.
 public class GradientProgressBar: UIProgressView {
-    // MARK: - Types
-
-    /// Struct containing the default configuration.
-    struct DefaultValues {
-        /// Default background color for the progress view.
-        static let backgroundColor = UIColor(hex: "#e5e9eb")
-
-        /// Default gradient colors for the progress view.
-        ///
-        /// Note:
-        ///  - Based on https://codepen.io/marcobiedermann/pen/LExXWW
-        static let gradientColorList = [
-            UIColor(hex: "#4cd964"),
-            UIColor(hex: "#5ac8fa"),
-            UIColor(hex: "#007aff"),
-            UIColor(hex: "#34aadc"),
-            UIColor(hex: "#5856d6"),
-            UIColor(hex: "#ff2d55")
-        ]
-
-        /// Default animation duration for call to `setProgress(x, animated: true)`.
-        ///
-        /// Note: Equals to CALayer default animation duration
-        static let animationDuration = 0.25
-
-        ///
-        static let timingFunction: CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-    }
-
     // MARK: - Public properties
 
     /// Gradient colors for the progress view.
@@ -145,7 +116,7 @@ public class GradientProgressBar: UIProgressView {
     // MARK: - Private methods
 
     private func setupProgressView() {
-        backgroundColor = DefaultValues.backgroundColor
+        backgroundColor = .defaultBackgroundColor
 
         // Clear tint and progress colors, we'll use our `gradientLayer` for showing progress instead.
         trackTintColor = .clear

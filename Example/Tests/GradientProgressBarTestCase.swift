@@ -6,8 +6,8 @@
 //  Copyright © 2017 CocoaPods. All rights reserved.
 //
 
-@testable import GradientProgressBar
 import XCTest
+@testable import GradientProgressBar
 
 class GradientProgressBarTestCase: XCTestCase {
     func testInitialization() {

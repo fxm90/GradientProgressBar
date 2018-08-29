@@ -124,7 +124,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				97081BB4200F55030005913C /* Helpers */,
+				97081BB5200F55100005913C /* Extensions */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				971B9F972013C09F00A72B4E /* ViewModel */,
 				97909BB71FA76F4A00595663 /* GradientProgressBarTestCase.swift */,
@@ -150,19 +150,27 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		97081BB4200F55030005913C /* Helpers */ = {
+		9702C8DD213705A70063B838 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
-				97081BB5200F55100005913C /* Extensions */,
+				97081BB7200F55100005913C /* UIColor+InitializersTestCase.swift */,
 			);
-			path = Helpers;
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		9702C8DE213705AE0063B838 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				97DBEFC221314221006399E1 /* Observable+ObserveDistinctTestCase.swift */,
+			);
+			path = Observable;
 			sourceTree = "<group>";
 		};
 		97081BB5200F55100005913C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				97081BB7200F55100005913C /* UIColor+InitializersTestCase.swift */,
-				97DBEFC221314221006399E1 /* Observable+ObserveDistinctTestCase.swift */,
+				9702C8DE213705AE0063B838 /* Observable */,
+				9702C8DD213705A70063B838 /* UIColor */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

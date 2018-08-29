@@ -23,24 +23,24 @@ class GradientProgressBarViewModel {
 
     // MARK: - Types
 
-    ///
+    /// Combines all properties for an animated update of a frame.
     struct AnimatedFrameUpdate: Equatable {
-        ///
+        /// Initializes the struct with "0".
         static let zero = AnimatedFrameUpdate(frame: .zero, animationDuration: 0.0)
 
-        ///
+        /// The new frame.
         let frame: CGRect
 
-        ///
+        /// The animation duration to update the frame with.
         let animationDuration: TimeInterval
     }
 
     // MARK: - Public properties
 
-    ///
+    /// The frame for the gradient layer.
     let gradientLayerFrame: Observable<CGRect> = Observable(.zero)
 
-    ///
+    /// The frame for the alpha layer.
     let alphaLayerFrame: Observable<AnimatedFrameUpdate> = Observable(.zero)
 
     /// Gradient colors for the progress view.
@@ -111,14 +111,19 @@ class GradientProgressBarViewModel {
 
     // MARK: - Public methods
 
+    /// Updates the gradient color list.
     ///
+    /// Parameters:
+    ///  - gradientColorList: New colors to be used as gradient colors.
     ///
     /// Note: This is just a public setter for hiding the oberservable implementation.
     func setGradientColorList(_ gradientColorList: [UIColor]) {
         self.gradientColorList.value = gradientColorList
     }
 
+    /// Returns the colors, currently used for the gradient.
     ///
+    /// Returns: Current gradient colors list.
     ///
     /// Note: This is just a public getter for hiding the oberservable implementation.
     func getGradientColorList() -> [UIColor] {

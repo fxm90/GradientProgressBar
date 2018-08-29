@@ -14,9 +14,6 @@ public class GradientProgressBar: UIProgressView {
     // MARK: - Public properties
 
     /// Gradient colors for the progress view.
-    //
-    /// Note:
-    ///  - Has to be of type `UIColor` for Objective-C compability
     public var gradientColorList: [UIColor] {
         get {
             return viewModel.getGradientColorList()
@@ -106,11 +103,12 @@ public class GradientProgressBar: UIProgressView {
 
     private func commonInit() {
         setupProgressView()
-        bindViewModelToView()
 
-        // Initialize view model with current properties.
+        // Initialize / update view model with current properties.
         viewModel.bounds = bounds
         viewModel.progress = progress
+
+        bindViewModelToView()
     }
 
     // MARK: - Private methods

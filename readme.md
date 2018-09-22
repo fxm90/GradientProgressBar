@@ -23,7 +23,7 @@ To integrate GradientProgressBar into your Xcode project using [Carthage](https:
 ```
 github "fxm90/GradientProgressBar" ~> 1.0
 ```
-Run carthage update to build the framework and drag the built GradientProgressBar.framework into your Xcode project.
+Run carthage update to build the framework and drag the built `GradientProgressBar.framework` (as well as the dependency [`Observable.framework`](https://github.com/roberthein/Observable)) into your Xcode project.
 
 ### How to use
 Simply drop a `UIProgressView` into your View Controller in the Storyboard. Select your progress view and in the `Identity Inspector` change the class to `GradientProgressBar`.

@@ -12,10 +12,19 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 
 ### Integration
+##### CocoaPods
 GradientProgressBar can be added to your project using [CocoaPods](https://cocoapods.org/) by adding the following line to your Podfile:
 ```
 pod 'GradientProgressBar', '~> 1.0'
 ```
+
+##### Carthage
+To integrate GradientProgressBar into your Xcode project using [Carthage](https://github.com/Carthage/Carthage), specify it in your Cartfile:
+```
+github "fxm90/GradientProgressBar" ~> 1.0
+```
+Run carthage update to build the framework and drag the built GradientProgressBar.framework into your Xcode project.
+
 ### How to use
 Simply drop a `UIProgressView` into your View Controller in the Storyboard. Select your progress view and in the `Identity Inspector` change the class to `GradientProgressBar`.
 >Don't forget to change the module to `GradientProgressBar` too.

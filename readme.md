@@ -1,7 +1,7 @@
 GradientProgressBar
 ====================
 
-![Swift4.0](https://img.shields.io/badge/Swift-4.0-green.svg?style=flat) [![CI Status](http://img.shields.io/travis/fxm90/GradientProgressBar.svg?style=flat)](https://travis-ci.org/fxm90/GradientProgressBar) [![Version](https://img.shields.io/cocoapods/v/GradientProgressBar.svg?style=flat)](http://cocoapods.org/pods/GradientProgressBar) [![License](https://img.shields.io/cocoapods/l/GradientProgressBar.svg?style=flat)](http://cocoapods.org/pods/GradientProgressBar) [![Platform](https://img.shields.io/cocoapods/p/GradientProgressBar.svg?style=flat)](http://cocoapods.org/pods/GradientProgressBar)
+![Swift4.2](https://img.shields.io/badge/Swift-4.2-green.svg?style=flat) [![CI Status](http://img.shields.io/travis/fxm90/GradientProgressBar.svg?style=flat)](https://travis-ci.org/fxm90/GradientProgressBar) [![Version](https://img.shields.io/cocoapods/v/GradientProgressBar.svg?style=flat)](http://cocoapods.org/pods/GradientProgressBar) [![License](https://img.shields.io/cocoapods/l/GradientProgressBar.svg?style=flat)](http://cocoapods.org/pods/GradientProgressBar) [![Platform](https://img.shields.io/cocoapods/p/GradientProgressBar.svg?style=flat)](http://cocoapods.org/pods/GradientProgressBar)
 
 ### Example
 A customizable gradient progress bar (UIProgressView). Inspired by [iOS 7 Progress Bar from Codepen](https://codepen.io/marcobiedermann/pen/LExXWW).
@@ -42,7 +42,7 @@ progressView.progress = 0.75
 
 ### Configuration
 As of version __1.1.0__ you can adjust the animation duration:
-```
+```swift
 progressView.animationDuration = 2.0
 progressView.setProgress(progress, animated: true)
 ```
@@ -50,19 +50,17 @@ progressView.setProgress(progress, animated: true)
 As of version __1.2.0__ you can also adjust the gradient colors as well as the animation timing function:
 
 __Custom gradient colors__
-```
-progressView.gradientColorList = [
-    UIColor(hex: "#f2526e"),
-    UIColor(hex: "#f17a97"),
-    UIColor(hex: "#f3bcc8"),
-    UIColor(hex: "#6dddf2"),
-    UIColor(hex: "#c1f0f4")
+```swift
+progressView.gradientColorList: [UIColor] = [
+    .red,
+    .white,
+    .blue
 ]
 ```
 ![Sample](http://felix.hamburg/files/github/gradient-progress-bar/screen-custom-colors.jpg)
 
 __Custom timing function__
-```
+```swift
 progressView.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
 ```
 

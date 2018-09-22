@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.2.4] - 2018-22-09
+### Changed
+ - Changes for Swift 4.2
+ - Removed `UIColor` initializers, as they're not required for the project to work (and it's not very common to use hex color codes in iOS)
+   - If you need them in your project, feel free to copy & paste to following file into you project: https://gist.github.com/fxm90/1350d27abf92af3be59aaa9eb72c9310
+
 ## [1.2.3] - 2018-29-08
 ### Changed
  - Refactored to observables
@@ -20,7 +26,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Added
  - Further documentation
 ### Changed
- - Refactor code to use MVVM
+ - Refactored code to use MVVM
  - Format code
 
 ## [1.2.0] - 2018-14-01
@@ -69,7 +75,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Initial release
 
 
-[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.2.3...master
+[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.2.4...master
+[1.2.4]: https://github.com/fxm90/GradientProgressBar/compare/1.2.3...1.2.4
 [1.2.3]: https://github.com/fxm90/GradientProgressBar/compare/1.2.2...1.2.3
 [1.2.2]: https://github.com/fxm90/GradientProgressBar/compare/1.2.1...1.2.2
 [1.2.1]: https://github.com/fxm90/GradientProgressBar/compare/1.2.0...1.2.1

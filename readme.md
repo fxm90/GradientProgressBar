@@ -6,7 +6,7 @@ GradientProgressBar
 ### Example
 A customizable gradient progress bar (UIProgressView). Inspired by [iOS 7 Progress Bar from Codepen](https://codepen.io/marcobiedermann/pen/LExXWW).
 
-![Sample](http://felix.hamburg/files/github/gradient-progress-bar/screen.jpg)
+[![Preview](http://felix.hamburg/files/github/gradient-progress-bar/preview.png)](http://felix.hamburg/files/github/gradient-progress-bar/preview.png)
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
@@ -50,15 +50,15 @@ progressView.progress = 0.75
 ```
 
 ### Configuration
-As of version __1.1.0__ you can adjust the animation duration:
+#### – Property `animationDuration`
+As of version __1.1.0__ you can adjust the animation duration for calls to `setProgress(_:animated:)`:
 ```swift
 progressView.animationDuration = 2.0
 progressView.setProgress(progress, animated: true)
 ```
 
-As of version __1.2.0__ you can also adjust the gradient colors as well as the animation timing function:
-
-__Custom gradient colors__
+#### – Property `gradientColorList`
+As of version __1.2.0__ you can also adjust the gradient colors. Therefore, you'll have to pass an array of type `UIColor` to the property `gradientColorList`.
 ```swift
 progressView.gradientColorList: [UIColor] = [
     .red,
@@ -66,12 +66,15 @@ progressView.gradientColorList: [UIColor] = [
     .blue
 ]
 ```
-![Sample](http://felix.hamburg/files/github/gradient-progress-bar/screen-custom-colors.jpg)
 
-__Custom timing function__
+#### – Property `timingFunction`
+As of version __1.2.0__ you can further adjust the timing function. Therefore, you'll have to pass an instance of `CAMediaTimingFunction` to the property `timingFunction`.
 ```swift
 progressView.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
 ```
+
+### Show progress of `WKWebView`
+Based on [my gist](https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931), the example application also contains the sample code, for attaching the progress view to a `UINavigationBar`. Using "Key-Value Observing" we change the progress of the bar accordingly to the property `estimatedProgress` of the `WKWebView`.
 
 Please have a look at the example application for further details :)
 

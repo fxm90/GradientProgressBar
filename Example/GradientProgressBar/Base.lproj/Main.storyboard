@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="x3C-0W-Nfd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x3C-0W-Nfd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Basic Example-->
+        <!--🏡 Basic Example-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="BasicExampleViewController" customModule="GradientProgressBar_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -25,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="150" width="375" height="473"/>
                                 <subviews>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mId-Y2-jaz" customClass="GradientProgressBar" customModule="GradientProgressBar">
-                                        <rect key="frame" x="20" y="235" width="335" height="2"/>
+                                        <rect key="frame" x="20" y="235.5" width="335" height="2"/>
                                     </progressView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,16 +78,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="iyT-bH-MJF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="4fF-bu-e0c"/>
-                            <constraint firstItem="iyT-bH-MJF" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Ajd-BQ-F3L"/>
-                            <constraint firstAttribute="trailing" secondItem="iyT-bH-MJF" secondAttribute="trailing" id="CdI-4M-fbK"/>
-                            <constraint firstItem="255-p6-29l" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="MMi-TP-ma5"/>
-                            <constraint firstAttribute="trailing" secondItem="255-p6-29l" secondAttribute="trailing" id="Ogr-Q0-rcR"/>
+                            <constraint firstItem="iyT-bH-MJF" firstAttribute="leading" secondItem="0wX-Te-c8F" secondAttribute="leading" id="4fF-bu-e0c"/>
+                            <constraint firstItem="iyT-bH-MJF" firstAttribute="top" secondItem="0wX-Te-c8F" secondAttribute="top" id="Ajd-BQ-F3L"/>
+                            <constraint firstItem="0wX-Te-c8F" firstAttribute="trailing" secondItem="iyT-bH-MJF" secondAttribute="trailing" id="CdI-4M-fbK"/>
+                            <constraint firstItem="255-p6-29l" firstAttribute="leading" secondItem="0wX-Te-c8F" secondAttribute="leading" id="MMi-TP-ma5"/>
+                            <constraint firstItem="0wX-Te-c8F" firstAttribute="trailing" secondItem="255-p6-29l" secondAttribute="trailing" id="Ogr-Q0-rcR"/>
                             <constraint firstItem="iyT-bH-MJF" firstAttribute="bottom" secondItem="255-p6-29l" secondAttribute="top" id="Uwk-iY-swu"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="255-p6-29l" secondAttribute="bottom" id="sY6-TW-unE"/>
+                            <constraint firstItem="0wX-Te-c8F" firstAttribute="bottom" secondItem="255-p6-29l" secondAttribute="bottom" id="sY6-TW-unE"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="0wX-Te-c8F"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Basic Example" prompt="Gradient Progress Bar" largeTitleDisplayMode="always" id="Z7n-YK-yp8">
+                    <navigationItem key="navigationItem" title="🏡 Basic Example" prompt="Gradient Progress Bar" largeTitleDisplayMode="always" id="Z7n-YK-yp8">
                         <barButtonItem key="rightBarButtonItem" title="Advanced Example" id="MSW-Ye-ZLF">
                             <connections>
                                 <segue destination="4ad-Yc-uw7" kind="show" id="X8Z-Q2-3vO"/>
@@ -105,14 +103,10 @@
             </objects>
             <point key="canvasLocation" x="1298" y="-593"/>
         </scene>
-        <!--Advanced Example-->
+        <!--🚀 Advanced Example-->
         <scene sceneID="yZ4-pT-hFn">
             <objects>
                 <viewController id="4ad-Yc-uw7" customClass="AdvancedExampleViewController" customModule="GradientProgressBar_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fQD-Nl-DHU"/>
-                        <viewControllerLayoutGuide type="bottom" id="xlf-V1-taZ"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HUH-hK-y1D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,7 +115,7 @@
                                 <rect key="frame" x="0.0" y="150" width="375" height="473"/>
                                 <subviews>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TB5-yb-pAn" customClass="GradientProgressBar" customModule="GradientProgressBar">
-                                        <rect key="frame" x="20" y="235" width="335" height="2"/>
+                                        <rect key="frame" x="20" y="235.5" width="335" height="2"/>
                                     </progressView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -179,16 +173,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="bdN-O6-x0x" secondAttribute="trailing" id="0LS-kd-0eN"/>
-                            <constraint firstAttribute="trailing" secondItem="MmE-Bl-iPI" secondAttribute="trailing" id="3kK-cu-mJv"/>
-                            <constraint firstItem="bdN-O6-x0x" firstAttribute="leading" secondItem="HUH-hK-y1D" secondAttribute="leading" id="3mL-st-pus"/>
-                            <constraint firstItem="MmE-Bl-iPI" firstAttribute="leading" secondItem="HUH-hK-y1D" secondAttribute="leading" id="HyC-fc-aOy"/>
+                            <constraint firstItem="JZz-n7-Jap" firstAttribute="trailing" secondItem="bdN-O6-x0x" secondAttribute="trailing" id="0LS-kd-0eN"/>
+                            <constraint firstItem="JZz-n7-Jap" firstAttribute="trailing" secondItem="MmE-Bl-iPI" secondAttribute="trailing" id="3kK-cu-mJv"/>
+                            <constraint firstItem="bdN-O6-x0x" firstAttribute="leading" secondItem="JZz-n7-Jap" secondAttribute="leading" id="3mL-st-pus"/>
+                            <constraint firstItem="MmE-Bl-iPI" firstAttribute="leading" secondItem="JZz-n7-Jap" secondAttribute="leading" id="HyC-fc-aOy"/>
                             <constraint firstItem="bdN-O6-x0x" firstAttribute="bottom" secondItem="MmE-Bl-iPI" secondAttribute="top" id="K75-l2-Fm4"/>
-                            <constraint firstItem="bdN-O6-x0x" firstAttribute="top" secondItem="fQD-Nl-DHU" secondAttribute="bottom" id="foz-yY-V70"/>
-                            <constraint firstItem="xlf-V1-taZ" firstAttribute="top" secondItem="MmE-Bl-iPI" secondAttribute="bottom" id="sab-NX-bdd"/>
+                            <constraint firstItem="bdN-O6-x0x" firstAttribute="top" secondItem="JZz-n7-Jap" secondAttribute="top" id="foz-yY-V70"/>
+                            <constraint firstItem="JZz-n7-Jap" firstAttribute="bottom" secondItem="MmE-Bl-iPI" secondAttribute="bottom" id="sab-NX-bdd"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="JZz-n7-Jap"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Advanced Example" prompt="Gradient Progress Bar" largeTitleDisplayMode="always" id="3sL-EA-bQc"/>
+                    <navigationItem key="navigationItem" title="🚀 Advanced Example" prompt="Gradient Progress Bar" largeTitleDisplayMode="always" id="3sL-EA-bQc">
+                        <barButtonItem key="rightBarButtonItem" title="Web View Example" id="Qzg-7H-NXQ">
+                            <connections>
+                                <segue destination="ye3-ic-PmR" kind="show" id="SC5-gE-Ohh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="gradientProgressBar" destination="TB5-yb-pAn" id="DxS-Dq-oZg"/>
                     </connections>
@@ -196,6 +197,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQ4-9w-baT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2015" y="-591"/>
+        </scene>
+        <!--📲 Web View Example-->
+        <scene sceneID="8uE-hs-oQ9">
+            <objects>
+                <viewController id="ye3-ic-PmR" customClass="WebViewExampleViewController" customModule="GradientProgressBar_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d57-Pi-Uil">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kBF-IR-qfs" userLabel="WebView">
+                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kBF-IR-qfs" firstAttribute="top" secondItem="hMd-1H-ys2" secondAttribute="top" id="N3E-bf-bgp"/>
+                            <constraint firstItem="kBF-IR-qfs" firstAttribute="leading" secondItem="d57-Pi-Uil" secondAttribute="leading" id="YYh-kB-vOY"/>
+                            <constraint firstAttribute="bottom" secondItem="kBF-IR-qfs" secondAttribute="bottom" id="qRJ-c0-1S7"/>
+                            <constraint firstAttribute="trailing" secondItem="kBF-IR-qfs" secondAttribute="trailing" id="rGY-UN-dk9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hMd-1H-ys2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="📲 Web View Example" prompt="Gradient Loading Bar" largeTitleDisplayMode="always" id="cHv-9K-7Wm">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="p9d-g1-Z4J"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="8gu-sQ-JcS">
+                            <connections>
+                                <action selector="refreshButtonTouchUpInside:" destination="ye3-ic-PmR" id="94C-Hg-3YA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="kBF-IR-qfs" id="6mx-uc-EiN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hz4-pF-Vw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2732" y="-591"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="56v-4j-2jv">

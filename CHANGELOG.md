@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.2.5] - 2018-16-11
+### Changed
+- Adapt code to support new version from dependency `Observable`
+
 ## [1.2.4] - 2018-22-09
 ### Changed
  - Changes for Swift 4.2
@@ -75,7 +79,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Initial release
 
 
-[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.2.4...master
+[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.2.5...master
+[1.2.4]: https://github.com/fxm90/GradientProgressBar/compare/1.2.4...1.2.5
 [1.2.4]: https://github.com/fxm90/GradientProgressBar/compare/1.2.3...1.2.4
 [1.2.3]: https://github.com/fxm90/GradientProgressBar/compare/1.2.2...1.2.3
 [1.2.2]: https://github.com/fxm90/GradientProgressBar/compare/1.2.1...1.2.2

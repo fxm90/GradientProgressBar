@@ -23,7 +23,7 @@ Inspired by https://codepen.io/marcobiedermann/pen/LExXWW
                        DESC
 
   s.homepage         = 'https://github.com/fxm90/GradientProgressBar'
-  s.screenshots      = 'http://felix.hamburg/files/github/gradient-progress-bar/screen.png'
+  s.screenshots      = 'https://felix.hamburg/files/github/gradient-progress-bar/preview.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'fxm90' => 'contact@felix.hamburg' }
   s.source           = { :git => 'https://github.com/fxm90/GradientProgressBar.git', :tag => s.version.to_s }

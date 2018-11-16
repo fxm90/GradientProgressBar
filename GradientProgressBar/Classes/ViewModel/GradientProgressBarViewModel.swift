@@ -38,18 +38,24 @@ class GradientProgressBarViewModel {
     // MARK: - Public properties
 
     /// The frame for the gradient layer.
-    let gradientLayerFrame: Observable<CGRect> = Observable(.zero)
+    var gradientLayerFrame: ImmutableObservable<CGRect> {
+        return gradientLayerFrameSubject
+    }
 
     /// The frame for the alpha layer.
-    let alphaLayerFrame: Observable<AnimatedFrameUpdate> = Observable(.zero)
+    var alphaLayerFrame: ImmutableObservable<AnimatedFrameUpdate> {
+        return alphaLayerFrameSubject
+    }
 
     /// Gradient colors for the progress view.
-    let gradientColorList: Observable = Observable(UIColor.defaultGradientColorList)
+    var gradientColorList: ImmutableObservable<[UIColor]> {
+        return gradientColorListSubject
+    }
 
     /// Bounds for the progress bar.
     var bounds = CGRect.zero {
         didSet {
-            gradientLayerFrame.value = bounds
+            gradientLayerFrameSubject.value = bounds
 
             setAlphaLayerFrame(for: progress, animated: false)
         }
@@ -71,6 +77,15 @@ class GradientProgressBarViewModel {
     var timingFunction = GradientProgressBarViewModel.defaultTimingFunction
 
     // MARK: - Private properties
+
+    /// The frame for the gradient layer.
+    private let gradientLayerFrameSubject: Observable<CGRect> = Observable(.zero)
+
+    /// The frame for the alpha layer.
+    private let alphaLayerFrameSubject: Observable<AnimatedFrameUpdate> = Observable(.zero)
+
+    /// Gradient colors for the progress view.
+    private let gradientColorListSubject: Observable = Observable(UIColor.defaultGradientColorList)
 
     /// Boolean flag, whether setting the `progress` property should inform the listeners.
     private var shouldInformListeners = true
@@ -94,8 +109,8 @@ class GradientProgressBarViewModel {
             animationDuration = 0.0
         }
 
-        alphaLayerFrame.value = AnimatedFrameUpdate(frame: frame,
-                                                    animationDuration: animationDuration)
+        alphaLayerFrameSubject.value = AnimatedFrameUpdate(frame: frame,
+                                                           animationDuration: animationDuration)
     }
 
     private func setProgress(_ progress: Float, shouldInformListeners: Bool) {
@@ -118,7 +133,7 @@ class GradientProgressBarViewModel {
     ///
     /// Note: This is just a public setter for hiding the oberservable implementation.
     func setGradientColorList(_ gradientColorList: [UIColor]) {
-        self.gradientColorList.value = gradientColorList
+        gradientColorListSubject.value = gradientColorList
     }
 
     /// Returns the colors, currently used for the gradient.

@@ -76,28 +76,31 @@ class WebViewExampleViewController: UIViewController {
 
 // MARK: - WKNavigationDelegate
 
+/// By implementing the `WKNavigationDelegate` we can update the visibility of the `progressView` according to the `WKNavigation` loading progress.
+/// The view-visibility updates are based on my gist [fxm90/UIView+AnimateIsHidden.swift](https://gist.github.com/fxm90/723b5def31b46035cd92a641e3b184f6)
 extension WebViewExampleViewController: WKNavigationDelegate {
     func webView(_: WKWebView, didStartProvisionalNavigation _: WKNavigation!) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        if progressView.isHidden {
+            // Make sure our animation is visible.
+            progressView.isHidden = false
+        }
 
-        UIView.transition(with: progressView,
-                          duration: 0.33,
-                          options: [.transitionCrossDissolve],
-                          animations: {
-                              self.progressView.isHidden = false
-                          },
-                          completion: nil)
+        UIView.animate(withDuration: 0.33,
+                       animations: {
+                           self.progressView.alpha = 1.0
+        })
     }
 
     func webView(_: WKWebView, didFinish _: WKNavigation!) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-
-        UIView.transition(with: progressView,
-                          duration: 0.33,
-                          options: [.transitionCrossDissolve],
-                          animations: {
-                              self.progressView.isHidden = true
-                          },
-                          completion: nil)
+        UIView.animate(withDuration: 0.33,
+                       animations: {
+                           self.progressView.alpha = 0.0
+                       },
+                       completion: { isFinished in
+                           // Update `isHidden` flag accordingly:
+                           //  - set to `true` in case animation was completly finished.
+                           //  - set to `false` in case animation was interrupted, e.g. due to starting of another animation.
+                           self.progressView.isHidden = isFinished
+        })
     }
 }

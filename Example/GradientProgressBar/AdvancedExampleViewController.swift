@@ -2,8 +2,8 @@
 //  AdvancedExampleViewController.swift
 //  GradientProgressBar_Example
 //
-//  Created by Felix Mau on 25.08.18.
-//  Copyright © 2018 CocoaPods. All rights reserved.
+//  Created by Felix Mau on 08/25/18.
+//  Copyright © 2018 Felix Mau. All rights reserved.
 //
 
 import UIKit
@@ -17,7 +17,7 @@ class AdvancedExampleViewController: UIViewController {
 
     // MARK: - Outlets
 
-    @IBOutlet var gradientProgressBar: GradientProgressBar!
+    @IBOutlet private var gradientProgressBar: GradientProgressBar!
 
     // MARK: - Public methods
 

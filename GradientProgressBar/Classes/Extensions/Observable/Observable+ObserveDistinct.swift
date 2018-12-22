@@ -2,7 +2,8 @@
 //  Observable+ObserveDistinct.swift
 //  GradientProgressBar
 //
-//  Created by Felix Mau on 25.08.18.
+//  Created by Felix Mau on 08/25/18.
+//  Copyright © 2018 Felix Mau. All rights reserved.
 //
 
 import Foundation

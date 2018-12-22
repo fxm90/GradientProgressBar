@@ -1,9 +1,9 @@
 //
-//  ViewController.swift
-//  GradientProgressBar
+//  BasicExampleViewController.swift
+//  GradientProgressBar_Example
 //
-//  Created by fxm90 on 09/30/2017.
-//  Copyright (c) 2017 fxm90. All rights reserved.
+//  Created by Felix Mau on 09/30/17.
+//  Copyright © 2017 Felix Mau. All rights reserved.
 //
 
 import UIKit
@@ -17,7 +17,7 @@ class BasicExampleViewController: UIViewController {
 
     // MARK: - Outlets
 
-    @IBOutlet var gradientProgressBar: GradientProgressBar!
+    @IBOutlet private var gradientProgressBar: GradientProgressBar!
 
     // MARK: - Public methods
 

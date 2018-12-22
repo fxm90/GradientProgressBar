@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  GradientProgressBar
+//  GradientProgressBar_Example
 //
-//  Created by fxm90 on 09/30/2017.
-//  Copyright (c) 2017 fxm90. All rights reserved.
+//  Created by Felix Mau on 09/30/17.
+//  Copyright © 2018 Felix Mau. All rights reserved.
 //
 
 import UIKit

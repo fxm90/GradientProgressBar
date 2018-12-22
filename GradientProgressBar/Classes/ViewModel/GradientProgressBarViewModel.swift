@@ -2,13 +2,12 @@
 //  GradientProgressBarViewModel.swift
 //  GradientProgressBar
 //
-//  Created by Felix Mau on 20.01.18.
+//  Created by Felix Mau on 01/20/18.
+//  Copyright © 2018 Felix Mau. All rights reserved.
 //
 
 import Foundation
 import Observable
-
-// MARK: - View Model
 
 class GradientProgressBarViewModel {
     // MARK: - Config
@@ -19,7 +18,7 @@ class GradientProgressBarViewModel {
     static let defaultAnimationDuration = 0.25
 
     /// Default animation timing function for animated progress change.
-    static let defaultTimingFunction: CAMediaTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+    static let defaultTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
 
     // MARK: - Types
 
@@ -85,7 +84,7 @@ class GradientProgressBarViewModel {
     private let alphaLayerFrameSubject: Observable<AnimatedFrameUpdate> = Observable(.zero)
 
     /// Gradient colors for the progress view.
-    private let gradientColorListSubject: Observable = Observable(UIColor.defaultGradientColorList)
+    private let gradientColorListSubject = Observable(UIColor.defaultGradientColorList)
 
     /// Boolean flag, whether setting the `progress` property should inform the listeners.
     private var shouldInformListeners = true

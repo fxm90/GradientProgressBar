@@ -2,8 +2,8 @@
 //  GradientProgressBarViewModelTestCase.swift
 //  GradientProgressBar_Example
 //
-//  Created by Felix Mau on 20.01.18.
-//  Copyright © 2018 CocoaPods. All rights reserved.
+//  Created by Felix Mau on 01/20/18.
+//  Copyright © 2018 Felix Mau. All rights reserved.
 //
 
 import XCTest

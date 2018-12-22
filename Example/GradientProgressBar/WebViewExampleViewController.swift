@@ -2,8 +2,8 @@
 //  WebViewExampleViewController.swift
 //  GradientProgressBar_Example
 //
-//  Created by Felix Mau on 23.09.18.
-//  Copyright © 2018 CocoaPods. All rights reserved.
+//  Created by Felix Mau on 09/23/18.
+//  Copyright © 2018 Felix Mau. All rights reserved.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ class WebViewExampleViewController: UIViewController {
     // MARK: - Outlets
 
     /// The web view from the interface builder.
-    @IBOutlet var webView: WKWebView!
+    @IBOutlet private var webView: WKWebView!
 
     // MARK: - Private properties
 

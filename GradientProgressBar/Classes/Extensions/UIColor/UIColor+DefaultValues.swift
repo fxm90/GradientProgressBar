@@ -2,7 +2,8 @@
 //  UIColor+DefaultValues.swift
 //  GradientProgressBar
 //
-//  Created by Felix Mau on 26.08.18.
+//  Created by Felix Mau on 08/26/18.
+//  Copyright © 2018 Felix Mau. All rights reserved.
 //
 
 import UIKit

@@ -17,7 +17,6 @@ opt_in_rules:
   - explicit_init              # Explicitly calling .init() should be avoided.
   - closure_spacing            # Closure expressions should have a single space inside each brace.
   - private_outlet             # IBOutlets should be private to avoid leaking UIKit to higher layers.
-  - attributes                 # Attributes should be on their own lines in functions and types, but on the same line as variables and imports.
   - operator_usage_whitespace  # Operators should be surrounded by a single whitespace when they are being used.
   - first_where                # Prefer using `.first(where:)` over `.filter { }.first` in collections.
   - object_literal             # Prefer object literals over image and color inits.

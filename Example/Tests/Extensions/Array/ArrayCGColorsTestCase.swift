@@ -19,6 +19,8 @@ class ArrayCGColorsTestCase: XCTestCase {
         let cgColors = uiColors.cgColors
 
         // Then
+        XCTAssertEqual(uiColors.count, cgColors.count)
+
         for (index, uiColor) in uiColors.enumerated() {
             let expectedCGColor = uiColor.cgColor
             let receivedCGColor = cgColors[index]

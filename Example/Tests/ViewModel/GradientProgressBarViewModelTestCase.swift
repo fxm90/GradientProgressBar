@@ -34,8 +34,8 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
     // MARK: - Test initializer
 
-    func testInitializerShouldSetAnimatedAlphaLayerFrameUpdateToZero() {
-        XCTAssertEqual(viewModel.animatedAlphaLayerFrameUpdate.value, .zero)
+    func testInitializerShouldSetAlphaLayerAnimatedFrameUpdateToZero() {
+        XCTAssertEqual(viewModel.alphaLayerAnimatedFrameUpdate.value, .zero)
     }
 
     func testInitializerShouldSetAnimationDurationToStaticConfigurationProperty() {
@@ -48,7 +48,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
     // MARK: - Test setting property `bounds`
 
-    func testSettingBoundsShouldSetAnimatedAlphaLayerFrameUpdateWithCorrectFrameButWithoutAnimation() {
+    func testSettingBoundsShouldSetAlphaLayerAnimatedFrameUpdateWithCorrectFrameButWithoutAnimation() {
         // Given
         let progress: Float = 0.25
         viewModel.setProgress(progress)
@@ -62,13 +62,13 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         var expectedFrame = bounds
         expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedAnimatedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
+        let expectedAlphaLayerAnimatedFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
                                                                         animationDuration: 0.0)
 
-        XCTAssertEqual(viewModel.animatedAlphaLayerFrameUpdate.value, expectedAnimatedAlphaLayerFrameUpdate)
+        XCTAssertEqual(viewModel.alphaLayerAnimatedFrameUpdate.value, expectedAlphaLayerAnimatedFrameUpdate)
     }
 
-    func testSettingBoundsWithSameValueShouldSetAnimatedAlphaLayerFrameUpdateJustOnce() {
+    func testSettingBoundsWithSameValueShouldSetAlphaLayerAnimatedFrameUpdateJustOnce() {
         // Given
         let progress: Float = 0.25
         viewModel.setProgress(progress)
@@ -77,8 +77,8 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
         var observerCounter = 0
         var disposal = Disposal()
-        viewModel.animatedAlphaLayerFrameUpdate.observe { _, oldAnimatedAlphaLayerFrameUpdate in
-            guard oldAnimatedAlphaLayerFrameUpdate != nil else {
+        viewModel.alphaLayerAnimatedFrameUpdate.observe { _, oldAlphaLayerAnimatedFrameUpdate in
+            guard oldAlphaLayerAnimatedFrameUpdate != nil else {
                 // Skip initial call to observer.
                 return
             }
@@ -97,7 +97,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
     // MARK: - Test method `setProgress()`
 
-    func testSetProgressShouldSetAnimatedAlphaLayerFrameUpdateWithCorrectFrameButWithoutAnimation() {
+    func testSetProgressShouldSetAlphaLayerAnimatedFrameUpdateWithCorrectFrameButWithoutAnimation() {
         // Given
         let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
         viewModel.bounds = bounds
@@ -110,13 +110,13 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         var expectedFrame = bounds
         expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedAnimatedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
+        let expectedAlphaLayerAnimatedFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
                                                                         animationDuration: 0.0)
 
-        XCTAssertEqual(viewModel.animatedAlphaLayerFrameUpdate.value, expectedAnimatedAlphaLayerFrameUpdate)
+        XCTAssertEqual(viewModel.alphaLayerAnimatedFrameUpdate.value, expectedAlphaLayerAnimatedFrameUpdate)
     }
 
-    func testSetProgressShouldSetAnimatedAlphaLayerFrameUpdateWithCorrectFrameAndGivenAnimationDuration() {
+    func testSetProgressShouldSetAlphaLayerAnimatedFrameUpdateWithCorrectFrameAndGivenAnimationDuration() {
         // Given
         let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
         viewModel.bounds = bounds
@@ -132,9 +132,9 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         var expectedFrame = bounds
         expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedAnimatedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
+        let expectedAlphaLayerAnimatedFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
                                                                         animationDuration: animationDuration)
 
-        XCTAssertEqual(viewModel.animatedAlphaLayerFrameUpdate.value, expectedAnimatedAlphaLayerFrameUpdate)
+        XCTAssertEqual(viewModel.alphaLayerAnimatedFrameUpdate.value, expectedAlphaLayerAnimatedFrameUpdate)
     }
 }

@@ -131,9 +131,9 @@ public class GradientProgressBar: UIProgressView {
     }
 
     private func bindViewModelToView() {
-        viewModel.animatedAlphaLayerFrameUpdate.observeDistinct { [weak self] newAnimatedAlphaLayerFrameUpdate, _ in
-            self?.update(alphaLayerFrame: newAnimatedAlphaLayerFrameUpdate.frame,
-                         animationDuration: newAnimatedAlphaLayerFrameUpdate.animationDuration)
+        viewModel.alphaLayerAnimatedFrameUpdate.observeDistinct { [weak self] newAlphaLayerAnimatedFrameUpdate, _ in
+            self?.update(alphaLayerFrame: newAlphaLayerAnimatedFrameUpdate.frame,
+                         animationDuration: newAlphaLayerAnimatedFrameUpdate.animationDuration)
         }.add(to: &disposal)
     }
 

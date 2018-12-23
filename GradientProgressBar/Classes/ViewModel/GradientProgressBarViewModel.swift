@@ -39,8 +39,8 @@ class GradientProgressBarViewModel {
     // MARK: - Public properties
 
     /// The frame for the alpha layer.
-    var animatedAlphaLayerFrameUpdate: ImmutableObservable<AnimatedFrameUpdate> {
-        return animatedAlphaLayerFrameUpdateSubject
+    var alphaLayerAnimatedFrameUpdate: ImmutableObservable<AnimatedFrameUpdate> {
+        return alphaLayerAnimatedFrameUpdateSubject
     }
 
     /// The current bounds of the progress view.
@@ -53,7 +53,7 @@ class GradientProgressBarViewModel {
                 return
             }
 
-            animatedAlphaLayerFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: false)
+            alphaLayerAnimatedFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: false)
         }
     }
 
@@ -65,7 +65,7 @@ class GradientProgressBarViewModel {
 
     // MARK: - Private properties
 
-    private let animatedAlphaLayerFrameUpdateSubject: Observable<AnimatedFrameUpdate> = Observable(.zero)
+    private let alphaLayerAnimatedFrameUpdateSubject: Observable<AnimatedFrameUpdate> = Observable(.zero)
 
     /// Keep track of our internal progress property. We need this e.g. if we rotate the device,
     /// and therefore have to adjust the alpha-layer-frame according to this property.
@@ -79,7 +79,7 @@ class GradientProgressBarViewModel {
     func setProgress(_ progress: Float, animated: Bool = false) {
         self.progress = progress
 
-        animatedAlphaLayerFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: animated)
+        alphaLayerAnimatedFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: animated)
     }
 
     // MARK: - Private methods

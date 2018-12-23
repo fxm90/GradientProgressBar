@@ -19,7 +19,7 @@ class GradientProgressBarViewModel {
     static let defaultAnimationDuration = 0.25
 
     /// Default animation timing function for animated progress change.
-    static let defaultTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+    static let defaultTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
 
     // MARK: - Types
 

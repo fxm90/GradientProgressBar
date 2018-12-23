@@ -48,7 +48,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
     // MARK: - Test setting property `bounds`
 
-    func testSettingBoundsShouldSetAlphaLayerAnimatedFrameUpdateWithCorrectFrameButWithoutAnimation() {
+    func testSettingBoundsShouldUpdateAlphaLayerAnimatedFrameUpdateWithCorrectFrameButWithoutAnimation() {
         // Given
         let progress: Float = 0.25
         viewModel.setProgress(progress)
@@ -68,7 +68,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.alphaLayerAnimatedFrameUpdate.value, expectedAlphaLayerAnimatedFrameUpdate)
     }
 
-    func testSettingBoundsWithSameValueShouldSetAlphaLayerAnimatedFrameUpdateJustOnce() {
+    func testSettingBoundsWithSameValueShouldUpdateAlphaLayerAnimatedFrameUpdateJustOnce() {
         // Given
         let progress: Float = 0.25
         viewModel.setProgress(progress)
@@ -97,7 +97,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
     // MARK: - Test method `setProgress()`
 
-    func testSetProgressShouldSetAlphaLayerAnimatedFrameUpdateWithCorrectFrameButWithoutAnimation() {
+    func testSetProgressShouldUpdateAlphaLayerAnimatedFrameUpdateWithCorrectFrameButWithoutAnimation() {
         // Given
         let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
         viewModel.bounds = bounds
@@ -116,7 +116,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.alphaLayerAnimatedFrameUpdate.value, expectedAlphaLayerAnimatedFrameUpdate)
     }
 
-    func testSetProgressShouldSetAlphaLayerAnimatedFrameUpdateWithCorrectFrameAndGivenAnimationDuration() {
+    func testSetProgressShouldUpdateAlphaLayerAnimatedFrameUpdateWithCorrectFrameAndGivenAnimationDuration() {
         // Given
         let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
         viewModel.bounds = bounds

@@ -51,7 +51,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
 
         let progress: Float = 0.25
-        viewModel.setProgress(progress, animated: false)
+        viewModel.setProgress(progress)
 
         // When
         viewModel.bounds = bounds
@@ -75,7 +75,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
         // When
         let progress: Float = 0.5
-        viewModel.setProgress(progress, animated: false)
+        viewModel.setProgress(progress)
 
         // Then
         var expectedFrame = bounds

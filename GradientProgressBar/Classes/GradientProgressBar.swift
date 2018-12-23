@@ -42,7 +42,7 @@ public class GradientProgressBar: UIProgressView {
 
     public override var progress: Float {
         didSet {
-            viewModel.setProgress(progress, animated: false)
+            viewModel.setProgress(progress)
         }
     }
 

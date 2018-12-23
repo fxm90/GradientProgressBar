@@ -76,7 +76,7 @@ class GradientProgressBarViewModel {
     /// Adjusts the current progress, optionally animating the change.
     ///
     /// - SeeAlso: `UIProgressView.setProgress(_:animated:)`
-    func setProgress(_ progress: Float, animated: Bool) {
+    func setProgress(_ progress: Float, animated: Bool = false) {
         self.progress = progress
 
         animatedAlphaLayerFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: animated)

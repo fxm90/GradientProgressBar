@@ -1,6 +1,6 @@
 //
 //  GradientProgressBarViewModelTestCase.swift
-//  GradientProgressBar_Example
+//  GradientProgressBar_Tests
 //
 //  Created by Felix Mau on 01/20/18.
 //  Copyright © 2018 Felix Mau. All rights reserved.
@@ -30,122 +30,64 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         super.tearDown()
     }
 
-    // MARK: - Test setup
+    // MARK: - Test initializer
 
-    func testGradientLayerFrameShouldBeZeroPerDefault() {
-        XCTAssertEqual(viewModel.gradientLayerFrame.value, .zero)
+    func testInitializerShouldSetAnimatedAlphaLayerFrameUpdateToZero() {
+        XCTAssertEqual(viewModel.animatedAlphaLayerFrameUpdate.value, .zero)
     }
 
-    func testAlphaLayerFrameShouldBeZeroPerDefault() {
-        XCTAssertEqual(viewModel.alphaLayerFrame.value, .zero)
+    func testInitializerShouldSetAnimationDurationToStaticConfigurationProperty() {
+        XCTAssertEqual(viewModel.animationDuration, GradientProgressBarViewModel.defaultAnimationDuration)
     }
 
-    func testGradientColorListShouldBeInitializedWithDefaultValue() {
-        XCTAssertEqual(viewModel.gradientColorList.value, UIColor.defaultGradientColorList)
+    func testInitializerShouldSetTimingFunctionToStaticConfigurationProperty() {
+        XCTAssertEqual(viewModel.timingFunction, GradientProgressBarViewModel.defaultTimingFunction)
     }
 
     // MARK: - Test setting property `bounds`
 
-    func testSettingBoundsShouldUpdateGradientLayerFrame() {
+    func testSettingBoundsShouldSetAnimatedAlphaLayerFrameUpdateWithCorrectFrameButWithoutAnimation() {
         // Given
         let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
 
-        // When
-        viewModel.bounds = bounds
-
-        // Then
-        XCTAssertEqual(viewModel.gradientLayerFrame.value, bounds)
-    }
-
-    func testSettingBoundsShouldUpdateAlphaLayerFrameForCurrentProgressWithoutAnimation() {
-        // Given
-        let progress: Float = 0.5
-        viewModel.progress = progress
-
-        // When
-        let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
-        viewModel.bounds = bounds
-
-        // Then
-        var expectedFrame = bounds
-        expectedFrame.size.width *= CGFloat(progress)
-
-        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
-                                                                animationDuration: 0.0)
-
-        XCTAssertEqual(viewModel.alphaLayerFrame.value, expectedAlphaLayerFrameUpdate)
-    }
-
-    // MARK: - Test setting property `progress`
-
-    func testSettingProgressShouldUpdateAlphaLayerFrameWithoutAnimation() {
-        // Given
-        let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
-        viewModel.bounds = bounds
-
-        // When
         let progress: Float = 0.25
-        viewModel.progress = progress
+        viewModel.setProgress(progress, animated: false)
+
+        // When
+        viewModel.bounds = bounds
 
         // Then
         var expectedFrame = bounds
         expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
-                                                                animationDuration: 0.0)
+        let expectedAnimatedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
+                                                                        animationDuration: 0.0)
 
-        XCTAssertEqual(viewModel.alphaLayerFrame.value, expectedAlphaLayerFrameUpdate)
-    }
-
-    // MARK: - Test method `setGradientColorList()`
-
-    func testSetGradientColorListShouldUpdateObservable() {
-        // Given
-        let gradientColorList: [UIColor] = [.black, .white]
-
-        // When
-        viewModel.setGradientColorList(gradientColorList)
-
-        // Then
-        XCTAssertEqual(viewModel.gradientColorList.value, gradientColorList)
-    }
-
-    // MARK: - Test method `getGradientColorList()`
-
-    func testGetGradientColorListShouldReturnColorsFromObservables() {
-        // Given
-        let gradientColorList: [UIColor] = [.black, .white]
-        viewModel.setGradientColorList(gradientColorList)
-
-        // When
-        let receivedGradientColorList = viewModel.getGradientColorList()
-
-        // Then
-        XCTAssertEqual(viewModel.gradientColorList.value, receivedGradientColorList)
+        XCTAssertEqual(viewModel.animatedAlphaLayerFrameUpdate.value, expectedAnimatedAlphaLayerFrameUpdate)
     }
 
     // MARK: - Test method `setProgress()`
 
-    func testSetProgressShouldUpdateAlphaLayerFrameWithoutAnimation() {
+    func testSetProgressShouldSetAnimatedAlphaLayerFrameUpdateWithCorrectFrameButWithoutAnimation() {
         // Given
         let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
         viewModel.bounds = bounds
 
         // When
-        let progress: Float = 0.75
+        let progress: Float = 0.5
         viewModel.setProgress(progress, animated: false)
 
         // Then
         var expectedFrame = bounds
         expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
-                                                                animationDuration: 0.0)
+        let expectedAnimatedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
+                                                                        animationDuration: 0.0)
 
-        XCTAssertEqual(viewModel.alphaLayerFrame.value, expectedAlphaLayerFrameUpdate)
+        XCTAssertEqual(viewModel.animatedAlphaLayerFrameUpdate.value, expectedAnimatedAlphaLayerFrameUpdate)
     }
 
-    func testSetProgressAnimatedShouldUpdateAlphaLayerFrameAndUpdateAnimationDuration() {
+    func testSetProgressShouldSetAnimatedAlphaLayerFrameUpdateWithCorrectFrameAndGivenAnimationDuration() {
         // Given
         let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
         viewModel.bounds = bounds
@@ -161,31 +103,9 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         var expectedFrame = bounds
         expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
-                                                                animationDuration: animationDuration)
+        let expectedAnimatedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
+                                                                        animationDuration: animationDuration)
 
-        XCTAssertEqual(viewModel.alphaLayerFrame.value, expectedAlphaLayerFrameUpdate)
-    }
-
-    func testSettingBoundsAfterAnimatedProgressUpdateShouldUpdateFrameAccordinglyWithoutAnimation() {
-        // Given
-        let animationDuration = 123.456
-        viewModel.animationDuration = animationDuration
-
-        let progress: Float = 0.75
-        viewModel.setProgress(progress, animated: true)
-
-        // When
-        let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
-        viewModel.bounds = bounds
-
-        // Then
-        var expectedFrame = bounds
-        expectedFrame.size.width *= CGFloat(progress)
-
-        let expectedAlphaLayerFrameUpdate = AnimatedFrameUpdate(frame: expectedFrame,
-                                                                animationDuration: 0.0)
-
-        XCTAssertEqual(viewModel.alphaLayerFrame.value, expectedAlphaLayerFrameUpdate)
+        XCTAssertEqual(viewModel.animatedAlphaLayerFrameUpdate.value, expectedAnimatedAlphaLayerFrameUpdate)
     }
 }

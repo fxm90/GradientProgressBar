@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Observable
+
 @testable import GradientProgressBar
 
 class GradientProgressBarViewModelTestCase: XCTestCase {
@@ -48,10 +50,10 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
     func testSettingBoundsShouldSetAnimatedAlphaLayerFrameUpdateWithCorrectFrameButWithoutAnimation() {
         // Given
-        let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
-
         let progress: Float = 0.25
         viewModel.setProgress(progress)
+
+        let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
 
         // When
         viewModel.bounds = bounds
@@ -64,6 +66,33 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
                                                                         animationDuration: 0.0)
 
         XCTAssertEqual(viewModel.animatedAlphaLayerFrameUpdate.value, expectedAnimatedAlphaLayerFrameUpdate)
+    }
+
+    func testSettingBoundsWithSameValueShouldSetAnimatedAlphaLayerFrameUpdateJustOnce() {
+        // Given
+        let progress: Float = 0.25
+        viewModel.setProgress(progress)
+
+        let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
+
+        var observerCounter = 0
+        var disposal = Disposal()
+        viewModel.animatedAlphaLayerFrameUpdate.observe { _, oldAnimatedAlphaLayerFrameUpdate in
+            guard oldAnimatedAlphaLayerFrameUpdate != nil else {
+                // Skip initial call to observer.
+                return
+            }
+
+            observerCounter += 1
+        }.add(to: &disposal)
+
+        // When
+        for _ in 1 ... 3 {
+            viewModel.bounds = bounds
+        }
+
+        // Then
+        XCTAssertEqual(observerCounter, 1)
     }
 
     // MARK: - Test method `setProgress()`

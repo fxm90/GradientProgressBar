@@ -9,12 +9,13 @@
 import Foundation
 import Observable
 
+/// This view model keeps track of the progress-value and updates the `alphaLayerFrame` accordingly.
 class GradientProgressBarViewModel {
     // MARK: - Config
 
     /// Default animation duration for call to `setProgress(x, animated: true)`.
     ///
-    /// Note: Equals to CALayer default animation duration
+    /// - Note: Equals to `CALayer` default animation duration
     static let defaultAnimationDuration = 0.25
 
     /// Default animation timing function for animated progress change.
@@ -24,8 +25,9 @@ class GradientProgressBarViewModel {
 
     /// Combines all properties for an animated update of a frame.
     struct AnimatedFrameUpdate: Equatable {
-        /// Initializes the struct with "0".
-        static let zero = AnimatedFrameUpdate(frame: .zero, animationDuration: 0.0)
+        /// Initializes the struct with all values set to zero.
+        static let zero = AnimatedFrameUpdate(frame: .zero,
+                                              animationDuration: 0.0)
 
         /// The new frame.
         let frame: CGRect
@@ -36,36 +38,22 @@ class GradientProgressBarViewModel {
 
     // MARK: - Public properties
 
-    /// The frame for the gradient layer.
-    var gradientLayerFrame: ImmutableObservable<CGRect> {
-        return gradientLayerFrameSubject
-    }
-
     /// The frame for the alpha layer.
-    var alphaLayerFrame: ImmutableObservable<AnimatedFrameUpdate> {
-        return alphaLayerFrameSubject
-    }
-
-    /// Gradient colors for the progress view.
-    var gradientColorList: ImmutableObservable<[UIColor]> {
-        return gradientColorListSubject
+    var animatedAlphaLayerFrameUpdate: ImmutableObservable<AnimatedFrameUpdate> {
+        return animatedAlphaLayerFrameUpdateSubject
     }
 
     /// Bounds for the progress bar.
-    var bounds = CGRect.zero {
+    var bounds: CGRect = .zero {
         didSet {
-            gradientLayerFrameSubject.value = bounds
+            let didChange = bounds != oldValue
+            guard didChange else {
+                // Prevent unnecessary UI-updates, as we set this value from `layoutSubviews()`,
+                // which gets triggered every time the progress value is changed.
+                return
+            }
 
-            setAlphaLayerFrame(for: progress, animated: false)
-        }
-    }
-
-    /// Current progress value.
-    var progress: Float = 0.0 {
-        didSet {
-            guard shouldInformListeners else { return }
-
-            setAlphaLayerFrame(for: progress, animated: false)
+            animatedAlphaLayerFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: false)
         }
     }
 
@@ -77,29 +65,28 @@ class GradientProgressBarViewModel {
 
     // MARK: - Private properties
 
-    /// The frame for the gradient layer.
-    private let gradientLayerFrameSubject: Observable<CGRect> = Observable(.zero)
+    private let animatedAlphaLayerFrameUpdateSubject: Observable<AnimatedFrameUpdate> = Observable(.zero)
 
-    /// The frame for the alpha layer.
-    private let alphaLayerFrameSubject: Observable<AnimatedFrameUpdate> = Observable(.zero)
+    /// Keep track of our internal progress property. We need this e.g. if we rotate the device,
+    /// and therefore have to adjust the alpha-layer-frame according to this property.
+    private var progress: Float = 0.0
 
-    /// Gradient colors for the progress view.
-    private let gradientColorListSubject = Observable(UIColor.defaultGradientColorList)
+    // MARK: - Public methods
 
-    /// Boolean flag, whether setting the `progress` property should inform the listeners.
-    private var shouldInformListeners = true
+    /// Adjusts the current progress, optionally animating the change.
+    ///
+    /// - SeeAlso: `UIProgressView.setProgress(_:animated:)`
+    func setProgress(_ progress: Float, animated: Bool) {
+        self.progress = progress
+
+        animatedAlphaLayerFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: animated)
+    }
 
     // MARK: - Private methods
 
-    private func alphaLayerFrame(for progress: Float) -> CGRect {
+    private func makeFrameUpdateForCurrentProgress(animated: Bool) -> AnimatedFrameUpdate {
         var alphaLayerFrame = bounds
         alphaLayerFrame.size.width *= CGFloat(progress)
-
-        return alphaLayerFrame
-    }
-
-    private func setAlphaLayerFrame(for progress: Float, animated: Bool) {
-        let frame = alphaLayerFrame(for: progress)
 
         let animationDuration: TimeInterval
         if animated {
@@ -108,48 +95,7 @@ class GradientProgressBarViewModel {
             animationDuration = 0.0
         }
 
-        alphaLayerFrameSubject.value = AnimatedFrameUpdate(frame: frame,
-                                                           animationDuration: animationDuration)
-    }
-
-    private func setProgress(_ progress: Float, shouldInformListeners: Bool) {
-        let backedUpShouldInformListeners = self.shouldInformListeners
-        defer {
-            self.shouldInformListeners = backedUpShouldInformListeners
-        }
-
-        self.shouldInformListeners = shouldInformListeners
-
-        self.progress = progress
-    }
-
-    // MARK: - Public methods
-
-    /// Updates the gradient color list.
-    ///
-    /// Parameters:
-    ///  - gradientColorList: New colors to be used as gradient colors.
-    ///
-    /// Note: This is just a public setter for hiding the oberservable implementation.
-    func setGradientColorList(_ gradientColorList: [UIColor]) {
-        gradientColorListSubject.value = gradientColorList
-    }
-
-    /// Returns the colors, currently used for the gradient.
-    ///
-    /// Returns: Current gradient colors list.
-    ///
-    /// Note: This is just a public getter for hiding the oberservable implementation.
-    func getGradientColorList() -> [UIColor] {
-        return gradientColorList.value
-    }
-
-    /// Adjusts the current progress.
-    func setProgress(_ progress: Float, animated: Bool) {
-        // Keep track of our internal progress property without updating the view. E.g. if we rotate the device afterwards,
-        // we have to adjust the frame to our current progress property.
-        setProgress(progress, shouldInformListeners: false)
-
-        setAlphaLayerFrame(for: progress, animated: animated)
+        return AnimatedFrameUpdate(frame: alphaLayerFrame,
+                                   animationDuration: animationDuration)
     }
 }

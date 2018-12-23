@@ -14,12 +14,9 @@ public class GradientProgressBar: UIProgressView {
     // MARK: - Public properties
 
     /// Gradient colors for the progress view.
-    public var gradientColorList: [UIColor] {
-        get {
-            return viewModel.getGradientColorList()
-        }
-        set {
-            viewModel.setGradientColorList(newValue)
+    public var gradientColorList = UIColor.defaultGradientColorList {
+        didSet {
+            gradientLayer.colors = gradientColorList.cgColors
         }
     }
 
@@ -43,27 +40,13 @@ public class GradientProgressBar: UIProgressView {
         }
     }
 
-    public override var bounds: CGRect {
-        didSet {
-            // Workaround to handle orientation change, as `layoutSubviews()` gets triggered each time
-            // the progress value is changed.
-            viewModel.bounds = bounds
-        }
-    }
-
     public override var progress: Float {
         didSet {
-            viewModel.progress = progress
+            viewModel.setProgress(progress, animated: false)
         }
     }
 
     // MARK: - Private properties
-
-    /// Viewmodel containing logic for gradient view.
-    private var viewModel = GradientProgressBarViewModel()
-
-    /// The dispose bag for the observables.
-    private var disposal = Disposal()
 
     /// Layer containing the gradient.
     private var gradientLayer: CAGradientLayer = {
@@ -87,6 +70,12 @@ public class GradientProgressBar: UIProgressView {
         return layer
     }()
 
+    /// Viewmodel containing logic related to the gradient view.
+    private let viewModel = GradientProgressBarViewModel()
+
+    /// The dispose bag for the observables.
+    private var disposal = Disposal()
+
     // MARK: - Constructor
 
     public override init(frame: CGRect) {
@@ -101,17 +90,31 @@ public class GradientProgressBar: UIProgressView {
         commonInit()
     }
 
-    private func commonInit() {
-        setupProgressView()
+    // MARK: - Public methods
 
-        // Initialize / update view model with current properties.
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+
+        // Unfortunately `CALayer` is not affected by autolayout, so any change in the size of the view will not change the gradient layer.
+        // That's why we'll have to update the frame here manually.
+        gradientLayer.frame = bounds
+
+        // Inform the view model about the changed bounds, so it can calculate a new frame for the alpha-layer for the current progress.
         viewModel.bounds = bounds
-        viewModel.progress = progress
+    }
 
-        bindViewModelToView()
+    public override func setProgress(_ progress: Float, animated: Bool) {
+        super.setProgress(progress, animated: animated)
+
+        viewModel.setProgress(progress, animated: animated)
     }
 
     // MARK: - Private methods
+
+    private func commonInit() {
+        setupProgressView()
+        bindViewModelToView()
+    }
 
     private func setupProgressView() {
         backgroundColor = .defaultBackgroundColor
@@ -120,29 +123,18 @@ public class GradientProgressBar: UIProgressView {
         trackTintColor = .clear
         progressTintColor = .clear
 
-        layer.insertSublayer(gradientLayer, at: 0)
-
         // Apply mask to the gradient layer in order to show only the current "progress" of the gradient.
         gradientLayer.mask = alphaMaskLayer
+        gradientLayer.colors = gradientColorList.cgColors
+
+        layer.insertSublayer(gradientLayer, at: 0)
     }
 
     private func bindViewModelToView() {
-        viewModel.gradientLayerFrame.observeDistinct { [weak self] nextValue, _ in
-            self?.update(gradientLayerFrame: nextValue)
+        viewModel.animatedAlphaLayerFrameUpdate.observeDistinct { [weak self] newAnimatedAlphaLayerFrameUpdate, _ in
+            self?.update(alphaLayerFrame: newAnimatedAlphaLayerFrameUpdate.frame,
+                         animationDuration: newAnimatedAlphaLayerFrameUpdate.animationDuration)
         }.add(to: &disposal)
-
-        viewModel.alphaLayerFrame.observeDistinct { [weak self] nextValue, _ in
-            self?.update(alphaLayerFrame: nextValue.frame,
-                         animationDuration: nextValue.animationDuration)
-        }.add(to: &disposal)
-
-        viewModel.gradientColorList.observeDistinct { [weak self] nextValue, _ in
-            self?.update(gradientColorList: nextValue)
-        }.add(to: &disposal)
-    }
-
-    private func update(gradientLayerFrame: CGRect) {
-        gradientLayer.frame = gradientLayerFrame
     }
 
     private func update(alphaLayerFrame: CGRect, animationDuration: TimeInterval) {
@@ -153,17 +145,5 @@ public class GradientProgressBar: UIProgressView {
         alphaMaskLayer.frame = alphaLayerFrame
 
         CATransaction.commit()
-    }
-
-    private func update(gradientColorList: [UIColor]) {
-        gradientLayer.colors = gradientColorList.map({ $0.cgColor })
-    }
-
-    // MARK: - Public methods
-
-    public override func setProgress(_ progress: Float, animated: Bool) {
-        super.setProgress(progress, animated: animated)
-
-        viewModel.setProgress(progress, animated: animated)
     }
 }

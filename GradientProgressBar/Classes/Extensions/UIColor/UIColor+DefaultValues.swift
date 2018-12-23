@@ -12,10 +12,9 @@ extension UIColor {
     /// Default background color for the progress view.
     static let defaultBackgroundColor = UIColor.CustomColors.grey
 
-    /// Default gradient colors for the progress view.
+    /// The default color palette for the gradient colors.
     ///
-    /// Note:
-    ///  - Based on https://codepen.io/marcobiedermann/pen/LExXWW
+    /// - SeeAlso: https://codepen.io/marcobiedermann/pen/LExXWW
     static let defaultGradientColorList = [
         UIColor.CustomColors.green,
         UIColor.CustomColors.blue.malibu,

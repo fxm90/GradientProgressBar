@@ -15,7 +15,7 @@ class GradientProgressBarViewModel {
 
     /// Default animation duration for call to `setProgress(x, animated: true)`.
     ///
-    /// - Note: Equals to `CALayer` default animation duration
+    /// - Note: Equals to `CALayer` default animation duration (https://apple.co/2PVTCsB).
     static let defaultAnimationDuration = 0.25
 
     /// Default animation timing function for animated progress change.

@@ -1,6 +1,6 @@
 //
 //  GradientProgressBarTestCase.swift
-//  GradientProgressBar_Example
+//  GradientProgressBar_Tests
 //
 //  Created by Felix Mau on 10/30/17.
 //  Copyright © 2017 Felix Mau. All rights reserved.

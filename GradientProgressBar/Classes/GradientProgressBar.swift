@@ -9,7 +9,7 @@
 import UIKit
 import Observable
 
-/// `UIProgressView` with a customizable gradient.
+/// A customizable gradient progress bar (`UIProgressView`).
 public class GradientProgressBar: UIProgressView {
     // MARK: - Public properties
 
@@ -20,7 +20,7 @@ public class GradientProgressBar: UIProgressView {
         }
     }
 
-    /// Animation duration for call to `setProgress(x, animated: true)`.
+    /// Animation duration for calls to `setProgress(x, animated: true)`.
     public var animationDuration: TimeInterval {
         get {
             return viewModel.animationDuration
@@ -30,7 +30,7 @@ public class GradientProgressBar: UIProgressView {
         }
     }
 
-    /// Animation timing function for call to `setProgress(x, animated: true)`.
+    /// Animation timing function for calls to `setProgress(x, animated: true)`.
     public var timingFunction: CAMediaTimingFunction {
         get {
             return viewModel.timingFunction
@@ -59,7 +59,7 @@ public class GradientProgressBar: UIProgressView {
         return layer
     }()
 
-    /// Alpha mask for showing only visible "progress"-part of gradient layer.
+    /// Alpha mask for showing only the visible "progress"-part of the gradient layer.
     private var alphaMaskLayer: CALayer = {
         let layer = CALayer()
 
@@ -70,7 +70,7 @@ public class GradientProgressBar: UIProgressView {
         return layer
     }()
 
-    /// Viewmodel containing logic related to the gradient view.
+    /// View-model containing all logic related to the gradient view.
     private let viewModel = GradientProgressBarViewModel()
 
     /// The dispose bag for the observables.
@@ -99,7 +99,7 @@ public class GradientProgressBar: UIProgressView {
         // That's why we'll have to update the frame here manually.
         gradientLayer.frame = bounds
 
-        // Inform the view model about the changed bounds, so it can calculate a new frame for the alpha-layer for the current progress.
+        // Inform the view-model about the changed bounds, so it can calculate a new frame for the alpha-layer for the current progress value.
         viewModel.bounds = bounds
     }
 
@@ -119,11 +119,11 @@ public class GradientProgressBar: UIProgressView {
     private func setupProgressView() {
         backgroundColor = .defaultBackgroundColor
 
-        // Clear tint and progress colors, we'll use our `gradientLayer` for showing progress instead.
+        // Clear tint and progress colors, we'll use our `gradientLayer` for showing the progress instead.
         trackTintColor = .clear
         progressTintColor = .clear
 
-        // Apply mask to the gradient layer in order to show only the current "progress" of the gradient.
+        // Apply the mask to the gradient layer, in order to show only the current progress of the gradient.
         gradientLayer.mask = alphaMaskLayer
         gradientLayer.colors = gradientColorList.cgColors
 

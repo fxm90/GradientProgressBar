@@ -43,7 +43,7 @@ class GradientProgressBarViewModel {
         return animatedAlphaLayerFrameUpdateSubject
     }
 
-    /// Bounds for the progress bar.
+    /// The current bounds of the progress view.
     var bounds: CGRect = .zero {
         didSet {
             let didChange = bounds != oldValue

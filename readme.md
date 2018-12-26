@@ -8,8 +8,7 @@ A customizable gradient progress bar (UIProgressView). Inspired by [iOS 7 Progre
 
 [![Preview](http://felix.hamburg/files/github/gradient-progress-bar/preview.png)](http://felix.hamburg/files/github/gradient-progress-bar/preview.png)
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
+To run the example project, clone the repo, and open the workspace from the Example directory.
 
 ### Integration
 ##### CocoaPods

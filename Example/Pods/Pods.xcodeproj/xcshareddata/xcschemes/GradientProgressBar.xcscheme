@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4E790E8BCFFDA98EBE608087D6405FBD"
+               BlueprintIdentifier = "3892431A074723D5548B2DA4E3181277"
                BuildableName = "GradientProgressBar.framework"
                BlueprintName = "GradientProgressBar"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4E790E8BCFFDA98EBE608087D6405FBD"
+            BlueprintIdentifier = "3892431A074723D5548B2DA4E3181277"
             BuildableName = "GradientProgressBar.framework"
             BlueprintName = "GradientProgressBar"
             ReferencedContainer = "container:Pods.xcodeproj">

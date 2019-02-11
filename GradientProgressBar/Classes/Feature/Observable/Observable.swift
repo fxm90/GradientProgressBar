@@ -8,6 +8,9 @@
 
 import Foundation
 
+// Source
+// https://gist.github.com/fxm90/26357043cfe174fabdeedd07d0f25314
+
 class Observable<T> {
     // MARK: - Types
 

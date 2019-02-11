@@ -8,6 +8,9 @@
 
 import Foundation
 
+// Source
+// https://gist.github.com/fxm90/26357043cfe174fabdeedd07d0f25314
+
 /// Helper to allow storing multiple disposables (and matching name from RxSwift).
 typealias DisposeBag = [Disposable]
 

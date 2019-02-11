@@ -15,9 +15,11 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
     typealias AnimatedFrameUpdate = GradientProgressBarViewModel.AnimatedFrameUpdate
 
-    // MARK: - Test setup
+    // MARK: - Private properties
 
-    var viewModel: GradientProgressBarViewModel!
+    private var viewModel: GradientProgressBarViewModel!
+
+    // MARK: - Public methods
 
     override func setUp() {
         super.setUp()

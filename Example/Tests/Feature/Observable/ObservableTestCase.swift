@@ -79,7 +79,7 @@ class ObservableTestCase: XCTestCase {
             newValue.isEven
         }
 
-        let expectation = self.expectation(description: "Expected five even numbers between zero and nine.")
+        let expectation = self.expectation(description: "Expected five even numbers between `0` and `9`.")
         expectation.expectedFulfillmentCount = 5
 
         let variable = Variable(0)

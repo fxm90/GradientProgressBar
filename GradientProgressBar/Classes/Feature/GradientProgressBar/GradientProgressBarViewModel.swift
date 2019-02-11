@@ -38,8 +38,8 @@ class GradientProgressBarViewModel {
     // MARK: - Public properties
 
     /// The frame for the alpha layer.
-    var alphaLayerAnimatedFrameUpdate: Variable<AnimatedFrameUpdate> {
-        return alphaLayerAnimatedFrameUpdateSubject
+    var alphaLayerAnimatedFrameUpdate: Observable<AnimatedFrameUpdate> {
+        return alphaLayerAnimatedFrameUpdateSubject.asObservable
     }
 
     /// The current bounds of the progress view.

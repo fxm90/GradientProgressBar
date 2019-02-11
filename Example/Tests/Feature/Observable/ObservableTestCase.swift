@@ -73,9 +73,9 @@ class ObservableTestCase: XCTestCase {
 
     // MARK: - Test method `observe(filter:)`
 
-    func testObservableShouldUpdateObserverOnlyIfFilterApplies() {
+    func testObservableShouldUpdateObserverOnlyIfFilterMatches() {
         // Given
-        let filterNewValueIsEven: (Int, Int?) -> Bool = { newValue, _ in
+        let assertNewValueIsEven: (Int, Int?) -> Bool = { newValue, _ in
             newValue.isEven
         }
 
@@ -83,7 +83,7 @@ class ObservableTestCase: XCTestCase {
         expectation.expectedFulfillmentCount = 5
 
         let variable = Variable(0)
-        variable.asObservable.subscribe(filter: filterNewValueIsEven, observer: { newValue, _ in
+        variable.asObservable.subscribe(filter: assertNewValueIsEven, observer: { newValue, _ in
             guard newValue.isEven else {
                 XCTFail("The received value `\(newValue)` is odd!")
                 return
@@ -103,16 +103,49 @@ class ObservableTestCase: XCTestCase {
 
     // MARK: - Test method `observeDistinct(:)`
 
-    func testObservableShouldUpdateDistinctObserverJustOnce() {
+    func testObservableShouldInformDistinctObserverWithCorrectValues() {
         // Given
-        let expectation = self.expectation(description: "Expected distinct observer to be informed just once.")
+        let variable = Variable(0)
+
+        // When
+        variable.asObservable.subscribeDistinct { newValue, oldValue in
+            self.newValue = newValue
+            self.oldValue = oldValue
+        }.add(to: &disposeBag)
+
+        // Then
+        XCTAssertEqual(newValue, 0)
+        XCTAssertNil(oldValue)
+    }
+
+    func testObservableShouldUpdateDistinctObserverWithCorrectValues() {
+        // Given
+        let variable = Variable(0)
+
+        variable.asObservable.subscribeDistinct { newValue, oldValue in
+            self.newValue = newValue
+            self.oldValue = oldValue
+        }.add(to: &disposeBag)
+
+        // When
+        for value in 1 ..< 10 {
+            variable.value = value
+
+            // Then
+            XCTAssertEqual(newValue, value)
+            XCTAssertEqual(oldValue, value - 1)
+        }
+    }
+
+    func testObservableShouldUpdateDistinctObserverJustOnceForSameValue() {
+        // Given
+        let expectation = self.expectation(description: "Expected distinct observer to be informed two times: The inital call and the new value.")
+        expectation.expectedFulfillmentCount = 2
 
         let variable = Variable(0)
-        variable.asObservable.subscribeDistinct { _, oldValue in
-            guard oldValue != nil else {
-                // Skip initial call to observer.
-                return
-            }
+        variable.asObservable.subscribeDistinct { newValue, oldValue in
+            self.newValue = newValue
+            self.oldValue = oldValue
 
             expectation.fulfill()
         }.add(to: &disposeBag)
@@ -120,15 +153,18 @@ class ObservableTestCase: XCTestCase {
         // When
         for _ in 1 ..< 10 {
             variable.value = 1
+
+            // Then
+            XCTAssertEqual(newValue, 1)
+            XCTAssertEqual(oldValue, 0)
         }
 
-        // Then
         waitForExpectations(timeout: 0.1, handler: nil)
     }
 
-    // MARK: - Test deinit of dispose bag
+    // MARK: - Test deallocated dispose bag
 
-    func testObservableShouldNotInformObserverAfterDeinitOfDisposeBag() {
+    func testObservableShouldNotInformObserverAfterDeallocatedDisposeBag() {
         // Given
         let variable = Variable(0)
 

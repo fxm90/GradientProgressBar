@@ -42,17 +42,17 @@ class Observable<T> {
 
     /// Initializes a new observable with the given value.
     ///
-    /// - Note: Declated `fileprivate` in order to prevent directly initializing an observable, which can not be updated.
+    /// - Note: Declared `fileprivate` in order to prevent directly initializing an observable, which can not be updated.
     fileprivate init(_ value: T) {
         self.value = value
     }
 
     // MARK: - Public methods
 
-    /// Adds an observer, that is notified on changes to our `value`.
+    /// Informs the given observer on changes to our `value`.
     ///
     /// - Parameter observer: The observer-closure that is notified on changes.
-    func observe(_ observer: @escaping Observer) -> Disposable {
+    func subscribe(_ observer: @escaping Observer) -> Disposable {
         let currentIndex = lastIndex + 1
         observers[currentIndex] = observer
 
@@ -61,7 +61,7 @@ class Observable<T> {
         // Inform observer with initial value.
         observer(value, nil)
 
-        // Return a disposable, that removes the entry for this observable when it's deallocated.
+        // Return a disposable, that removes the entry for this observer when it's deallocated.
         return Disposable { [weak self] in
             self?.observers[currentIndex] = nil
         }
@@ -75,32 +75,32 @@ extension Observable where T: Equatable {
 
     // MARK: - Public methods
 
-    /// Adds an observer, that is notified on changes to our `value` if the given filter applies.
+    /// Informs the given observer on changes to our `value`, if the given filter matches.
     ///
     /// - Parameters:
     ///   - filter: The filer-closure, that must return `true` in order for the observer to be notified.
     ///   - observer: The observer-closure that is notified on changes.
-    func observe(filter: @escaping Filter, observer: @escaping Observer) -> Disposable {
-        return observe { nextValue, prevValue in
+    func subscribe(filter: @escaping Filter, observer: @escaping Observer) -> Disposable {
+        return subscribe { nextValue, prevValue in
             guard filter(nextValue, prevValue) else { return }
 
             observer(nextValue, prevValue)
         }
     }
 
-    /// Adds an observer, that is notified on **distinct** changes to our `value`.
+    /// Informs the given observer on **distinct** changes to our `value`.
     ///
     /// - Parameter observer: The observer-closure that is notified on changes.
-    func observeDistinct(_ observer: @escaping Observer) -> Disposable {
-        return observe(filter: { $0 != $1 },
-                       observer: observer)
+    func subscribeDistinct(_ observer: @escaping Observer) -> Disposable {
+        return subscribe(filter: { $0 != $1 },
+                         observer: observer)
     }
 }
 
 final class Variable<T>: Observable<T> {
     // MARK: - Public properties
 
-    /// The current variable converted to an `Observable`.
+    /// The current variable converted to an (readonly) `Observable`.
     var asObservable: Observable<T> {
         return self as Observable
     }

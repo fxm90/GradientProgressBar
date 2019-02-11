@@ -78,7 +78,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
         var observerCounter = 0
         var disposeBag = DisposeBag()
-        viewModel.alphaLayerAnimatedFrameUpdate.observe { _, oldAlphaLayerAnimatedFrameUpdate in
+        viewModel.alphaLayerAnimatedFrameUpdate.subscribe { _, oldAlphaLayerAnimatedFrameUpdate in
             guard oldAlphaLayerAnimatedFrameUpdate != nil else {
                 // Skip initial call to observer.
                 return

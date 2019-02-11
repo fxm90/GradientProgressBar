@@ -42,7 +42,7 @@ class ObservableTestCase: XCTestCase {
         let variable = Variable(0)
 
         // When
-        variable.asObservable.observe { newValue, oldValue in
+        variable.asObservable.subscribe { newValue, oldValue in
             self.newValue = newValue
             self.oldValue = oldValue
         }.add(to: &disposeBag)
@@ -56,7 +56,7 @@ class ObservableTestCase: XCTestCase {
         // Given
         let variable = Variable(0)
 
-        variable.asObservable.observe { newValue, oldValue in
+        variable.asObservable.subscribe { newValue, oldValue in
             self.newValue = newValue
             self.oldValue = oldValue
         }.add(to: &disposeBag)
@@ -83,7 +83,7 @@ class ObservableTestCase: XCTestCase {
         expectation.expectedFulfillmentCount = 5
 
         let variable = Variable(0)
-        variable.asObservable.observe(filter: filterNewValueIsEven, observer: { newValue, _ in
+        variable.asObservable.subscribe(filter: filterNewValueIsEven, observer: { newValue, _ in
             guard newValue.isEven else {
                 XCTFail("The received value `\(newValue)` is odd!")
                 return
@@ -108,7 +108,7 @@ class ObservableTestCase: XCTestCase {
         let expectation = self.expectation(description: "Expected distinct observer to be informed just once.")
 
         let variable = Variable(0)
-        variable.asObservable.observeDistinct { _, oldValue in
+        variable.asObservable.subscribeDistinct { _, oldValue in
             guard oldValue != nil else {
                 // Skip initial call to observer.
                 return
@@ -132,7 +132,7 @@ class ObservableTestCase: XCTestCase {
         // Given
         let variable = Variable(0)
 
-        variable.asObservable.observe { newValue, oldValue in
+        variable.asObservable.subscribe { newValue, oldValue in
             self.newValue = newValue
             self.oldValue = oldValue
         }.add(to: &disposeBag)

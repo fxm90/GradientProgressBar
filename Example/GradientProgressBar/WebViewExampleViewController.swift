@@ -10,6 +10,9 @@ import UIKit
 import WebKit
 import GradientProgressBar
 
+// Based on
+// https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931
+
 class WebViewExampleViewController: UIViewController {
     // MARK: - Outlets
 

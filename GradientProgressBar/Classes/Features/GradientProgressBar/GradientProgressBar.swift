@@ -9,7 +9,7 @@
 import UIKit
 
 /// A customizable gradient progress bar (`UIProgressView`).
-public class GradientProgressBar: UIProgressView {
+open class GradientProgressBar: UIProgressView {
     // MARK: - Public properties
 
     /// Gradient colors for the progress view.
@@ -39,7 +39,7 @@ public class GradientProgressBar: UIProgressView {
         }
     }
 
-    public override var progress: Float {
+    open override var progress: Float {
         didSet {
             viewModel.setProgress(progress)
         }
@@ -91,7 +91,7 @@ public class GradientProgressBar: UIProgressView {
 
     // MARK: - Public methods
 
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
 
         // Unfortunately `CALayer` is not affected by autolayout, so any change in the size of the view will not change the gradient layer.
@@ -102,7 +102,7 @@ public class GradientProgressBar: UIProgressView {
         viewModel.bounds = bounds
     }
 
-    public override func setProgress(_ progress: Float, animated: Bool) {
+    open override func setProgress(_ progress: Float, animated: Bool) {
         super.setProgress(progress, animated: animated)
 
         viewModel.setProgress(progress, animated: animated)

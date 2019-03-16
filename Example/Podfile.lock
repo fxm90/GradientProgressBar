@@ -1,5 +1,5 @@
 PODS:
-  - GradientProgressBar (1.2.6)
+  - GradientProgressBar (1.2.7)
   - SwiftFormat/CLI (0.39.5)
   - SwiftLint (0.31.0)
 
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GradientProgressBar: 3252133e0b558e6503b5df7bbb3af9af02924950
+  GradientProgressBar: a5754d3b3052b84c1c55d336dccd080ffbad5b11
   SwiftFormat: 082b6ee68dbf8ba1bee9e8cd508ddb094f535fbb
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 

@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.2.8] - 2019-04-04
+### Changed
+ - Added support for Swift 5.0
+
 ## [1.2.7] - 2019-03-16
 ### Changed
 - Changed class access control to `open` in order to allow subclassing `GradientProgressBar` (fixes issue [#5](https://github.com/fxm90/GradientProgressBar/issues/5)).
@@ -88,7 +92,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Initial release
 
 
-[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.2.7...master
+[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.2.8...master
+[1.2.7]: https://github.com/fxm90/GradientProgressBar/compare/1.2.7...1.2.8
 [1.2.7]: https://github.com/fxm90/GradientProgressBar/compare/1.2.6...1.2.7
 [1.2.6]: https://github.com/fxm90/GradientProgressBar/compare/1.2.5...1.2.6
 [1.2.5]: https://github.com/fxm90/GradientProgressBar/compare/1.2.4...1.2.5

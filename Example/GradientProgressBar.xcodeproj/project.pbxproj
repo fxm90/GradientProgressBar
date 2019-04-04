@@ -19,6 +19,7 @@
 		6445D60B2211098B0050DFB4 /* DisposableTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6445D60A2211098B0050DFB4 /* DisposableTestCase.swift */; };
 		6445D60D221109970050DFB4 /* ObservableTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6445D60C221109970050DFB4 /* ObservableTestCase.swift */; };
 		64C7D17F21CFA93B006C2207 /* ArrayCGColorsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C7D17E21CFA93B006C2207 /* ArrayCGColorsTestCase.swift */; };
+		64CA391D2255EBD3002B83C8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CA391C2255EBD3002B83C8 /* WebKit.framework */; };
 		97AF80D82157238D009B7566 /* WebViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF80D72157238D009B7566 /* WebViewExampleViewController.swift */; };
 		97DBEFBF2131364B006399E1 /* AdvancedExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBEFBE2131364B006399E1 /* AdvancedExampleViewController.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		6445D60A2211098B0050DFB4 /* DisposableTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableTestCase.swift; sourceTree = "<group>"; };
 		6445D60C221109970050DFB4 /* ObservableTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableTestCase.swift; sourceTree = "<group>"; };
 		64C7D17E21CFA93B006C2207 /* ArrayCGColorsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayCGColorsTestCase.swift; sourceTree = "<group>"; };
+		64CA391C2255EBD3002B83C8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		97AF80D72157238D009B7566 /* WebViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewExampleViewController.swift; sourceTree = "<group>"; };
 		97DBEFBE2131364B006399E1 /* AdvancedExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedExampleViewController.swift; sourceTree = "<group>"; };
 		99AF8B41726EDDA3CC894825 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64CA391D2255EBD3002B83C8 /* WebKit.framework in Frameworks */,
 				1986A067E4FB6B1E25150875 /* Pods_GradientProgressBar_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +203,7 @@
 		D91CF1FC4E693F065D5250E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				64CA391C2255EBD3002B83C8 /* WebKit.framework */,
 				CD5408C07FBE29B49AECF73C /* Pods_GradientProgressBar_Example.framework */,
 				C0A7E4E3A01ED5AFE596220F /* Pods_GradientProgressBar_Tests.framework */,
 			);

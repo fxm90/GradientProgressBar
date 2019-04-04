@@ -13,6 +13,6 @@ extension Array where Element: UIColor {
     ///
     /// - SeeAlso: Definition of `cgColor` on `UIColor`.
     var cgColors: [CGColor] {
-        return map({ $0.cgColor })
+        return map { $0.cgColor }
     }
 }

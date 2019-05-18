@@ -336,10 +336,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GradientProgressBar_Example/Pods-GradientProgressBar_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GradientProgressBar/GradientProgressBar.framework",
+				"${BUILT_PRODUCTS_DIR}/LightweightObservable/LightweightObservable.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GradientProgressBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LightweightObservable.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

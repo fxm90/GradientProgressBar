@@ -16,8 +16,6 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		6445D608221109480050DFB4 /* GradientProgressBarViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6445D606221109480050DFB4 /* GradientProgressBarViewModelTestCase.swift */; };
 		6445D609221109480050DFB4 /* GradientProgressBarTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6445D607221109480050DFB4 /* GradientProgressBarTestCase.swift */; };
-		6445D60B2211098B0050DFB4 /* DisposableTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6445D60A2211098B0050DFB4 /* DisposableTestCase.swift */; };
-		6445D60D221109970050DFB4 /* ObservableTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6445D60C221109970050DFB4 /* ObservableTestCase.swift */; };
 		64C7D17F21CFA93B006C2207 /* ArrayCGColorsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C7D17E21CFA93B006C2207 /* ArrayCGColorsTestCase.swift */; };
 		64CA391D2255EBD3002B83C8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CA391C2255EBD3002B83C8 /* WebKit.framework */; };
 		97AF80D82157238D009B7566 /* WebViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF80D72157238D009B7566 /* WebViewExampleViewController.swift */; };
@@ -49,8 +47,6 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6445D606221109480050DFB4 /* GradientProgressBarViewModelTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressBarViewModelTestCase.swift; sourceTree = "<group>"; };
 		6445D607221109480050DFB4 /* GradientProgressBarTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressBarTestCase.swift; sourceTree = "<group>"; };
-		6445D60A2211098B0050DFB4 /* DisposableTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableTestCase.swift; sourceTree = "<group>"; };
-		6445D60C221109970050DFB4 /* ObservableTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableTestCase.swift; sourceTree = "<group>"; };
 		64C7D17E21CFA93B006C2207 /* ArrayCGColorsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayCGColorsTestCase.swift; sourceTree = "<group>"; };
 		64CA391C2255EBD3002B83C8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		97AF80D72157238D009B7566 /* WebViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewExampleViewController.swift; sourceTree = "<group>"; };
@@ -160,19 +156,9 @@
 		6445D603221109480050DFB4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				6445D604221109480050DFB4 /* Observable */,
 				6445D605221109480050DFB4 /* GradientProgressBar */,
 			);
 			path = Feature;
-			sourceTree = "<group>";
-		};
-		6445D604221109480050DFB4 /* Observable */ = {
-			isa = PBXGroup;
-			children = (
-				6445D60A2211098B0050DFB4 /* DisposableTestCase.swift */,
-				6445D60C221109970050DFB4 /* ObservableTestCase.swift */,
-			);
-			path = Observable;
 			sourceTree = "<group>";
 		};
 		6445D605221109480050DFB4 /* GradientProgressBar */ = {
@@ -459,8 +445,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				64C7D17F21CFA93B006C2207 /* ArrayCGColorsTestCase.swift in Sources */,
-				6445D60B2211098B0050DFB4 /* DisposableTestCase.swift in Sources */,
-				6445D60D221109970050DFB4 /* ObservableTestCase.swift in Sources */,
 				6445D609221109480050DFB4 /* GradientProgressBarTestCase.swift in Sources */,
 				6445D608221109480050DFB4 /* GradientProgressBarViewModelTestCase.swift in Sources */,
 			);

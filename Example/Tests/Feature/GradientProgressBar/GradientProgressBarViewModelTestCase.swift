@@ -9,6 +9,7 @@
 import XCTest
 
 @testable import GradientProgressBar
+@testable import LightweightObservable
 
 class GradientProgressBarViewModelTestCase: XCTestCase {
     // MARK: - Types
@@ -85,7 +86,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
             }
 
             observerCounter += 1
-        }.add(to: &disposeBag)
+        }.disposed(by: &disposeBag)
 
         // When
         for _ in 1 ... 3 {

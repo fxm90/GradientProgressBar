@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LightweightObservable
 
 /// A customizable gradient progress bar (`UIProgressView`).
 open class GradientProgressBar: UIProgressView {
@@ -133,7 +134,7 @@ open class GradientProgressBar: UIProgressView {
         viewModel.alphaLayerAnimatedFrameUpdate.subscribeDistinct { [weak self] newAlphaLayerAnimatedFrameUpdate, _ in
             self?.update(alphaLayerFrame: newAlphaLayerAnimatedFrameUpdate.frame,
                          animationDuration: newAlphaLayerAnimatedFrameUpdate.animationDuration)
-        }.add(to: &disposeBag)
+        }.disposed(by: &disposeBag)
     }
 
     private func update(alphaLayerFrame: CGRect, animationDuration: TimeInterval) {

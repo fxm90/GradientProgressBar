@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import LightweightObservable
 
 /// This view model keeps track of the progress-value and updates the `alphaLayerFrame` accordingly.
 class GradientProgressBarViewModel {

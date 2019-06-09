@@ -7,6 +7,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+
+## [1.2.9] - 2019-09-06
+### Fixed
+ - Fix Carthage build failed due to non shared scheme 
+### Changed
+ - Moved observable implementation into a framework (`LightweightObservable`) and added it as dependency
+
 ## [1.2.8] - 2019-04-04
 ### Changed
  - Added support for Swift 5.0
@@ -92,8 +99,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Initial release
 
 
-[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.2.8...master
-[1.2.7]: https://github.com/fxm90/GradientProgressBar/compare/1.2.7...1.2.8
+[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.2.9...master
+[1.2.9]: https://github.com/fxm90/GradientProgressBar/compare/1.2.8...1.2.9
+[1.2.8]: https://github.com/fxm90/GradientProgressBar/compare/1.2.7...1.2.8
 [1.2.7]: https://github.com/fxm90/GradientProgressBar/compare/1.2.6...1.2.7
 [1.2.6]: https://github.com/fxm90/GradientProgressBar/compare/1.2.5...1.2.6
 [1.2.5]: https://github.com/fxm90/GradientProgressBar/compare/1.2.4...1.2.5

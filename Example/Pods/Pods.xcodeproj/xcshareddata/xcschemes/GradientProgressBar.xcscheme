@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1B356FE7DA3008C46E4B97979D3EE6E4"
+               BlueprintIdentifier = "9A2E4209411D60DE0B4FC5F2711D39FD"
                BuildableName = "GradientProgressBar.framework"
                BlueprintName = "GradientProgressBar"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1B356FE7DA3008C46E4B97979D3EE6E4"
+            BlueprintIdentifier = "9A2E4209411D60DE0B4FC5F2711D39FD"
             BuildableName = "GradientProgressBar.framework"
             BlueprintName = "GradientProgressBar"
             ReferencedContainer = "container:Pods.xcodeproj">

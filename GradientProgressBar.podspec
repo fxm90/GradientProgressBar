@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GradientProgressBar'
-  s.version          = '1.2.8'
+  s.version          = '1.2.9'
   s.summary          = 'A customizable gradient progress bar (UIProgressView).'
 
 # This description is used to generate tags and improve search results.

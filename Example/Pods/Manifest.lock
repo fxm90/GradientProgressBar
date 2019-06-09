@@ -1,9 +1,9 @@
 PODS:
   - GradientProgressBar (1.2.8):
     - LightweightObservable (~> 1.0)
-  - LightweightObservable (1.0.0)
-  - SwiftFormat/CLI (0.40.4)
-  - SwiftLint (0.31.0)
+  - LightweightObservable (1.0.1)
+  - SwiftFormat/CLI (0.40.9)
+  - SwiftLint (0.33.0)
 
 DEPENDENCIES:
   - GradientProgressBar (from `../`)
@@ -22,9 +22,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   GradientProgressBar: 6d672580bf8ccb20801928e889283083051153cf
-  LightweightObservable: 4d3baddc9949ce29327fab825e48fad8b41502e7
-  SwiftFormat: cc36377840cffa5d0634782875dccf34dc02ff39
-  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+  LightweightObservable: d723535b481a5ac7853d4e423779c636534542ab
+  SwiftFormat: 6b67b6e7fe73d664f0cbb4f13721f130462c86a5
+  SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
 
 PODFILE CHECKSUM: 5e1594ff360bdeea487280fd19bc31d92a5ab6ba
 

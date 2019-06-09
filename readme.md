@@ -69,7 +69,7 @@ progressView.gradientColorList: [UIColor] = [
 #### – Property `timingFunction`
 As of version __1.2.0__ you can further adjust the timing function. Therefore, you'll have to pass an instance of `CAMediaTimingFunction` to the property `timingFunction`.
 ```swift
-progressView.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
+progressView.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 ```
 
 ### Show progress of `WKWebView`

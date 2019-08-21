@@ -46,7 +46,7 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9A2E4209411D60DE0B4FC5F2711D39FD"
+            BlueprintIdentifier = "02A49EFF333D539AFC033A5F1B8B0A45"
             BuildableName = "GradientProgressBar.framework"
             BlueprintName = "GradientProgressBar"
             ReferencedContainer = "container:Pods/Pods.xcodeproj">

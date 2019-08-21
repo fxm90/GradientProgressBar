@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x3C-0W-Nfd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x3C-0W-Nfd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,22 +21,31 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyT-bH-MJF" userLabel="Wrapper View">
                                 <rect key="frame" x="0.0" y="150" width="375" height="473"/>
                                 <subviews>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mId-Y2-jaz" customClass="GradientProgressBar" customModule="GradientProgressBar">
-                                        <rect key="frame" x="20" y="235.5" width="335" height="2"/>
-                                    </progressView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="paV-Jd-DiT" customClass="GradientProgressBar" customModule="GradientProgressBar">
+                                        <rect key="frame" x="16" y="235.5" width="343" height="2"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="fOz-ay-jbP"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="mId-Y2-jaz" secondAttribute="trailing" constant="20" id="Zdk-De-Hne"/>
-                                    <constraint firstItem="mId-Y2-jaz" firstAttribute="centerY" secondItem="iyT-bH-MJF" secondAttribute="centerY" id="uEf-CF-MID"/>
-                                    <constraint firstItem="mId-Y2-jaz" firstAttribute="leading" secondItem="iyT-bH-MJF" secondAttribute="leading" constant="20" id="xls-J4-U7T"/>
+                                    <constraint firstItem="paV-Jd-DiT" firstAttribute="leading" secondItem="iyT-bH-MJF" secondAttribute="leading" constant="16" id="RJ3-np-qJf"/>
+                                    <constraint firstItem="paV-Jd-DiT" firstAttribute="centerY" secondItem="iyT-bH-MJF" secondAttribute="centerY" id="cq5-TA-jDX"/>
+                                    <constraint firstAttribute="trailing" secondItem="paV-Jd-DiT" secondAttribute="trailing" constant="16" id="rjI-L7-w7i"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="255-p6-29l" userLabel="Button Stack View">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAz-ki-O4J">
-                                        <rect key="frame" x="0.0" y="7" width="119.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="13" width="119.5" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -48,7 +57,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06F-hP-RAe">
-                                        <rect key="frame" x="127.5" y="7" width="120" height="30"/>
+                                        <rect key="frame" x="127.5" y="13" width="120" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="titleEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Set Progress" image="services">
@@ -59,7 +68,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBz-Y4-LoE">
-                                        <rect key="frame" x="255.5" y="7" width="119.5" height="30"/>
+                                        <rect key="frame" x="255.5" y="13" width="119.5" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -96,7 +105,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="gradientProgressBar" destination="mId-Y2-jaz" id="jOT-uC-Z2R"/>
+                        <outlet property="gradientProgressBar" destination="paV-Jd-DiT" id="iK4-52-LnI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -114,15 +123,24 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdN-O6-x0x" userLabel="Wrapper View">
                                 <rect key="frame" x="0.0" y="150" width="375" height="473"/>
                                 <subviews>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TB5-yb-pAn" customClass="GradientProgressBar" customModule="GradientProgressBar">
-                                        <rect key="frame" x="20" y="235.5" width="335" height="2"/>
-                                    </progressView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AiD-8Z-1cp" customClass="GradientProgressBar" customModule="GradientProgressBar">
+                                        <rect key="frame" x="16" y="235.5" width="343" height="2"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="iM6-9E-PRE"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="TB5-yb-pAn" firstAttribute="leading" secondItem="bdN-O6-x0x" secondAttribute="leading" constant="20" id="DHA-y1-Rl3"/>
-                                    <constraint firstItem="TB5-yb-pAn" firstAttribute="centerY" secondItem="bdN-O6-x0x" secondAttribute="centerY" id="hFB-WJ-Ha0"/>
-                                    <constraint firstAttribute="trailing" secondItem="TB5-yb-pAn" secondAttribute="trailing" constant="20" id="xru-Km-aqf"/>
+                                    <constraint firstAttribute="trailing" secondItem="AiD-8Z-1cp" secondAttribute="trailing" constant="16" id="1Vv-Ze-Xau"/>
+                                    <constraint firstItem="AiD-8Z-1cp" firstAttribute="centerY" secondItem="bdN-O6-x0x" secondAttribute="centerY" id="LdJ-iU-At2"/>
+                                    <constraint firstItem="AiD-8Z-1cp" firstAttribute="leading" secondItem="bdN-O6-x0x" secondAttribute="leading" constant="16" id="M2o-U3-QFe"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MmE-Bl-iPI" userLabel="Button Stack View">
@@ -191,7 +209,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="gradientProgressBar" destination="TB5-yb-pAn" id="DxS-Dq-oZg"/>
+                        <outlet property="gradientProgressBar" destination="AiD-8Z-1cp" id="sVm-1r-cNb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQ4-9w-baT" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,8 +9,21 @@
 import UIKit
 import LightweightObservable
 
+///
+protocol UIProgressHandling {
+    ///
+    var progress: Float { get set }
+
+    ///
+    func setProgress(_ progress: Float, animated: Bool)
+}
+
+///
+extension UIProgressView: UIProgressHandling {}
+
 /// A customizable gradient progress bar (`UIProgressView`).
-open class GradientProgressBar: UIProgressView {
+@IBDesignable
+open class GradientProgressBar: UIView, UIProgressHandling {
     // MARK: - Public properties
 
     /// Gradient colors for the progress view.
@@ -40,10 +53,16 @@ open class GradientProgressBar: UIProgressView {
         }
     }
 
-    open override var progress: Float {
+    @IBInspectable
+    open var progress: Float = 0.5 {
         didSet {
             viewModel.setProgress(progress)
         }
+    }
+
+    open override var intrinsicContentSize: CGSize {
+        return CGSize(width: UIView.noIntrinsicMetric,
+                      height: 2.0)
     }
 
     // MARK: - Private properties
@@ -103,9 +122,7 @@ open class GradientProgressBar: UIProgressView {
         viewModel.bounds = bounds
     }
 
-    open override func setProgress(_ progress: Float, animated: Bool) {
-        super.setProgress(progress, animated: animated)
-
+    open func setProgress(_ progress: Float, animated: Bool) {
         viewModel.setProgress(progress, animated: animated)
     }
 
@@ -118,10 +135,6 @@ open class GradientProgressBar: UIProgressView {
 
     private func setupProgressView() {
         backgroundColor = .defaultBackgroundColor
-
-        // Clear tint and progress colors, we'll use our `gradientLayer` for showing the progress instead.
-        trackTintColor = .clear
-        progressTintColor = .clear
 
         // Apply the mask to the gradient layer, in order to show only the current progress of the gradient.
         gradientLayer.mask = alphaMaskLayer

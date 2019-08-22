@@ -54,9 +54,12 @@ open class GradientProgressBar: UIView, UIProgressHandling {
     }
 
     @IBInspectable
-    open var progress: Float = 0.5 {
-        didSet {
-            viewModel.setProgress(progress)
+    open var progress: Float {
+        get {
+            return viewModel.progress
+        }
+        set {
+            viewModel.progress = newValue
         }
     }
 
@@ -79,7 +82,7 @@ open class GradientProgressBar: UIView, UIProgressHandling {
     }()
 
     /// Alpha mask for showing only the visible "progress"-part of the gradient layer.
-    private var alphaMaskLayer: CALayer = {
+    private var maskLayer: CALayer = {
         let layer = CALayer()
 
         layer.anchorPoint = .zero
@@ -137,16 +140,16 @@ open class GradientProgressBar: UIView, UIProgressHandling {
         backgroundColor = .defaultBackgroundColor
 
         // Apply the mask to the gradient layer, in order to show only the current progress of the gradient.
-        gradientLayer.mask = alphaMaskLayer
+        gradientLayer.mask = maskLayer
         gradientLayer.colors = gradientColorList.cgColors
 
         layer.insertSublayer(gradientLayer, at: 0)
     }
 
     private func bindViewModelToView() {
-        viewModel.alphaLayerAnimatedFrameUpdate.subscribeDistinct { [weak self] newAlphaLayerAnimatedFrameUpdate, _ in
-            self?.update(alphaLayerFrame: newAlphaLayerAnimatedFrameUpdate.frame,
-                         animationDuration: newAlphaLayerAnimatedFrameUpdate.animationDuration)
+        viewModel.maskLayerFrameUpdate.subscribeDistinct { [weak self] newMaskLayerFrameUpdate, _ in
+            self?.update(alphaLayerFrame: newMaskLayerFrameUpdate.frame,
+                         animationDuration: newMaskLayerFrameUpdate.animationDuration)
         }.disposed(by: &disposeBag)
     }
 
@@ -155,7 +158,7 @@ open class GradientProgressBar: UIView, UIProgressHandling {
         CATransaction.setAnimationDuration(animationDuration)
         CATransaction.setAnimationTimingFunction(viewModel.timingFunction)
 
-        alphaMaskLayer.frame = alphaLayerFrame
+        maskLayer.frame = alphaLayerFrame
 
         CATransaction.commit()
     }

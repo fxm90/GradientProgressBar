@@ -39,8 +39,8 @@ class GradientProgressBarViewModel {
     // MARK: - Public properties
 
     /// The frame for the alpha layer.
-    var alphaLayerAnimatedFrameUpdate: Observable<AnimatedFrameUpdate> {
-        return alphaLayerAnimatedFrameUpdateSubject.asObservable
+    var maskLayerFrameUpdate: Observable<AnimatedFrameUpdate> {
+        return maskLayerFrameUpdateSubject.asObservable
     }
 
     /// The current bounds of the progress view.
@@ -48,12 +48,20 @@ class GradientProgressBarViewModel {
         didSet {
             let didChange = bounds != oldValue
             guard didChange else {
-                // Prevent unnecessary UI-updates, as we set this value from `layoutSubviews()`,
-                // which gets triggered every time the progress value is changed.
+                // Prevent unnecessary UI-updates.
                 return
             }
 
-            alphaLayerAnimatedFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: false)
+            maskLayerFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: false)
+        }
+    }
+
+    ///
+    var progress: Float = 0.5 {
+        didSet {
+            guard shouldUpdateMaskLayerFrameOnProgressChange else { return }
+
+            maskLayerFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: false)
         }
     }
 
@@ -65,11 +73,11 @@ class GradientProgressBarViewModel {
 
     // MARK: - Private properties
 
-    private let alphaLayerAnimatedFrameUpdateSubject: Variable<AnimatedFrameUpdate> = Variable(.zero)
+    private let maskLayerFrameUpdateSubject: Variable<AnimatedFrameUpdate> = Variable(.zero)
 
-    /// Keep track of our internal progress property. We need this e.g. if we rotate the device,
-    /// and therefore have to adjust the alpha-layer-frame according to this property.
-    private var progress: Float = 0.0
+    ///
+    private var shouldUpdateMaskLayerFrameOnProgressChange = true
+    // swiftlint:disable:previous identifier_name
 
     // MARK: - Public methods
 
@@ -77,9 +85,12 @@ class GradientProgressBarViewModel {
     ///
     /// - SeeAlso: `UIProgressView.setProgress(_:animated:)`
     func setProgress(_ progress: Float, animated: Bool = false) {
+        //
+        shouldUpdateMaskLayerFrameOnProgressChange = false
         self.progress = progress
+        shouldUpdateMaskLayerFrameOnProgressChange = true
 
-        alphaLayerAnimatedFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: animated)
+        maskLayerFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: animated)
     }
 
     // MARK: - Private methods

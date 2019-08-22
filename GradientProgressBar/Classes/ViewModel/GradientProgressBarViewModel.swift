@@ -24,23 +24,23 @@ class GradientProgressBarViewModel {
     // MARK: - Types
 
     /// Combines all properties for an animated update of a frame.
-    struct AnimatedFrameUpdate: Equatable {
+    struct FrameAnimation: Equatable {
         /// Initializes the struct with all values set to zero.
-        static let zero = AnimatedFrameUpdate(frame: .zero,
-                                              animationDuration: 0.0)
+        static let zero = FrameAnimation(frame: .zero,
+                                         duration: 0.0)
 
-        /// The new frame.
+        /// The new rect for the frame.
         let frame: CGRect
 
         /// The animation duration to update the frame with.
-        let animationDuration: TimeInterval
+        let duration: TimeInterval
     }
 
     // MARK: - Public properties
 
     /// The frame for the alpha layer.
-    var maskLayerFrameUpdate: Observable<AnimatedFrameUpdate> {
-        return maskLayerFrameUpdateSubject.asObservable
+    var maskLayerFrameAnimation: Observable<FrameAnimation> {
+        return maskLayerFrameAnimationSubject.asObservable
     }
 
     /// The current bounds of the progress view.
@@ -52,16 +52,16 @@ class GradientProgressBarViewModel {
                 return
             }
 
-            maskLayerFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: false)
+            maskLayerFrameAnimationSubject.value = makeMaskLayerFrameAnimationForCurrentProgress(animated: false)
         }
     }
 
-    ///
+    /// The current progress.
     var progress: Float = 0.5 {
         didSet {
             guard shouldUpdateMaskLayerFrameOnProgressChange else { return }
 
-            maskLayerFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: false)
+            maskLayerFrameAnimationSubject.value = makeMaskLayerFrameAnimationForCurrentProgress(animated: false)
         }
     }
 
@@ -73,31 +73,33 @@ class GradientProgressBarViewModel {
 
     // MARK: - Private properties
 
-    private let maskLayerFrameUpdateSubject: Variable<AnimatedFrameUpdate> = Variable(.zero)
+    private let maskLayerFrameAnimationSubject: Variable<FrameAnimation> = Variable(.zero)
 
+    /// Boolean flag whether we should calculate a new frame for the mask-layer
+    /// on setting the `progress` value.
     ///
+    /// - SeeAlso: `setProgress(_:animated:)`
     private var shouldUpdateMaskLayerFrameOnProgressChange = true
     // swiftlint:disable:previous identifier_name
 
     // MARK: - Public methods
 
     /// Adjusts the current progress, optionally animating the change.
-    ///
-    /// - SeeAlso: `UIProgressView.setProgress(_:animated:)`
     func setProgress(_ progress: Float, animated: Bool = false) {
-        //
+        // We don't want to update the mask-layer frame on setting the progress value,
+        // as we might have to do it animated.
         shouldUpdateMaskLayerFrameOnProgressChange = false
         self.progress = progress
         shouldUpdateMaskLayerFrameOnProgressChange = true
 
-        maskLayerFrameUpdateSubject.value = makeFrameUpdateForCurrentProgress(animated: animated)
+        maskLayerFrameAnimationSubject.value = makeMaskLayerFrameAnimationForCurrentProgress(animated: animated)
     }
 
     // MARK: - Private methods
 
-    private func makeFrameUpdateForCurrentProgress(animated: Bool) -> AnimatedFrameUpdate {
-        var alphaLayerFrame = bounds
-        alphaLayerFrame.size.width *= CGFloat(progress)
+    private func makeMaskLayerFrameAnimationForCurrentProgress(animated: Bool) -> FrameAnimation {
+        var maskLayerFrame = bounds
+        maskLayerFrame.size.width *= CGFloat(progress)
 
         let animationDuration: TimeInterval
         if animated {
@@ -106,7 +108,7 @@ class GradientProgressBarViewModel {
             animationDuration = 0.0
         }
 
-        return AnimatedFrameUpdate(frame: alphaLayerFrame,
-                                   animationDuration: animationDuration)
+        return FrameAnimation(frame: maskLayerFrame,
+                              duration: animationDuration)
     }
 }

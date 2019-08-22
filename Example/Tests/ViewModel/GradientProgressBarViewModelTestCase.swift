@@ -14,7 +14,7 @@ import XCTest
 class GradientProgressBarViewModelTestCase: XCTestCase {
     // MARK: - Types
 
-    typealias AnimatedFrameUpdate = GradientProgressBarViewModel.AnimatedFrameUpdate
+    typealias FrameAnimation = GradientProgressBarViewModel.FrameAnimation
 
     // MARK: - Private properties
 
@@ -36,8 +36,8 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
     // MARK: - Test initializer
 
-    func testInitializerShouldSetLayerMaskFrameToZero() {
-        XCTAssertEqual(viewModel.maskLayerFrameUpdate.value, .zero)
+    func testInitializerShouldSetMaskLayerFrameAnimationToZero() {
+        XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, .zero)
     }
 
     func testInitializerShouldSetAnimationDurationToStaticConfigurationProperty() {
@@ -50,7 +50,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
     // MARK: - Test setting property `bounds`
 
-    func testSettingBoundsShouldUpdateLayerMaskFrameWithCorrectFrameButWithoutAnimationDuration() {
+    func testSettingBoundsShouldUpdateMaskLayerFrameAnimationWithCorrectFrameButWithoutDuration() {
         // Given
         let progress: Float = 0.25
         viewModel.setProgress(progress)
@@ -64,13 +64,13 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         var expectedFrame = bounds
         expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedLayerMaskFrame = AnimatedFrameUpdate(frame: expectedFrame,
-                                                         animationDuration: 0.0)
+        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
+                                                             duration: 0.0)
 
-        XCTAssertEqual(viewModel.maskLayerFrameUpdate.value, expectedLayerMaskFrame)
+        XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
     }
 
-    func testSettingBoundsWithSameValueShouldUpdateLayerMaskFrameJustOnce() {
+    func testSettingBoundsWithSameValueShouldUpdateMaskLayerFrameAnimationJustOnce() {
         // Given
         let progress: Float = 0.25
         viewModel.setProgress(progress)
@@ -79,8 +79,8 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
         var observerCounter = 0
         var disposeBag = DisposeBag()
-        viewModel.maskLayerFrameUpdate.subscribe { _, oldLayerMaskFrame in
-            guard oldLayerMaskFrame != nil else {
+        viewModel.maskLayerFrameAnimation.subscribe { _, oldMaskLayerFrameAnimation in
+            guard oldMaskLayerFrameAnimation != nil else {
                 // Skip initial call to observer.
                 return
             }
@@ -99,7 +99,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
     // MARK: - Test setting property `progress`
 
-    func testSettingProgressShouldUpdateLayerMaskFrameWithCorrectFrameButWithoutAnimationDuration() {
+    func testSettingProgressShouldUpdateMaskLayerFrameAnimationWithCorrectFrameButWithoutDuration() {
         // Given
         let progress: Float = 0.5
         viewModel.setProgress(progress)
@@ -113,10 +113,10 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         var expectedFrame = bounds
         expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedLayerMaskFrame = AnimatedFrameUpdate(frame: expectedFrame,
-                                                         animationDuration: 0.0)
+        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
+                                                             duration: 0.0)
 
-        XCTAssertEqual(viewModel.maskLayerFrameUpdate.value, expectedLayerMaskFrame)
+        XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
     }
 
     // MARK: - Test method `setProgress()`
@@ -147,7 +147,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.progress, progress)
     }
 
-    func testSetProgressShouldUpdateLayerMaskFrameWithCorrectFrameButWithoutAnimationDuration() {
+    func testSetProgressShouldUpdateMaskLayerFrameAnimationWithCorrectFrameButWithoutDuration() {
         // Given
         let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
         viewModel.bounds = bounds
@@ -160,13 +160,13 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         var expectedFrame = bounds
         expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedLayerMaskFrame = AnimatedFrameUpdate(frame: expectedFrame,
-                                                         animationDuration: 0.0)
+        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
+                                                             duration: 0.0)
 
-        XCTAssertEqual(viewModel.maskLayerFrameUpdate.value, expectedLayerMaskFrame)
+        XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
     }
 
-    func testSetProgressShouldUpdateLayerMaskFrameWithCorrectFrameAndAnimationDuration() {
+    func testSetProgressShouldUpdateMaskLayerFrameAnimationWithCorrectFrameAndDuration() {
         // Given
         let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
         viewModel.bounds = bounds
@@ -182,9 +182,9 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         var expectedFrame = bounds
         expectedFrame.size.width *= CGFloat(progress)
 
-        let expectedLayerMaskFrame = AnimatedFrameUpdate(frame: expectedFrame,
-                                                         animationDuration: animationDuration)
+        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
+                                                             duration: animationDuration)
 
-        XCTAssertEqual(viewModel.maskLayerFrameUpdate.value, expectedLayerMaskFrame)
+        XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
     }
 }

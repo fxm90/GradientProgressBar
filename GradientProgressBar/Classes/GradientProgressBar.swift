@@ -23,7 +23,7 @@ extension UIProgressView: UIProgressHandling {}
 
 /// A customizable gradient progress bar (`UIProgressView`).
 @IBDesignable
-open class GradientProgressBar: UIView, UIProgressHandling {
+open class GradientProgressBar: UIView {
     // MARK: - Public properties
 
     /// Gradient colors for the progress view.
@@ -51,21 +51,6 @@ open class GradientProgressBar: UIView, UIProgressHandling {
         set {
             viewModel.timingFunction = newValue
         }
-    }
-
-    @IBInspectable
-    open var progress: Float {
-        get {
-            return viewModel.progress
-        }
-        set {
-            viewModel.progress = newValue
-        }
-    }
-
-    open override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric,
-                      height: 2.0)
     }
 
     // MARK: - Private properties
@@ -125,10 +110,6 @@ open class GradientProgressBar: UIView, UIProgressHandling {
         viewModel.bounds = bounds
     }
 
-    open func setProgress(_ progress: Float, animated: Bool) {
-        viewModel.setProgress(progress, animated: animated)
-    }
-
     // MARK: - Private methods
 
     private func commonInit() {
@@ -161,5 +142,27 @@ open class GradientProgressBar: UIView, UIProgressHandling {
         maskLayer.frame = maskLayerFrame
 
         CATransaction.commit()
+    }
+}
+
+// MARK: - `UIProgressHandling` conformance
+
+extension GradientProgressBar: UIProgressHandling {
+    // MARK: - Public properties
+
+    @IBInspectable
+    open var progress: Float {
+        get {
+            return viewModel.progress
+        }
+        set {
+            viewModel.progress = newValue
+        }
+    }
+
+    // MARK: - Public methods
+
+    open func setProgress(_ progress: Float, animated: Bool) {
+        viewModel.setProgress(progress, animated: animated)
     }
 }

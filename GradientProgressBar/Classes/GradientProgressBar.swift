@@ -9,16 +9,22 @@
 import UIKit
 import LightweightObservable
 
+/// Protocol for managing a progress bar, as defined by `UIProgressView` from Apple.
+/// To provide the same interface with `GradientProgressBar`, we're gonna make both classes conform to this protocol.
 ///
+/// - SeeAlso: [Apple documentation for `https://apple.co/2HjwstS`](https://apple.co/2HjwstS)
 protocol UIProgressHandling {
-    ///
+    /// The current progress shown by the receiver (between 0.0 and 1.0, inclusive).
     var progress: Float { get set }
 
+    /// Adjusts the current progress shown by the receiver, optionally animating the change.
     ///
+    /// - Parameters:
+    ///   - progress: The new progress value (between 0.0 and 1.0, inclusive).
+    ///   - animated: `true` if the change should be animated, `false` if the change should happen immediately.
     func setProgress(_ progress: Float, animated: Bool)
 }
 
-///
 extension UIProgressView: UIProgressHandling {}
 
 /// A customizable gradient progress bar (`UIProgressView`).
@@ -106,7 +112,7 @@ open class GradientProgressBar: UIView {
         // That's why we'll have to update the frame here manually.
         gradientLayer.frame = bounds
 
-        // Inform the view-model about the changed bounds, so it can calculate a new frame for the alpha-layer for the current progress value.
+        // Inform the view-model about the changed bounds, so it can calculate a new frame for the mask-layer, based on the current progress value.
         viewModel.bounds = bounds
     }
 

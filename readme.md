@@ -17,6 +17,21 @@ GradientProgressBar can be added to your project using [CocoaPods](https://cocoa
 pod 'GradientProgressBar', '~> 1.0'
 ```
 
+**Interface Builder Support**
+The Interface Builder support is currently broken for Cocoapods frameworks. As a workaround you can add the following code to your Podfile and run `pod install` again. Afterwards you should be able to use the `GradientProgressBar` inside the Interface Builder :)
+```
+  post_install do |installer|
+    installer.pods_project.build_configurations.each do |config|
+      next unless config.name == 'Debug'
+
+      config.build_settings['LD_RUNPATH_SEARCH_PATHS'] = [
+        '$(FRAMEWORK_SEARCH_PATHS)'
+      ]
+    end
+  end
+  ```
+   [Cocoapods – Issue 7606](https://github.com/CocoaPods/CocoaPods/issues/7606#issuecomment-484294739)
+
 ##### Carthage
 To integrate GradientProgressBar into your Xcode project using [Carthage](https://github.com/Carthage/Carthage), specify it in your Cartfile:
 ```
@@ -25,12 +40,12 @@ github "fxm90/GradientProgressBar" ~> 1.0
 Run carthage update to build the framework and drag the built `GradientProgressBar.framework`, as well as the dependency `LightweightObservable.framework`, into your Xcode project.
 
 ### How to use
-Simply drop a `UIProgressView` into your View Controller in the Storyboard. Select your progress view and in the `Identity Inspector` change the class to `GradientProgressBar`.
+Simply drop a `UIView` into your View Controller in the Storyboard. Select your view and in the `Identity Inspector` change the class to `GradientProgressBar`.
 >Don't forget to change the module to `GradientProgressBar` too.
 
 ![Interface Builder](http://felix.hamburg/files/github/gradient-progress-bar/interface-builder.png)
 
-Setup the constraints for the UIProgressView according to your needs.
+Setup the constraints for the `UIView` according to your needs.
 
 Import `GradientProgressBar` in your view controller source file.
 ```swift
@@ -38,14 +53,14 @@ import GradientProgressBar
 ```
 Create an `IBOutlet` of the progress view in your view controller source file.
 ```swift
-@IBOutlet weak var progressView: GradientProgressBar!
+@IBOutlet weak var gradientProgressView: GradientProgressBar!
 ```
 After that you can set the progress programmatically as you would do on a normal UIProgressView.
 ```swift
-progressView.setProgress(0.75, animated: true)
+gradientProgressView.setProgress(0.75, animated: true)
 ```
 ```swift
-progressView.progress = 0.75
+gradientProgressView.progress = 0.75
 ```
 
 ### Configuration

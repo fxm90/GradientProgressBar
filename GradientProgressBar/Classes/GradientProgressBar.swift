@@ -27,13 +27,13 @@ protocol UIProgressHandling {
 
 extension UIProgressView: UIProgressHandling {}
 
-/// A customizable gradient progress bar (`UIProgressView`).
+/// A customizable gradient progress view.
 @IBDesignable
 open class GradientProgressBar: UIView {
     // MARK: - Public properties
 
     /// Gradient colors for the progress view.
-    public var gradientColorList = UIColor.defaultGradientColorList {
+    public var gradientColorList = UIColor.GradientProgressBar.gradientColorList {
         didSet {
             gradientLayer.colors = gradientColorList.cgColors
         }
@@ -124,7 +124,7 @@ open class GradientProgressBar: UIView {
     }
 
     private func setupProgressView() {
-        backgroundColor = .defaultBackgroundColor
+        backgroundColor = UIColor.GradientProgressBar.backgroundColor
 
         // Apply the mask to the gradient layer, in order to show only the current progress of the gradient.
         gradientLayer.mask = maskLayer

@@ -41,11 +41,11 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
     }
 
     func testInitializerShouldSetAnimationDurationToStaticConfigurationProperty() {
-        XCTAssertEqual(viewModel.animationDuration, GradientProgressBarViewModel.defaultAnimationDuration)
+        XCTAssertEqual(viewModel.animationDuration, Double.GradientProgressBar.progressAnimationDuration)
     }
 
     func testInitializerShouldSetTimingFunctionToStaticConfigurationProperty() {
-        XCTAssertEqual(viewModel.timingFunction, GradientProgressBarViewModel.defaultTimingFunction)
+        XCTAssertEqual(viewModel.timingFunction, CAMediaTimingFunction.GradientProgressBar.progressAnimationFunction)
     }
 
     // MARK: - Test setting property `bounds`

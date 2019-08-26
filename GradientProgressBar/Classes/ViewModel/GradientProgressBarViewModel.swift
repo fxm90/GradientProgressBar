@@ -11,16 +11,6 @@ import LightweightObservable
 
 /// This view model keeps track of the progress-value and updates the `alphaLayerFrame` accordingly.
 class GradientProgressBarViewModel {
-    // MARK: - Config
-
-    /// Default animation duration for call to `setProgress(x, animated: true)`.
-    ///
-    /// - Note: Equals to `CALayer` default animation duration (https://apple.co/2PVTCsB).
-    static let defaultAnimationDuration = 0.25
-
-    /// Default animation timing function for animated progress change.
-    static let defaultTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
-
     // MARK: - Types
 
     /// Combines all properties for an animated update of a frame.
@@ -65,11 +55,11 @@ class GradientProgressBarViewModel {
         }
     }
 
-    /// Animation duration for animated progress change.
-    var animationDuration = GradientProgressBarViewModel.defaultAnimationDuration
+    /// Animation duration for an animated progress change.
+    var animationDuration = Double.GradientProgressBar.progressAnimationDuration
 
-    /// Animation timing function for animated progress change.
-    var timingFunction = GradientProgressBarViewModel.defaultTimingFunction
+    /// Animation timing function for an animated progress change.
+    var timingFunction = CAMediaTimingFunction.GradientProgressBar.progressAnimationFunction
 
     // MARK: - Private properties
 

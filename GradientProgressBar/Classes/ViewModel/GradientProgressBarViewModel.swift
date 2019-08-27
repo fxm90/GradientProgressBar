@@ -79,7 +79,7 @@ class GradientProgressBarViewModel {
 
     /// Adjusts the current progress, optionally animating the change.
     func setProgress(_ progress: Float, animated: Bool = false) {
-        // We don't want to update the mask-layer frame on setting the progress value,
+        // We don't want to update the mask-layer frame on setting the progress value here,
         // as we might have to do it animated.
         shouldUpdateMaskLayerFrameOnProgressChange = false
         self.progress = progress

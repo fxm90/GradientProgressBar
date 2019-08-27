@@ -12,7 +12,7 @@ import LightweightObservable
 /// Protocol for managing a progress bar, as defined by `UIProgressView` from Apple.
 /// To provide the same interface with `GradientProgressBar`, we're gonna make both classes conform to this protocol.
 ///
-/// - SeeAlso: [Apple documentation for `https://apple.co/2HjwstS`](https://apple.co/2HjwstS)
+/// - SeeAlso: [Apple documentation for `UIProgressView`](https://apple.co/2HjwstS)
 protocol UIProgressHandling {
     /// The current progress shown by the receiver (between 0.0 and 1.0, inclusive).
     var progress: Float { get set }

@@ -47,6 +47,10 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, .zero)
     }
 
+    func testInitializerShouldSetGradientColorsToStaticConfigurationProperty() {
+        XCTAssertEqual(viewModel.gradientColors, UIColor.GradientProgressBar.gradientColors)
+    }
+
     func testInitializerShouldSetAnimationDurationToStaticConfigurationProperty() {
         XCTAssertEqual(viewModel.animationDuration, TimeInterval.GradientProgressBar.progressAnimationDuration)
     }

@@ -28,12 +28,12 @@ class GradientProgressBarViewModel {
 
     // MARK: - Public properties
 
-    /// The color array for the gradient layer (of type `CGColor`).
+    /// Observable color array for the gradient layer (of type `CGColor`).
     var gradientLayerColors: Observable<[CGColor]> {
         return gradientLayerColorsSubject.asObservable
     }
 
-    /// The frame for the mask layer.
+    /// Observable frame-animation for the mask layer.
     var maskLayerFrameAnimation: Observable<FrameAnimation> {
         return maskLayerFrameAnimationSubject.asObservable
     }
@@ -112,6 +112,8 @@ class GradientProgressBarViewModel {
 
     // MARK: - Private methods
 
+    /// Maps the current `gradientColors` given by the user as an array of `UIColor`,
+    /// to an array of type `CGColor`, so we can use it for our gradient layer.
     private func makeGradientLayerColors() -> [CGColor] {
         return gradientColors.map { $0.cgColor }
     }

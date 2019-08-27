@@ -33,9 +33,9 @@ open class GradientProgressBar: UIView {
     // MARK: - Public properties
 
     /// Gradient colors for the progress view.
-    public var gradientColorList = UIColor.GradientProgressBar.gradientColorList {
+    public var gradientColors = UIColor.GradientProgressBar.gradientColors {
         didSet {
-            gradientLayer.colors = gradientColorList.cgColors
+            gradientLayer.colors = gradientColors.cgColors
         }
     }
 
@@ -128,7 +128,7 @@ open class GradientProgressBar: UIView {
 
         // Apply the mask to the gradient layer, in order to show only the current progress of the gradient.
         gradientLayer.mask = maskLayer
-        gradientLayer.colors = gradientColorList.cgColors
+        gradientLayer.colors = gradientColors.cgColors
 
         layer.insertSublayer(gradientLayer, at: 0)
     }

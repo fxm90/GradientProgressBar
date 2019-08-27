@@ -71,10 +71,10 @@ progressView.animationDuration = 2.0
 progressView.setProgress(progress, animated: true)
 ```
 
-#### – Property `gradientColorList`
-As of version __1.2.0__ you can also adjust the gradient colors. Therefore, you'll have to pass an array of type `UIColor` to the property `gradientColorList`.
+#### – Property `gradientColors`
+As of version __1.2.0__ you can also adjust the gradient colors. Therefore, you'll have to pass an array of type `UIColor` to the property `gradientColors`.
 ```swift
-progressView.gradientColorList: [UIColor] = [
+progressView.gradientColors: [UIColor] = [
     .red,
     .white,
     .blue

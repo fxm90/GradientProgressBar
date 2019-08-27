@@ -49,14 +49,17 @@ class GradientProgressBarViewModel {
     /// The current progress.
     var progress: Float = 0.5 {
         didSet {
-            guard shouldUpdateMaskLayerFrameOnProgressChange else { return }
+            // Make sure progress value fits our range.
+            progress = min(1.0, max(0.0, progress))
 
-            maskLayerFrameAnimationSubject.value = makeMaskLayerFrameAnimationForCurrentProgress(animated: false)
+            if shouldUpdateMaskLayerFrameOnProgressChange {
+                maskLayerFrameAnimationSubject.value = makeMaskLayerFrameAnimationForCurrentProgress(animated: false)
+            }
         }
     }
 
     /// Animation duration for an animated progress change.
-    var animationDuration = Double.GradientProgressBar.progressAnimationDuration
+    var animationDuration = TimeInterval.GradientProgressBar.progressAnimationDuration
 
     /// Animation timing function for an animated progress change.
     var timingFunction = CAMediaTimingFunction.GradientProgressBar.progressAnimationFunction

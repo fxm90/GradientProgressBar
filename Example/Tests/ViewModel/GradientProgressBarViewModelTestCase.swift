@@ -41,7 +41,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
     }
 
     func testInitializerShouldSetAnimationDurationToStaticConfigurationProperty() {
-        XCTAssertEqual(viewModel.animationDuration, Double.GradientProgressBar.progressAnimationDuration)
+        XCTAssertEqual(viewModel.animationDuration, TimeInterval.GradientProgressBar.progressAnimationDuration)
     }
 
     func testInitializerShouldSetTimingFunctionToStaticConfigurationProperty() {
@@ -99,6 +99,22 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
     // MARK: - Test setting property `progress`
 
+    func testSettingProgressValueGraterThanOneShouldBePinnedToOne() {
+        // When
+        viewModel.progress = 1.1
+
+        // Then
+        XCTAssertEqual(viewModel.progress, 1.0)
+    }
+
+    func testSettingProgressValueSmallerThanZeroShouldBePinnedToZero() {
+        // When
+        viewModel.progress = -0.1
+
+        // Then
+        XCTAssertEqual(viewModel.progress, 0.0)
+    }
+
     func testSettingProgressShouldUpdateMaskLayerFrameAnimationWithCorrectFrameButWithoutDuration() {
         // Given
         let progress: Float = 0.5
@@ -122,10 +138,6 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
     // MARK: - Test method `setProgress()`
 
     func testSetProgressShouldUpdateProgressProperty() {
-        // Given
-        let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
-        viewModel.bounds = bounds
-
         // When
         let progress: Float = 0.25
         viewModel.setProgress(progress)
@@ -134,17 +146,20 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.progress, progress)
     }
 
-    func testSetProgressAnimatedShouldUpdateProgressProperty() {
-        // Given
-        let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
-        viewModel.bounds = bounds
-
+    func testSetProgressWithValueGraterThanOneShouldBePinnedToOne() {
         // When
-        let progress: Float = 0.5
-        viewModel.setProgress(progress, animated: true)
+        viewModel.setProgress(1.1)
 
         // Then
-        XCTAssertEqual(viewModel.progress, progress)
+        XCTAssertEqual(viewModel.progress, 1.0)
+    }
+
+    func testSetProgressWithValueSmallerThanZeroShouldBePinnedToZero() {
+        // When
+        viewModel.setProgress(-0.1)
+
+        // Then
+        XCTAssertEqual(viewModel.progress, 0.0)
     }
 
     func testSetProgressShouldUpdateMaskLayerFrameAnimationWithCorrectFrameButWithoutDuration() {

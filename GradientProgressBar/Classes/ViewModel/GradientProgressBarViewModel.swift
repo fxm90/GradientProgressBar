@@ -9,7 +9,7 @@
 import Foundation
 import LightweightObservable
 
-/// This view model keeps track of the progress-value and updates the `alphaLayerFrame` accordingly.
+/// This view model keeps track of the progress-value and updates the `maskLayer` accordingly.
 class GradientProgressBarViewModel {
     // MARK: - Types
 
@@ -28,7 +28,7 @@ class GradientProgressBarViewModel {
 
     // MARK: - Public properties
 
-    /// The frame for the alpha layer.
+    /// The frame for the mask layer.
     var maskLayerFrameAnimation: Observable<FrameAnimation> {
         return maskLayerFrameAnimationSubject.asObservable
     }
@@ -49,7 +49,7 @@ class GradientProgressBarViewModel {
     /// The current progress.
     var progress: Float = 0.5 {
         didSet {
-            // Make sure progress value fits our range.
+            // Make sure progress value fits our bounds.
             progress = min(1.0, max(0.0, progress))
 
             if shouldUpdateMaskLayerFrameOnProgressChange {

@@ -18,7 +18,7 @@ pod 'GradientProgressBar', '~> 1.0'
 ```
 
 **Interface Builder Support**
-The Interface Builder support is currently broken for Cocoapods frameworks. As a workaround you can add the following code to your Podfile and run `pod install` again. Afterwards you should be able to use the `GradientProgressBar` inside the Interface Builder :)
+The Interface Builder support is currently broken for Cocoapods frameworks. In case you need Interface Builder support, simply add the following code to your Podfile and run `pod install` again. Afterwards you should be able to use the `GradientProgressBar` inside the Interface Builder :)
 ```
   post_install do |installer|
     installer.pods_project.build_configurations.each do |config|
@@ -30,7 +30,7 @@ The Interface Builder support is currently broken for Cocoapods frameworks. As a
     end
   end
   ```
-   [Cocoapods – Issue 7606](https://github.com/CocoaPods/CocoaPods/issues/7606#issuecomment-484294739)
+Source: [Cocoapods – Issue 7606](https://github.com/CocoaPods/CocoaPods/issues/7606#issuecomment-484294739)
 
 ##### Carthage
 To integrate GradientProgressBar into your Xcode project using [Carthage](https://github.com/Carthage/Carthage), specify it in your Cartfile:
@@ -65,14 +65,14 @@ gradientProgressView.progress = 0.75
 
 ### Configuration
 #### – Property `animationDuration`
-As of version __1.1.0__ you can adjust the animation duration for calls to `setProgress(_:animated:)`:
+Adjusts the animation duration for calls to `setProgress(_:animated:)`:
 ```swift
 progressView.animationDuration = 2.0
 progressView.setProgress(progress, animated: true)
 ```
 
 #### – Property `gradientColors`
-As of version __1.2.0__ you can also adjust the gradient colors. Therefore, you'll have to pass an array of type `UIColor` to the property `gradientColors`.
+Adjusts the colors, used for the gradient inside the progress-view.
 ```swift
 progressView.gradientColors: [UIColor] = [
     .red,
@@ -82,7 +82,7 @@ progressView.gradientColors: [UIColor] = [
 ```
 
 #### – Property `timingFunction`
-As of version __1.2.0__ you can further adjust the timing function. Therefore, you'll have to pass an instance of `CAMediaTimingFunction` to the property `timingFunction`.
+Adjusts the timing function for calls to `setProgress(_:animated:)`, with animated set to `true`.
 ```swift
 progressView.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 ```

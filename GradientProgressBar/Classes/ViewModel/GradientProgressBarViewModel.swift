@@ -66,7 +66,7 @@ class GradientProgressBarViewModel {
     /// Color array used for the gradient progress bar (of type `UIColor`).
     var gradientColors = UIColor.GradientProgressBar.gradientColors {
         didSet {
-            gradientLayerColorsSubject.value = gradientColors.map { $0.cgColor }
+            gradientLayerColorsSubject.value = makeGradientLayerColors()
         }
     }
 
@@ -92,8 +92,9 @@ class GradientProgressBarViewModel {
     // MARK: - Initializer
 
     init() {
-        let gradientLayerColors = gradientColors.map { $0.cgColor }
-        gradientLayerColorsSubject = Variable(gradientLayerColors)
+        // Small workaround as calls to `self.makeGradientLayerColors()` aren't allowed before all properties have been initialized.
+        gradientLayerColorsSubject = Variable([])
+        gradientLayerColorsSubject.value = makeGradientLayerColors()
     }
 
     // MARK: - Public methods
@@ -110,6 +111,10 @@ class GradientProgressBarViewModel {
     }
 
     // MARK: - Private methods
+
+    private func makeGradientLayerColors() -> [CGColor] {
+        return gradientColors.map { $0.cgColor }
+    }
 
     private func makeMaskLayerFrameAnimationForCurrentProgress(animated: Bool) -> FrameAnimation {
         var maskLayerFrame = bounds

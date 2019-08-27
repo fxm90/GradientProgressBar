@@ -22,7 +22,7 @@ class WebViewExampleViewController: UIViewController {
     // MARK: - Private properties
 
     /// Progress view reflecting the current loading progress of the web view.
-    let progressView = GradientProgressBar()
+    private let progressView = GradientProgressBar()
 
     /// The observation object for the progress of the web view (we only receive notifications until it is deallocated).
     private var estimatedProgressObserver: NSKeyValueObservation?

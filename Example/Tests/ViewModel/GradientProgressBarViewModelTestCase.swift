@@ -36,9 +36,9 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
     // MARK: - Test initializer
 
-    func testInitializerShouldSetGradientLayerColorsToStaticConfigurationProperty() {
+    func testInitializerShouldSetGradientLayerColorsToStaticConfigurationPropertyMappedToCgColor() {
         let expectedGradientLayerColors =
-            UIColor.GradientProgressBar.gradientColors.map { $0.cgColor }
+            makeGradientLayerColors(from: UIColor.GradientProgressBar.gradientColors)
 
         XCTAssertEqual(viewModel.gradientLayerColors.value, expectedGradientLayerColors)
     }
@@ -156,7 +156,7 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         viewModel.gradientColors = gradientColors
 
         // Then
-        let expectedGradientLayerColors = gradientColors.map { $0.cgColor }
+        let expectedGradientLayerColors = makeGradientLayerColors(from: gradientColors)
         XCTAssertEqual(viewModel.gradientLayerColors.value, expectedGradientLayerColors)
     }
 
@@ -226,5 +226,13 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
                                                              duration: animationDuration)
 
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
+    }
+}
+
+// MARK: - Helpers
+
+extension GradientProgressBarViewModelTestCase {
+    private func makeGradientLayerColors(from gradientColors: [UIColor]) -> [CGColor] {
+        return gradientColors.map { $0.cgColor }
     }
 }

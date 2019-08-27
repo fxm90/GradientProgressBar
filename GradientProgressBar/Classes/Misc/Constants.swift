@@ -24,7 +24,7 @@ extension UIColor {
 }
 
 extension TimeInterval {
-    /// Nummeric default values.
+    /// Numeric default values.
     public struct GradientProgressBar {
         /// Default animation duration for calls to `setProgress(x, animated: true)`.
         ///

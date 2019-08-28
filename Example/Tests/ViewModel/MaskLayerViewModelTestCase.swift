@@ -189,7 +189,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
     }
 
-    func testSetProgressShouldUpdateMaskLayerFrameAnimationWithCorrectFrameAndDuration() {
+    func testSetProgressShouldUpdateMaskLayerFrameAnimationWithCorrectFrameAndTimingFunctionAndDuration() {
         // Given
         let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         viewModel.timingFunction = timingFunction

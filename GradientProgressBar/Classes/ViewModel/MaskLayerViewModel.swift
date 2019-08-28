@@ -1,16 +1,16 @@
 //
-//  GradientProgressBarViewModel.swift
+//  MaskLayerViewModel.swift
 //  GradientProgressBar
 //
-//  Created by Felix Mau on 01/20/18.
-//  Copyright © 2018 Felix Mau. All rights reserved.
+//  Created by Felix Mau on 08/08/19.
+//  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
 import Foundation
 import LightweightObservable
 
 /// This view model keeps track of the progress-value and updates the `maskLayer` accordingly.
-class GradientProgressBarViewModel {
+class MaskLayerViewModel {
     // MARK: - Types
 
     /// Combines all properties for an animated update of a frame.
@@ -27,11 +27,6 @@ class GradientProgressBarViewModel {
     }
 
     // MARK: - Public properties
-
-    /// Observable color array for the gradient layer (of type `CGColor`).
-    var gradientLayerColors: Observable<[CGColor]> {
-        return gradientLayerColorsSubject.asObservable
-    }
 
     /// Observable frame-animation for the mask layer.
     var maskLayerFrameAnimation: Observable<FrameAnimation> {
@@ -63,13 +58,6 @@ class GradientProgressBarViewModel {
         }
     }
 
-    /// Color array used for the gradient progress bar (of type `UIColor`).
-    var gradientColors = UIColor.GradientProgressBar.gradientColors {
-        didSet {
-            gradientLayerColorsSubject.value = makeGradientLayerColors()
-        }
-    }
-
     /// Animation duration for an animated progress change.
     var animationDuration = TimeInterval.GradientProgressBar.progressAnimationDuration
 
@@ -77,8 +65,6 @@ class GradientProgressBarViewModel {
     var timingFunction = CAMediaTimingFunction.GradientProgressBar.progressAnimationFunction
 
     // MARK: - Private properties
-
-    private let gradientLayerColorsSubject: Variable<[CGColor]>
 
     private let maskLayerFrameAnimationSubject: Variable<FrameAnimation> = Variable(.zero)
 
@@ -88,14 +74,6 @@ class GradientProgressBarViewModel {
     /// - SeeAlso: `setProgress(_:animated:)`
     private var shouldUpdateMaskLayerFrameOnProgressChange = true
     // swiftlint:disable:previous identifier_name
-
-    // MARK: - Initializer
-
-    init() {
-        // Small workaround as calls to `self.makeGradientLayerColors()` aren't allowed before all properties have been initialized.
-        gradientLayerColorsSubject = Variable([])
-        gradientLayerColorsSubject.value = makeGradientLayerColors()
-    }
 
     // MARK: - Public methods
 
@@ -111,12 +89,6 @@ class GradientProgressBarViewModel {
     }
 
     // MARK: - Private methods
-
-    /// Maps the current `gradientColors` given by the user as an array of `UIColor`,
-    /// to an array of type `CGColor`, so we can use it for our gradient layer.
-    private func makeGradientLayerColors() -> [CGColor] {
-        return gradientColors.map { $0.cgColor }
-    }
 
     private func makeMaskLayerFrameAnimationForCurrentProgress(animated: Bool) -> FrameAnimation {
         var maskLayerFrame = bounds

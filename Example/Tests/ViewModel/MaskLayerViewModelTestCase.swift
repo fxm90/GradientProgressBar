@@ -1,9 +1,9 @@
 //
-//  GradientProgressBarViewModelTestCase.swift
-//  GradientProgressBar_Tests
+//  MaskLayerViewModelTestCase.swift
+//  GradientProgressBar_Example
 //
-//  Created by Felix Mau on 01/20/18.
-//  Copyright © 2018 Felix Mau. All rights reserved.
+//  Created by Felix Mau on 08/28/19.
+//  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
 import XCTest
@@ -11,21 +11,21 @@ import XCTest
 @testable import GradientProgressBar
 @testable import LightweightObservable
 
-class GradientProgressBarViewModelTestCase: XCTestCase {
+class MaskLayerViewModelTestCase: XCTestCase {
     // MARK: - Types
 
-    typealias FrameAnimation = GradientProgressBarViewModel.FrameAnimation
+    typealias FrameAnimation = MaskLayerViewModel.FrameAnimation
 
     // MARK: - Private properties
 
-    private var viewModel: GradientProgressBarViewModel!
+    private var viewModel: MaskLayerViewModel!
 
     // MARK: - Public methods
 
     override func setUp() {
         super.setUp()
 
-        viewModel = GradientProgressBarViewModel()
+        viewModel = MaskLayerViewModel()
     }
 
     override func tearDown() {
@@ -36,19 +36,8 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
 
     // MARK: - Test initializer
 
-    func testInitializerShouldSetGradientLayerColorsToStaticConfigurationPropertyMappedToCgColor() {
-        let expectedGradientLayerColors =
-            makeGradientLayerColors(from: UIColor.GradientProgressBar.gradientColors)
-
-        XCTAssertEqual(viewModel.gradientLayerColors.value, expectedGradientLayerColors)
-    }
-
     func testInitializerShouldSetMaskLayerFrameAnimationToZero() {
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, .zero)
-    }
-
-    func testInitializerShouldSetGradientColorsToStaticConfigurationProperty() {
-        XCTAssertEqual(viewModel.gradientColors, UIColor.GradientProgressBar.gradientColors)
     }
 
     func testInitializerShouldSetAnimationDurationToStaticConfigurationProperty() {
@@ -146,20 +135,6 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
     }
 
-    // MARK: - Test setting property `gradientColors`
-
-    func testSettingsGradientColorsShouldUpdateGradientLayerColors() {
-        // Given
-        let gradientColors: [UIColor] = [.red, .yellow, .green]
-
-        // When
-        viewModel.gradientColors = gradientColors
-
-        // Then
-        let expectedGradientLayerColors = makeGradientLayerColors(from: gradientColors)
-        XCTAssertEqual(viewModel.gradientLayerColors.value, expectedGradientLayerColors)
-    }
-
     // MARK: - Test method `setProgress()`
 
     func testSetProgressShouldUpdateProgressProperty() {
@@ -226,13 +201,5 @@ class GradientProgressBarViewModelTestCase: XCTestCase {
                                                              duration: animationDuration)
 
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
-    }
-}
-
-// MARK: - Helpers
-
-extension GradientProgressBarViewModelTestCase {
-    private func makeGradientLayerColors(from gradientColors: [UIColor]) -> [CGColor] {
-        return gradientColors.map { $0.cgColor }
     }
 }

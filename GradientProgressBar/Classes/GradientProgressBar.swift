@@ -35,30 +35,30 @@ open class GradientProgressBar: UIView {
     /// Gradient colors for the progress view.
     public var gradientColors: [UIColor] {
         get {
-            return viewModel.gradientColors
+            return gradientLayerViewModel.gradientColors
         }
         set {
-            viewModel.gradientColors = newValue
+            gradientLayerViewModel.gradientColors = newValue
         }
     }
 
     /// Animation duration for calls to `setProgress(x, animated: true)`.
     public var animationDuration: TimeInterval {
         get {
-            return viewModel.animationDuration
+            return maskLayerViewModel.animationDuration
         }
         set {
-            viewModel.animationDuration = newValue
+            maskLayerViewModel.animationDuration = newValue
         }
     }
 
     /// Animation timing function for calls to `setProgress(x, animated: true)`.
     public var timingFunction: CAMediaTimingFunction {
         get {
-            return viewModel.timingFunction
+            return maskLayerViewModel.timingFunction
         }
         set {
-            viewModel.timingFunction = newValue
+            maskLayerViewModel.timingFunction = newValue
         }
     }
 
@@ -86,8 +86,11 @@ open class GradientProgressBar: UIView {
         return layer
     }()
 
-    /// View-model containing all logic related to the gradient view.
-    private let viewModel = GradientProgressBarViewModel()
+    /// View-model containing all logic related to the gradient-layer.
+    private let gradientLayerViewModel = GradientLayerViewModel()
+
+    /// View-model containing all logic related to the mask-layer.
+    private let maskLayerViewModel = MaskLayerViewModel()
 
     /// The dispose bag for the observables.
     private var disposeBag = DisposeBag()
@@ -116,14 +119,14 @@ open class GradientProgressBar: UIView {
         gradientLayer.frame = bounds
 
         // Inform the view-model about the changed bounds, so it can calculate a new frame for the mask-layer, based on the current progress value.
-        viewModel.bounds = bounds
+        maskLayerViewModel.bounds = bounds
     }
 
     // MARK: - Private methods
 
     private func commonInit() {
         setupProgressView()
-        bindViewModelToView()
+        bindViewModelsToView()
     }
 
     private func setupProgressView() {
@@ -134,12 +137,12 @@ open class GradientProgressBar: UIView {
         layer.insertSublayer(gradientLayer, at: 0)
     }
 
-    private func bindViewModelToView() {
-        viewModel.gradientLayerColors.subscribeDistinct { [weak self] newGradientLayerColors, _ in
+    private func bindViewModelsToView() {
+        gradientLayerViewModel.gradientLayerColors.subscribeDistinct { [weak self] newGradientLayerColors, _ in
             self?.gradientLayer.colors = newGradientLayerColors
         }.disposed(by: &disposeBag)
 
-        viewModel.maskLayerFrameAnimation.subscribeDistinct { [weak self] newMaskLayerFrameAnimation, _ in
+        maskLayerViewModel.maskLayerFrameAnimation.subscribeDistinct { [weak self] newMaskLayerFrameAnimation, _ in
             self?.update(maskLayerFrame: newMaskLayerFrameAnimation.frame,
                          animationDuration: newMaskLayerFrameAnimation.duration)
         }.disposed(by: &disposeBag)
@@ -148,7 +151,7 @@ open class GradientProgressBar: UIView {
     private func update(maskLayerFrame: CGRect, animationDuration: TimeInterval) {
         CATransaction.begin()
         CATransaction.setAnimationDuration(animationDuration)
-        CATransaction.setAnimationTimingFunction(viewModel.timingFunction)
+        CATransaction.setAnimationTimingFunction(maskLayerViewModel.timingFunction)
 
         maskLayer.frame = maskLayerFrame
 
@@ -164,16 +167,16 @@ extension GradientProgressBar: UIProgressHandling {
     @IBInspectable
     open var progress: Float {
         get {
-            return viewModel.progress
+            return maskLayerViewModel.progress
         }
         set {
-            viewModel.progress = newValue
+            maskLayerViewModel.progress = newValue
         }
     }
 
     // MARK: - Public methods
 
     open func setProgress(_ progress: Float, animated: Bool) {
-        viewModel.setProgress(progress, animated: animated)
+        maskLayerViewModel.setProgress(progress, animated: animated)
     }
 }

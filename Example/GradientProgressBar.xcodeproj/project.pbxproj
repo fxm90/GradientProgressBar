@@ -14,9 +14,10 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		641B86BB22AB937E00556C15 /* GradientProgressBarViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641B86B922AB937E00556C15 /* GradientProgressBarViewModelTestCase.swift */; };
 		641B86BC22AB937E00556C15 /* GradientProgressBarTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641B86BA22AB937E00556C15 /* GradientProgressBarTestCase.swift */; };
 		64CA391D2255EBD3002B83C8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CA391C2255EBD3002B83C8 /* WebKit.framework */; };
+		64DEBFAD2316847A00A0A3A9 /* GradientLayerViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DEBFAB2316844F00A0A3A9 /* GradientLayerViewModelTestCase.swift */; };
+		64DEBFAE2316847D00A0A3A9 /* MaskLayerViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DEBFA92316843200A0A3A9 /* MaskLayerViewModelTestCase.swift */; };
 		97AF80D82157238D009B7566 /* WebViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF80D72157238D009B7566 /* WebViewExampleViewController.swift */; };
 		97DBEFBF2131364B006399E1 /* AdvancedExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DBEFBE2131364B006399E1 /* AdvancedExampleViewController.swift */; };
 /* End PBXBuildFile section */
@@ -44,9 +45,10 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* GradientProgressBar_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradientProgressBar_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		641B86B922AB937E00556C15 /* GradientProgressBarViewModelTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressBarViewModelTestCase.swift; sourceTree = "<group>"; };
 		641B86BA22AB937E00556C15 /* GradientProgressBarTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressBarTestCase.swift; sourceTree = "<group>"; };
 		64CA391C2255EBD3002B83C8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		64DEBFA92316843200A0A3A9 /* MaskLayerViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskLayerViewModelTestCase.swift; sourceTree = "<group>"; };
+		64DEBFAB2316844F00A0A3A9 /* GradientLayerViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayerViewModelTestCase.swift; sourceTree = "<group>"; };
 		97AF80D72157238D009B7566 /* WebViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewExampleViewController.swift; sourceTree = "<group>"; };
 		97DBEFBE2131364B006399E1 /* AdvancedExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedExampleViewController.swift; sourceTree = "<group>"; };
 		99AF8B41726EDDA3CC894825 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -154,7 +156,8 @@
 		641B86B822AB937E00556C15 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				641B86B922AB937E00556C15 /* GradientProgressBarViewModelTestCase.swift */,
+				64DEBFAB2316844F00A0A3A9 /* GradientLayerViewModelTestCase.swift */,
+				64DEBFA92316843200A0A3A9 /* MaskLayerViewModelTestCase.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -417,8 +420,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64DEBFAE2316847D00A0A3A9 /* MaskLayerViewModelTestCase.swift in Sources */,
 				641B86BC22AB937E00556C15 /* GradientProgressBarTestCase.swift in Sources */,
-				641B86BB22AB937E00556C15 /* GradientProgressBarViewModelTestCase.swift in Sources */,
+				64DEBFAD2316847A00A0A3A9 /* GradientLayerViewModelTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

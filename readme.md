@@ -17,8 +17,8 @@ GradientProgressBar can be added to your project using [CocoaPods](https://cocoa
 pod 'GradientProgressBar', '~> 1.0'
 ```
 
-**Interface Builder Support**
-Unfortunatly the Interface Builder support is currently broken for Cocoapods frameworks. If you need Interface Builder support, add the following code to your Podfile and run `pod install` again. Afterwards you should be able to use the `GradientProgressBar` inside the Interface Builder 🙂
+###### Interface Builder Support
+Unfortunatly the Interface Builder support is currently broken for Cocoapods frameworks. If you need Interface Builder support, add the following code to your Podfile and run `pod install` again. Afterwards you should be able to use the `GradientProgressBar` inside the Interface Builder :)
 ```
   post_install do |installer|
     installer.pods_project.build_configurations.each do |config|

@@ -10,7 +10,7 @@ import Foundation
 import LightweightObservable
 
 /// This view model keeps track of the progress-value and updates the `maskLayer` accordingly.
-class MaskLayerViewModel {
+final class MaskLayerViewModel {
     // MARK: - Types
 
     /// Combines all properties for an animated update of a frame.

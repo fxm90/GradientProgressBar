@@ -10,7 +10,7 @@ import Foundation
 import LightweightObservable
 
 /// This view model keeps track of the gradient-colors and updates the `gradientLayer` accordingly.
-class GradientLayerViewModel {
+final class GradientLayerViewModel {
     // MARK: - Public properties
 
     /// Observable color array for the gradient layer (of type `CGColor`).

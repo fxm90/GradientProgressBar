@@ -144,14 +144,15 @@ open class GradientProgressBar: UIView {
 
         maskLayerViewModel.maskLayerFrameAnimation.subscribeDistinct { [weak self] newMaskLayerFrameAnimation, _ in
             self?.update(maskLayerFrame: newMaskLayerFrameAnimation.frame,
-                         animationDuration: newMaskLayerFrameAnimation.duration)
+                         animationDuration: newMaskLayerFrameAnimation.duration,
+                         timingFunction: newMaskLayerFrameAnimation.timingFunction)
         }.disposed(by: &disposeBag)
     }
 
-    private func update(maskLayerFrame: CGRect, animationDuration: TimeInterval) {
+    private func update(maskLayerFrame: CGRect, animationDuration: TimeInterval, timingFunction: CAMediaTimingFunction) {
         CATransaction.begin()
         CATransaction.setAnimationDuration(animationDuration)
-        CATransaction.setAnimationTimingFunction(maskLayerViewModel.timingFunction)
+        CATransaction.setAnimationTimingFunction(timingFunction)
 
         maskLayer.frame = maskLayerFrame
 

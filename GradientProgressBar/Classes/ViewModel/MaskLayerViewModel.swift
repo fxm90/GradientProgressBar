@@ -15,15 +15,19 @@ class MaskLayerViewModel {
 
     /// Combines all properties for an animated update of a frame.
     struct FrameAnimation: Equatable {
-        /// Initializes the struct with all values set to zero.
+        /// Initializes the struct with all values set to zero / default.
         static let zero = FrameAnimation(frame: .zero,
-                                         duration: 0.0)
+                                         duration: 0.0,
+                                         timingFunction: CAMediaTimingFunction(name: .default))
 
         /// The new rect for the frame.
         let frame: CGRect
 
         /// The animation duration to update the frame with.
         let duration: TimeInterval
+
+        /// The timing function to update the frame with (e.g. `easeInOut`).
+        let timingFunction: CAMediaTimingFunction
     }
 
     // MARK: - Public properties
@@ -102,6 +106,7 @@ class MaskLayerViewModel {
         }
 
         return FrameAnimation(frame: maskLayerFrame,
-                              duration: animationDuration)
+                              duration: animationDuration,
+                              timingFunction: timingFunction)
     }
 }

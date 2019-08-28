@@ -37,6 +37,6 @@ extension CAMediaTimingFunction {
     /// Default animation timing functions.
     public struct GradientProgressBar {
         /// Default animation timing function for calls to `setProgress(x, animated: true)`.
-        static let progressAnimationFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
+        static let progressAnimationFunction = CAMediaTimingFunction(name: .default)
     }
 }

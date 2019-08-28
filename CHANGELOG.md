@@ -8,6 +8,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ## [Unreleased]
 
 
+## [2.0.0] - 2019-28-08
+### Changed
+ - Changed subclassing from `UIProgressView` to `UIView`, in order to make framework more failure safe (e.g. due to accidentally setting `progressTintColor`)
+### Added
+ - Interface builder support
+
 ## [1.2.9] - 2019-09-06
 ### Fixed
  - Fix Carthage build failed due to non shared scheme 
@@ -99,7 +105,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Initial release
 
 
-[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/1.2.9...master
+[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/2.0.0...master
+[1.2.9]: https://github.com/fxm90/GradientProgressBar/compare/1.2.9...2.0.0
 [1.2.9]: https://github.com/fxm90/GradientProgressBar/compare/1.2.8...1.2.9
 [1.2.8]: https://github.com/fxm90/GradientProgressBar/compare/1.2.7...1.2.8
 [1.2.7]: https://github.com/fxm90/GradientProgressBar/compare/1.2.6...1.2.7

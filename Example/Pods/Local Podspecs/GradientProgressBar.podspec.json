@@ -1,6 +1,6 @@
 {
   "name": "GradientProgressBar",
-  "version": "1.2.9",
+  "version": "2.0.0",
   "summary": "A customizable gradient progress bar (UIProgressView).",
   "description": "A gradient progress bar (UIProgressView).\nInspired by https://codepen.io/marcobiedermann/pen/LExXWW",
   "homepage": "https://github.com/fxm90/GradientProgressBar",
@@ -14,9 +14,9 @@
   },
   "source": {
     "git": "https://github.com/fxm90/GradientProgressBar.git",
-    "tag": "1.2.9"
+    "tag": "2.0.0"
   },
-  "social_media_url": "https://twitter.com/askfxm90",
+  "social_media_url": "https://twitter.com/_fxm90",
   "platforms": {
     "ios": "9.0"
   },

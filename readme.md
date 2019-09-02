@@ -14,7 +14,7 @@ To run the example project, clone the repo, and open the workspace from the Exam
 ##### CocoaPods
 GradientProgressBar can be added to your project using [CocoaPods](https://cocoapods.org/) by adding the following line to your Podfile:
 ```
-pod 'GradientProgressBar', '~> 1.0'
+pod 'GradientProgressBar', '~> 2.0'
 ```
 
 ###### Interface Builder Support
@@ -93,7 +93,7 @@ Based on [my gist](https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab93
 Please have a look at the example application for further details :)
 
 ### Author
-Felix Mau (contact(@)felix.hamburg)
+Felix Mau (me(@)felix.hamburg)
 
 ### License
 GradientProgressBar is available under the MIT license. See the LICENSE file for more info.

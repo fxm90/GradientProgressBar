@@ -35,7 +35,7 @@ Source: [Cocoapods – Issue 7606](https://github.com/CocoaPods/CocoaPods/issues
 ##### Carthage
 To integrate GradientProgressBar into your Xcode project using [Carthage](https://github.com/Carthage/Carthage), specify it in your Cartfile:
 ```
-github "fxm90/GradientProgressBar" ~> 1.0
+github "fxm90/GradientProgressBar" ~> 2.0
 ```
 Run carthage update to build the framework and drag the built `GradientProgressBar.framework`, as well as the dependency `LightweightObservable.framework`, into your Xcode project.
 

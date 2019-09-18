@@ -76,12 +76,12 @@ open class GradientProgressBar: UIView {
     }()
 
     /// Alpha mask for showing only the visible "progress"-part of the gradient layer.
-    private var maskLayer: CALayer = {
-        let layer = CALayer()
+    private var maskLayer: CAShapeLayer = {
+        let layer = CAShapeLayer()
 
-        layer.anchorPoint = .zero
-        layer.position = .zero
-        layer.backgroundColor = UIColor.white.cgColor
+//        layer.anchorPoint = .zero
+//        layer.position = .zero
+//        layer.backgroundColor = UIColor.white.cgColor
 
         return layer
     }()

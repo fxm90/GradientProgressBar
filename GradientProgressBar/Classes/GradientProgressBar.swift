@@ -155,6 +155,9 @@ open class GradientProgressBar: UIView {
         CATransaction.setAnimationTimingFunction(timingFunction)
 
         maskLayer.frame = frame
+        maskLayer.path = UIBezierPath(roundedRect: maskLayer.bounds,
+                                      byRoundingCorners: .allCorners,
+                                      cornerRadii: CGSize(width: frame.size.width*0.5, height: frame.size.height*0.5)).cgPath
 
         CATransaction.commit()
     }

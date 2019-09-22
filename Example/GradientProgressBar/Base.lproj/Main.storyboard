@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x3C-0W-Nfd">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x3C-0W-Nfd">
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,10 +16,25 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyT-bH-MJF" userLabel="Wrapper View">
-                                <rect key="frame" x="0.0" y="150" width="375" height="473"/>
+                                <rect key="frame" x="0.0" y="137.5" width="375" height="485.5"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBR-eE-ute" userLabel="Border Top View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                        <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="s49-ZP-ZoY"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99t-Yb-Qag" userLabel="Border Bottom View">
+                                        <rect key="frame" x="0.0" y="484.5" width="375" height="1"/>
+                                        <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="FZL-yi-WqM"/>
+                                            <constraint firstAttribute="height" constant="1" id="LXe-lj-NG5"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="paV-Jd-DiT" customClass="GradientProgressBar" customModule="GradientProgressBar">
-                                        <rect key="frame" x="16" y="235.5" width="343" height="2"/>
+                                        <rect key="frame" x="16" y="242" width="343" height="2"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="fOz-ay-jbP"/>
@@ -34,10 +46,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hBR-eE-ute" secondAttribute="trailing" id="4E6-AN-Emw"/>
+                                    <constraint firstItem="99t-Yb-Qag" firstAttribute="leading" secondItem="iyT-bH-MJF" secondAttribute="leading" id="C46-oN-o5p"/>
+                                    <constraint firstAttribute="bottom" secondItem="99t-Yb-Qag" secondAttribute="bottom" id="NWH-jD-Uqq"/>
                                     <constraint firstItem="paV-Jd-DiT" firstAttribute="leading" secondItem="iyT-bH-MJF" secondAttribute="leading" constant="16" id="RJ3-np-qJf"/>
+                                    <constraint firstItem="hBR-eE-ute" firstAttribute="leading" secondItem="iyT-bH-MJF" secondAttribute="leading" id="WC9-jH-4Km"/>
+                                    <constraint firstAttribute="trailing" secondItem="99t-Yb-Qag" secondAttribute="trailing" id="bRP-P1-91k"/>
                                     <constraint firstItem="paV-Jd-DiT" firstAttribute="centerY" secondItem="iyT-bH-MJF" secondAttribute="centerY" id="cq5-TA-jDX"/>
+                                    <constraint firstItem="hBR-eE-ute" firstAttribute="top" secondItem="iyT-bH-MJF" secondAttribute="top" id="miK-rk-P9e"/>
                                     <constraint firstAttribute="trailing" secondItem="paV-Jd-DiT" secondAttribute="trailing" constant="16" id="rjI-L7-w7i"/>
                                 </constraints>
                             </view>
@@ -50,7 +68,7 @@
                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Animate" image="timer">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="onAnimateButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="O8V-bQ-Ilx"/>
@@ -61,7 +79,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="titleEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Set Progress" image="services">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="onSetProgressButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="g3C-r0-26T"/>
@@ -73,7 +91,7 @@
                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Reset" image="refresh">
-                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="onResetButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KjT-pw-v1C"/>
@@ -85,7 +103,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iyT-bH-MJF" firstAttribute="leading" secondItem="0wX-Te-c8F" secondAttribute="leading" id="4fF-bu-e0c"/>
                             <constraint firstItem="iyT-bH-MJF" firstAttribute="top" secondItem="0wX-Te-c8F" secondAttribute="top" id="Ajd-BQ-F3L"/>
@@ -98,7 +116,7 @@
                         <viewLayoutGuide key="safeArea" id="0wX-Te-c8F"/>
                     </view>
                     <navigationItem key="navigationItem" title="🏡 Basic Example" prompt="Gradient Progress Bar" largeTitleDisplayMode="always" id="Z7n-YK-yp8">
-                        <barButtonItem key="rightBarButtonItem" title="Advanced Example" id="MSW-Ye-ZLF">
+                        <barButtonItem key="rightBarButtonItem" title="» Advanced Example" id="MSW-Ye-ZLF">
                             <connections>
                                 <segue destination="4ad-Yc-uw7" kind="show" id="X8Z-Q2-3vO"/>
                             </connections>
@@ -121,10 +139,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdN-O6-x0x" userLabel="Wrapper View">
-                                <rect key="frame" x="0.0" y="150" width="375" height="473"/>
+                                <rect key="frame" x="0.0" y="137.5" width="375" height="485.5"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upk-tN-DZc" userLabel="Border Top View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                        <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="EdY-jT-arC"/>
+                                            <constraint firstAttribute="height" constant="1" id="Rjf-cj-0u4"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUG-z4-188" userLabel="Border Bottom View">
+                                        <rect key="frame" x="0.0" y="484.5" width="375" height="1"/>
+                                        <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Uv7-N3-SQP"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="dUc-G7-FVg"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="mAT-Se-Twd"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AiD-8Z-1cp" customClass="GradientProgressBar" customModule="GradientProgressBar">
-                                        <rect key="frame" x="16" y="235.5" width="343" height="2"/>
+                                        <rect key="frame" x="16" y="242" width="343" height="2"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="iM6-9E-PRE"/>
@@ -136,11 +171,17 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="AiD-8Z-1cp" secondAttribute="trailing" constant="16" id="1Vv-Ze-Xau"/>
                                     <constraint firstItem="AiD-8Z-1cp" firstAttribute="centerY" secondItem="bdN-O6-x0x" secondAttribute="centerY" id="LdJ-iU-At2"/>
                                     <constraint firstItem="AiD-8Z-1cp" firstAttribute="leading" secondItem="bdN-O6-x0x" secondAttribute="leading" constant="16" id="M2o-U3-QFe"/>
+                                    <constraint firstItem="GUG-z4-188" firstAttribute="leading" secondItem="bdN-O6-x0x" secondAttribute="leading" id="XOm-70-Yez"/>
+                                    <constraint firstItem="upk-tN-DZc" firstAttribute="top" secondItem="bdN-O6-x0x" secondAttribute="top" id="fVx-uw-L6L"/>
+                                    <constraint firstAttribute="trailing" secondItem="upk-tN-DZc" secondAttribute="trailing" id="hH4-4X-Umo"/>
+                                    <constraint firstAttribute="trailing" secondItem="GUG-z4-188" secondAttribute="trailing" id="hkD-hG-qat"/>
+                                    <constraint firstItem="GUG-z4-188" firstAttribute="bottom" secondItem="bdN-O6-x0x" secondAttribute="bottom" id="oPe-vZ-1sR"/>
+                                    <constraint firstItem="upk-tN-DZc" firstAttribute="leading" secondItem="bdN-O6-x0x" secondAttribute="leading" id="rSu-Uw-q7N"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MmE-Bl-iPI" userLabel="Button Stack View">
@@ -151,7 +192,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Animate" image="timer">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="onAnimateButtonTouchUpInside:" destination="4ad-Yc-uw7" eventType="touchUpInside" id="7Pw-gU-bhi"/>
@@ -163,7 +204,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Set Progress" image="services">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="onSetProgressButtonTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="URH-Jm-dsa"/>
@@ -176,7 +217,7 @@
                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Reset" image="refresh">
-                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="onResetButtonTouchUpInside:" destination="4ad-Yc-uw7" eventType="touchUpInside" id="ROn-SM-fps"/>
@@ -189,7 +230,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JZz-n7-Jap" firstAttribute="trailing" secondItem="bdN-O6-x0x" secondAttribute="trailing" id="0LS-kd-0eN"/>
                             <constraint firstItem="JZz-n7-Jap" firstAttribute="trailing" secondItem="MmE-Bl-iPI" secondAttribute="trailing" id="3kK-cu-mJv"/>
@@ -202,7 +243,7 @@
                         <viewLayoutGuide key="safeArea" id="JZz-n7-Jap"/>
                     </view>
                     <navigationItem key="navigationItem" title="🚀 Advanced Example" prompt="Gradient Progress Bar" largeTitleDisplayMode="always" id="3sL-EA-bQc">
-                        <barButtonItem key="rightBarButtonItem" title="Web View Example" id="Qzg-7H-NXQ">
+                        <barButtonItem key="rightBarButtonItem" title="» Web View Example" id="Qzg-7H-NXQ">
                             <connections>
                                 <segue destination="ye3-ic-PmR" kind="show" id="SC5-gE-Ohh"/>
                             </connections>
@@ -225,15 +266,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kBF-IR-qfs" userLabel="WebView">
-                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="137.5" width="375" height="529.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kBF-IR-qfs" firstAttribute="top" secondItem="hMd-1H-ys2" secondAttribute="top" id="N3E-bf-bgp"/>
                             <constraint firstItem="kBF-IR-qfs" firstAttribute="leading" secondItem="d57-Pi-Uil" secondAttribute="leading" id="YYh-kB-vOY"/>
@@ -264,7 +305,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x3C-0W-Nfd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="t33-eO-Q58">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="103.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

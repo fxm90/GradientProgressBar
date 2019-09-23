@@ -7,6 +7,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [2.0.1] - 2019-23-09
+### Added
+ - Support for dark mode on iOS 13
+### Changed
+ - Set access control to `public` for layers on `GradientProgressBar`, in order to allow further configuration in subclasses ([#8])
 
 ## [2.0.0] - 2019-28-08
 ### Changed
@@ -16,7 +21,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [1.2.9] - 2019-09-06
 ### Fixed
- - Fix Carthage build failed due to non shared scheme 
+ - Fix Carthage build failed due to non shared scheme
 ### Changed
  - Moved observable implementation into a framework (`LightweightObservable`) and added it as dependency
 
@@ -50,7 +55,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ## [1.2.2] - 2018-14-04
 ### Changed
  - Updates for Swift 4.1
- - Formatted code 
+ - Formatted code
 
 ## [1.2.1] - 2018-27-01
 ### Added
@@ -105,8 +110,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Initial release
 
 
-[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/2.0.0...master
-[1.2.9]: https://github.com/fxm90/GradientProgressBar/compare/1.2.9...2.0.0
+[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/2.0.1...master
+[2.0.1]: https://github.com/fxm90/GradientProgressBar/compare/2.0.0...2.0.1
+[2.0.0]: https://github.com/fxm90/GradientProgressBar/compare/1.2.9...2.0.0
 [1.2.9]: https://github.com/fxm90/GradientProgressBar/compare/1.2.8...1.2.9
 [1.2.8]: https://github.com/fxm90/GradientProgressBar/compare/1.2.7...1.2.8
 [1.2.7]: https://github.com/fxm90/GradientProgressBar/compare/1.2.6...1.2.7

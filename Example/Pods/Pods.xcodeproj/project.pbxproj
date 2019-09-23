@@ -15,7 +15,6 @@
 			dependencies = (
 			);
 			name = SwiftFormat;
-			productName = SwiftFormat;
 		};
 		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
 			isa = PBXAggregateTarget;
@@ -25,42 +24,34 @@
 			dependencies = (
 			);
 			name = SwiftLint;
-			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0026C2DA36FF98B3B2B4ABF65B47B612 /* GradientLayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACF553B52B7ACB86EE01E094666371B /* GradientLayerViewModel.swift */; };
-		043819E0277C7C12F7C2F093BEE882B5 /* GradientProgressBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D401BF4A254889AED36E189041EA3 /* GradientProgressBar-dummy.m */; };
-		0693811913F9B98F6CDB68ECC23B321E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747043F67145DD5849FE516B3C4B4FD /* Observable.swift */; };
 		18CA521ED13CE001A7E50AAF73447483 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B802EDB707F8CE8EBD66EB815051159F /* Foundation.framework */; };
-		38A537BEEC84B88FB937B5F0B829C25C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B802EDB707F8CE8EBD66EB815051159F /* Foundation.framework */; };
-		43E69A283F950CF477DD546295E41962 /* GradientProgressBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4B518261563568070A67AF7F40AB06 /* GradientProgressBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46D3EA8560ABB9BC0029C2B16FBB0FAA /* GradientProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F3E122FAAE9F398A92F57D27C67FC /* GradientProgressBar.swift */; };
-		4EF723B95519A9F1A31EA134EC0A51E1 /* LightweightObservable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD063AA69CB768D6A5AA2979C02245EF /* LightweightObservable.framework */; };
-		5AA08EE2294524A050B289352FD4C292 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D0D61D4FBBAB814724AABEBA7559C /* Constants.swift */; };
-		62E174A41C15A71CEF89BEDB8C93C0E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B802EDB707F8CE8EBD66EB815051159F /* Foundation.framework */; };
-		6426768E2338A2ED003F3DCF /* UIColor+MakeDynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6426768D2338A2ED003F3DCF /* UIColor+MakeDynamicColor.swift */; };
+		1B5A1B1608BFFB27523D45DD320C0AA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8900B30C6E69ECC456CD31BD8DCB8CE9 /* Constants.swift */; };
+		2B875324BF8589863683DBDC8ED7E14B /* MaskLayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2BF1B6664C75E40CA2D1976DC9339 /* MaskLayerViewModel.swift */; };
+		387E0F2A8401EA07D3FCD21FEAE296BC /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D38C5B20099D076D82117D02E0B7AED /* Disposable.swift */; };
+		561D85DADEC75D701D0A5525EC63E911 /* GradientProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABD9EAB6EE9C36866AF140DF85A488 /* GradientProgressBar.swift */; };
+		57FF59FD40621E306DD1A364C649AE68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B802EDB707F8CE8EBD66EB815051159F /* Foundation.framework */; };
+		5ABC92149ACE3DF0824A2866A3C9E874 /* LightweightObservable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AC7D666D92E1D61A47F107800B7146A3 /* LightweightObservable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8893A5D194D49988B7C250B62A9D02B7 /* Pods-GradientProgressBar_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9C4D384CE2C884A87E1D62DA15C00 /* Pods-GradientProgressBar_Tests-dummy.m */; };
 		8EC570F13FA182306BB6073FCF2264CC /* Pods-GradientProgressBar_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 23D001A493B5F34B6355B705744F1BF2 /* Pods-GradientProgressBar_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		966AC0C98E18F1531E54C6E513861FDD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B802EDB707F8CE8EBD66EB815051159F /* Foundation.framework */; };
+		AE5E4285A502EDB530EB3F276A5545D8 /* UIColor+MakeDynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9145D55E2174A563A7B7266F3AF694 /* UIColor+MakeDynamicColor.swift */; };
+		B12ECA8A64EAC968A9D9CA8FCA04A2D6 /* LightweightObservable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD063AA69CB768D6A5AA2979C02245EF /* LightweightObservable.framework */; };
 		B244973CEFE93A8C8B3E41D57CFC1DC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B802EDB707F8CE8EBD66EB815051159F /* Foundation.framework */; };
-		B5E2FEF3FA17FF8890BF4BD460010E2A /* MaskLayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDC8E52CD3D1E1BCBA4A2F26EDADB0C /* MaskLayerViewModel.swift */; };
-		F17725450D693B51184FDDDA23E9916C /* LightweightObservable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F13B2F6DA37C8A593426CD44738795 /* LightweightObservable-dummy.m */; };
+		CE507C86464A03933016BCAED1F3675B /* GradientProgressBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E886BB368BBE18CAF44E5F29C5735C0 /* GradientProgressBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E91AE0A43ED636C68A601175401A6EAA /* GradientLayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C689E90A6E952787F6AFB6332E6B788 /* GradientLayerViewModel.swift */; };
+		E97822D94ECFD536C109ECBC47BAEF25 /* Observable+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B598956441B4D3C63D9CCDB07CA83 /* Observable+Equatable.swift */; };
+		ECCFA5D3A3D496C33F10D0DD18090B4D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A747043F67145DD5849FE516B3C4B4FD /* Observable.swift */; };
+		EDAD881F947B46473DB3200A3BA41B41 /* LightweightObservable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F13B2F6DA37C8A593426CD44738795 /* LightweightObservable-dummy.m */; };
 		F188F25383B3E29D1565EF1B51C4C68B /* Pods-GradientProgressBar_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 657DEA0A4FEEAD97AF9B060A041E96E8 /* Pods-GradientProgressBar_Example-dummy.m */; };
 		F3CB4CB049D958F850526E25C1FCA02A /* Pods-GradientProgressBar_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E252D851C620D18415EDAD4E0CE20A1 /* Pods-GradientProgressBar_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD84639AD9E8EEAEBC479B0915F33577 /* LightweightObservable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AC7D666D92E1D61A47F107800B7146A3 /* LightweightObservable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF500CFAF1CB2415342F0C0833436739 /* Observable+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B598956441B4D3C63D9CCDB07CA83 /* Observable+Equatable.swift */; };
-		FF829DBCAED16FE030C5593A37B34632 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D38C5B20099D076D82117D02E0B7AED /* Disposable.swift */; };
+		F86D9AE7D15BA3303973C7CA18DC5556 /* GradientProgressBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0F774A0EE7217E71022A643C74E70B /* GradientProgressBar-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		11F1E1A4E98575B4F3A1C53952092893 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 086F937CFC9099EB74E4B66BE7CBCB93;
-			remoteInfo = LightweightObservable;
-		};
 		168C0A06B88A7C510C4C61A6678AD772 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -89,6 +80,13 @@
 			remoteGlobalIDString = 02A49EFF333D539AFC033A5F1B8B0A45;
 			remoteInfo = GradientProgressBar;
 		};
+		B2E0CB4A8FA9020975EE0FBE7989C54C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 086F937CFC9099EB74E4B66BE7CBCB93;
+			remoteInfo = LightweightObservable;
+		};
 		F2D5E0C8CCB443B012E5C04B001E2126 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -100,41 +98,40 @@
 
 /* Begin PBXFileReference section */
 		03F82557A097C776E121CFBF19683E92 /* Pods-GradientProgressBar_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GradientProgressBar_Example.modulemap"; sourceTree = "<group>"; };
-		06D2A33567A0BA45FD04D735CF5FA780 /* GradientProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GradientProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		095A4FBB15CC83219BA320D87D64C8E1 /* GradientProgressBar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GradientProgressBar.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		0BF69CE4CF9957ECA6985CEA34E6A79D /* GradientProgressBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GradientProgressBar.xcconfig; sourceTree = "<group>"; };
+		06D2A33567A0BA45FD04D735CF5FA780 /* GradientProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GradientProgressBar.framework; path = GradientProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08DB8672A3FAF9D6BD5B383C6641ADD7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		0C689E90A6E952787F6AFB6332E6B788 /* GradientLayerViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradientLayerViewModel.swift; sourceTree = "<group>"; };
 		0D38C5B20099D076D82117D02E0B7AED /* Disposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Disposable.swift; path = LightweightObservable/Classes/Disposable.swift; sourceTree = "<group>"; };
 		11E0AF157CD3B2B984CE39270D7505C0 /* Pods-GradientProgressBar_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GradientProgressBar_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		120D0D61D4FBBAB814724AABEBA7559C /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		123716900E543F0F7D0826C14A96CC69 /* GradientProgressBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GradientProgressBar-prefix.pch"; sourceTree = "<group>"; };
 		1481C2474E04A24E089E460B08F3A7C2 /* Pods-GradientProgressBar_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GradientProgressBar_Tests-Info.plist"; sourceTree = "<group>"; };
-		14C00286638A617A30E3E5FF7D8204D2 /* GradientProgressBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GradientProgressBar-prefix.pch"; sourceTree = "<group>"; };
+		1E886BB368BBE18CAF44E5F29C5735C0 /* GradientProgressBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GradientProgressBar-umbrella.h"; sourceTree = "<group>"; };
 		23D001A493B5F34B6355B705744F1BF2 /* Pods-GradientProgressBar_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GradientProgressBar_Tests-umbrella.h"; sourceTree = "<group>"; };
 		2A29F06250B6F46DFEBD1E83DA9CAA75 /* LightweightObservable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LightweightObservable.modulemap; sourceTree = "<group>"; };
 		2AB9C4D384CE2C884A87E1D62DA15C00 /* Pods-GradientProgressBar_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GradientProgressBar_Tests-dummy.m"; sourceTree = "<group>"; };
-		2ACF553B52B7ACB86EE01E094666371B /* GradientLayerViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradientLayerViewModel.swift; sourceTree = "<group>"; };
+		2CD4D96377188299A227B5D18D9E1B44 /* GradientProgressBar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GradientProgressBar.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		35750B817B3FC23DFB1A2028C82E281C /* Pods-GradientProgressBar_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GradientProgressBar_Example-Info.plist"; sourceTree = "<group>"; };
 		3AEDDAEB9C54242A524BE3D93F11099D /* Pods-GradientProgressBar_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GradientProgressBar_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		43A4C7CF51827A48237235CAD948C513 /* Pods-GradientProgressBar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GradientProgressBar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		4B36D2B1E6A36B239A8ADD555A095659 /* GradientProgressBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GradientProgressBar.modulemap; sourceTree = "<group>"; };
-		4C2D401BF4A254889AED36E189041EA3 /* GradientProgressBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GradientProgressBar-dummy.m"; sourceTree = "<group>"; };
+		45E0FBB898BF5979FE738A216DB67BF4 /* GradientProgressBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GradientProgressBar-Info.plist"; sourceTree = "<group>"; };
+		48ABD9EAB6EE9C36866AF140DF85A488 /* GradientProgressBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientProgressBar.swift; path = GradientProgressBar/Classes/GradientProgressBar.swift; sourceTree = "<group>"; };
 		4CCB5C737460CA4EE7F96DBD7D2F6858 /* LightweightObservable-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LightweightObservable-Info.plist"; sourceTree = "<group>"; };
+		4D7BFEC634B6BE65B5AE315FE4C4932D /* readme.md */ = {isa = PBXFileReference; includeInIndex = 1; path = readme.md; sourceTree = "<group>"; };
 		4EBE3EEBF56AAAA7F35303B5926066F4 /* Pods-GradientProgressBar_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GradientProgressBar_Tests.modulemap"; sourceTree = "<group>"; };
 		51B550AFED70A1CF041342EE110549F8 /* Pods-GradientProgressBar_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GradientProgressBar_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		5255D8E2919757475E3A29F43306598B /* GradientProgressBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GradientProgressBar-Info.plist"; sourceTree = "<group>"; };
 		52F13B2F6DA37C8A593426CD44738795 /* LightweightObservable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LightweightObservable-dummy.m"; sourceTree = "<group>"; };
-		5F4B518261563568070A67AF7F40AB06 /* GradientProgressBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GradientProgressBar-umbrella.h"; sourceTree = "<group>"; };
 		6153A27C55EECF90D877BE0D98C42807 /* Pods-GradientProgressBar_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GradientProgressBar_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		6426768D2338A2ED003F3DCF /* UIColor+MakeDynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+MakeDynamicColor.swift"; sourceTree = "<group>"; };
 		657DEA0A4FEEAD97AF9B060A041E96E8 /* Pods-GradientProgressBar_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GradientProgressBar_Example-dummy.m"; sourceTree = "<group>"; };
 		670D1598351BCDDA2ACA6F3ECB0434BB /* SwiftFormat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftFormat.xcconfig; sourceTree = "<group>"; };
-		7089F0D00E320DA5B1AEA2EDA788B012 /* Pods_GradientProgressBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradientProgressBar_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7089F0D00E320DA5B1AEA2EDA788B012 /* Pods_GradientProgressBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GradientProgressBar_Tests.framework; path = "Pods-GradientProgressBar_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EB18C8AFCE2ED322E3A584A62EB659 /* LightweightObservable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LightweightObservable.xcconfig; sourceTree = "<group>"; };
+		8900B30C6E69ECC456CD31BD8DCB8CE9 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8A6CC03E053C1C2F16082364273E4B82 /* GradientProgressBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GradientProgressBar.xcconfig; sourceTree = "<group>"; };
 		8A7D08240645B7808926E1CB70D5D114 /* Pods-GradientProgressBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GradientProgressBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8F250286A5229A56B46FC13B1262852B /* SwiftLint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.xcconfig; sourceTree = "<group>"; };
 		950B598956441B4D3C63D9CCDB07CA83 /* Observable+Equatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Observable+Equatable.swift"; path = "LightweightObservable/Classes/Observable/Observable+Equatable.swift"; sourceTree = "<group>"; };
 		98A1BBB9EC5F0B8CF955ADBE9C13F227 /* Pods-GradientProgressBar_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GradientProgressBar_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9CDC8E52CD3D1E1BCBA4A2F26EDADB0C /* MaskLayerViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MaskLayerViewModel.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E252D851C620D18415EDAD4E0CE20A1 /* Pods-GradientProgressBar_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GradientProgressBar_Example-umbrella.h"; sourceTree = "<group>"; };
 		A6B9F17E903DFFE234A63764A68EC8A2 /* Pods-GradientProgressBar_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GradientProgressBar_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A747043F67145DD5849FE516B3C4B4FD /* Observable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = LightweightObservable/Classes/Observable/Observable.swift; sourceTree = "<group>"; };
@@ -142,20 +139,38 @@
 		AEFDBE9CAAE5C8572076FA1DA16DD534 /* LightweightObservable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LightweightObservable-prefix.pch"; sourceTree = "<group>"; };
 		B55D77E4F47384F9B30DF4157FE5D573 /* Pods-GradientProgressBar_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GradientProgressBar_Example-frameworks.sh"; sourceTree = "<group>"; };
 		B802EDB707F8CE8EBD66EB815051159F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		BD3C46FB59DF76DFA5974C92DB17066A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		D4F88EFDF064131C6FF6186C38964C01 /* Pods_GradientProgressBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradientProgressBar_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0B2BF1B6664C75E40CA2D1976DC9339 /* MaskLayerViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MaskLayerViewModel.swift; sourceTree = "<group>"; };
+		C76CD4B803E45C195AB72A842F8D5A58 /* GradientProgressBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GradientProgressBar.modulemap; sourceTree = "<group>"; };
+		CF9145D55E2174A563A7B7266F3AF694 /* UIColor+MakeDynamicColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+MakeDynamicColor.swift"; sourceTree = "<group>"; };
+		D4F88EFDF064131C6FF6186C38964C01 /* Pods_GradientProgressBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GradientProgressBar_Example.framework; path = "Pods-GradientProgressBar_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD063AA69CB768D6A5AA2979C02245EF /* LightweightObservable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LightweightObservable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA2F3E122FAAE9F398A92F57D27C67FC /* GradientProgressBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientProgressBar.swift; path = GradientProgressBar/Classes/GradientProgressBar.swift; sourceTree = "<group>"; };
-		F196AAA163469B17170E99B82C7C4C0A /* LightweightObservable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LightweightObservable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB6F5E9D0899D8917D1EA5E17ECB4EC2 /* readme.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		EA0F774A0EE7217E71022A643C74E70B /* GradientProgressBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GradientProgressBar-dummy.m"; sourceTree = "<group>"; };
+		F196AAA163469B17170E99B82C7C4C0A /* LightweightObservable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LightweightObservable.framework; path = LightweightObservable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1C32E14B2E74D26BC6AC54A66AB202B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57FF59FD40621E306DD1A364C649AE68 /* Foundation.framework in Frameworks */,
+				B12ECA8A64EAC968A9D9CA8FCA04A2D6 /* LightweightObservable.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		749D21601A3DE6A967DF2518668E556D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				18CA521ED13CE001A7E50AAF73447483 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93E48D47F82E9F696365BEA514126CD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				966AC0C98E18F1531E54C6E513861FDD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,38 +182,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE1E3BD749891D14D4623D4ADD6D0F34 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				62E174A41C15A71CEF89BEDB8C93C0E7 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ECC38DB36150CF61837A67FE75DDA798 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				38A537BEEC84B88FB937B5F0B829C25C /* Foundation.framework in Frameworks */,
-				4EF723B95519A9F1A31EA134EC0A51E1 /* LightweightObservable.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2006424F6D5E9104F252C72514AF5797 /* GradientProgressBar */ = {
+		08EA71403020F9407C431519302D354C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				EA2F3E122FAAE9F398A92F57D27C67FC /* GradientProgressBar.swift */,
-				6426768C2338A2ED003F3DCF /* Extensions */,
-				DDC3B1CF67FC39FEB760F2C6B6C80C19 /* Misc */,
-				6945411245B659DE2C353C93FAA8BA1A /* Pod */,
-				6E8D74271F3B5B2455CA2560A6CC884D /* Support Files */,
-				3FD74FF12EAE1B69CF4A4829911050CD /* ViewModel */,
+				0C689E90A6E952787F6AFB6332E6B788 /* GradientLayerViewModel.swift */,
+				C0B2BF1B6664C75E40CA2D1976DC9339 /* MaskLayerViewModel.swift */,
 			);
-			name = GradientProgressBar;
-			path = ../..;
+			name = ViewModel;
+			path = GradientProgressBar/Classes/ViewModel;
 			sourceTree = "<group>";
 		};
 		2522EA1CD73983B85B5446CF7A5FC545 /* SwiftLint */ = {
@@ -206,7 +200,31 @@
 			children = (
 				2B1C5D8984DE17B536E3AA18AD9A36AD /* Support Files */,
 			);
+			name = SwiftLint;
 			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		26D751C7DC42763A55DB79441532B0D5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF9145D55E2174A563A7B7266F3AF694 /* UIColor+MakeDynamicColor.swift */,
+			);
+			name = Extensions;
+			path = GradientProgressBar/Classes/Extensions;
+			sourceTree = "<group>";
+		};
+		277E2ADABDB61BDF8ABCDA28759162FA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C76CD4B803E45C195AB72A842F8D5A58 /* GradientProgressBar.modulemap */,
+				8A6CC03E053C1C2F16082364273E4B82 /* GradientProgressBar.xcconfig */,
+				EA0F774A0EE7217E71022A643C74E70B /* GradientProgressBar-dummy.m */,
+				45E0FBB898BF5979FE738A216DB67BF4 /* GradientProgressBar-Info.plist */,
+				123716900E543F0F7D0826C14A96CC69 /* GradientProgressBar-prefix.pch */,
+				1E886BB368BBE18CAF44E5F29C5735C0 /* GradientProgressBar-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/GradientProgressBar";
 			sourceTree = "<group>";
 		};
 		28CF81584746F1CC16C59537D24B2CE1 /* Pods */ = {
@@ -228,16 +246,6 @@
 			path = "../Target Support Files/SwiftLint";
 			sourceTree = "<group>";
 		};
-		3FD74FF12EAE1B69CF4A4829911050CD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				2ACF553B52B7ACB86EE01E094666371B /* GradientLayerViewModel.swift */,
-				9CDC8E52CD3D1E1BCBA4A2F26EDADB0C /* MaskLayerViewModel.swift */,
-			);
-			name = ViewModel;
-			path = GradientProgressBar/Classes/ViewModel;
-			sourceTree = "<group>";
-		};
 		3FE6BED61024E91D4D0E6997F4CF4DD1 /* Pods-GradientProgressBar_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,37 +262,12 @@
 			path = "Target Support Files/Pods-GradientProgressBar_Tests";
 			sourceTree = "<group>";
 		};
-		6426768C2338A2ED003F3DCF /* Extensions */ = {
+		7628836BB6E658EB7854D7B2D1AD6449 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6426768D2338A2ED003F3DCF /* UIColor+MakeDynamicColor.swift */,
+				AC79574C73ECFE95A111122F6F368FF3 /* GradientProgressBar */,
 			);
-			name = Extensions;
-			path = GradientProgressBar/Classes/Extensions;
-			sourceTree = "<group>";
-		};
-		6945411245B659DE2C353C93FAA8BA1A /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				095A4FBB15CC83219BA320D87D64C8E1 /* GradientProgressBar.podspec */,
-				BD3C46FB59DF76DFA5974C92DB17066A /* LICENSE */,
-				FB6F5E9D0899D8917D1EA5E17ECB4EC2 /* readme.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		6E8D74271F3B5B2455CA2560A6CC884D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4B36D2B1E6A36B239A8ADD555A095659 /* GradientProgressBar.modulemap */,
-				0BF69CE4CF9957ECA6985CEA34E6A79D /* GradientProgressBar.xcconfig */,
-				4C2D401BF4A254889AED36E189041EA3 /* GradientProgressBar-dummy.m */,
-				5255D8E2919757475E3A29F43306598B /* GradientProgressBar-Info.plist */,
-				14C00286638A617A30E3E5FF7D8204D2 /* GradientProgressBar-prefix.pch */,
-				5F4B518261563568070A67AF7F40AB06 /* GradientProgressBar-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/GradientProgressBar";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		77EF0692EA53DAF89BA695C6D440A85B /* SwiftFormat */ = {
@@ -292,6 +275,7 @@
 			children = (
 				DD0982CE766FEDDC6A9FF49DFB59184D /* Support Files */,
 			);
+			name = SwiftFormat;
 			path = SwiftFormat;
 			sourceTree = "<group>";
 		};
@@ -303,6 +287,7 @@
 				950B598956441B4D3C63D9CCDB07CA83 /* Observable+Equatable.swift */,
 				8D2B996144BFC136BF8D3EEF59E87FFB /* Support Files */,
 			);
+			name = LightweightObservable;
 			path = LightweightObservable;
 			sourceTree = "<group>";
 		};
@@ -327,14 +312,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/LightweightObservable";
-			sourceTree = "<group>";
-		};
-		8F5FE72799D35434A9F4E3F171B9C20D /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2006424F6D5E9104F252C72514AF5797 /* GradientProgressBar */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		99BFFC4C67A5CE1DF012BD3FF1119CDF /* Products */ = {
@@ -365,6 +342,20 @@
 			path = "Target Support Files/Pods-GradientProgressBar_Example";
 			sourceTree = "<group>";
 		};
+		AC79574C73ECFE95A111122F6F368FF3 /* GradientProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				48ABD9EAB6EE9C36866AF140DF85A488 /* GradientProgressBar.swift */,
+				26D751C7DC42763A55DB79441532B0D5 /* Extensions */,
+				F9F1CD31A47C66FEA9E96C14D056EAA2 /* Misc */,
+				F3816C8593BB58E95F6209D2659389F6 /* Pod */,
+				277E2ADABDB61BDF8ABCDA28759162FA /* Support Files */,
+				08EA71403020F9407C431519302D354C /* ViewModel */,
+			);
+			name = GradientProgressBar;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		B3CF2F02BDA2ADF54DD0DDFFE714C8E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,7 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				8F5FE72799D35434A9F4E3F171B9C20D /* Development Pods */,
+				7628836BB6E658EB7854D7B2D1AD6449 /* Development Pods */,
 				B3CF2F02BDA2ADF54DD0DDFFE714C8E0 /* Frameworks */,
 				28CF81584746F1CC16C59537D24B2CE1 /* Pods */,
 				99BFFC4C67A5CE1DF012BD3FF1119CDF /* Products */,
@@ -403,10 +394,20 @@
 			path = "../Target Support Files/SwiftFormat";
 			sourceTree = "<group>";
 		};
-		DDC3B1CF67FC39FEB760F2C6B6C80C19 /* Misc */ = {
+		F3816C8593BB58E95F6209D2659389F6 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				120D0D61D4FBBAB814724AABEBA7559C /* Constants.swift */,
+				2CD4D96377188299A227B5D18D9E1B44 /* GradientProgressBar.podspec */,
+				08DB8672A3FAF9D6BD5B383C6641ADD7 /* LICENSE */,
+				4D7BFEC634B6BE65B5AE315FE4C4932D /* readme.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		F9F1CD31A47C66FEA9E96C14D056EAA2 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				8900B30C6E69ECC456CD31BD8DCB8CE9 /* Constants.swift */,
 			);
 			name = Misc;
 			path = GradientProgressBar/Classes/Misc;
@@ -423,6 +424,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4186A276A49FEB5921F7DD075ACCF789 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ABC92149ACE3DF0824A2866A3C9E874 /* LightweightObservable-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90531E04809A28B876ABC33879C8EA0D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,19 +440,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A866CDF64F8EDDA47C7643D8CDB075B8 /* Headers */ = {
+		BB0ABB64E1935F755A3B3AFBD2ACCB24 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD84639AD9E8EEAEBC479B0915F33577 /* LightweightObservable-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FF036DD2FAA9C0CA30590894324CFA0A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				43E69A283F950CF477DD546295E41962 /* GradientProgressBar-umbrella.h in Headers */,
+				CE507C86464A03933016BCAED1F3675B /* GradientProgressBar-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,17 +453,17 @@
 /* Begin PBXNativeTarget section */
 		02A49EFF333D539AFC033A5F1B8B0A45 /* GradientProgressBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF21E0987012E0CAA2516CCFADB827B7 /* Build configuration list for PBXNativeTarget "GradientProgressBar" */;
+			buildConfigurationList = 6670CF157B0B4B168A498BC3C82135D3 /* Build configuration list for PBXNativeTarget "GradientProgressBar" */;
 			buildPhases = (
-				FF036DD2FAA9C0CA30590894324CFA0A /* Headers */,
-				F3B024A0E1E883799891882CBE1F4BE9 /* Sources */,
-				ECC38DB36150CF61837A67FE75DDA798 /* Frameworks */,
-				3CEE2C1D244ED4A194FCD1C83B70BDCA /* Resources */,
+				BB0ABB64E1935F755A3B3AFBD2ACCB24 /* Headers */,
+				EA81C2BA078CDED4B2E06FD8B20393C8 /* Sources */,
+				1C32E14B2E74D26BC6AC54A66AB202B8 /* Frameworks */,
+				D22859875E4CE08BFCDEEF6DC4A84850 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B75C5B0866396330C7CD3318916446E5 /* PBXTargetDependency */,
+				333D9F3FC205249101D118655B265ACF /* PBXTargetDependency */,
 			);
 			name = GradientProgressBar;
 			productName = GradientProgressBar;
@@ -471,12 +472,12 @@
 		};
 		086F937CFC9099EB74E4B66BE7CBCB93 /* LightweightObservable */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3CAA7900CD45923001DFA217706653B7 /* Build configuration list for PBXNativeTarget "LightweightObservable" */;
+			buildConfigurationList = C48DA4941C272E288472E14197B26F5D /* Build configuration list for PBXNativeTarget "LightweightObservable" */;
 			buildPhases = (
-				A866CDF64F8EDDA47C7643D8CDB075B8 /* Headers */,
-				EFDBF937E3ADD97AA45BE1217DE50B33 /* Sources */,
-				DE1E3BD749891D14D4623D4ADD6D0F34 /* Frameworks */,
-				77BA999C2B4E2E010EA772F9ACE56362 /* Resources */,
+				4186A276A49FEB5921F7DD075ACCF789 /* Headers */,
+				7153C43AC34941102DA38022A9CEDFE5 /* Sources */,
+				93E48D47F82E9F696365BEA514126CD3 /* Frameworks */,
+				6E63710CABE87A7101B22247E436B519 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -543,7 +544,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 99BFFC4C67A5CE1DF012BD3FF1119CDF /* Products */;
@@ -568,14 +568,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3CEE2C1D244ED4A194FCD1C83B70BDCA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		77BA999C2B4E2E010EA772F9ACE56362 /* Resources */ = {
+		6E63710CABE87A7101B22247E436B519 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -583,6 +576,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BF5096E3EEFCDA78AE42F7E22E33AE4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D22859875E4CE08BFCDEEF6DC4A84850 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -608,27 +608,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EFDBF937E3ADD97AA45BE1217DE50B33 /* Sources */ = {
+		7153C43AC34941102DA38022A9CEDFE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF829DBCAED16FE030C5593A37B34632 /* Disposable.swift in Sources */,
-				F17725450D693B51184FDDDA23E9916C /* LightweightObservable-dummy.m in Sources */,
-				FF500CFAF1CB2415342F0C0833436739 /* Observable+Equatable.swift in Sources */,
-				0693811913F9B98F6CDB68ECC23B321E /* Observable.swift in Sources */,
+				387E0F2A8401EA07D3FCD21FEAE296BC /* Disposable.swift in Sources */,
+				EDAD881F947B46473DB3200A3BA41B41 /* LightweightObservable-dummy.m in Sources */,
+				E97822D94ECFD536C109ECBC47BAEF25 /* Observable+Equatable.swift in Sources */,
+				ECCFA5D3A3D496C33F10D0DD18090B4D /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3B024A0E1E883799891882CBE1F4BE9 /* Sources */ = {
+		EA81C2BA078CDED4B2E06FD8B20393C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AA08EE2294524A050B289352FD4C292 /* Constants.swift in Sources */,
-				6426768E2338A2ED003F3DCF /* UIColor+MakeDynamicColor.swift in Sources */,
-				0026C2DA36FF98B3B2B4ABF65B47B612 /* GradientLayerViewModel.swift in Sources */,
-				043819E0277C7C12F7C2F093BEE882B5 /* GradientProgressBar-dummy.m in Sources */,
-				46D3EA8560ABB9BC0029C2B16FBB0FAA /* GradientProgressBar.swift in Sources */,
-				B5E2FEF3FA17FF8890BF4BD460010E2A /* MaskLayerViewModel.swift in Sources */,
+				1B5A1B1608BFFB27523D45DD320C0AA9 /* Constants.swift in Sources */,
+				E91AE0A43ED636C68A601175401A6EAA /* GradientLayerViewModel.swift in Sources */,
+				F86D9AE7D15BA3303973C7CA18DC5556 /* GradientProgressBar-dummy.m in Sources */,
+				561D85DADEC75D701D0A5525EC63E911 /* GradientProgressBar.swift in Sources */,
+				2B875324BF8589863683DBDC8ED7E14B /* MaskLayerViewModel.swift in Sources */,
+				AE5E4285A502EDB530EB3F276A5545D8 /* UIColor+MakeDynamicColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +640,12 @@
 			name = GradientProgressBar;
 			target = 02A49EFF333D539AFC033A5F1B8B0A45 /* GradientProgressBar */;
 			targetProxy = 9C382269B79032C10DB97B188E10792C /* PBXContainerItemProxy */;
+		};
+		333D9F3FC205249101D118655B265ACF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LightweightObservable;
+			target = 086F937CFC9099EB74E4B66BE7CBCB93 /* LightweightObservable */;
+			targetProxy = B2E0CB4A8FA9020975EE0FBE7989C54C /* PBXContainerItemProxy */;
 		};
 		83E9E808C995823D70F025912EB7B78E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -659,12 +665,6 @@
 			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
 			targetProxy = 168C0A06B88A7C510C4C61A6678AD772 /* PBXContainerItemProxy */;
 		};
-		B75C5B0866396330C7CD3318916446E5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LightweightObservable;
-			target = 086F937CFC9099EB74E4B66BE7CBCB93 /* LightweightObservable */;
-			targetProxy = 11F1E1A4E98575B4F3A1C53952092893 /* PBXContainerItemProxy */;
-		};
 		E23E6116FDDFD837082D36E3258062B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-GradientProgressBar_Example";
@@ -674,6 +674,37 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		045C85BEF45D0FFED94B9EBDE1E53CB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A6CC03E053C1C2F16082364273E4B82 /* GradientProgressBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GradientProgressBar/GradientProgressBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GradientProgressBar/GradientProgressBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GradientProgressBar/GradientProgressBar.modulemap";
+				PRODUCT_MODULE_NAME = GradientProgressBar;
+				PRODUCT_NAME = GradientProgressBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		0CFB044F314FC7970BEA86E88DD99F6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 43A4C7CF51827A48237235CAD948C513 /* Pods-GradientProgressBar_Tests.debug.xcconfig */;
@@ -707,9 +738,9 @@
 			};
 			name = Debug;
 		};
-		290522BB4953FE7B59B9B55AF6DB035E /* Release */ = {
+		1B12C42B314A0480C6304B54F1503137 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BF69CE4CF9957ECA6985CEA34E6A79D /* GradientProgressBar.xcconfig */;
+			baseConfigurationReference = 81EB18C8AFCE2ED322E3A584A62EB659 /* LightweightObservable.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -720,14 +751,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GradientProgressBar/GradientProgressBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GradientProgressBar/GradientProgressBar-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/LightweightObservable/LightweightObservable-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LightweightObservable/LightweightObservable-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GradientProgressBar/GradientProgressBar.modulemap";
-				PRODUCT_MODULE_NAME = GradientProgressBar;
-				PRODUCT_NAME = GradientProgressBar;
+				MODULEMAP_FILE = "Target Support Files/LightweightObservable/LightweightObservable.modulemap";
+				PRODUCT_MODULE_NAME = LightweightObservable;
+				PRODUCT_NAME = LightweightObservable;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -771,6 +802,38 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		548B8308CAD12B7073E5CAE578DC159D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A6CC03E053C1C2F16082364273E4B82 /* GradientProgressBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GradientProgressBar/GradientProgressBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GradientProgressBar/GradientProgressBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GradientProgressBar/GradientProgressBar.modulemap";
+				PRODUCT_MODULE_NAME = GradientProgressBar;
+				PRODUCT_NAME = GradientProgressBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		61D16562C88F67A248B236668FAC8E96 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -887,7 +950,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -971,70 +1035,7 @@
 			};
 			name = Debug;
 		};
-		B765A8A465030361C7ECC4E3127ACEBE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81EB18C8AFCE2ED322E3A584A62EB659 /* LightweightObservable.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LightweightObservable/LightweightObservable-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LightweightObservable/LightweightObservable-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LightweightObservable/LightweightObservable.modulemap";
-				PRODUCT_MODULE_NAME = LightweightObservable;
-				PRODUCT_NAME = LightweightObservable;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C1B13683F34DA423D7EC9E15F769CC5B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BF69CE4CF9957ECA6985CEA34E6A79D /* GradientProgressBar.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GradientProgressBar/GradientProgressBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GradientProgressBar/GradientProgressBar-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GradientProgressBar/GradientProgressBar.modulemap";
-				PRODUCT_MODULE_NAME = GradientProgressBar;
-				PRODUCT_NAME = GradientProgressBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D6A6AEC62E656E6158159242E49196C3 /* Debug */ = {
+		C139BCC5FEA267FDA68FECEFE2E26DED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 81EB18C8AFCE2ED322E3A584A62EB659 /* LightweightObservable.xcconfig */;
 			buildSettings = {
@@ -1115,20 +1116,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3CAA7900CD45923001DFA217706653B7 /* Build configuration list for PBXNativeTarget "LightweightObservable" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D6A6AEC62E656E6158159242E49196C3 /* Debug */,
-				B765A8A465030361C7ECC4E3127ACEBE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				916E0404255105F480DC4950B7625F7A /* Debug */,
 				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6670CF157B0B4B168A498BC3C82135D3 /* Build configuration list for PBXNativeTarget "GradientProgressBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				045C85BEF45D0FFED94B9EBDE1E53CB8 /* Debug */,
+				548B8308CAD12B7073E5CAE578DC159D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1169,11 +1170,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF21E0987012E0CAA2516CCFADB827B7 /* Build configuration list for PBXNativeTarget "GradientProgressBar" */ = {
+		C48DA4941C272E288472E14197B26F5D /* Build configuration list for PBXNativeTarget "LightweightObservable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C1B13683F34DA423D7EC9E15F769CC5B /* Debug */,
-				290522BB4953FE7B59B9B55AF6DB035E /* Release */,
+				C139BCC5FEA267FDA68FECEFE2E26DED /* Debug */,
+				1B12C42B314A0480C6304B54F1503137 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

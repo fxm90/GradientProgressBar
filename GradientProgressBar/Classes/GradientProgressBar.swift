@@ -149,9 +149,9 @@ open class GradientProgressBar: UIView {
         }.disposed(by: &disposeBag)
     }
 
-    private func animateMaskLayer(frame: CGRect, duration _: TimeInterval, timingFunction: CAMediaTimingFunction) {
+    private func animateMaskLayer(frame: CGRect, duration: TimeInterval, timingFunction: CAMediaTimingFunction) {
         CATransaction.begin()
-        CATransaction.setAnimationDuration(animationDuration)
+        CATransaction.setAnimationDuration(duration)
         CATransaction.setAnimationTimingFunction(timingFunction)
 
         maskLayer.frame = frame

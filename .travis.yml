@@ -3,7 +3,7 @@
 # Created by Felix Mau (https://felix.hamburg)
 #
 
-osx_image: xcode11.0
+osx_image: xcode11
 language: swift
 script:
 - ./Scripts/swift-format.sh

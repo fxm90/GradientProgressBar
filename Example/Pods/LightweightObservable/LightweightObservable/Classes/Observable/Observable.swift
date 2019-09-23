@@ -30,7 +30,7 @@ public class Observable<T> {
     // MARK: - Public properties
 
     /// The current (readonly) value of the observable.
-    fileprivate(set) var value: T {
+    public fileprivate(set) var value: T {
         didSet {
             for (_, observer) in observers {
                 observer(value, oldValue)
@@ -52,6 +52,7 @@ public class Observable<T> {
     ///
     /// - Note: Declared `fileprivate` in order to prevent directly initializing an observable, which can not be updated.
     fileprivate init(_ value: T) {
+        // swiftformat:disable:previous redundantFileprivate
         self.value = value
     }
 

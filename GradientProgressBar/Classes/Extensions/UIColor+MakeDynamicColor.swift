@@ -3,7 +3,8 @@
 //  GradientProgressBar
 //
 //  Created by Felix Mau on 22/09/19.
-//  Copyright © 2017 Felix Mau. All rights reserved.
+//  Copyright © 2019 Felix Mau. All rights reserved.
+//
 
 import Foundation
 
@@ -23,14 +24,9 @@ extension UIColor {
         }
 
         return UIColor { (traitCollection: UITraitCollection) -> UIColor in
-            // Disable false positive in colon rule.
-            // https://github.com/realm/SwiftLint/issues/1277
-            //
-            // swiftlint:disable colon
             traitCollection.userInterfaceStyle == .dark
                 ? darkVariant
                 : lightVariant
-            // swiftlint:enable colon
         }
     }
 }

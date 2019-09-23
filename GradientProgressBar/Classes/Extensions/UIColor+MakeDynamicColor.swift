@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Source: https://gist.github.com/fxm90/fd217b463222afd6eabcb006fb26d92e
 extension UIColor {
     /// Creates an instance of `UIColor`, that generates its color data dynamically based on the current `userInterfaceStyle`.
     /// Furthermore this method handles a fallback for iOS versions prior to iOS 13.

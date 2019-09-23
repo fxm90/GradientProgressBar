@@ -25,10 +25,11 @@ Inspired by https://codepen.io/marcobiedermann/pen/LExXWW
   s.homepage         = 'https://github.com/fxm90/GradientProgressBar'
   s.screenshots      = 'https://felix.hamburg/files/github/gradient-progress-bar/preview.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'fxm90' => 'contact@felix.hamburg' }
+  s.author           = { 'Felix Mau' => 'me@felix.hamburg' }
   s.source           = { :git => 'https://github.com/fxm90/GradientProgressBar.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/_fxm90'
 
+  s.swift_version         = '5.0'
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'GradientProgressBar/Classes/**/*'
@@ -40,5 +41,5 @@ Inspired by https://codepen.io/marcobiedermann/pen/LExXWW
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'LightweightObservable', '~> 1.0'
-  
+
 end

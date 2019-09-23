@@ -62,10 +62,8 @@ open class GradientProgressBar: UIView {
         }
     }
 
-    // MARK: - Private properties
-
     /// Layer containing the gradient.
-    private var gradientLayer: CAGradientLayer = {
+    public let gradientLayer: CAGradientLayer = {
         let layer = CAGradientLayer()
 
         layer.anchorPoint = .zero
@@ -76,15 +74,14 @@ open class GradientProgressBar: UIView {
     }()
 
     /// Alpha mask for showing only the visible "progress"-part of the gradient layer.
-    private var maskLayer: CALayer = {
+    public let maskLayer: CALayer = {
         let layer = CALayer()
-
-        layer.anchorPoint = .zero
-        layer.position = .zero
         layer.backgroundColor = UIColor.white.cgColor
 
         return layer
     }()
+
+    // MARK: - Private properties
 
     /// View-model containing all logic related to the gradient-layer.
     private let gradientLayerViewModel = GradientLayerViewModel()

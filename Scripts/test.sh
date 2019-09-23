@@ -16,5 +16,5 @@ xcodebuild \
   -workspace GradientProgressBar.xcworkspace \
   -scheme GradientProgressBar-Example \
   -sdk iphonesimulator \
-  -destination 'platform=iOS Simulator,name=iPhone XR,OS=12.2' \
+  -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=13.0' \
   build test | xcpretty && exit ${PIPESTATUS[0]}

@@ -15,6 +15,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		641B86BC22AB937E00556C15 /* GradientProgressBarTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641B86BA22AB937E00556C15 /* GradientProgressBarTestCase.swift */; };
+		64531A822337E89500792CC9 /* UIColorMakeDynamicColorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64531A812337E89500792CC9 /* UIColorMakeDynamicColorTestCase.swift */; };
 		64CA391D2255EBD3002B83C8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CA391C2255EBD3002B83C8 /* WebKit.framework */; };
 		64DEBFAD2316847A00A0A3A9 /* GradientLayerViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DEBFAB2316844F00A0A3A9 /* GradientLayerViewModelTestCase.swift */; };
 		64DEBFAE2316847D00A0A3A9 /* MaskLayerViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DEBFA92316843200A0A3A9 /* MaskLayerViewModelTestCase.swift */; };
@@ -46,6 +47,7 @@
 		607FACE51AFB9204008FA782 /* GradientProgressBar_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradientProgressBar_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		641B86BA22AB937E00556C15 /* GradientProgressBarTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressBarTestCase.swift; sourceTree = "<group>"; };
+		64531A812337E89500792CC9 /* UIColorMakeDynamicColorTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorMakeDynamicColorTestCase.swift; sourceTree = "<group>"; };
 		64CA391C2255EBD3002B83C8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		64DEBFA92316843200A0A3A9 /* MaskLayerViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskLayerViewModelTestCase.swift; sourceTree = "<group>"; };
 		64DEBFAB2316844F00A0A3A9 /* GradientLayerViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayerViewModelTestCase.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				64531A802337E87800792CC9 /* Extensions */,
 				641B86B822AB937E00556C15 /* ViewModel */,
 				641B86BA22AB937E00556C15 /* GradientProgressBarTestCase.swift */,
 			);
@@ -160,6 +163,14 @@
 				64DEBFA92316843200A0A3A9 /* MaskLayerViewModelTestCase.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		64531A802337E87800792CC9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				64531A812337E89500792CC9 /* UIColorMakeDynamicColorTestCase.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D91CF1FC4E693F065D5250E1 /* Frameworks */ = {
@@ -358,7 +369,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SWIFTLINT=\"${PODS_ROOT}/SwiftLint/swiftlint\"\nif [ ! -f \"$SWIFTLINT\" ]; then\n    echo \"warning: SwiftLint not installed!\"\n    exit 1\nfi\n\n$SWIFTLINT";
+			shellScript = "SWIFTLINT=\"${PODS_ROOT}/SwiftLint/swiftlint\"\nif [ ! -f \"$SWIFTLINT\" ]; then\n    echo \"warning: SwiftLint not installed!\"\n    exit 1\nfi\n\n$SWIFTLINT\n";
 		};
 		970D1F17201BB73D00F90864 /* Swiftformat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -423,6 +434,7 @@
 				64DEBFAE2316847D00A0A3A9 /* MaskLayerViewModelTestCase.swift in Sources */,
 				641B86BC22AB937E00556C15 /* GradientProgressBarTestCase.swift in Sources */,
 				64DEBFAD2316847A00A0A3A9 /* GradientLayerViewModelTestCase.swift in Sources */,
+				64531A822337E89500792CC9 /* UIColorMakeDynamicColorTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,7 +615,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -618,7 +630,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

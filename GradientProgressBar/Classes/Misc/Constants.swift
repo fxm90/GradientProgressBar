@@ -11,8 +11,15 @@ import Foundation
 extension UIColor {
     /// Default colors for components.
     public struct GradientProgressBar {
+        /// Default background color for the progress view in light mode.
+        static let backgroundColorForLightMode = #colorLiteral(red: 0.8980392157, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
+
+        /// Default background color for the progress view in dark mode.
+        static let backgroundColorForDarkMode = #colorLiteral(red: 0.1725490196, green: 0.1882352941, blue: 0.1843137255, alpha: 1)
+
         /// Default background color for the progress view.
-        static let backgroundColor = #colorLiteral(red: 0.8980392157, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
+        static let backgroundColor: UIColor = .makeDynamicColor(lightVariant: backgroundColorForLightMode,
+                                                                darkVariant: backgroundColorForDarkMode)
 
         /// The default color palette for the gradient colors.
         ///

@@ -9,7 +9,6 @@
 import XCTest
 @testable import GradientProgressBar
 
-@available(iOS 13.0, *)
 class UIColorMakeDynamicColorTestCase: XCTestCase {
     func testDynamicColorShouldReturnLightColorInUnspecifiedInterfaceStyle() {
         // Given

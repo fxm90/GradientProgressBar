@@ -15,7 +15,10 @@ class CustomColorSnapshotTestCase: XCTestCase {
     // MARK: - Config
 
     /// The frame we use for rendering the `GradientProgressBar`. This will also be the image size for our snapshot.
-    private static let testFrame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 4.0)
+    private static let frame = CGRect(x: 0.0, y: 0.0, width: 375.0, height: 4.0)
+
+    /// The trait collection we use for our snapshot.
+    private static let traitCollection = UITraitCollection(userInterfaceStyle: .light)
 
     /// The custom colors we use on this test-case.
     /// Source: https://color.adobe.com/Pink-Flamingo-color-theme-10343714/
@@ -27,49 +30,49 @@ class CustomColorSnapshotTestCase: XCTestCase {
 
     func testGradientProgressBarWithProgressSetToZero() {
         // Given
-        let gradientProgressBar = GradientProgressBar(frame: Self.testFrame)
+        let gradientProgressBar = GradientProgressBar(frame: Self.frame)
         gradientProgressBar.gradientColors = Self.gradientColors
 
         // When
         gradientProgressBar.progress = 0.0
 
         // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image)
+        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Self.traitCollection))
     }
 
     func testGradientProgressBarWithProgressSetTo33Percent() {
         // Given
-        let gradientProgressBar = GradientProgressBar(frame: Self.testFrame)
+        let gradientProgressBar = GradientProgressBar(frame: Self.frame)
         gradientProgressBar.gradientColors = Self.gradientColors
 
         // When
         gradientProgressBar.progress = 0.33
 
         // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image)
+        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Self.traitCollection))
     }
 
     func testGradientProgressBarWithProgressSetTo66Percent() {
         // Given
-        let gradientProgressBar = GradientProgressBar(frame: Self.testFrame)
+        let gradientProgressBar = GradientProgressBar(frame: Self.frame)
         gradientProgressBar.gradientColors = Self.gradientColors
 
         // When
         gradientProgressBar.progress = 0.66
 
         // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image)
+        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Self.traitCollection))
     }
 
     func testGradientProgressBarWithProgressSetTo100Percent() {
         // Given
-        let gradientProgressBar = GradientProgressBar(frame: Self.testFrame)
+        let gradientProgressBar = GradientProgressBar(frame: Self.frame)
         gradientProgressBar.gradientColors = Self.gradientColors
 
         // When
         gradientProgressBar.progress = 1.0
 
         // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image)
+        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Self.traitCollection))
     }
 }

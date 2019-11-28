@@ -28,6 +28,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		01F0CF0F08E540D7A5BB1662CBFF473D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC3284BBD34713A3AB3C06B372588DF /* Observable.swift */; };
 		0A8B8C10EEE41F7A0B243CFD690CDA60 /* Snapshotting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D024359A1D7FCB26F8230048CBE40245 /* Snapshotting.swift */; };
 		0C6AB859A1656DE69158A16278238D55 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B566491AD1D2F09BEE83815EF1EC5C5E /* URLRequest.swift */; };
 		18CA521ED13CE001A7E50AAF73447483 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59CE2F9522AE21F97AA29799051F00E /* Foundation.framework */; };
@@ -38,18 +39,19 @@
 		23A2D1BD7E0C4552A0E57467F6BF7E96 /* NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E84D7ECD34A5AB94A824528F12271 /* NSView.swift */; };
 		2B875324BF8589863683DBDC8ED7E14B /* MaskLayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2BF1B6664C75E40CA2D1976DC9339 /* MaskLayerViewModel.swift */; };
 		3123B111C91B4E80CF939ACAA86317A4 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CB418AC0911177C9A2C28E35D1612C /* CALayer.swift */; };
-		387E0F2A8401EA07D3FCD21FEAE296BC /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2550296A552984B5E78D433C4F78F9 /* Disposable.swift */; };
+		387E0F2A8401EA07D3FCD21FEAE296BC /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3FE89DCA76B16901DEB74B192C425 /* Disposable.swift */; };
 		46C1549B816BBA0D22AEC7860C5D99C7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0965FCF94C6751E5F873995C0CC05032 /* XCTest.framework */; };
 		511A793818A50BE1993A30329F595167 /* SnapshotTesting-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4133F785EFF39E5F2420EEC0D952E042 /* SnapshotTesting-dummy.m */; };
 		561D85DADEC75D701D0A5525EC63E911 /* GradientProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ABD9EAB6EE9C36866AF140DF85A488 /* GradientProgressBar.swift */; };
 		5671B10B54839FA8C7247F987BD7FC36 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1541E22840B0A04DC99936F3875E49D3 /* UIImage.swift */; };
 		57FF59FD40621E306DD1A364C649AE68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59CE2F9522AE21F97AA29799051F00E /* Foundation.framework */; };
-		5ABC92149ACE3DF0824A2866A3C9E874 /* LightweightObservable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AC7C57B3850F023AC144E8187AEBEE75 /* LightweightObservable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5ABC92149ACE3DF0824A2866A3C9E874 /* LightweightObservable-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8811E9B8E468EC5DF980E42E095FF9DF /* LightweightObservable-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C4818CC84E3902DDB0BC094B75370A9 /* NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD80DE3010A295D8EAD140DC1D51E60 /* NSImage.swift */; };
 		63CEBA3FE942C05ACB1551B500C8AB1C /* NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12A8C84D679379006ADE9E1F57F8803 /* NSViewController.swift */; };
 		72EC65D0962E7C4532B6B11940F2334C /* SceneKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA2E5A34FC1B7CFF331B89A444CFF9F /* SceneKit.swift */; };
 		736CC488E781102146156734504786AC /* String+SpecialCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC3368E9C5D8F1373E5C6240B3932B /* String+SpecialCharacters.swift */; };
 		73D034E9BB3267E41D46C6A1954FC341 /* XCTAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144334A6907A0BC204CF178F6B42C78C /* XCTAttachment.swift */; };
+		8185697EEA1F96947A4C2717E8745D34 /* Observable+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38C0900086F6224F07ECDADA306EC4 /* Observable+Equatable.swift */; };
 		8316C684AB8719C80557E0DD0FDBC7D2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF1AE548385A7B7B7218C679A29A834 /* UIView.swift */; };
 		8893A5D194D49988B7C250B62A9D02B7 /* Pods-GradientProgressBar_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B768A051B8D570EDE27F1C0F3FBC8194 /* Pods-GradientProgressBar_Tests-dummy.m */; };
 		894A715631AFFAE4FFFC7D08B268EDC2 /* AssertInlineSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365B97A1A4E36C8914A1B6F443B2919 /* AssertInlineSnapshot.swift */; };
@@ -73,9 +75,7 @@
 		DE237C23FCFE8A5FC662FD5AC0BBDE1B /* Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C50D35B00945DD26828798F19D20C /* Internal.swift */; };
 		E67D9F10EB87C47510EC8F6916B4D339 /* SpriteKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F142A9A722ECB4B932EEEEA9B4402217 /* SpriteKit.swift */; };
 		E91AE0A43ED636C68A601175401A6EAA /* GradientLayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C689E90A6E952787F6AFB6332E6B788 /* GradientLayerViewModel.swift */; };
-		E97822D94ECFD536C109ECBC47BAEF25 /* Observable+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF318454F91378313461D7C8444A2D69 /* Observable+Equatable.swift */; };
-		ECCFA5D3A3D496C33F10D0DD18090B4D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A710AFD738829E3B8F094FB6F52FDE9B /* Observable.swift */; };
-		EDAD881F947B46473DB3200A3BA41B41 /* LightweightObservable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D3A641892244027B3835C0AAE13F3D /* LightweightObservable-dummy.m */; };
+		EDAD881F947B46473DB3200A3BA41B41 /* LightweightObservable-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEEBFD86E62974E91E942A621C64BC1 /* LightweightObservable-dummy.m */; };
 		F188F25383B3E29D1565EF1B51C4C68B /* Pods-GradientProgressBar_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA9B7DF22F0BF6E9649B6F745933FC2 /* Pods-GradientProgressBar_Example-dummy.m */; };
 		F3CB4CB049D958F850526E25C1FCA02A /* Pods-GradientProgressBar_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E3BCE2B6D70196DE8DC94C2F2C6825C4 /* Pods-GradientProgressBar_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F6421644246CC1F439ABBDBB5DF8D5CA /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7448547AB63D7FE246FFD2F35598E0 /* UIViewController.swift */; };
@@ -150,29 +150,30 @@
 		02D06ADA7430E485346FE0B225F8FC79 /* Pods-GradientProgressBar_SnapshotTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GradientProgressBar_SnapshotTests-Info.plist"; sourceTree = "<group>"; };
 		04FE0C4BFF6B969E790DF1AB1F303870 /* Pods-GradientProgressBar_SnapshotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GradientProgressBar_SnapshotTests.release.xcconfig"; sourceTree = "<group>"; };
 		06D2A33567A0BA45FD04D735CF5FA780 /* GradientProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GradientProgressBar.framework; path = GradientProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06E8ED304B6DC5EEA9733DF0B1EC830B /* LightweightObservable-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LightweightObservable-Info.plist"; sourceTree = "<group>"; };
 		08DB8672A3FAF9D6BD5B383C6641ADD7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		0965FCF94C6751E5F873995C0CC05032 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0C689E90A6E952787F6AFB6332E6B788 /* GradientLayerViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradientLayerViewModel.swift; sourceTree = "<group>"; };
+		0FC3284BBD34713A3AB3C06B372588DF /* Observable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = LightweightObservable/Classes/Observable.swift; sourceTree = "<group>"; };
 		10847F76058FE66CB2ADC3C37B557B54 /* Pods-GradientProgressBar_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GradientProgressBar_Example-frameworks.sh"; sourceTree = "<group>"; };
 		123716900E543F0F7D0826C14A96CC69 /* GradientProgressBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GradientProgressBar-prefix.pch"; sourceTree = "<group>"; };
 		144334A6907A0BC204CF178F6B42C78C /* XCTAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XCTAttachment.swift; path = Sources/SnapshotTesting/Common/XCTAttachment.swift; sourceTree = "<group>"; };
-		14D3A641892244027B3835C0AAE13F3D /* LightweightObservable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LightweightObservable-dummy.m"; sourceTree = "<group>"; };
 		1541E22840B0A04DC99936F3875E49D3 /* UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Sources/SnapshotTesting/Snapshotting/UIImage.swift; sourceTree = "<group>"; };
 		1AD80DE3010A295D8EAD140DC1D51E60 /* NSImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSImage.swift; path = Sources/SnapshotTesting/Snapshotting/NSImage.swift; sourceTree = "<group>"; };
 		1BE0B5721F553E22547D9A94E12DD03F /* SnapshotTesting.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapshotTesting.xcconfig; sourceTree = "<group>"; };
+		1DEEBFD86E62974E91E942A621C64BC1 /* LightweightObservable-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LightweightObservable-dummy.m"; sourceTree = "<group>"; };
 		1E886BB368BBE18CAF44E5F29C5735C0 /* GradientProgressBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GradientProgressBar-umbrella.h"; sourceTree = "<group>"; };
 		1E994A8FF390361E6692A06709232E66 /* Pods-GradientProgressBar_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GradientProgressBar_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1EA2E5A34FC1B7CFF331B89A444CFF9F /* SceneKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneKit.swift; path = Sources/SnapshotTesting/Snapshotting/SceneKit.swift; sourceTree = "<group>"; };
-		211933270108A13674AB94E0E3BC98D2 /* LightweightObservable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LightweightObservable.xcconfig; sourceTree = "<group>"; };
+		220539AEEC34898FA7E63555641B5663 /* LightweightObservable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LightweightObservable-prefix.pch"; sourceTree = "<group>"; };
 		269E84D7ECD34A5AB94A824528F12271 /* NSView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSView.swift; path = Sources/SnapshotTesting/Snapshotting/NSView.swift; sourceTree = "<group>"; };
 		2CD4D96377188299A227B5D18D9E1B44 /* GradientProgressBar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GradientProgressBar.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		332A91BDCCB0425A9CE22879135892DB /* Pods-GradientProgressBar_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GradientProgressBar_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		34D114D0B51C3EAD5CA081C7D2BFFF2A /* LightweightObservable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LightweightObservable.modulemap; sourceTree = "<group>"; };
+		334E65EE8E60507426A496CE2380D0DB /* LightweightObservable.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LightweightObservable.xcconfig; sourceTree = "<group>"; };
 		37AC0455B865BC1335745F27A7180B3F /* SnapshotTesting-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapshotTesting-prefix.pch"; sourceTree = "<group>"; };
 		388C7D788EB5BA29424EEC5FC814D713 /* Pods-GradientProgressBar_SnapshotTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GradientProgressBar_SnapshotTests-dummy.m"; sourceTree = "<group>"; };
 		38FD9B2F414E880C3CD726916B00C935 /* Codable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Codable.swift; path = Sources/SnapshotTesting/Snapshotting/Codable.swift; sourceTree = "<group>"; };
 		3A3C50D35B00945DD26828798F19D20C /* Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Internal.swift; path = Sources/SnapshotTesting/Common/Internal.swift; sourceTree = "<group>"; };
+		3FD3FE89DCA76B16901DEB74B192C425 /* Disposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Disposable.swift; path = LightweightObservable/Classes/Disposable.swift; sourceTree = "<group>"; };
 		4133F785EFF39E5F2420EEC0D952E042 /* SnapshotTesting-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapshotTesting-dummy.m"; sourceTree = "<group>"; };
 		41CF3CFB21FBFD5C89875B7A951AC6C5 /* Pods_GradientProgressBar_SnapshotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GradientProgressBar_SnapshotTests.framework; path = "Pods-GradientProgressBar_SnapshotTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44611AB9F27D707CE10442E86C554E33 /* Pods-GradientProgressBar_SnapshotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GradientProgressBar_SnapshotTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -182,14 +183,15 @@
 		4BF1AE548385A7B7B7218C679A29A834 /* UIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = Sources/SnapshotTesting/Snapshotting/UIView.swift; sourceTree = "<group>"; };
 		4D7BFEC634B6BE65B5AE315FE4C4932D /* readme.md */ = {isa = PBXFileReference; includeInIndex = 1; path = readme.md; sourceTree = "<group>"; };
 		4F8489AE7398E8BD899CD8339F73BA54 /* Pods-GradientProgressBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GradientProgressBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		656794E903F00F08A79611B559471CD8 /* LightweightObservable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LightweightObservable-prefix.pch"; sourceTree = "<group>"; };
 		661E1BC648C05340EADD4E73E4933993 /* Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Sources/SnapshotTesting/Async.swift; sourceTree = "<group>"; };
 		6A89DB958CB68AAE0D142165BDB895E9 /* Any.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Any.swift; path = Sources/SnapshotTesting/Snapshotting/Any.swift; sourceTree = "<group>"; };
 		6F7448547AB63D7FE246FFD2F35598E0 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = Sources/SnapshotTesting/Snapshotting/UIViewController.swift; sourceTree = "<group>"; };
 		6FD7099AF64080B46C3BB6BDAEC18C3D /* Pods-GradientProgressBar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GradientProgressBar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7089F0D00E320DA5B1AEA2EDA788B012 /* Pods_GradientProgressBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GradientProgressBar_Tests.framework; path = "Pods-GradientProgressBar_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		75BFE8FD604A1FFAA60CEED94A1F13C4 /* LightweightObservable-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LightweightObservable-Info.plist"; sourceTree = "<group>"; };
 		834918404C77B6D44D53C01B3D12C581 /* LightweightObservable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LightweightObservable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C51127E8FCAD347B6959BE176A7FAE /* SnapshotTesting-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapshotTesting-Info.plist"; sourceTree = "<group>"; };
+		8811E9B8E468EC5DF980E42E095FF9DF /* LightweightObservable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LightweightObservable-umbrella.h"; sourceTree = "<group>"; };
 		8900B30C6E69ECC456CD31BD8DCB8CE9 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8A6CC03E053C1C2F16082364273E4B82 /* GradientProgressBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GradientProgressBar.xcconfig; sourceTree = "<group>"; };
 		8F6EC1196F8E290039A6428E4A44356E /* AssertSnapshot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertSnapshot.swift; path = Sources/SnapshotTesting/AssertSnapshot.swift; sourceTree = "<group>"; };
@@ -207,8 +209,7 @@
 		9FF34F2140532C3B797FC00BF11B64AB /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = View.swift; path = Sources/SnapshotTesting/Common/View.swift; sourceTree = "<group>"; };
 		A037DBBCCACBFACB5C39A80B1C273043 /* SnapshotTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapshotTesting.framework; path = SnapshotTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4933D3705B8DF51EBD769933097734B /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = String.swift; path = Sources/SnapshotTesting/Snapshotting/String.swift; sourceTree = "<group>"; };
-		A710AFD738829E3B8F094FB6F52FDE9B /* Observable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = LightweightObservable/Classes/Observable/Observable.swift; sourceTree = "<group>"; };
-		AC7C57B3850F023AC144E8187AEBEE75 /* LightweightObservable-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LightweightObservable-umbrella.h"; sourceTree = "<group>"; };
+		A687FABFA8DA9112CE64F9BA78124696 /* LightweightObservable.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LightweightObservable.modulemap; sourceTree = "<group>"; };
 		B12A8C84D679379006ADE9E1F57F8803 /* NSViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSViewController.swift; path = Sources/SnapshotTesting/Snapshotting/NSViewController.swift; sourceTree = "<group>"; };
 		B365B97A1A4E36C8914A1B6F443B2919 /* AssertInlineSnapshot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertInlineSnapshot.swift; path = Sources/SnapshotTesting/AssertInlineSnapshot.swift; sourceTree = "<group>"; };
 		B566491AD1D2F09BEE83815EF1EC5C5E /* URLRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLRequest.swift; path = Sources/SnapshotTesting/Snapshotting/URLRequest.swift; sourceTree = "<group>"; };
@@ -233,14 +234,13 @@
 		E6BE9E9B021216B7EACF614662BC8B46 /* Pods-GradientProgressBar_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GradientProgressBar_Tests.modulemap"; sourceTree = "<group>"; };
 		EA0F774A0EE7217E71022A643C74E70B /* GradientProgressBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GradientProgressBar-dummy.m"; sourceTree = "<group>"; };
 		EA1F180F6598E2C91C54A774C2979FC2 /* Pods-GradientProgressBar_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GradientProgressBar_Example-Info.plist"; sourceTree = "<group>"; };
+		EB38C0900086F6224F07ECDADA306EC4 /* Observable+Equatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Observable+Equatable.swift"; path = "LightweightObservable/Classes/Extensions/Observable+Equatable.swift"; sourceTree = "<group>"; };
 		EE9F9ED5350FB7B00008AA447329D95A /* Description.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Description.swift; path = Sources/SnapshotTesting/Snapshotting/Description.swift; sourceTree = "<group>"; };
-		EF318454F91378313461D7C8444A2D69 /* Observable+Equatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Observable+Equatable.swift"; path = "LightweightObservable/Classes/Observable/Observable+Equatable.swift"; sourceTree = "<group>"; };
 		F142A9A722ECB4B932EEEEA9B4402217 /* SpriteKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpriteKit.swift; path = Sources/SnapshotTesting/Snapshotting/SpriteKit.swift; sourceTree = "<group>"; };
 		F196AAA163469B17170E99B82C7C4C0A /* LightweightObservable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LightweightObservable.framework; path = LightweightObservable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCAFB97985C47EF359078BDF854A2D2E /* Diff.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Diff.swift; path = Sources/SnapshotTesting/Diff.swift; sourceTree = "<group>"; };
 		FE9A75C2A2CEA21E5945F499608F6113 /* SnapshotTestCase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SnapshotTestCase.swift; path = Sources/SnapshotTesting/SnapshotTestCase.swift; sourceTree = "<group>"; };
 		FEC6E4FE123FE19B3057E543191152D5 /* SnapshotTesting.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapshotTesting.modulemap; sourceTree = "<group>"; };
-		FF2550296A552984B5E78D433C4F78F9 /* Disposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Disposable.swift; path = LightweightObservable/Classes/Disposable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +343,18 @@
 			path = "Example/Pods/Target Support Files/GradientProgressBar";
 			sourceTree = "<group>";
 		};
+		42CF48FE0CF02BFB18B0BFDE656771A4 /* LightweightObservable */ = {
+			isa = PBXGroup;
+			children = (
+				3FD3FE89DCA76B16901DEB74B192C425 /* Disposable.swift */,
+				0FC3284BBD34713A3AB3C06B372588DF /* Observable.swift */,
+				EB38C0900086F6224F07ECDADA306EC4 /* Observable+Equatable.swift */,
+				43B203DF94D079773CE2576CEB2FE825 /* Support Files */,
+			);
+			name = LightweightObservable;
+			path = LightweightObservable;
+			sourceTree = "<group>";
+		};
 		4317A23E57A79F487E9EEE81F747B8BE /* SwiftLint */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +362,20 @@
 			);
 			name = SwiftLint;
 			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		43B203DF94D079773CE2576CEB2FE825 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A687FABFA8DA9112CE64F9BA78124696 /* LightweightObservable.modulemap */,
+				334E65EE8E60507426A496CE2380D0DB /* LightweightObservable.xcconfig */,
+				1DEEBFD86E62974E91E942A621C64BC1 /* LightweightObservable-dummy.m */,
+				75BFE8FD604A1FFAA60CEED94A1F13C4 /* LightweightObservable-Info.plist */,
+				220539AEEC34898FA7E63555641B5663 /* LightweightObservable-prefix.pch */,
+				8811E9B8E468EC5DF980E42E095FF9DF /* LightweightObservable-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LightweightObservable";
 			sourceTree = "<group>";
 		};
 		4697706855BE470EA0EE5646F2A82D28 /* Pods-GradientProgressBar_Example */ = {
@@ -397,7 +423,7 @@
 		61DC97DF4B43FDAE192E35D2A1E8E9DF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CC42008C0EA9236DE550F48BF3C4D07C /* LightweightObservable */,
+				42CF48FE0CF02BFB18B0BFDE656771A4 /* LightweightObservable */,
 				71636720CA4DD408F2B602341B0E133D /* SnapshotTesting */,
 				9FE463918895C7B587CE7D7509F7AF55 /* SwiftFormat */,
 				4317A23E57A79F487E9EEE81F747B8BE /* SwiftLint */,
@@ -513,20 +539,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		BECC4BF10A25D3EC0C02B11535F8B8BC /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				34D114D0B51C3EAD5CA081C7D2BFFF2A /* LightweightObservable.modulemap */,
-				211933270108A13674AB94E0E3BC98D2 /* LightweightObservable.xcconfig */,
-				14D3A641892244027B3835C0AAE13F3D /* LightweightObservable-dummy.m */,
-				06E8ED304B6DC5EEA9733DF0B1EC830B /* LightweightObservable-Info.plist */,
-				656794E903F00F08A79611B559471CD8 /* LightweightObservable-prefix.pch */,
-				AC7C57B3850F023AC144E8187AEBEE75 /* LightweightObservable-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/LightweightObservable";
-			sourceTree = "<group>";
-		};
 		CAC0E7E2279CD0610FD02BBA5E397CDB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,18 +546,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftFormat";
-			sourceTree = "<group>";
-		};
-		CC42008C0EA9236DE550F48BF3C4D07C /* LightweightObservable */ = {
-			isa = PBXGroup;
-			children = (
-				FF2550296A552984B5E78D433C4F78F9 /* Disposable.swift */,
-				A710AFD738829E3B8F094FB6F52FDE9B /* Observable.swift */,
-				EF318454F91378313461D7C8444A2D69 /* Observable+Equatable.swift */,
-				BECC4BF10A25D3EC0C02B11535F8B8BC /* Support Files */,
-			);
-			name = LightweightObservable;
-			path = LightweightObservable;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -870,8 +870,8 @@
 			files = (
 				387E0F2A8401EA07D3FCD21FEAE296BC /* Disposable.swift in Sources */,
 				EDAD881F947B46473DB3200A3BA41B41 /* LightweightObservable-dummy.m in Sources */,
-				E97822D94ECFD536C109ECBC47BAEF25 /* Observable+Equatable.swift in Sources */,
-				ECCFA5D3A3D496C33F10D0DD18090B4D /* Observable.swift in Sources */,
+				8185697EEA1F96947A4C2717E8745D34 /* Observable+Equatable.swift in Sources */,
+				01F0CF0F08E540D7A5BB1662CBFF473D /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1075,39 +1075,6 @@
 			};
 			name = Release;
 		};
-		216081F7155ACB79BE193376A6F89739 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 211933270108A13674AB94E0E3BC98D2 /* LightweightObservable.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LightweightObservable/LightweightObservable-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LightweightObservable/LightweightObservable-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LightweightObservable/LightweightObservable.modulemap";
-				PRODUCT_MODULE_NAME = LightweightObservable;
-				PRODUCT_NAME = LightweightObservable;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		44D5D2B4C29A74F8B742EBA93B22F838 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6FD7099AF64080B46C3BB6BDAEC18C3D /* Pods-GradientProgressBar_Tests.debug.xcconfig */;
@@ -1157,38 +1124,6 @@
 			};
 			name = Debug;
 		};
-		63D781FC41916D79AB6171C02C95D029 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 211933270108A13674AB94E0E3BC98D2 /* LightweightObservable.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LightweightObservable/LightweightObservable-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LightweightObservable/LightweightObservable-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LightweightObservable/LightweightObservable.modulemap";
-				PRODUCT_MODULE_NAME = LightweightObservable;
-				PRODUCT_NAME = LightweightObservable;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		702FBF42AF69F046F46FA5B832F0ECBF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8A6CC03E053C1C2F16082364273E4B82 /* GradientProgressBar.xcconfig */;
@@ -1215,6 +1150,38 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7B016E4D2104E7325F36A938833320D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 334E65EE8E60507426A496CE2380D0DB /* LightweightObservable.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LightweightObservable/LightweightObservable-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LightweightObservable/LightweightObservable-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LightweightObservable/LightweightObservable.modulemap";
+				PRODUCT_MODULE_NAME = LightweightObservable;
+				PRODUCT_NAME = LightweightObservable;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1372,6 +1339,39 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B12C275EFE3C0CCE442A541CF4F92070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 334E65EE8E60507426A496CE2380D0DB /* LightweightObservable.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LightweightObservable/LightweightObservable-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LightweightObservable/LightweightObservable-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LightweightObservable/LightweightObservable.modulemap";
+				PRODUCT_MODULE_NAME = LightweightObservable;
+				PRODUCT_NAME = LightweightObservable;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1648,8 +1648,8 @@
 		C48DA4941C272E288472E14197B26F5D /* Build configuration list for PBXNativeTarget "LightweightObservable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				63D781FC41916D79AB6171C02C95D029 /* Debug */,
-				216081F7155ACB79BE193376A6F89739 /* Release */,
+				7B016E4D2104E7325F36A938833320D8 /* Debug */,
+				B12C275EFE3C0CCE442A541CF4F92070 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

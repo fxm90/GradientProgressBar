@@ -24,7 +24,7 @@
   "source_files": "GradientProgressBar/Classes/**/*",
   "dependencies": {
     "LightweightObservable": [
-      "~> 1.0"
+      "~> 2.0"
     ]
   },
   "swift_version": "5.0"

@@ -34,7 +34,7 @@ final class MaskLayerViewModel {
 
     /// Observable frame-animation for the mask layer.
     var maskLayerFrameAnimation: Observable<FrameAnimation> {
-        return maskLayerFrameAnimationSubject.asObservable
+        return maskLayerFrameAnimationSubject
     }
 
     /// The current bounds of the progress view.

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x3C-0W-Nfd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x3C-0W-Nfd">
     <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyT-bH-MJF" userLabel="Wrapper View">
-                                <rect key="frame" x="0.0" y="137.5" width="375" height="485.5"/>
+                                <rect key="frame" x="0.0" y="138.5" width="375" height="484.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBR-eE-ute" userLabel="Border Top View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
@@ -26,7 +26,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99t-Yb-Qag" userLabel="Border Bottom View">
-                                        <rect key="frame" x="0.0" y="484.5" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="483.5" width="375" height="1"/>
                                         <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="FZL-yi-WqM"/>
@@ -34,7 +34,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="paV-Jd-DiT" customClass="GradientProgressBar" customModule="GradientProgressBar">
-                                        <rect key="frame" x="16" y="242" width="343" height="2"/>
+                                        <rect key="frame" x="16" y="241.5" width="343" height="2"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="fOz-ay-jbP"/>
@@ -116,7 +116,7 @@
                         <viewLayoutGuide key="safeArea" id="0wX-Te-c8F"/>
                     </view>
                     <navigationItem key="navigationItem" title="🏡 Basic Example" prompt="Gradient Progress Bar" largeTitleDisplayMode="always" id="Z7n-YK-yp8">
-                        <barButtonItem key="rightBarButtonItem" title="» Advanced Example" id="MSW-Ye-ZLF">
+                        <barButtonItem key="rightBarButtonItem" title="Advanced Example" id="MSW-Ye-ZLF">
                             <connections>
                                 <segue destination="4ad-Yc-uw7" kind="show" id="X8Z-Q2-3vO"/>
                             </connections>
@@ -139,7 +139,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdN-O6-x0x" userLabel="Wrapper View">
-                                <rect key="frame" x="0.0" y="137.5" width="375" height="485.5"/>
+                                <rect key="frame" x="0.0" y="138.5" width="375" height="484.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upk-tN-DZc" userLabel="Border Top View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
@@ -150,7 +150,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUG-z4-188" userLabel="Border Bottom View">
-                                        <rect key="frame" x="0.0" y="484.5" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="483.5" width="375" height="1"/>
                                         <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Uv7-N3-SQP"/>
@@ -159,7 +159,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AiD-8Z-1cp" customClass="GradientProgressBar" customModule="GradientProgressBar">
-                                        <rect key="frame" x="16" y="242" width="343" height="2"/>
+                                        <rect key="frame" x="16" y="241.5" width="343" height="2"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="iM6-9E-PRE"/>
@@ -243,7 +243,7 @@
                         <viewLayoutGuide key="safeArea" id="JZz-n7-Jap"/>
                     </view>
                     <navigationItem key="navigationItem" title="🚀 Advanced Example" prompt="Gradient Progress Bar" largeTitleDisplayMode="always" id="3sL-EA-bQc">
-                        <barButtonItem key="rightBarButtonItem" title="» Web View Example" id="Qzg-7H-NXQ">
+                        <barButtonItem key="rightBarButtonItem" title="Web View Example" id="Qzg-7H-NXQ">
                             <connections>
                                 <segue destination="ye3-ic-PmR" kind="show" id="SC5-gE-Ohh"/>
                             </connections>
@@ -266,7 +266,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kBF-IR-qfs" userLabel="WebView">
-                                <rect key="frame" x="0.0" y="137.5" width="375" height="529.5"/>
+                                <rect key="frame" x="0.0" y="138.5" width="375" height="528.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -305,7 +305,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x3C-0W-Nfd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="t33-eO-Q58">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="103.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -10,6 +10,11 @@ A customizable gradient progress bar (UIProgressView). Inspired by [iOS 7 Progre
 
 To run the example project, clone the repo, and open the workspace from the Example directory.
 
+### Requirements
+- Swift 5.0
+- Xcode 11
+- iOS 9.0+
+
 ### Integration
 ##### CocoaPods
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate GradientProgressBar into your Xcode project using CocoaPods, specify it in your `Podfile`:

@@ -31,6 +31,18 @@ github "fxm90/GradientProgressBar" ~> 2.0
 Run carthage update to build the framework and drag the built `GradientProgressBar.framework`, as well as the dependency `LightweightObservable.framework`, into your Xcode project.
 
 
+##### Swift Package Manager
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. It is in early development, but Gradient Progress Bar does support its use on supported platforms.
+
+Once you have your Swift package set up, adding Gradient Progress Bar as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/fxm90/GradientProgressBar", from: "2.0.3")
+]
+```
+
+
 ### How to use
 Simply drop a `UIView` into your View Controller in the Storyboard. Select your view and in the `Identity Inspector` change the class to `GradientProgressBar`.
 >Don't forget to change the module to `GradientProgressBar` too.

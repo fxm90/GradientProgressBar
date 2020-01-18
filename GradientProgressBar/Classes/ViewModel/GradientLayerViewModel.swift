@@ -6,7 +6,7 @@
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import LightweightObservable
 
 /// This view model keeps track of the gradient-colors and updates the `gradientLayer` accordingly.

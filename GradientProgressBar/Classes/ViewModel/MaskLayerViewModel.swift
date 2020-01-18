@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreGraphics
+import QuartzCore
 import LightweightObservable
 
 /// This view model keeps track of the progress-value and updates the `maskLayer` accordingly.

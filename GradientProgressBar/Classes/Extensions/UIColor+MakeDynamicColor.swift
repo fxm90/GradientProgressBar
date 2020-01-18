@@ -6,7 +6,7 @@
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // Source: https://gist.github.com/fxm90/fd217b463222afd6eabcb006fb26d92e
 extension UIColor {

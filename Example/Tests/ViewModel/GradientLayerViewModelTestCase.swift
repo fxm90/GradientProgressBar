@@ -62,6 +62,6 @@ class GradientLayerViewModelTestCase: XCTestCase {
 
 extension GradientLayerViewModelTestCase {
     private func makeGradientLayerColors(from gradientColors: [UIColor]) -> [CGColor] {
-        return gradientColors.map { $0.cgColor }
+        gradientColors.map { $0.cgColor }
     }
 }

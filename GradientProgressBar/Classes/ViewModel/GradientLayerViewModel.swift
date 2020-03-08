@@ -15,7 +15,7 @@ final class GradientLayerViewModel {
 
     /// Observable color array for the gradient layer (of type `CGColor`).
     var gradientLayerColors: Observable<[CGColor]> {
-        return gradientLayerColorsSubject
+        gradientLayerColorsSubject
     }
 
     /// Color array used for the gradient progress bar (of type `UIColor`).
@@ -42,6 +42,6 @@ final class GradientLayerViewModel {
     /// Maps the current `gradientColors` given by the user as an array of `UIColor`,
     /// to an array of type `CGColor`, so we can use it for our gradient layer.
     private func makeGradientLayerColors() -> [CGColor] {
-        return gradientColors.map { $0.cgColor }
+        gradientColors.map { $0.cgColor }
     }
 }

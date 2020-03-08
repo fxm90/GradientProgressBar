@@ -34,38 +34,25 @@ open class GradientProgressBar: UIView {
 
     /// Gradient colors for the progress view.
     public var gradientColors: [UIColor] {
-        get {
-            return gradientLayerViewModel.gradientColors
-        }
-        set {
-            gradientLayerViewModel.gradientColors = newValue
-        }
+        get { gradientLayerViewModel.gradientColors }
+        set { gradientLayerViewModel.gradientColors = newValue }
     }
 
     /// Animation duration for calls to `setProgress(x, animated: true)`.
     public var animationDuration: TimeInterval {
-        get {
-            return maskLayerViewModel.animationDuration
-        }
-        set {
-            maskLayerViewModel.animationDuration = newValue
-        }
+        get { maskLayerViewModel.animationDuration }
+        set { maskLayerViewModel.animationDuration = newValue }
     }
 
     /// Animation timing function for calls to `setProgress(x, animated: true)`.
     public var timingFunction: CAMediaTimingFunction {
-        get {
-            return maskLayerViewModel.timingFunction
-        }
-        set {
-            maskLayerViewModel.timingFunction = newValue
-        }
+        get { maskLayerViewModel.timingFunction }
+        set { maskLayerViewModel.timingFunction = newValue }
     }
 
     /// Layer containing the gradient.
     public let gradientLayer: CAGradientLayer = {
         let layer = CAGradientLayer()
-
         layer.anchorPoint = .zero
         layer.startPoint = .zero
         layer.endPoint = CGPoint(x: 1.0, y: 0.0)
@@ -164,12 +151,8 @@ extension GradientProgressBar: UIProgressHandling {
 
     @IBInspectable
     open var progress: Float {
-        get {
-            return maskLayerViewModel.progress
-        }
-        set {
-            maskLayerViewModel.progress = newValue
-        }
+        get { maskLayerViewModel.progress }
+        set { maskLayerViewModel.progress = newValue }
     }
 
     // MARK: - Public methods

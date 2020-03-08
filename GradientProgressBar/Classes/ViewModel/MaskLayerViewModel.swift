@@ -36,7 +36,7 @@ final class MaskLayerViewModel {
 
     /// Observable frame-animation for the mask layer.
     var maskLayerFrameAnimation: Observable<FrameAnimation> {
-        return maskLayerFrameAnimationSubject
+        maskLayerFrameAnimationSubject
     }
 
     /// The current bounds of the progress view.
@@ -48,6 +48,7 @@ final class MaskLayerViewModel {
                 return
             }
 
+            // Update mask-layer frame accordingly.
             maskLayerFrameAnimationSubject.value = makeMaskLayerFrameAnimationForCurrentProgress(animated: false)
         }
     }
@@ -85,8 +86,7 @@ final class MaskLayerViewModel {
 
     /// Adjusts the current progress, optionally animating the change.
     func setProgress(_ progress: Float, animated: Bool = false) {
-        // We don't want to update the mask-layer frame on setting the progress value here,
-        // as we might have to do it animated.
+        // We don't want to update the mask-layer frame on setting the progress value here, as we might have to do it animated.
         shouldUpdateMaskLayerFrameOnProgressChange = false
         self.progress = progress
         shouldUpdateMaskLayerFrameOnProgressChange = true

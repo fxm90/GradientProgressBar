@@ -81,7 +81,7 @@ open class GradientProgressBar: UIView {
 
     // MARK: - Constructor
 
-    public override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
 
         commonInit()
@@ -95,7 +95,7 @@ open class GradientProgressBar: UIView {
 
     // MARK: - Public methods
 
-    open override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
 
         // Unfortunately `CALayer` is not affected by autolayout, so any change in the size of the view will not change the gradient layer.

@@ -6,7 +6,7 @@ GradientProgressBar
 A customizable gradient progress bar (UIProgressView). Inspired by [iOS 7 Progress Bar from Codepen](https://codepen.io/marcobiedermann/pen/LExXWW).
 
 ### Example
-[![Example](http://felix.hamburg/files/github/gradient-progress-bar/preview.png)](http://felix.hamburg/files/github/gradient-progress-bar/preview.png)
+![Example][example]
 
 To run the example project, clone the repo, and open the workspace from the Example directory.
 
@@ -47,7 +47,7 @@ dependencies: [
 Simply drop a `UIView` into your View Controller in the Storyboard. Select your view and in the `Identity Inspector` change the class to `GradientProgressBar`.
 >Don't forget to change the module to `GradientProgressBar` too.
 
-![Interface Builder](http://felix.hamburg/files/github/gradient-progress-bar/interface-builder.png)
+![Interface Builder][interface-builder]
 
 Setup the constraints for the `UIView` according to your needs.
 
@@ -121,3 +121,6 @@ Felix Mau (me(@)felix.hamburg)
 
 ### License
 GradientProgressBar is available under the MIT license. See the LICENSE file for more info.
+
+[example]: Assets/example.png
+[interface-builder]: Assets/interface-builder.png

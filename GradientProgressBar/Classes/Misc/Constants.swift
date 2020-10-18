@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     /// Default colors for components.
-    public struct GradientProgressBar {
+    enum GradientProgressBar {
         /// Default background color for the progress view in light mode.
         static let backgroundColorForLightMode = #colorLiteral(red: 0.8980392157, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
 
@@ -30,9 +30,9 @@ extension UIColor {
     }
 }
 
-extension TimeInterval {
+public extension TimeInterval {
     /// Numeric default values.
-    public struct GradientProgressBar {
+    enum GradientProgressBar {
         /// Default animation duration for calls to `setProgress(x, animated: true)`.
         ///
         /// - Note: Equals to `CALayer` default animation duration (https://apple.co/2PVTCsB).
@@ -40,9 +40,9 @@ extension TimeInterval {
     }
 }
 
-extension CAMediaTimingFunction {
+public extension CAMediaTimingFunction {
     /// Default animation timing functions.
-    public struct GradientProgressBar {
+    enum GradientProgressBar {
         /// Default animation timing function for calls to `setProgress(x, animated: true)`.
         static let progressAnimationFunction = CAMediaTimingFunction(name: .default)
     }

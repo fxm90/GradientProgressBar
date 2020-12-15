@@ -2,7 +2,7 @@
 //  MaskLayerViewModelTestCase.swift
 //  GradientProgressBar_Example
 //
-//  Created by Felix Mau on 08/28/19.
+//  Created by Felix Mau on 28.08.19.
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 

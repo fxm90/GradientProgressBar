@@ -2,7 +2,7 @@
 //  WebViewExampleViewController.swift
 //  GradientProgressBar_Example
 //
-//  Created by Felix Mau on 09/23/18.
+//  Created by Felix Mau on 23.09.18.
 //  Copyright © 2018 Felix Mau. All rights reserved.
 //
 
@@ -55,7 +55,7 @@ class WebViewExampleViewController: UIViewController {
             progressView.trailingAnchor.constraint(equalTo: navigationBar.trailingAnchor),
 
             progressView.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor),
-            progressView.heightAnchor.constraint(equalToConstant: 2.0)
+            progressView.heightAnchor.constraint(equalToConstant: 2.0),
         ])
     }
 

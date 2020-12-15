@@ -2,7 +2,7 @@
 //  UIColor+MakeDynamicColor.swift
 //  GradientProgressBar
 //
-//  Created by Felix Mau on 22/09/19.
+//  Created by Felix Mau on 22.09.19.
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 

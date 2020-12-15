@@ -2,8 +2,8 @@
 //  UIColorMakeDynamicColorTestCase.swift
 //  GradientProgressBar_Tests
 //
-//  Created by Felix Mau on 22/09/19.
-//  Copyright © 2019 CocoaPods. All rights reserved.
+//  Created by Felix Mau on 22.09.19.
+//  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
 import XCTest

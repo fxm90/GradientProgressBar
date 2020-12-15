@@ -10,30 +10,30 @@
 ///       }
 ///     }
 public struct Async<Value> {
-  public let run: (@escaping (Value) -> Void) -> Void
+    public let run: (@escaping (Value) -> Void) -> Void
 
-  /// Creates an asynchronous operation.
-  ///
-  /// - Parameters:
-  ///   - run: A function that, when called, can hand a value to a callback.
-  ///   - callback: A function that can be called with a value.
-  public init(run: @escaping (_ callback: @escaping (Value) -> Void) -> Void) {
-    self.run = run
-  }
-
-  /// Wraps a pure value in an asynchronous operation.
-  ///
-  /// - Parameter value: A value to be wrapped in an asynchronous operation.
-  public init(value: Value) {
-    self.init { callback in callback(value) }
-  }
-
-  /// Transforms an Async<Value> into an Async<NewValue> with a function `(Value) -> NewValue`.
-  ///
-  /// - Parameter f: A transformation to apply to the value wrapped by the async value.
-  public func map<NewValue>(_ f: @escaping (Value) -> NewValue) -> Async<NewValue> {
-    return .init { callback in
-      self.run { a in callback(f(a)) }
+    /// Creates an asynchronous operation.
+    ///
+    /// - Parameters:
+    ///   - run: A function that, when called, can hand a value to a callback.
+    ///   - callback: A function that can be called with a value.
+    public init(run: @escaping (_ callback: @escaping (Value) -> Void) -> Void) {
+        self.run = run
     }
-  }
+
+    /// Wraps a pure value in an asynchronous operation.
+    ///
+    /// - Parameter value: A value to be wrapped in an asynchronous operation.
+    public init(value: Value) {
+        self.init { callback in callback(value) }
+    }
+
+    /// Transforms an Async<Value> into an Async<NewValue> with a function `(Value) -> NewValue`.
+    ///
+    /// - Parameter f: A transformation to apply to the value wrapped by the async value.
+    public func map<NewValue>(_ f: @escaping (Value) -> NewValue) -> Async<NewValue> {
+        .init { callback in
+            self.run { a in callback(f(a)) }
+        }
+    }
 }

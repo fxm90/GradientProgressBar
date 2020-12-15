@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  GradientProgressBar_Example
 //
-//  Created by Felix Mau on 09/30/17.
+//  Created by Felix Mau on 30.09.17.
 //  Copyright © 2018 Felix Mau. All rights reserved.
 //
 

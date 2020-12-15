@@ -2,8 +2,8 @@
 //  DefaultColorSnapshotTestCase.swift
 //  GradientProgressBar_SnapshotTests
 //
-//  Created by Felix Mau on 11/07/19.
-//  Copyright © 2019 CocoaPods. All rights reserved.
+//  Created by Felix Mau on 07.11.19.
+//  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
 import XCTest

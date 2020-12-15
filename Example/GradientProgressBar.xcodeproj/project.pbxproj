@@ -274,8 +274,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				970D1F1A201C6F9500F90864 /* Swiftformat */,
-				97244F681F7FE8C200F4E795 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -486,35 +484,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SWIFTFORMAT=\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\"\nif [ ! -f \"$SWIFTFORMAT\" ]; then\n    echo \"warning: SwiftFormat not installed!\"\n    exit 1\nfi\n\n$SWIFTFORMAT ../\n";
-		};
-		970D1F1A201C6F9500F90864 /* Swiftformat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Swiftformat;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "SWIFTFORMAT=\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\"\nif [ ! -f \"$SWIFTFORMAT\" ]; then\n    echo \"warning: SwiftFormat not installed!\"\n    exit 1\nfi\n\n$SWIFTFORMAT ../ --disable \"trailingCommas\"";
-		};
-		97244F681F7FE8C200F4E795 /* Swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Swiftlint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "SWIFTLINT=\"${PODS_ROOT}/SwiftLint/swiftlint\"\nif [ ! -f \"$SWIFTLINT\" ]; then\n    echo \"warning: SwiftLint not installed!\"\n    exit 1\nfi\n\n$SWIFTLINT";
+			shellScript = "SWIFTFORMAT=\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\"\nif [ ! -f \"$SWIFTFORMAT\" ]; then\n    echo \"warning: SwiftFormat not installed!\"\n    exit 1\nfi\n\n$SWIFTFORMAT ../ --config \"${PODS_ROOT}/SwiftConfigurationFiles/.swiftformat\"\n";
 		};
 		D3BDC900957F89C52D7BF399 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

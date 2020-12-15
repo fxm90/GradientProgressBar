@@ -2,12 +2,12 @@
 //  GradientLayerViewModel.swift
 //  GradientProgressBar
 //
-//  Created by Felix Mau on 08/08/19.
+//  Created by Felix Mau on 08.08.19.
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
-import UIKit
 import LightweightObservable
+import UIKit
 
 /// This view model keeps track of the gradient-colors and updates the `gradientLayer` accordingly.
 final class GradientLayerViewModel {

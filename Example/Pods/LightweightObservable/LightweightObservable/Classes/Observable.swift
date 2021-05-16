@@ -2,7 +2,7 @@
 //  Observable.swift
 //  LightweightObservable
 //
-//  Created by Felix Mau on 11/02/19.
+//  Created by Felix Mau on 11.02.19.
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
@@ -157,9 +157,11 @@ public final class Variable<T>: Observable<T> {
     // MARK: - Public methods
 
     override public func subscribe(_ observer: @escaping Observer) -> Disposable {
+        let disposable = super.subscribe(observer)
+
         // A variable should inform the observer with the initial value.
         observer(_value, nil)
 
-        return super.subscribe(observer)
+        return disposable
     }
 }

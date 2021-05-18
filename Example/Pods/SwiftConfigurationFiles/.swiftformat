@@ -13,7 +13,10 @@
 #
 # File options
 #
---exclude Pods,Generated
+# Note: Excluded paths are relative to the SwiftFormat configuration file.
+#       Therefore we can't specify them in the here. Just leaving this commented out line here as a reminder.
+#
+# --exclude Pods,Generated
 
 #
 # Rules

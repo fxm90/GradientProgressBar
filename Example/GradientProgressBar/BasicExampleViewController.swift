@@ -21,21 +21,21 @@ class BasicExampleViewController: UIViewController {
 
     // MARK: - Public methods
 
-    @IBAction func onAnimateButtonTouchUpInside(_: Any) {
+    @IBAction private func onAnimateButtonTouchUpInside(_: Any) {
         let currentProgress = gradientProgressBar.progress
         let updatedProgress = currentProgress + BasicExampleViewController.increaseValue
 
         gradientProgressBar.setProgress(updatedProgress, animated: true)
     }
 
-    @IBAction func onSetProgressButtonTouchUpInside(_: Any) {
+    @IBAction private func onSetProgressButtonTouchUpInside(_: Any) {
         let currentProgress = gradientProgressBar.progress
         let updatedProgress = currentProgress + BasicExampleViewController.increaseValue
 
         gradientProgressBar.progress = updatedProgress
     }
 
-    @IBAction func onResetButtonTouchUpInside(_: Any) {
+    @IBAction private func onResetButtonTouchUpInside(_: Any) {
         gradientProgressBar.progress = 0.0
     }
 }

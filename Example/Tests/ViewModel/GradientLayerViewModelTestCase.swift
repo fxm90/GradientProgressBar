@@ -33,9 +33,10 @@ class GradientLayerViewModelTestCase: XCTestCase {
     // MARK: - Test initializer
 
     func testInitializerShouldSetGradientLayerColorsToStaticConfigurationPropertyMappedToCgColor() {
-        let expectedGradientLayerColors =
-            makeGradientLayerColors(from: UIColor.GradientProgressBar.gradientColors)
+        // Given
+        let expectedGradientLayerColors = UIColor.GradientProgressBar.gradientColors.cgColor
 
+        // Then
         XCTAssertEqual(viewModel.gradientLayerColors.value, expectedGradientLayerColors)
     }
 
@@ -53,15 +54,16 @@ class GradientLayerViewModelTestCase: XCTestCase {
         viewModel.gradientColors = gradientColors
 
         // Then
-        let expectedGradientLayerColors = makeGradientLayerColors(from: gradientColors)
+        let expectedGradientLayerColors = gradientColors.cgColor
         XCTAssertEqual(viewModel.gradientLayerColors.value, expectedGradientLayerColors)
     }
 }
 
 // MARK: - Helpers
 
-extension GradientLayerViewModelTestCase {
-    private func makeGradientLayerColors(from gradientColors: [UIColor]) -> [CGColor] {
-        gradientColors.map { $0.cgColor }
+private extension Array where Element: UIColor {
+    /// The Quartz color that corresponds to the color objects.
+    var cgColor: [CGColor] {
+        map { $0.cgColor }
     }
 }

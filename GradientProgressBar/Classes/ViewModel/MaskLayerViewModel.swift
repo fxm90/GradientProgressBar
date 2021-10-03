@@ -19,7 +19,7 @@ final class MaskLayerViewModel {
     struct FrameAnimation: Equatable {
         /// Initializes the struct with all values set to zero / default.
         static let zero = FrameAnimation(frame: .zero,
-                                         duration: 0.0,
+                                         duration: 0,
                                          timingFunction: CAMediaTimingFunction(name: .default))
 
         /// The new rect for the frame.
@@ -42,14 +42,13 @@ final class MaskLayerViewModel {
     /// The current bounds of the progress view.
     var bounds: CGRect = .zero {
         didSet {
-            let didChange = bounds != oldValue
-            guard didChange else {
+            guard bounds != oldValue else {
                 // Prevent unnecessary UI-updates.
                 return
             }
 
             // Update mask-layer frame accordingly.
-            maskLayerFrameAnimationSubject.value = makeMaskLayerFrameAnimationForCurrentProgress(animated: false)
+            maskLayerFrameAnimationSubject.value = maskLayerFrameAnimationForCurrentProgress(animated: false)
         }
     }
 
@@ -57,10 +56,10 @@ final class MaskLayerViewModel {
     var progress: Float = 0.5 {
         didSet {
             // Make sure progress value fits our bounds.
-            progress = min(1.0, max(0.0, progress))
+            progress = min(1, max(0, progress))
 
             if shouldUpdateMaskLayerFrameOnProgressChange {
-                maskLayerFrameAnimationSubject.value = makeMaskLayerFrameAnimationForCurrentProgress(animated: false)
+                maskLayerFrameAnimationSubject.value = maskLayerFrameAnimationForCurrentProgress(animated: false)
             }
         }
     }
@@ -91,12 +90,12 @@ final class MaskLayerViewModel {
         self.progress = progress
         shouldUpdateMaskLayerFrameOnProgressChange = true
 
-        maskLayerFrameAnimationSubject.value = makeMaskLayerFrameAnimationForCurrentProgress(animated: animated)
+        maskLayerFrameAnimationSubject.value = maskLayerFrameAnimationForCurrentProgress(animated: animated)
     }
 
     // MARK: - Private methods
 
-    private func makeMaskLayerFrameAnimationForCurrentProgress(animated: Bool) -> FrameAnimation {
+    private func maskLayerFrameAnimationForCurrentProgress(animated: Bool) -> FrameAnimation {
         var maskLayerFrame = bounds
         maskLayerFrame.size.width *= CGFloat(progress)
 
@@ -104,7 +103,7 @@ final class MaskLayerViewModel {
         if animated {
             animationDuration = self.animationDuration
         } else {
-            animationDuration = 0.0
+            animationDuration = 0
         }
 
         return FrameAnimation(frame: maskLayerFrame,

@@ -58,7 +58,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         let progress: Float = 0.25
         viewModel.setProgress(progress)
 
-        let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
+        let bounds = CGRect(x: 2, y: 4, width: 6, height: 8)
 
         // When
         viewModel.bounds = bounds
@@ -68,7 +68,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         expectedFrame.size.width *= CGFloat(progress)
 
         let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
-                                                             duration: 0.0,
+                                                             duration: 0,
                                                              timingFunction: timingFunction)
 
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
@@ -76,7 +76,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
 
     func testSettingBoundsWithSameValueShouldUpdateMaskLayerFrameAnimationJustOnce() {
         // Given
-        let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
+        let bounds = CGRect(x: 2, y: 4, width: 6, height: 8)
 
         var observerCounter = 0
         var disposeBag = DisposeBag()
@@ -105,7 +105,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         viewModel.progress = 1.1
 
         // Then
-        XCTAssertEqual(viewModel.progress, 1.0)
+        XCTAssertEqual(viewModel.progress, 1)
     }
 
     func testSettingProgressValueSmallerThanZeroShouldBePinnedToZero() {
@@ -113,7 +113,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         viewModel.progress = -0.1
 
         // Then
-        XCTAssertEqual(viewModel.progress, 0.0)
+        XCTAssertEqual(viewModel.progress, 0)
     }
 
     func testSettingProgressShouldUpdateMaskLayerFrameAnimationWithCorrectFrameAndTimingFunctionButWithoutDuration() {
@@ -121,7 +121,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         viewModel.timingFunction = timingFunction
 
-        let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
+        let bounds = CGRect(x: 2, y: 4, width: 6, height: 8)
         viewModel.bounds = bounds
 
         // When
@@ -133,7 +133,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         expectedFrame.size.width *= CGFloat(progress)
 
         let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
-                                                             duration: 0.0,
+                                                             duration: 0,
                                                              timingFunction: timingFunction)
 
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
@@ -155,7 +155,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         viewModel.setProgress(1.1)
 
         // Then
-        XCTAssertEqual(viewModel.progress, 1.0)
+        XCTAssertEqual(viewModel.progress, 1)
     }
 
     func testSetProgressWithValueSmallerThanZeroShouldBePinnedToZero() {
@@ -163,7 +163,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         viewModel.setProgress(-0.1)
 
         // Then
-        XCTAssertEqual(viewModel.progress, 0.0)
+        XCTAssertEqual(viewModel.progress, 0)
     }
 
     func testSetProgressShouldUpdateMaskLayerFrameAnimationWithCorrectFrameAndTimingFunctionButWithoutDuration() {
@@ -171,7 +171,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         viewModel.timingFunction = timingFunction
 
-        let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
+        let bounds = CGRect(x: 2, y: 4, width: 6, height: 8)
         viewModel.bounds = bounds
 
         // When
@@ -183,7 +183,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         expectedFrame.size.width *= CGFloat(progress)
 
         let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
-                                                             duration: 0.0,
+                                                             duration: 0,
                                                              timingFunction: timingFunction)
 
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
@@ -197,11 +197,11 @@ class MaskLayerViewModelTestCase: XCTestCase {
         let animationDuration = 123.456
         viewModel.animationDuration = animationDuration
 
-        let bounds = CGRect(x: 2.0, y: 4.0, width: 6.0, height: 8.0)
+        let bounds = CGRect(x: 2, y: 4, width: 6, height: 8)
         viewModel.bounds = bounds
 
         // When
-        let progress: Float = 1.0
+        let progress: Float = 1
         viewModel.setProgress(progress, animated: true)
 
         // Then

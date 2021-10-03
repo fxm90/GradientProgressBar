@@ -51,22 +51,14 @@ open class GradientProgressBar: UIView {
     }
 
     /// Layer containing the gradient.
-    public let gradientLayer: CAGradientLayer = {
-        let layer = CAGradientLayer()
-        layer.anchorPoint = .zero
-        layer.startPoint = .zero
-        layer.endPoint = CGPoint(x: 1.0, y: 0.0)
-
-        return layer
-    }()
+    public let gradientLayer = CAGradientLayer()
+        .set(\.anchorPoint, to: .zero)
+        .set(\.startPoint, to: .zero)
+        .set(\.endPoint, to: CGPoint(x: 1, y: 0))
 
     /// Alpha mask for showing only the visible "progress"-part of the gradient layer.
-    public let maskLayer: CALayer = {
-        let layer = CALayer()
-        layer.backgroundColor = UIColor.white.cgColor
-
-        return layer
-    }()
+    public let maskLayer = CALayer()
+        .set(\.backgroundColor, to: UIColor.white.cgColor)
 
     // MARK: - Private properties
 

@@ -21,7 +21,7 @@ final class GradientLayerViewModel {
     /// Color array used for the gradient progress bar (of type `UIColor`).
     var gradientColors = UIColor.GradientProgressBar.gradientColors {
         didSet {
-            gradientLayerColorsSubject.value = makeGradientLayerColors()
+            gradientLayerColorsSubject.value = gradientColors.cgColor
         }
     }
 
@@ -32,16 +32,15 @@ final class GradientLayerViewModel {
     // MARK: - Initializer
 
     init() {
-        // Small workaround as calls to `self.makeGradientLayerColors()` aren't allowed before all properties have been initialized.
-        gradientLayerColorsSubject = Variable([])
-        gradientLayerColorsSubject.value = makeGradientLayerColors()
+        gradientLayerColorsSubject = Variable(gradientColors.cgColor)
     }
+}
 
-    // MARK: - Private methods
+// MARK: - Helpers
 
-    /// Maps the current `gradientColors` given by the user as an array of `UIColor`,
-    /// to an array of type `CGColor`, so we can use it for our gradient layer.
-    private func makeGradientLayerColors() -> [CGColor] {
-        gradientColors.map { $0.cgColor }
+private extension Array where Element: UIColor {
+    /// The Quartz color that corresponds to the color objects.
+    var cgColor: [CGColor] {
+        map { $0.cgColor }
     }
 }

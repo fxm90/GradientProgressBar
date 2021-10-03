@@ -79,6 +79,7 @@
 		CD5408C07FBE29B49AECF73C /* Pods_GradientProgressBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradientProgressBar_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88613A6DC087BA805555F66 /* Pods-GradientProgressBar_Example-GradientProgressBar_SnapshotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientProgressBar_Example-GradientProgressBar_SnapshotTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradientProgressBar_Example-GradientProgressBar_SnapshotTests/Pods-GradientProgressBar_Example-GradientProgressBar_SnapshotTests.release.xcconfig"; sourceTree = "<group>"; };
 		DC9C354CBDD23876804503B3 /* Pods-GradientProgressBar_SnapshotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientProgressBar_SnapshotTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradientProgressBar_SnapshotTests/Pods-GradientProgressBar_SnapshotTests.release.xcconfig"; sourceTree = "<group>"; };
+		DC9FF9342709A7AC0065B5B9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FF591E10E6898BF5D8EE7B44 /* Pods-GradientProgressBar_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientProgressBar_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradientProgressBar_Tests/Pods-GradientProgressBar_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -210,6 +211,7 @@
 				64BA30382374BC520035102B /* DefaultColorSnapshotTestCase.swift */,
 				64B76B19237576D500F9C2E0 /* CustomColorSnapshotTestCase.swift */,
 				64BA303A2374BC520035102B /* Info.plist */,
+				DC9FF9342709A7AC0065B5B9 /* README.md */,
 			);
 			path = SnapshotTests;
 			sourceTree = "<group>";

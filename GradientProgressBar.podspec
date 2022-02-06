@@ -31,7 +31,7 @@ Inspired by https://codepen.io/marcobiedermann/pen/LExXWW
   s.swift_version         = '5.1'
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'GradientProgressBar/Classes/**/*'
+  s.source_files = 'GradientProgressBar/**/*'
 
   # s.resource_bundles = {
   #   'GradientProgressBar' => ['GradientProgressBar/Assets/*.png']

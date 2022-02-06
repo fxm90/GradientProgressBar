@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-///
+/// A `ProgressViewStyle` showing a gradient.
 ///
 /// - Note: Requires **iOS 15**, due to the view-modifier `mask(alignment:_:)`.
 @available(iOS 15.0, *)
@@ -49,14 +49,18 @@ public struct GradientProgressBarViewStyle: ProgressViewStyle {
 
 @available(iOS 15.0, *)
 public extension ProgressViewStyle where Self == GradientProgressBarViewStyle {
-    ///
-    ///
+    /// Syntactic sugar for returning an instance of the `GradientProgressBarViewStyle`
+    /// with the **default parameters**.
     static var gradientProgressBar: Self {
         gradientProgressBar()
     }
 
+    /// Syntactic sugar for returning an instance of the `GradientProgressBarViewStyle`.
     ///
-    ///
+    /// - Parameters:
+    ///  - backgroundColor: The background-color to be used (clipped by a possible `cornerRadius`)
+    ///  - gradientColors: The gradient-colors to be applied.
+    ///  - cornerRadius: The corner-radius used on the background and the progress bar.
     static func gradientProgressBar(backgroundColor: Color = GradientProgressBarViewStyle.Config.defaultBackgroundColor,
                                     gradientColors: [Color] = GradientProgressBarViewStyle.Config.defaultGradientColors,
                                     cornerRadius: Double = GradientProgressBarViewStyle.Config.defaultCornerRadius) -> Self {

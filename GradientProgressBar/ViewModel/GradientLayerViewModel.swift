@@ -41,6 +41,6 @@ final class GradientLayerViewModel {
 private extension Array where Element: UIColor {
     /// The Quartz color that corresponds to the color objects.
     var cgColor: [CGColor] {
-        map { $0.cgColor }
+        map(\.cgColor)
     }
 }

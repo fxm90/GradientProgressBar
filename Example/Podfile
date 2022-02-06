@@ -1,10 +1,10 @@
 # Fixes warning `Your project does not explicitly specify the CocoaPods master specs repo`.
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '13.0'
+platform :ios, '9.0'
 use_frameworks!
 
-target 'GradientProgressBar_Example' do
+target 'Example' do
   pod 'GradientProgressBar', :path => '../'
 
   # Development pods.
@@ -12,38 +12,46 @@ target 'GradientProgressBar_Example' do
   pod 'SwiftLint', '~> 0.42'
   pod 'SwiftConfigurationFiles', :git => 'https://github.com/fxm90/SwiftConfigurationFiles.git'
 
-  target 'GradientProgressBar_Tests' do
+  target 'ExampleTests' do
     inherit! :search_paths
 
     # Pods for testing.
   end
 
-  target 'GradientProgressBar_SnapshotTests' do
+  target 'ExampleSnapshotTests' do
     inherit! :search_paths
 
     # Pods for snapshot testing.
-    pod 'SnapshotTesting', '~> 1.7', :inhibit_warnings => true
+    pod 'SnapshotTesting', '~> 1.9', :inhibit_warnings => true
   end
 
   post_install do |installer|
-    # Fix issues with interface builder and cocoapods.
+
+    #
+    # Fix warning from `pod install` in Xcode.
+    #
+    # > The iOS Simulator deployment targets is set to 8.0,
+    # > but the range of supported deployment target version for this platform is X.X to Y.Y
+    #
+    # Source: https://stackoverflow.com/a/58367269
+    #
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+      end
+    end
+
+    #
+    # Fix issues with interface builder and CocoaPods.
+    #
     # Source: https://github.com/CocoaPods/CocoaPods/issues/7606#issuecomment-484294739
+    #
     installer.pods_project.build_configurations.each do |config|
       next unless config.name == 'Debug'
 
       config.build_settings['LD_RUNPATH_SEARCH_PATHS'] = [
         '$(FRAMEWORK_SEARCH_PATHS)'
       ]
-    end
-
-    # We support all iOS versions starting from 9.0. Therefore we manually decrease the deployment target for `GradientProgressBar` here,
-    # so other (development / testing related pods) can use a higher deployment target, which is defined using `platform :ios` above.
-    installer.pods_project.targets.each do |target|
-      next unless target.name == 'GradientProgressBar'
-
-      target.build_configurations.each do |config|
-        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
-      end
     end
   end
 end

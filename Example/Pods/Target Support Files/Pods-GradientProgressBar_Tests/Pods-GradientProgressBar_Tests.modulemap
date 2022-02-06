@@ -1,6 +1,0 @@
-framework module Pods_GradientProgressBar_Tests {
-  umbrella header "Pods-GradientProgressBar_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

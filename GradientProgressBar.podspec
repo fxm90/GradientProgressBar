@@ -28,7 +28,7 @@ Inspired by https://codepen.io/marcobiedermann/pen/LExXWW
   s.author           = { 'Felix Mau' => 'me@felix.hamburg' }
   s.source           = { :git => 'https://github.com/fxm90/GradientProgressBar.git', :tag => s.version.to_s }
 
-  s.swift_version         = '5.1'
+  s.swift_version         = '5.5'
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'GradientProgressBar/**/*'

@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.5
 
 import PackageDescription
 
@@ -15,7 +15,7 @@ let package = Package(name: "GradientProgressBar",
                       targets: [
                           .target(name: "GradientProgressBar",
                                   dependencies: ["LightweightObservable"],
-                                  path: "GradientProgressBar/Classes"),
+                                  path: "GradientProgressBar/"),
                           .testTarget(name: "GradientProgressBarTests",
                                       dependencies: ["GradientProgressBar"],
                                       path: "Example/Tests/"),

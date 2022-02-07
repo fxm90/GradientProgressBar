@@ -33,13 +33,13 @@ CHECKOUT OPTIONS:
     :git: https://github.com/fxm90/SwiftConfigurationFiles.git
 
 SPEC CHECKSUMS:
-  GradientProgressBar: 25fe3fe785043daa094bd0135da002f5706dab9e
+  GradientProgressBar: c3b3d2f6a19349bb5547e301be7f63636923f762
   LightweightObservable: c5ac85423a5edbed9a920b4d5c7b8f94ab3688c4
   SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
   SwiftConfigurationFiles: 1cf2228a911ebed9f42f8dec077bb634f04ca6c8
   SwiftFormat: dca5803d3e2120aed5614f1653d252e62ac33be1
   SwiftLint: aaa29a9f649316095a9079595cb60906bd899353
 
-PODFILE CHECKSUM: 0ea0df93601239cc6097fa00b224edfad8358a26
+PODFILE CHECKSUM: 8d4a8d6f9affa43be5f3627c47957652da05e1ba
 
 COCOAPODS: 1.11.2

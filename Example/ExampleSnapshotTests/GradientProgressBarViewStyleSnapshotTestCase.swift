@@ -32,7 +32,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
 
     // MARK: - Test `.light` user interface style
 
-    func testGradientProgressBarWithProgressZeroAndLightTraitCollection() {
+    func test_gradientProgressBarViewStyle_withProgressZero_andLightTraitCollection() {
         // When
         let progressView = ProgressView("", value: 0, total: 100)
             .progressViewStyle(.gradientProgressBar)
@@ -42,7 +42,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
     }
 
-    func testGradientProgressBarWithProgress33PercentAndLightTraitCollection() {
+    func test_gradientProgressBarViewStyle_withProgress33Percent_andLightTraitCollection() {
         // When
         let progressView = ProgressView("", value: 33, total: 100)
             .progressViewStyle(.gradientProgressBar)
@@ -52,7 +52,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
     }
 
-    func testGradientProgressBarWithProgress66PercentAndLightTraitCollection() {
+    func test_gradientProgressBarViewStyle_withProgress66Percent_andLightTraitCollection() {
         // When
         let progressView = ProgressView("", value: 66, total: 100)
             .progressViewStyle(.gradientProgressBar)
@@ -62,7 +62,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
     }
 
-    func testGradientProgressBarWithProgress100PercentAndLightTraitCollection() {
+    func test_gradientProgressBarViewStyle_withProgress100Percent_andLightTraitCollection() {
         // When
         let progressView = ProgressView("", value: 100, total: 100)
             .progressViewStyle(.gradientProgressBar)
@@ -74,7 +74,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
 
     // MARK: - Test `.dark` user interface style
 
-    func testGradientProgressBarWithProgressZeroAndDarkTraitCollection() {
+    func test_gradientProgressBarViewStyle_withProgressZero_andDarkTraitCollection() {
         // When
         let progressView = ProgressView("", value: 0, total: 100)
             .progressViewStyle(.gradientProgressBar)
@@ -84,7 +84,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: progressView, as: .image(traits: Config.darkTraitCollection))
     }
 
-    func testGradientProgressBarWithProgress33PercentAndDarkTraitCollection() {
+    func test_gradientProgressBarViewStyle_withProgress33Percent_andDarkTraitCollection() {
         // When
         let progressView = ProgressView("", value: 33, total: 100)
             .progressViewStyle(.gradientProgressBar)
@@ -94,7 +94,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: progressView, as: .image(traits: Config.darkTraitCollection))
     }
 
-    func testGradientProgressBarWithProgress66PercentAndDarkTraitCollection() {
+    func test_gradientProgressBarViewStyle_withProgress66Percent_andDarkTraitCollection() {
         // When
         let progressView = ProgressView("", value: 66, total: 100)
             .progressViewStyle(.gradientProgressBar)
@@ -104,7 +104,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: progressView, as: .image(traits: Config.darkTraitCollection))
     }
 
-    func testGradientProgressBarWithProgress100PercentAndDarkTraitCollection() {
+    func test_gradientProgressBarViewStyle_withProgress100Percent_andDarkTraitCollection() {
         // When
         let progressView = ProgressView("", value: 100, total: 100)
             .progressViewStyle(.gradientProgressBar)
@@ -116,7 +116,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
 
     // MARK: - Test custom background color
 
-    func testGradientProgressBarWithProgressZeroAndCustomBackgroundColor() {
+    func test_gradientProgressBarViewStyle_withProgressZero_andCustomBackgroundColor() {
         // Given
         let backgroundColor: Color = .cyan
 
@@ -131,7 +131,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
 
     // MARK: - Test custom colors
 
-    func testGradientProgressBarWithProgressZeroAndCustomColors() {
+    func test_gradientProgressBarViewStyle_withProgressZero_andCustomColors() {
         // When
         let progressView = ProgressView("", value: 100, total: 100)
             .progressViewStyle(.gradientProgressBar(gradientColors: Config.gradientColors))
@@ -141,7 +141,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
     }
 
-    func testGradientProgressBarWithProgress33PercentAndCustomColors() {
+    func test_gradientProgressBarViewStyle_withProgress33Percent_andCustomColors() {
         // When
         let progressView = ProgressView("", value: 33, total: 100)
             .progressViewStyle(.gradientProgressBar(gradientColors: Config.gradientColors))
@@ -151,7 +151,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
     }
 
-    func testGradientProgressBarWithProgress66PercentAndCustomColors() {
+    func test_gradientProgressBarViewStyle_withProgress66Percent_andCustomColors() {
         // When
         let progressView = ProgressView("", value: 66, total: 100)
             .progressViewStyle(.gradientProgressBar(gradientColors: Config.gradientColors))
@@ -161,7 +161,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
     }
 
-    func testGradientProgressBarWithProgress100PercentAndCustomColors() {
+    func test_gradientProgressBarViewStyle_withProgress100Percent_andCustomColors() {
         // When
         let progressView = ProgressView("", value: 100, total: 100)
             .progressViewStyle(.gradientProgressBar(gradientColors: Config.gradientColors))
@@ -173,7 +173,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
 
     // MARK: - Test custom background color
 
-    func testGradientProgressBarWithProgress50AndCustomCornerRadius() {
+    func test_gradientProgressBarViewStyle_withProgress50_andCustomCornerRadius() {
         // Given
         let frame = CGRect(x: 0, y: 0, width: Config.frame.width, height: 20)
         let cornerRadius = frame.height / 2

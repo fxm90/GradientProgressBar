@@ -11,7 +11,7 @@ import XCTest
 @testable import GradientProgressBar
 
 final class UIColorMakeDynamicColorTestCase: XCTestCase {
-    func testDynamicColorShouldReturnLightColorInUnspecifiedInterfaceStyle() {
+    func test_dynamicColor_shouldReturnLightColor_forUnspecifiedInterfaceStyle() {
         // Given
         let lightColor: UIColor = .white
         let darkColor: UIColor = .black
@@ -27,7 +27,7 @@ final class UIColorMakeDynamicColorTestCase: XCTestCase {
         XCTAssertEqual(resolvedColor, lightColor)
     }
 
-    func testDynamicColorShouldReturnLightColorInLightInterfaceStyle() {
+    func test_dynamicColor_shouldReturnLightColor_forLightInterfaceStyle() {
         // Given
         let lightColor: UIColor = .white
         let darkColor: UIColor = .black
@@ -43,7 +43,7 @@ final class UIColorMakeDynamicColorTestCase: XCTestCase {
         XCTAssertEqual(resolvedColor, lightColor)
     }
 
-    func testDynamicColorShouldReturnDarkColorInDarkInterfaceStyle() {
+    func test_dynamicColor_shouldReturnDarkColor_forDarkInterfaceStyle() {
         // Given
         let lightColor: UIColor = .white
         let darkColor: UIColor = .black

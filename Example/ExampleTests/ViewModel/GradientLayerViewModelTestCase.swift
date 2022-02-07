@@ -32,7 +32,7 @@ class GradientLayerViewModelTestCase: XCTestCase {
 
     // MARK: - Test initializer
 
-    func testInitializerShouldSetGradientLayerColorsToStaticConfigurationPropertyMappedToCgColor() {
+    func test_initializer_shouldSetGradientLayerColors_toStaticConfigurationProperty_mappedToCgColor() {
         // Given
         let expectedGradientLayerColors = UIColor.GradientProgressBar.gradientColors.cgColor
 
@@ -40,13 +40,13 @@ class GradientLayerViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.gradientLayerColors.value, expectedGradientLayerColors)
     }
 
-    func testInitializerShouldSetGradientColorsToStaticConfigurationProperty() {
+    func test_initializer_shouldSetGradientColors_toStaticConfigurationProperty() {
         XCTAssertEqual(viewModel.gradientColors, UIColor.GradientProgressBar.gradientColors)
     }
 
     // MARK: - Test setting property `gradientColors`
 
-    func testSettingsGradientColorsShouldUpdateGradientLayerColors() {
+    func test_setGradientColors_shouldUpdateGradientLayerColors() {
         // Given
         let gradientColors: [UIColor] = [.red, .yellow, .green]
 

@@ -11,7 +11,7 @@ import XCTest
 @testable import GradientProgressBar
 
 final class GradientProgressBarTestCase: XCTestCase {
-    func testSetup() {
+    func test_viewSetup() {
         // When
         let gradientProgressBar = GradientProgressBar(frame: .zero)
 

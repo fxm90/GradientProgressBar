@@ -36,21 +36,21 @@ class MaskLayerViewModelTestCase: XCTestCase {
 
     // MARK: - Test initializer
 
-    func testInitializerShouldSetMaskLayerFrameAnimationToZero() {
+    func test_initializer_shouldSetMaskLayerFrameAnimation_toZero() {
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, .zero)
     }
 
-    func testInitializerShouldSetAnimationDurationToStaticConfigurationProperty() {
+    func test_initializer_shouldSetAnimationDuration_toStaticConfigurationProperty() {
         XCTAssertEqual(viewModel.animationDuration, TimeInterval.GradientProgressBar.progressAnimationDuration)
     }
 
-    func testInitializerShouldSetTimingFunctionToStaticConfigurationProperty() {
+    func test_initializer_shouldSetTimingFunction_toStaticConfigurationProperty() {
         XCTAssertEqual(viewModel.timingFunction, CAMediaTimingFunction.GradientProgressBar.progressAnimationFunction)
     }
 
     // MARK: - Test setting property `bounds`
 
-    func testSettingBoundsShouldUpdateMaskLayerFrameAnimationWithCorrectFrameAndTimingFunctionButWithoutDuration() {
+    func test_setBounds_shouldUpdateMaskLayerFrameAnimation_withCorrectFrame_andTimingFunction_butWithoutDuration() {
         // Given
         let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         viewModel.timingFunction = timingFunction
@@ -74,7 +74,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
     }
 
-    func testSettingBoundsWithSameValueShouldUpdateMaskLayerFrameAnimationJustOnce() {
+    func test_setBounds_withSameValue_shouldUpdateMaskLayerFrameAnimation_justOnce() {
         // Given
         let bounds = CGRect(x: 2, y: 4, width: 6, height: 8)
 
@@ -100,7 +100,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
 
     // MARK: - Test setting property `progress`
 
-    func testSettingProgressValueGraterThanOneShouldBePinnedToOne() {
+    func test_setPropertyProgress_withValueGreaterThanOne_shouldBeClampedToOne() {
         // When
         viewModel.progress = 1.1
 
@@ -108,7 +108,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.progress, 1)
     }
 
-    func testSettingProgressValueSmallerThanZeroShouldBePinnedToZero() {
+    func test_setPropertyProgress_withValueSmallerThanZero_shouldBeClampedToZero() {
         // When
         viewModel.progress = -0.1
 
@@ -116,7 +116,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.progress, 0)
     }
 
-    func testSettingProgressShouldUpdateMaskLayerFrameAnimationWithCorrectFrameAndTimingFunctionButWithoutDuration() {
+    func test_setPropertyProgress_shouldUpdateMaskLayerFrameAnimation_withCorrectFrame_andTimingFunction_butWithoutDuration() {
         // Given
         let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         viewModel.timingFunction = timingFunction
@@ -141,7 +141,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
 
     // MARK: - Test method `setProgress()`
 
-    func testSetProgressShouldUpdateProgressProperty() {
+    func test_setProgress_shouldUpdateProgressProperty() {
         // When
         let progress: Float = 0.25
         viewModel.setProgress(progress)
@@ -150,7 +150,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.progress, progress)
     }
 
-    func testSetProgressWithValueGraterThanOneShouldBePinnedToOne() {
+    func test_setProgress_withValueGraterThanOne_shouldBeClampedToOne() {
         // When
         viewModel.setProgress(1.1)
 
@@ -158,7 +158,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.progress, 1)
     }
 
-    func testSetProgressWithValueSmallerThanZeroShouldBePinnedToZero() {
+    func test_setProgress_withValueSmallerThanZero_shouldBeClampedToZero() {
         // When
         viewModel.setProgress(-0.1)
 
@@ -166,7 +166,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.progress, 0)
     }
 
-    func testSetProgressShouldUpdateMaskLayerFrameAnimationWithCorrectFrameAndTimingFunctionButWithoutDuration() {
+    func test_setProgress_shouldUpdateMaskLayerFrameAnimation_withCorrectFrame_andTimingFunction_butWithoutDuration() {
         // Given
         let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         viewModel.timingFunction = timingFunction
@@ -189,7 +189,7 @@ class MaskLayerViewModelTestCase: XCTestCase {
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
     }
 
-    func testSetProgressShouldUpdateMaskLayerFrameAnimationWithCorrectFrameAndTimingFunctionAndDuration() {
+    func test_setProgress_shouldUpdateMaskLayerFrameAnimation_withCorrectFrame_andTimingFunction_andDuration() {
         // Given
         let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         viewModel.timingFunction = timingFunction

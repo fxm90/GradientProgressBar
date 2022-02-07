@@ -7,9 +7,10 @@
 //
 
 import XCTest
+
 @testable import GradientProgressBar
 
-class GradientProgressBarTestCase: XCTestCase {
+final class GradientProgressBarTestCase: XCTestCase {
     func testSetup() {
         // When
         let gradientProgressBar = GradientProgressBar(frame: .zero)

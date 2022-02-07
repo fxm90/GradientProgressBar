@@ -17,9 +17,9 @@
 		DC54A53627AD298100B14516 /* UIColorMakeDynamicColorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54A53127AD298100B14516 /* UIColorMakeDynamicColorTestCase.swift */; };
 		DC54A53727AD298100B14516 /* MaskLayerViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54A53327AD298100B14516 /* MaskLayerViewModelTestCase.swift */; };
 		DC54A53827AD298100B14516 /* GradientLayerViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54A53427AD298100B14516 /* GradientLayerViewModelTestCase.swift */; };
-		DC54A55427AD2B0900B14516 /* CustomColorSnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54A54627AD2B0900B14516 /* CustomColorSnapshotTestCase.swift */; };
-		DC54A55D27AD2B0900B14516 /* DefaultColorSnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54A55227AD2B0900B14516 /* DefaultColorSnapshotTestCase.swift */; };
+		DC54A55427AD2B0900B14516 /* GradientProgressBarSnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54A54627AD2B0900B14516 /* GradientProgressBarSnapshotTestCase.swift */; };
 		DC54A55E27AD2B0900B14516 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DC54A55327AD2B0900B14516 /* README.md */; };
+		DC7AF94E27B1918900E1CE98 /* GradientProgressBarViewStyleSnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7AF94D27B1918900E1CE98 /* GradientProgressBarViewStyleSnapshotTestCase.swift */; };
 		DCA889BB27AC199E00CF909E /* BasicExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA889B927AC199E00CF909E /* BasicExampleViewController.swift */; };
 		DCA889C127AC1B7F00CF909E /* AdvancedExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA889BF27AC1B7F00CF909E /* AdvancedExampleViewController.swift */; };
 		DCA889C527AC1BC100CF909E /* WebViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA889C327AC1BC100CF909E /* WebViewExampleViewController.swift */; };
@@ -66,9 +66,9 @@
 		DC54A53327AD298100B14516 /* MaskLayerViewModelTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskLayerViewModelTestCase.swift; sourceTree = "<group>"; };
 		DC54A53427AD298100B14516 /* GradientLayerViewModelTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLayerViewModelTestCase.swift; sourceTree = "<group>"; };
 		DC54A53D27AD2AD700B14516 /* ExampleSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC54A54627AD2B0900B14516 /* CustomColorSnapshotTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColorSnapshotTestCase.swift; sourceTree = "<group>"; };
-		DC54A55227AD2B0900B14516 /* DefaultColorSnapshotTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultColorSnapshotTestCase.swift; sourceTree = "<group>"; };
+		DC54A54627AD2B0900B14516 /* GradientProgressBarSnapshotTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressBarSnapshotTestCase.swift; sourceTree = "<group>"; };
 		DC54A55327AD2B0900B14516 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DC7AF94D27B1918900E1CE98 /* GradientProgressBarViewStyleSnapshotTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientProgressBarViewStyleSnapshotTestCase.swift; sourceTree = "<group>"; };
 		DCA889B927AC199E00CF909E /* BasicExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicExampleViewController.swift; sourceTree = "<group>"; };
 		DCA889BF27AC1B7F00CF909E /* AdvancedExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedExampleViewController.swift; sourceTree = "<group>"; };
 		DCA889C327AC1BC100CF909E /* WebViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewExampleViewController.swift; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 		DC54A53E27AD2AD700B14516 /* ExampleSnapshotTests */ = {
 			isa = PBXGroup;
 			children = (
-				DC54A54627AD2B0900B14516 /* CustomColorSnapshotTestCase.swift */,
-				DC54A55227AD2B0900B14516 /* DefaultColorSnapshotTestCase.swift */,
+				DC54A54627AD2B0900B14516 /* GradientProgressBarSnapshotTestCase.swift */,
+				DC7AF94D27B1918900E1CE98 /* GradientProgressBarViewStyleSnapshotTestCase.swift */,
 				DC54A55327AD2B0900B14516 /* README.md */,
 			);
 			path = ExampleSnapshotTests;
@@ -549,8 +549,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC54A55427AD2B0900B14516 /* CustomColorSnapshotTestCase.swift in Sources */,
-				DC54A55D27AD2B0900B14516 /* DefaultColorSnapshotTestCase.swift in Sources */,
+				DC54A55427AD2B0900B14516 /* GradientProgressBarSnapshotTestCase.swift in Sources */,
+				DC7AF94E27B1918900E1CE98 /* GradientProgressBarViewStyleSnapshotTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

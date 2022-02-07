@@ -24,10 +24,8 @@ extension UIColor {
             return lightVariant
         }
 
-        return UIColor { (traitCollection: UITraitCollection) -> UIColor in
-            traitCollection.userInterfaceStyle == .dark
-                ? darkVariant
-                : lightVariant
+        return UIColor {
+            $0.userInterfaceStyle == .dark ? darkVariant : lightVariant
         }
     }
 }

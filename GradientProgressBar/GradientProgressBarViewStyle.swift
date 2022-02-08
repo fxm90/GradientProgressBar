@@ -58,8 +58,8 @@ public extension ProgressViewStyle where Self == GradientProgressBarViewStyle {
     /// Syntactic sugar for returning an instance of the `GradientProgressBarViewStyle`.
     ///
     /// - Parameters:
-    ///  - backgroundColor: The background-color to be used (clipped by a possible `cornerRadius`)
-    ///  - gradientColors: The gradient-colors to be applied.
+    ///  - backgroundColor: The background-color shown behind the gradient (clipped by a possible `cornerRadius`).
+    ///  - gradientColors: The colors used for the gradient.
     ///  - cornerRadius: The corner-radius used on the background and the progress bar.
     static func gradientProgressBar(backgroundColor: Color = GradientProgressBarViewStyle.Config.defaultBackgroundColor,
                                     gradientColors: [Color] = GradientProgressBarViewStyle.Config.defaultGradientColors,

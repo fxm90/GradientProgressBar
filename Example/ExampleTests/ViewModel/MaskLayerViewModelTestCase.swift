@@ -11,7 +11,7 @@ import XCTest
 @testable import GradientProgressBar
 @testable import LightweightObservable
 
-class MaskLayerViewModelTestCase: XCTestCase {
+final class MaskLayerViewModelTestCase: XCTestCase {
     // MARK: - Types
 
     typealias FrameAnimation = MaskLayerViewModel.FrameAnimation

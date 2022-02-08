@@ -11,7 +11,7 @@ import XCTest
 @testable import GradientProgressBar
 @testable import LightweightObservable
 
-class GradientLayerViewModelTestCase: XCTestCase {
+final class GradientLayerViewModelTestCase: XCTestCase {
     // MARK: - Private properties
 
     private var viewModel: GradientLayerViewModel!

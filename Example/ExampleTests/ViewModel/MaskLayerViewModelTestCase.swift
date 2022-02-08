@@ -64,10 +64,7 @@ final class MaskLayerViewModelTestCase: XCTestCase {
         viewModel.bounds = bounds
 
         // Then
-        var expectedFrame = bounds
-        expectedFrame.size.width *= CGFloat(progress)
-
-        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
+        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: bounds.adaptedWidth(percent: progress),
                                                              duration: 0,
                                                              timingFunction: timingFunction)
 
@@ -129,10 +126,7 @@ final class MaskLayerViewModelTestCase: XCTestCase {
         viewModel.progress = progress
 
         // Then
-        var expectedFrame = bounds
-        expectedFrame.size.width *= CGFloat(progress)
-
-        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
+        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: bounds.adaptedWidth(percent: progress),
                                                              duration: 0,
                                                              timingFunction: timingFunction)
 
@@ -179,17 +173,14 @@ final class MaskLayerViewModelTestCase: XCTestCase {
         viewModel.setProgress(progress)
 
         // Then
-        var expectedFrame = bounds
-        expectedFrame.size.width *= CGFloat(progress)
-
-        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
+        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: bounds.adaptedWidth(percent: progress),
                                                              duration: 0,
                                                              timingFunction: timingFunction)
 
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
     }
 
-    func test_setProgress_shouldUpdateMaskLayerFrameAnimation_withCorrectFrame_andTimingFunction_andDuration() {
+    func test_setProgressAnimated_shouldUpdateMaskLayerFrameAnimation_withCorrectFrame_andTimingFunction_andDuration() {
         // Given
         let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         viewModel.timingFunction = timingFunction
@@ -205,13 +196,21 @@ final class MaskLayerViewModelTestCase: XCTestCase {
         viewModel.setProgress(progress, animated: true)
 
         // Then
-        var expectedFrame = bounds
-        expectedFrame.size.width *= CGFloat(progress)
-
-        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
-                                                             duration: 123.456,
+        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: bounds.adaptedWidth(percent: progress),
+                                                             duration: animationDuration,
                                                              timingFunction: timingFunction)
 
         XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
+    }
+}
+
+// MARK: - Helpers
+
+private extension CGRect {
+    func adaptedWidth(percent: Float) -> CGRect {
+        var mutableCopy = self
+        mutableCopy.size.width *= CGFloat(percent)
+
+        return mutableCopy
     }
 }

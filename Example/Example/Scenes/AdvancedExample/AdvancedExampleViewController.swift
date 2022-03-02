@@ -43,6 +43,8 @@ final class AdvancedExampleViewController: UIViewController {
         gradientProgressBar.timingFunction = Config.timingFunction
     }
 
+    // MARK: - Private methods
+
     @IBAction private func animateButtonTouchUpInside(_: Any) {
         let currentProgress = gradientProgressBar.progress
         let updatedProgress = currentProgress + Config.increaseValue

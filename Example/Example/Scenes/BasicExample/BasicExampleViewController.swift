@@ -22,7 +22,7 @@ final class BasicExampleViewController: UIViewController {
 
     @IBOutlet private var gradientProgressBar: GradientProgressBar!
 
-    // MARK: - Public methods
+    // MARK: - Private methods
 
     @IBAction private func animateButtonTouchUpInside(_: Any) {
         let currentProgress = gradientProgressBar.progress

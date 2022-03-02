@@ -44,7 +44,7 @@ dependencies: [
 
 
 ### How to use (`UIKit`)
-*[Scroll down]() for the SwiftUI documentation.*
+*[Scroll down](#how-to-use-swiftui) for the SwiftUI documentation.*
 
 Simply drop a `UIView` into your View Controller in the Storyboard. Select your view and in the `Identity Inspector` change the class to `GradientProgressBar`.
 >Don't forget to change the module to `GradientProgressBar` too.
@@ -120,7 +120,7 @@ Please have a look at the example application for further details :)
 
 
 ### How to use (`SwiftUI`)
-*[Scroll up]() for the UIKit documentation.*
+*[Scroll up](#how-to-use-uikit) for the UIKit documentation.*
 
 Since version 2.1.0 this framework provides a [`ProgressViewStyle`](https://developer.apple.com/documentation/swiftui/progressviewstyle) that can be used in SwiftUI.
 

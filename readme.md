@@ -70,15 +70,15 @@ gradientProgressView.progress = 0.75
 ```
 
 
-#### Configuration
-##### – Property `animationDuration`
+### Configuration
+#### – Property `animationDuration`
 Adjusts the animation duration for calls to `setProgress(_:animated:)`:
 ```swift
 progressView.animationDuration = 2.0
 progressView.setProgress(progress, animated: true)
 ```
 
-##### – Property `gradientColors`
+#### – Property `gradientColors`
 Adjusts the colors, used for the gradient inside the progress-view.
 ```swift
 progressView.gradientColors: [UIColor] = [
@@ -89,15 +89,15 @@ progressView.gradientColors: [UIColor] = [
 ```
 
 
-##### – Property `timingFunction`
+#### – Property `timingFunction`
 Adjusts the timing function for calls to `setProgress(_:animated:)`, with animated set to `true`.
 ```swift
 progressView.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
 ```
 
 
-#### Troubleshooting
-##### Interface Builder Support
+### Troubleshooting
+#### Interface Builder Support
 Unfortunately the Interface Builder support is currently broken for Cocoapods frameworks. If you need Interface Builder support, add the following code to your Podfile and run `pod install` again. Afterwards you should be able to use the `GradientProgressBar` inside the Interface Builder :)
 ```
   post_install do |installer|
@@ -113,7 +113,7 @@ Unfortunately the Interface Builder support is currently broken for Cocoapods fr
 Source: [Cocoapods – Issue 7606](https://github.com/CocoaPods/CocoaPods/issues/7606#issuecomment-484294739)
 
 
-#### Show progress of `WKWebView`
+### Show progress of `WKWebView`
 Based on [my gist](https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931), the example application also contains the sample code, for attaching the progress view to a `UINavigationBar`. Using "Key-Value Observing" we change the progress of the bar accordingly to the property `estimatedProgress` of the `WKWebView`.
 
 Please have a look at the example application for further details :)
@@ -138,7 +138,7 @@ struct ExampleView: View {
 }
 ```
 
-#### Configuration
+### Configuration
 
 ```swift
 struct ExampleView: View {
@@ -160,16 +160,16 @@ struct ExampleView: View {
 ```
 
 
-##### – Parameter `backgroundColor`
+#### – Parameter `backgroundColor`
 The background-color shown behind the gradient (clipped by a possible `cornerRadius`).
 
-##### – Parameter `gradientColors`
+#### – Parameter `gradientColors`
 The colors used for the gradient.
 
-##### – Parameter `cornerRadius`
+#### – Parameter `cornerRadius`
 The corner-radius used on the background and the progress bar.
 
-#### Add / Adapt animation
+### Add / Adapt animation
 To add an animation you have to wrap the update of the `@State` property inside [`withAnimation(_:_:)`](https://developer.apple.com/documentation/swiftui/withanimation(_:_:)/).
 
 ```swift

@@ -37,7 +37,7 @@ final class WebViewExampleViewController: UIViewController {
         setupEstimatedProgressObserver()
 
         if let initialUrl = URL(string: "https://felix.hamburg") {
-            setupWebview(url: initialUrl)
+            setupWebView(url: initialUrl)
         }
     }
 
@@ -66,7 +66,7 @@ final class WebViewExampleViewController: UIViewController {
         }
     }
 
-    private func setupWebview(url: URL) {
+    private func setupWebView(url: URL) {
         let request = URLRequest(url: url)
 
         webView.navigationDelegate = self

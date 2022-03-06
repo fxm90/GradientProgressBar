@@ -129,6 +129,45 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
     }
 
+    func test_gradientProgressBarViewStyle_withProgress33Percent_andCustomBackgroundColor() {
+        // Given
+        let backgroundColor: Color = .cyan
+
+        // When
+        let progressView = ProgressView("", value: 33, total: 100)
+            .progressViewStyle(.gradientProgressBar(backgroundColor: backgroundColor))
+            .frame(width: Config.frame.width, height: Config.frame.height)
+
+        // Then
+        assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
+    }
+
+    func test_gradientProgressBarViewStyle_withProgress66Percent_andCustomBackgroundColor() {
+        // Given
+        let backgroundColor: Color = .cyan
+
+        // When
+        let progressView = ProgressView("", value: 66, total: 100)
+            .progressViewStyle(.gradientProgressBar(backgroundColor: backgroundColor))
+            .frame(width: Config.frame.width, height: Config.frame.height)
+
+        // Then
+        assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
+    }
+
+    func test_gradientProgressBarViewStyle_withProgress100Percent_andCustomBackgroundColor() {
+        // Given
+        let backgroundColor: Color = .cyan
+
+        // When
+        let progressView = ProgressView("", value: 100, total: 100)
+            .progressViewStyle(.gradientProgressBar(backgroundColor: backgroundColor))
+            .frame(width: Config.frame.width, height: Config.frame.height)
+
+        // Then
+        assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
+    }
+
     // MARK: - Test custom colors
 
     func test_gradientProgressBarViewStyle_withProgressZero_andCustomColors() {
@@ -171,7 +210,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
     }
 
-    // MARK: - Test custom background color
+    // MARK: - Test custom corner radius
 
     func test_gradientProgressBarViewStyle_withProgress50_andCustomCornerRadius() {
         // Given

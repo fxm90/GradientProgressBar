@@ -41,23 +41,12 @@ final class GradientProgressBarSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.lightTraitCollection))
     }
 
-    func test_gradientProgressBar_withProgress33Percent_andLightTraitCollection() {
+    func test_gradientProgressBar_withProgress50Percent_andLightTraitCollection() {
         // Given
         let gradientProgressBar = GradientProgressBar(frame: Config.frame)
 
         // When
-        gradientProgressBar.progress = 0.33
-
-        // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.lightTraitCollection))
-    }
-
-    func test_gradientProgressBar_withProgress66Percent_andLightTraitCollection() {
-        // Given
-        let gradientProgressBar = GradientProgressBar(frame: Config.frame)
-
-        // When
-        gradientProgressBar.progress = 0.66
+        gradientProgressBar.progress = 0.5
 
         // Then
         assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.lightTraitCollection))
@@ -87,23 +76,12 @@ final class GradientProgressBarSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.darkTraitCollection))
     }
 
-    func test_gradientProgressBar_withProgress33Percent_andDarkTraitCollection() {
+    func test_gradientProgressBar_withProgress50Percent_andDarkTraitCollection() {
         // Given
         let gradientProgressBar = GradientProgressBar(frame: Config.frame)
 
         // When
-        gradientProgressBar.progress = 0.33
-
-        // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.darkTraitCollection))
-    }
-
-    func test_gradientProgressBar_withProgress66Percent_andDarkTraitCollection() {
-        // Given
-        let gradientProgressBar = GradientProgressBar(frame: Config.frame)
-
-        // When
-        gradientProgressBar.progress = 0.66
+        gradientProgressBar.progress = 0.5
 
         // Then
         assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.darkTraitCollection))
@@ -134,25 +112,13 @@ final class GradientProgressBarSnapshotTestCase: XCTestCase {
         assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.lightTraitCollection))
     }
 
-    func test_gradientProgressBar_withProgress33Percent_andCustomColors() {
+    func test_gradientProgressBar_withProgress50Percent_andCustomColors() {
         // Given
         let gradientProgressBar = GradientProgressBar(frame: Config.frame)
         gradientProgressBar.gradientColors = Config.gradientColors
 
         // When
-        gradientProgressBar.progress = 0.33
-
-        // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.lightTraitCollection))
-    }
-
-    func test_gradientProgressBar_withProgress66Percent_andCustomColors() {
-        // Given
-        let gradientProgressBar = GradientProgressBar(frame: Config.frame)
-        gradientProgressBar.gradientColors = Config.gradientColors
-
-        // When
-        gradientProgressBar.progress = 0.66
+        gradientProgressBar.progress = 0.5
 
         // Then
         assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.lightTraitCollection))

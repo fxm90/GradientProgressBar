@@ -97,7 +97,7 @@ And then run it using:
 $ mint run swiftformat
 ```
 
-Or if you prefer, you can check out and build SwiftFormat manually on macOS or Linux as follows:
+Or if you prefer, you can check out and build SwiftFormat manually on macOS, Linux or Windows as follows:
 
 ```bash
 $ git clone https://github.com/nicklockwood/SwiftFormat
@@ -211,7 +211,7 @@ Alternatively, if you prefer not to use Homebrew, you'll find the latest version
 
 **Usage:**
 
-Once you have launched the app and restarted Xcode, you'll find a SwiftFormat option under Xcode's Editor menu.
+Once you have launched the app and restarted Xcode, you'll find a SwiftFormat option under Xcode's Editor menu. If the SwiftFormat menu does not appear [this thread](https://github.com/nicklockwood/SwiftFormat/issues/494) may help. 
 
 You can configure the formatting [rules](#rules) and [options](#options) using the SwiftFormat for Xcode host application. There is currently no way to override these per-project, however, you can import and export different configurations using the File menu. You will need to do this again each time you switch projects.
 
@@ -267,7 +267,7 @@ You can also use `swift run -c release --package-path BuildTools swiftformat "$S
 
 **NOTE:** You may wish to check BuildTools/Package.swift into your source control so that the version used by your run-script phase is kept in version control. It is recommended to add the following to your .gitignore file: `BuildTools/.build` and `BuildTools/.swiftpm`.
 
-### Using Cocoapods
+### Using CocoaPods
 
 #### 1) Add the SwiftFormat CLI to your Podfile
 
@@ -446,7 +446,13 @@ Alternatively, you can use the line continuation character `\` to wrap a single 
     redundantSelf
 ```
 
-To avoid automatically opting-in to new rules when SwiftFormat is updated, use the`--rules` argument to *only* enable the rules you specify:
+To avoid automatically opting-in to new rules when SwiftFormat is updated, you can disable all rules using:
+
+```bash
+--disable all
+```
+
+And then individually enable just the rules you want. Alternatively, use the`--rules` argument to *only* enable the rules you specify:
 
 ```bash
 --rules indent,linebreaks
@@ -716,7 +722,7 @@ FAQ
 
 *Q. What platforms does SwiftFormat support?*
 
-> A. SwiftFormat works on macOS 10.13 (High Sierra) and above, and also runs on Ubuntu Linux.
+> A. SwiftFormat works on macOS 10.13 (High Sierra) and above, and also runs on Ubuntu Linux and Windows.
 
 
 *Q. What versions of Swift are supported?*
@@ -772,6 +778,8 @@ Q. I don't want to be surprised by new rules added when I upgrade SwiftFormat. H
 
 Known issues
 ---------------
+
+* When using the Xcode Source Editor Extension, the SwiftFormat menu sometimes disappears from Xcode. If this happens, try moving or renaming Xcode temporarily and then changing it back. Failing that, the suggestions in [this thread](https://github.com/nicklockwood/SwiftFormat/issues/494) may help.
 
 * The `redundantType` rule can introduce ambiguous code in certain cases when using the default mode of `--redundanttype inferred`. This can be worked around by by using `--redundanttype explicit`, or by manually removing the redundant type reference on the affected line, or by using the `// swiftformat:disable:next redundantType` comment directive to disable the rule at the call site (or just disable the `redundantType` rule completely).
 

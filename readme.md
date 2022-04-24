@@ -12,7 +12,7 @@ To run the example project, clone the repo, and open the workspace from the Exam
 
 ### Requirements
 - Swift 5.5
-- Xcode 11
+- Xcode 13.2
 - iOS 9.0+
 
 ### Integration

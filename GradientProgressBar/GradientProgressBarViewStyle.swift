@@ -24,6 +24,7 @@ import SwiftUI
     /// - Note: Requires **iOS 15**, due to the view-modifier `mask(alignment:_:)`.
     @available(iOS 15.0, *)
     public struct GradientProgressBarViewStyle: ProgressViewStyle {
+
         // MARK: - Config
 
         public enum Config {
@@ -56,7 +57,7 @@ import SwiftUI
         }
     }
 
-    // MARK: - Helpers
+    // MARK: - Helper
 
     @available(iOS 15.0, *)
     public extension ProgressViewStyle where Self == GradientProgressBarViewStyle {

@@ -15,6 +15,7 @@ import GradientProgressBar
 // https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931
 
 final class WebViewExampleViewController: UIViewController {
+
     // MARK: - Outlets
 
     /// The web view from the interface builder.
@@ -106,7 +107,7 @@ extension WebViewExampleViewController: WKNavigationDelegate {
     }
 }
 
-// MARK: - Helpers
+// MARK: - Helper
 
 struct WebViewExampleView: View {
     var body: some View {

@@ -11,6 +11,7 @@ import SwiftUI
 import GradientProgressBar
 
 final class BasicExampleViewController: UIViewController {
+
     // MARK: - Config
 
     private enum Config {
@@ -43,7 +44,7 @@ final class BasicExampleViewController: UIViewController {
     }
 }
 
-// MARK: - Helpers
+// MARK: - Helper
 
 struct BasicExampleView: View {
     var body: some View {

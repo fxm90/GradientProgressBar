@@ -14,6 +14,7 @@ import SnapshotTesting
 
 // swiftlint:disable:next type_name
 final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
+
     // MARK: - Config
 
     private enum Config {

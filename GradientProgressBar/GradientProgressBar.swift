@@ -30,6 +30,7 @@ extension UIProgressView: UIProgressHandling {}
 /// A customizable gradient progress view.
 @IBDesignable
 open class GradientProgressBar: UIView {
+
     // MARK: - Public properties
 
     /// Gradient colors for the progress view.
@@ -71,7 +72,7 @@ open class GradientProgressBar: UIView {
     /// The dispose bag for the observables.
     private var disposeBag = DisposeBag()
 
-    // MARK: - Constructor
+    // MARK: - Instance Lifecycle
 
     override public init(frame: CGRect) {
         super.init(frame: frame)

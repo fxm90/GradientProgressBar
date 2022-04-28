@@ -12,6 +12,7 @@ import SnapshotTesting
 @testable import GradientProgressBar
 
 final class GradientProgressBarSnapshotTestCase: XCTestCase {
+
     // MARK: - Config
 
     private enum Config {

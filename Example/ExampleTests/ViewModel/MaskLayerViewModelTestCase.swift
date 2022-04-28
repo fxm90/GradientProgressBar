@@ -12,6 +12,7 @@ import XCTest
 @testable import LightweightObservable
 
 final class MaskLayerViewModelTestCase: XCTestCase {
+
     // MARK: - Types
 
     typealias FrameAnimation = MaskLayerViewModel.FrameAnimation
@@ -204,7 +205,7 @@ final class MaskLayerViewModelTestCase: XCTestCase {
     }
 }
 
-// MARK: - Helpers
+// MARK: - Helper
 
 private extension CGRect {
     func adaptedWidth(percent: Float) -> CGRect {

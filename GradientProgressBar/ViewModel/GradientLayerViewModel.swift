@@ -11,6 +11,7 @@ import UIKit
 
 /// This view model keeps track of the gradient-colors and updates the `gradientLayer` accordingly.
 final class GradientLayerViewModel {
+
     // MARK: - Public properties
 
     /// Observable color array for the gradient layer (of type `CGColor`).
@@ -29,14 +30,14 @@ final class GradientLayerViewModel {
 
     private let gradientLayerColorsSubject: Variable<[CGColor]>
 
-    // MARK: - Initializer
+    // MARK: - Instance Lifecycle
 
     init() {
         gradientLayerColorsSubject = Variable(gradientColors.cgColor)
     }
 }
 
-// MARK: - Helpers
+// MARK: - Helper
 
 private extension Array where Element: UIColor {
     /// The Quartz color that corresponds to the color objects.

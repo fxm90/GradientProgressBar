@@ -12,6 +12,7 @@ import XCTest
 @testable import LightweightObservable
 
 final class GradientLayerViewModelTestCase: XCTestCase {
+
     // MARK: - Private properties
 
     private var viewModel: GradientLayerViewModel!
@@ -59,7 +60,7 @@ final class GradientLayerViewModelTestCase: XCTestCase {
     }
 }
 
-// MARK: - Helpers
+// MARK: - Helper
 
 private extension Array where Element: UIColor {
     /// The Quartz color that corresponds to the color objects.

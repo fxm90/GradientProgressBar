@@ -10,6 +10,7 @@ import SwiftUI
 import GradientProgressBar
 
 struct SwiftUIExampleView: View {
+
     // MARK: - Config
 
     private enum Config {

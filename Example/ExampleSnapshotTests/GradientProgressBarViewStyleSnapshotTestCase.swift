@@ -6,9 +6,9 @@
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
-import XCTest
-import SwiftUI
 import SnapshotTesting
+import SwiftUI
+import XCTest
 
 @testable import GradientProgressBar
 

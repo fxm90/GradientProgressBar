@@ -6,10 +6,10 @@
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
-import Foundation
 import CoreGraphics
-import QuartzCore
+import Foundation
 import LightweightObservable
+import QuartzCore
 
 /// This view model keeps track of the progress-value and updates the `maskLayer` accordingly.
 final class MaskLayerViewModel {

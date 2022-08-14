@@ -6,10 +6,10 @@
 //  Copyright © 2022 Felix Mau. All rights reserved.
 //
 
-import UIKit
-import SwiftUI
-import WebKit
 import GradientProgressBar
+import SwiftUI
+import UIKit
+import WebKit
 
 // Based on
 // https://gist.github.com/fxm90/50d6c73d07c4d9755981b9bb4c5ab931

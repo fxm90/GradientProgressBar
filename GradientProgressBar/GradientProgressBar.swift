@@ -6,8 +6,8 @@
 //  Copyright © 2017 Felix Mau. All rights reserved.
 //
 
-import UIKit
 import LightweightObservable
+import UIKit
 
 /// Protocol for managing a progress bar, as defined by `UIProgressView` from Apple.
 /// To provide the same interface with `GradientProgressBar`, we're gonna make both classes conform to this protocol.

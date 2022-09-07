@@ -22,6 +22,7 @@ Table of Contents
     - [Git pre-commit hook](#git-pre-commit-hook)
     - [On CI using Danger](#on-ci-using-danger)
     - [Bazel build](#bazel-build)
+    - [Docker](#docker)
 - [Configuration](#configuration)
     - [Options](#options)
     - [Rules](#rules)
@@ -388,6 +389,39 @@ Bazel Build
 
 If you use [Bazel](https://bazel.build/) to build your Swift projects and want to ensure that only properly formatted code is merged to your main branch, try [rules_swiftformat](https://github.com/cgrindel/rules_swiftformat). The repository contains Bazel rules and macros that format Swift source files using SwiftFormat, test that the formatted files exist in the workspace directory, and copy the formatted files to the workspace directory.
 
+
+Docker
+-----------
+
+SwiftFormat publishes releases into [GitHub Packages](https://github.com/features/packages) Docker registry. To pull the image call:
+
+```bash
+$ docker pull ghcr.io/nicklockwood/swiftformat:latest
+```
+
+By default, the container runs `swiftformat .` Therefore, you need to provide a path either via an argument:
+
+```bash
+docker run --rm -v /local/source/path:/work ghcr.io/nicklockwood/swiftformat:latest /work
+```
+
+or by changing the working dir:
+
+```bash
+docker run --rm -v /local/source/path:/work -w /work ghcr.io/nicklockwood/swiftformat:latest
+```
+
+To check the installed SwiftFormat version:
+
+```bash
+docker run --rm ghcr.io/nicklockwood/swiftformat:latest --version
+```
+
+Linting example:
+
+```bash
+docker run --rm -v /local/source/path:/work ghcr.io/nicklockwood/swiftformat:latest /work --lint
+```
 
 Configuration
 -------------
@@ -786,6 +820,8 @@ Known issues
 
 * When using the Xcode Source Editor Extension, the SwiftFormat menu sometimes disappears from Xcode. If this happens, try moving or renaming Xcode temporarily and then changing it back. Failing that, the suggestions in [this thread](https://github.com/nicklockwood/SwiftFormat/issues/494) may help.
 
+* The `enumNamespaces` rule replaces classes that have only static members with an `enum`. If the class is subclassed, or if there is code that depends on the class exposing certain runtime behaviors, this may break the program. To solve this you can either fix it on a per-case basis by adding a `// swiftformat:disable:next enumNamespaces` comment directive above the class declaration, or just disable the `enumNamespaces` rule completely.
+
 * The `redundantVoidReturnType` rule can inadvertently alter the type signature for closures, for example in cases where the closure calls a `@discardableResult` function. To solve this you can either fix it on a per-case basis by adding a `// swiftformat:disable:next redundantVoidReturnType` comment directive to disable the rule for a specific call site, or you can add `--closurevoid preserve` to your [configuration](#configuration) to disable the rule completely for closures (regular functions or methods aren't affected).
 
 * The `redundantType` rule can introduce ambiguous code in certain cases when using the default mode of `--redundanttype inferred`. This can be worked around by by using `--redundanttype explicit`, or by manually removing the redundant type reference on the affected line, or by using the `// swiftformat:disable:next redundantType` comment directive to disable the rule at the call site (or just disable the `redundantType` rule completely).
@@ -844,6 +880,7 @@ Credits
 * [Jim Puls](https://github.com/puls) - Big Sur icon update
 * [Daniele Formichelli](https://github.com/danyf90) - JSON reporter
 * [Mahdi Bchatnia](https://github.com/inket) - Linux build workflow
+* [Arthur Semenyutin](https://github.com/vox-humana) - Docker image
 * [Nick Lockwood](https://github.com/nicklockwood) - Everything else
 
 ([Full list of contributors](https://github.com/nicklockwood/SwiftFormat/graphs/contributors))

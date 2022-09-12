@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [2.1.1] - 2022-12-09
+### Fixed
+ - Fixed wrong minimum iOS deployment target when using Carthage.
+
 ## [2.1.0] - 2022-06-03
 ### Added
  - Added support for SwiftUI, by providing `.gradientProgressBar` as a `ProgressViewStyle`.
@@ -33,7 +37,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [1.2.9] - 2019-09-06
 ### Fixed
- - Fix Carthage build failed due to non shared scheme
+ - Fixed Carthage build failed due to non shared scheme
 ### Changed
  - Moved observable implementation into a framework (`LightweightObservable`) and added it as dependency
 
@@ -89,7 +93,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Added
  - Further tests
 ### Fixed
- - Fix frame not updated correctly
+ - Fixed frame not updated correctly
 ### Changed
  - Updated documentation
 
@@ -114,7 +118,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [1.0.1] - 2017-15-08
 ### Fixed
- - Fix UIProgressView always updates via animation
+ - Fixed UIProgressView always updates via animation
 ### Changed
  - Refactor entire code
 
@@ -122,7 +126,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Initial release
 
 
-[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/2.1.0...main
+[Unreleased]: https://github.com/fxm90/GradientProgressBar/compare/2.1.1...main
+[2.1.1]: https://github.com/fxm90/GradientProgressBar/compare/2.1.0...2.1.1
 [2.1.0]: https://github.com/fxm90/GradientProgressBar/compare/2.0.3...2.1.0
 [2.0.3]: https://github.com/fxm90/GradientProgressBar/compare/2.0.2...2.0.3
 [2.0.2]: https://github.com/fxm90/GradientProgressBar/compare/2.0.1...2.0.2

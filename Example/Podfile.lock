@@ -1,5 +1,5 @@
 PODS:
-  - GradientProgressBar (2.1.0):
+  - GradientProgressBar (2.1.1):
     - LightweightObservable (~> 2.1)
   - LightweightObservable (2.2.2)
   - SnapshotTesting (1.9.0)
@@ -33,7 +33,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/fxm90/SwiftConfigurationFiles.git
 
 SPEC CHECKSUMS:
-  GradientProgressBar: e4ed177a613cc290d784ef489022b495c2170cb2
+  GradientProgressBar: b7d892ec9a62dc0d32148f9617b21366e8f80608
   LightweightObservable: 6a106f0d60d497ee1ebd90ff549b54ac7abf3c36
   SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
   SwiftConfigurationFiles: 1cf2228a911ebed9f42f8dec077bb634f04ca6c8

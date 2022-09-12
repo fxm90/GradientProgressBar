@@ -150,7 +150,7 @@ extension GradientProgressBar: UIProgressHandling {
 
     // MARK: - Public methods
 
-    open func setProgress(_ progress: Float, animated: Bool) {
+    public func setProgress(_ progress: Float, animated: Bool) {
         maskLayerViewModel.setProgress(progress, animated: animated)
     }
 }

@@ -1,7 +1,5 @@
 PODS:
-  - GradientProgressBar (2.1.1):
-    - LightweightObservable (~> 2.1)
-  - LightweightObservable (2.2.2)
+  - GradientProgressBar (2.1.1)
   - SnapshotTesting (1.9.0)
   - SwiftConfigurationFiles (0.0.1)
   - SwiftFormat/CLI (0.49.18)
@@ -16,7 +14,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - LightweightObservable
     - SnapshotTesting
     - SwiftFormat
     - SwiftLint
@@ -33,13 +30,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/fxm90/SwiftConfigurationFiles.git
 
 SPEC CHECKSUMS:
-  GradientProgressBar: b7d892ec9a62dc0d32148f9617b21366e8f80608
-  LightweightObservable: 6a106f0d60d497ee1ebd90ff549b54ac7abf3c36
+  GradientProgressBar: 7a5ee541ef95d6f6ddfec300afd6e90185abfd6f
   SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
   SwiftConfigurationFiles: 1cf2228a911ebed9f42f8dec077bb634f04ca6c8
   SwiftFormat: 2402d29b26746f169cce5454d5af88314cbb2e35
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
 
-PODFILE CHECKSUM: e059a2e95ea3647707a3e5e07682caa48470b6a0
+PODFILE CHECKSUM: 1c5e88e50500983d09ba6add30db11cae3e1655a
 
 COCOAPODS: 1.11.3

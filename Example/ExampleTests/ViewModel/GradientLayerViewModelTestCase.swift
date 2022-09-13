@@ -6,16 +6,17 @@
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
+import Combine
 import XCTest
 
 @testable import GradientProgressBar
-@testable import LightweightObservable
 
 final class GradientLayerViewModelTestCase: XCTestCase {
 
     // MARK: - Private properties
 
     private var viewModel: GradientLayerViewModel!
+    private var subscriptions: Set<AnyCancellable>!
 
     // MARK: - Public methods
 
@@ -23,9 +24,11 @@ final class GradientLayerViewModelTestCase: XCTestCase {
         super.setUp()
 
         viewModel = GradientLayerViewModel()
+        subscriptions = Set()
     }
 
     override func tearDown() {
+        subscriptions = nil
         viewModel = nil
 
         super.tearDown()
@@ -33,15 +36,19 @@ final class GradientLayerViewModelTestCase: XCTestCase {
 
     // MARK: - Test initializer
 
-    func test_initializer_shouldSetGradientLayerColors_toStaticConfigurationProperty_mappedToCgColor() {
+    func test_initializer_shouldSetGradientLayerColors_toConfigurationProperty_mappedToCgColor() {
         // Given
-        let expectedGradientLayerColors = UIColor.GradientProgressBar.gradientColors.cgColor
+        var receivedGradientLayerColors: [CGColor]?
+        viewModel.gradientLayerColors.sink { gradientLayerColors in
+            receivedGradientLayerColors = gradientLayerColors
+        }.store(in: &subscriptions)
 
         // Then
-        XCTAssertEqual(viewModel.gradientLayerColors.value, expectedGradientLayerColors)
+        XCTAssertEqual(receivedGradientLayerColors, UIColor.GradientProgressBar.gradientColors.cgColor)
     }
 
-    func test_initializer_shouldSetGradientColors_toStaticConfigurationProperty() {
+    func test_initializer_shouldSetGradientColors_toConfigurationProperty() {
+        // Then
         XCTAssertEqual(viewModel.gradientColors, UIColor.GradientProgressBar.gradientColors)
     }
 
@@ -49,14 +56,17 @@ final class GradientLayerViewModelTestCase: XCTestCase {
 
     func test_setGradientColors_shouldUpdateGradientLayerColors() {
         // Given
-        let gradientColors: [UIColor] = [.red, .yellow, .green]
+        var receivedGradientLayerColors: [CGColor]?
+        viewModel.gradientLayerColors.sink { gradientLayerColors in
+            receivedGradientLayerColors = gradientLayerColors
+        }.store(in: &subscriptions)
 
         // When
+        let gradientColors: [UIColor] = [.red, .yellow, .green]
         viewModel.gradientColors = gradientColors
 
         // Then
-        let expectedGradientLayerColors = gradientColors.cgColor
-        XCTAssertEqual(viewModel.gradientLayerColors.value, expectedGradientLayerColors)
+        XCTAssertEqual(receivedGradientLayerColors, gradientColors.cgColor)
     }
 }
 

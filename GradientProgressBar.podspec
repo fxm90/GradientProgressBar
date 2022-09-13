@@ -31,7 +31,12 @@ Inspired by https://codepen.io/marcobiedermann/pen/LExXWW
   s.swift_version         = '5.5'
   s.ios.deployment_target = '13.0'
 
-  s.source_files = 'GradientProgressBar/**/*'
+  s.source_files = 'GradientProgressBar/Sources/**/*.swift'
+
+  s.test_spec 'Tests' do |test_spec|
+    test_spec.source_files = 'GradientProgressBar/Tests/**/*.{swift,md}'
+    test_spec.dependency 'SnapshotTesting', '~> 1.9'
+  end
 
   # s.resource_bundles = {
   #   'GradientProgressBar' => ['GradientProgressBar/Assets/*.png']

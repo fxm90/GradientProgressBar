@@ -1,5 +1,7 @@
 PODS:
   - GradientProgressBar (2.1.1)
+  - GradientProgressBar/Tests (2.1.1):
+    - SnapshotTesting (~> 1.9)
   - SnapshotTesting (1.9.0)
   - SwiftConfigurationFiles (0.0.1)
   - SwiftFormat/CLI (0.49.18)
@@ -7,7 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - GradientProgressBar (from `../`)
-  - SnapshotTesting (~> 1.9)
+  - GradientProgressBar/Tests (from `../`)
   - SwiftConfigurationFiles (from `https://github.com/fxm90/SwiftConfigurationFiles.git`)
   - SwiftFormat/CLI (~> 0.41)
   - SwiftLint (~> 0.42)
@@ -30,12 +32,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/fxm90/SwiftConfigurationFiles.git
 
 SPEC CHECKSUMS:
-  GradientProgressBar: 7a5ee541ef95d6f6ddfec300afd6e90185abfd6f
+  GradientProgressBar: 6ea6a14d882f2c86b903b98b9a230730c8e3a2c0
   SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
   SwiftConfigurationFiles: 1cf2228a911ebed9f42f8dec077bb634f04ca6c8
   SwiftFormat: 2402d29b26746f169cce5454d5af88314cbb2e35
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
 
-PODFILE CHECKSUM: 1c5e88e50500983d09ba6add30db11cae3e1655a
+PODFILE CHECKSUM: a6a39e08387aba1dd15d8e4c2782033e62cf86b8
 
 COCOAPODS: 1.11.3

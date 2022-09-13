@@ -6,7 +6,7 @@
 //  Copyright © 2017 Felix Mau. All rights reserved.
 //
 
-import LightweightObservable
+import Combine
 import UIKit
 
 /// Protocol for managing a progress bar, as defined by `UIProgressView` from Apple.
@@ -52,14 +52,22 @@ open class GradientProgressBar: UIView {
     }
 
     /// Layer containing the gradient.
-    public let gradientLayer = CAGradientLayer()
-        .set(\.anchorPoint, to: .zero)
-        .set(\.startPoint, to: .zero)
-        .set(\.endPoint, to: CGPoint(x: 1, y: 0))
+    private let gradientLayer: CAGradientLayer = {
+        let layer = CAGradientLayer()
+        layer.anchorPoint = .zero
+        layer.startPoint = .zero
+        layer.endPoint = CGPoint(x: 1, y: 0)
+
+        return layer
+    }()
 
     /// Alpha mask for showing only the visible "progress"-part of the gradient layer.
-    public let maskLayer = CALayer()
-        .set(\.backgroundColor, to: UIColor.white.cgColor)
+    public let maskLayer: CALayer = {
+        let maskLayer = CALayer()
+        maskLayer.backgroundColor = UIColor.white.cgColor
+
+        return maskLayer
+    }()
 
     // MARK: - Private properties
 
@@ -70,7 +78,7 @@ open class GradientProgressBar: UIView {
     private let maskLayerViewModel = MaskLayerViewModel()
 
     /// The dispose bag for the observables.
-    private var disposeBag = DisposeBag()
+    private var subscriptions = Set<AnyCancellable>()
 
     // MARK: - Instance Lifecycle
 
@@ -115,15 +123,15 @@ open class GradientProgressBar: UIView {
     }
 
     private func bindViewModelsToView() {
-        gradientLayerViewModel.gradientLayerColors.subscribeDistinct { [weak self] newGradientLayerColors, _ in
-            self?.gradientLayer.colors = newGradientLayerColors
-        }.disposed(by: &disposeBag)
+        gradientLayerViewModel.gradientLayerColors.sink { [weak self] gradientLayerColors in
+            self?.gradientLayer.colors = gradientLayerColors
+        }.store(in: &subscriptions)
 
-        maskLayerViewModel.maskLayerFrameAnimation.subscribeDistinct { [weak self] newMaskLayerFrameAnimation, _ in
-            self?.animateMaskLayer(frame: newMaskLayerFrameAnimation.frame,
-                                   duration: newMaskLayerFrameAnimation.duration,
-                                   timingFunction: newMaskLayerFrameAnimation.timingFunction)
-        }.disposed(by: &disposeBag)
+        maskLayerViewModel.maskLayerFrameAnimation.sink { [weak self] maskLayerFrameAnimation in
+            self?.animateMaskLayer(frame: maskLayerFrameAnimation.frame,
+                                   duration: maskLayerFrameAnimation.duration,
+                                   timingFunction: maskLayerFrameAnimation.timingFunction)
+        }.store(in: &subscriptions)
     }
 
     private func animateMaskLayer(frame: CGRect, duration: TimeInterval, timingFunction: CAMediaTimingFunction) {

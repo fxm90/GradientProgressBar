@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = SwiftFormat;
+			productName = SwiftFormat;
 		};
 		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
 			isa = PBXAggregateTarget;
@@ -24,6 +25,7 @@
 			dependencies = (
 			);
 			name = SwiftLint;
+			productName = SwiftLint;
 		};
 		B951B6FCD3E55AF969FBA9F7B476B877 /* SwiftConfigurationFiles */ = {
 			isa = PBXAggregateTarget;
@@ -33,11 +35,11 @@
 			dependencies = (
 			);
 			name = SwiftConfigurationFiles;
+			productName = SwiftConfigurationFiles;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		04E82F6C00A5F6214596D4236DC0A98F /* UIColor+MakeDynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE8E0D1576BADB341E24FA3A1558A52 /* UIColor+MakeDynamicColor.swift */; };
 		07319FC388250B963206DB0BF5262128 /* CGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4AD85C3FB4C0385D01F3503B54C6ED /* CGPath.swift */; };
 		1BD419C63130D70B6D5951E78C4CD834 /* Pods-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CB227C88005476A2E5924D38CC5C0D /* Pods-Example-dummy.m */; };
 		1D0EF6FBAF37BB930183B8F5AA719CD2 /* SnapshotTesting-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C004F22F33040A336AD967CF544FD7CC /* SnapshotTesting-dummy.m */; };
@@ -91,7 +93,6 @@
 		EB5F8B0D9E74FD8A1724B04E6AACFABE /* Snapshotting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39390DB6B03D24896D23B092036B98 /* Snapshotting.swift */; };
 		EDAFC0E4FB70D26296C39A4E8A9BD624 /* GradientProgressBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B72029BACC88761802EF28825BABF1C /* GradientProgressBar-dummy.m */; };
 		F7E4B0C2090897C0E4800DD650C1933A /* GradientLayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3DEEE3456BF4A2B0C0A2560F117B25 /* GradientLayerViewModel.swift */; };
-		F9C35BADD5A4A547D444EF3680525C85 /* NSObject+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F1E7CECAF0CBEE6DAFF50A38969DDC /* NSObject+Builder.swift */; };
 		FEB8176EE5F7E44C5399D94BC6DE0C46 /* String+SpecialCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70701A88A2A2FB890D134BD5B3029641 /* String+SpecialCharacters.swift */; };
 /* End PBXBuildFile section */
 
@@ -158,10 +159,9 @@
 		1EC06CD38CB67E4E8061D4D2DCD617B2 /* Pods-ExampleSnapshotTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ExampleSnapshotTests"; path = Pods_ExampleSnapshotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F667CC0E19EAF34E5A4119E2121F585 /* Pods-Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Example"; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EA109CE119C6D7DB2FAFB9E6D24D70 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = Sources/SnapshotTesting/Snapshotting/UIViewController.swift; sourceTree = "<group>"; };
-		26F1E7CECAF0CBEE6DAFF50A38969DDC /* NSObject+Builder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSObject+Builder.swift"; sourceTree = "<group>"; };
 		29B352272E0CA8C60A5C519A7E94508F /* GradientProgressBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GradientProgressBar.debug.xcconfig; sourceTree = "<group>"; };
 		2C9F8087FCBF61D3E21269E410BEDBD4 /* PlistEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlistEncoder.swift; path = Sources/SnapshotTesting/Common/PlistEncoder.swift; sourceTree = "<group>"; };
-		2F01AE7E8B4E126CCC5AC7465A622729 /* GradientProgressBar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GradientProgressBar.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2F01AE7E8B4E126CCC5AC7465A622729 /* GradientProgressBar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GradientProgressBar.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		32D4CCA5758C85C3B2AF055D55E15391 /* NSImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSImage.swift; path = Sources/SnapshotTesting/Snapshotting/NSImage.swift; sourceTree = "<group>"; };
 		39576E7EEE9C7CCC07619BD4BFC787EA /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
 		3C7AA70545E347FFDB26847CE49A0620 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = View.swift; path = Sources/SnapshotTesting/Common/View.swift; sourceTree = "<group>"; };
@@ -197,10 +197,10 @@
 		90153A27EB05F606E13162C9C4A4BE5F /* Pods-ExampleSnapshotTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ExampleSnapshotTests.modulemap"; sourceTree = "<group>"; };
 		99CFA467AA120C6CD7D36150DAB3A3DE /* SnapshotTesting-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapshotTesting-umbrella.h"; sourceTree = "<group>"; };
 		9D8F6FC92850C59B2BAB9847CD3E27AC /* NSView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSView.swift; path = Sources/SnapshotTesting/Snapshotting/NSView.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E4AD85C3FB4C0385D01F3503B54C6ED /* CGPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGPath.swift; path = Sources/SnapshotTesting/Snapshotting/CGPath.swift; sourceTree = "<group>"; };
 		A037DBBCCACBFACB5C39A80B1C273043 /* SnapshotTesting */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapshotTesting; path = SnapshotTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A10E95DE3E94BBB642B526EE63FB7D3B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		A10E95DE3E94BBB642B526EE63FB7D3B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		AA36DC22EDA044133EE2DB064FF97B29 /* Pods-ExampleSnapshotTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ExampleSnapshotTests-Info.plist"; sourceTree = "<group>"; };
 		AB109E238B73EE3EA91555C6530BF455 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ACDE99BB23677763C335EE5B0AF606CC /* SnapshotTesting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapshotTesting.release.xcconfig; sourceTree = "<group>"; };
@@ -224,7 +224,6 @@
 		C91D2E875503D0BFF65C16AAB29A7CF3 /* SpriteKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpriteKit.swift; path = Sources/SnapshotTesting/Snapshotting/SpriteKit.swift; sourceTree = "<group>"; };
 		CA8B94E9D3B433157168D1EECCEC11CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CCF067F479241CF6EC4D821D7631E8D1 /* SnapshotTestCase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SnapshotTestCase.swift; path = Sources/SnapshotTesting/SnapshotTestCase.swift; sourceTree = "<group>"; };
-		CDE8E0D1576BADB341E24FA3A1558A52 /* UIColor+MakeDynamicColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+MakeDynamicColor.swift"; sourceTree = "<group>"; };
 		CE091F38F417790A4A5773BA0A44BEFF /* UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Sources/SnapshotTesting/Snapshotting/UIImage.swift; sourceTree = "<group>"; };
 		D837B6B884C93257247A6FA854BCF63E /* Pods-ExampleSnapshotTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ExampleSnapshotTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DB7CCF96D83F3EEC61BC08205C15630E /* SwiftConfigurationFiles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftConfigurationFiles.debug.xcconfig; sourceTree = "<group>"; };
@@ -241,7 +240,7 @@
 		EF68A974941ABA976B12B8071F5E4A60 /* Diff.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Diff.swift; path = Sources/SnapshotTesting/Diff.swift; sourceTree = "<group>"; };
 		F09C7D47084FE71ABBB4F02C1DBA99D2 /* Pods-ExampleSnapshotTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ExampleSnapshotTests-frameworks.sh"; sourceTree = "<group>"; };
 		F297236E1E1D810F8CF6290EA6ED4168 /* Description.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Description.swift; path = Sources/SnapshotTesting/Snapshotting/Description.swift; sourceTree = "<group>"; };
-		F2B8FCB06B294197924B5D2E7D33D734 /* readme.md */ = {isa = PBXFileReference; includeInIndex = 1; path = readme.md; sourceTree = "<group>"; };
+		F2B8FCB06B294197924B5D2E7D33D734 /* readme.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		F88EA58D96440077B653714F58692A9B /* Pods-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-umbrella.h"; sourceTree = "<group>"; };
 		FD09B2B9DA4ECA0F9F21AD977F0F2125 /* GradientProgressBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GradientProgressBar-prefix.pch"; sourceTree = "<group>"; };
 		FD47E11773EEA545958D9720A0573B93 /* NSViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSViewController.swift; path = Sources/SnapshotTesting/Snapshotting/NSViewController.swift; sourceTree = "<group>"; };
@@ -425,23 +424,13 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		79F4C85456D00FAD2CD09DD5BBB8C75D /* Misc */ = {
+		79F4C85456D00FAD2CD09DD5BBB8C75D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				AB109E238B73EE3EA91555C6530BF455 /* Constants.swift */,
 			);
-			name = Misc;
-			path = GradientProgressBar/Misc;
-			sourceTree = "<group>";
-		};
-		7F87DE7A8BC04E9550149752BC042574 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				26F1E7CECAF0CBEE6DAFF50A38969DDC /* NSObject+Builder.swift */,
-				CDE8E0D1576BADB341E24FA3A1558A52 /* UIColor+MakeDynamicColor.swift */,
-			);
-			name = Extensions;
-			path = GradientProgressBar/Extensions;
+			name = Helper;
+			path = GradientProgressBar/Helper;
 			sourceTree = "<group>";
 		};
 		8742DA6E7546C232C831AB7BAE86BD62 /* GradientProgressBar */ = {
@@ -449,8 +438,7 @@
 			children = (
 				3FB4C0EC610FF658186A0676771045C9 /* GradientProgressBar.swift */,
 				E2515335EAE757199D7B8D5DFD4D4F94 /* GradientProgressBarViewStyle.swift */,
-				7F87DE7A8BC04E9550149752BC042574 /* Extensions */,
-				79F4C85456D00FAD2CD09DD5BBB8C75D /* Misc */,
+				79F4C85456D00FAD2CD09DD5BBB8C75D /* Helper */,
 				77DBDFBE3194BB38E6E2EC0B31D04C19 /* Pod */,
 				375FEB92EFE930BA2A191FB619E88201 /* Support Files */,
 				01410843265C073BE9C43368900527DE /* ViewModel */,
@@ -483,7 +471,6 @@
 			children = (
 				A89DED1F7D7AAF549F19900807CE20C9 /* Support Files */,
 			);
-			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -537,7 +524,6 @@
 				AE5942DAC384C5C99958D901095B68A0 /* XCTAttachment.swift */,
 				6CA99199138EC8C8B4DAE2DECE37D7EF /* Support Files */,
 			);
-			name = SnapshotTesting;
 			path = SnapshotTesting;
 			sourceTree = "<group>";
 		};
@@ -546,7 +532,6 @@
 			children = (
 				E8ABD01CAC5E3D8B2BF31DC0F2933EC9 /* Support Files */,
 			);
-			name = SwiftConfigurationFiles;
 			path = SwiftConfigurationFiles;
 			sourceTree = "<group>";
 		};
@@ -555,7 +540,6 @@
 			children = (
 				1F7A0AD450F17E3E0622DFA7B72D3F42 /* Support Files */,
 			);
-			name = SwiftFormat;
 			path = SwiftFormat;
 			sourceTree = "<group>";
 		};
@@ -829,8 +813,6 @@
 				EDAFC0E4FB70D26296C39A4E8A9BD624 /* GradientProgressBar-dummy.m in Sources */,
 				8E93D047A1CA97E689F2B25083AC3ACB /* GradientProgressBarViewStyle.swift in Sources */,
 				E858C9BF5CC2ABE01867CAEBE30CB30B /* MaskLayerViewModel.swift in Sources */,
-				F9C35BADD5A4A547D444EF3680525C85 /* NSObject+Builder.swift in Sources */,
-				04E82F6C00A5F6214596D4236DC0A98F /* UIColor+MakeDynamicColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

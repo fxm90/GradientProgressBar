@@ -6,48 +6,26 @@
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
+import Combine
 import CoreGraphics
 import Foundation
-import LightweightObservable
 import QuartzCore
 
 /// This view model keeps track of the progress-value and updates the `maskLayer` accordingly.
 final class MaskLayerViewModel {
 
-    // MARK: - Types
-
-    /// Combines all properties for an animated update of a frame.
-    struct FrameAnimation: Equatable {
-        /// Initializes the struct with all values set to zero / default.
-        static let zero = FrameAnimation(frame: .zero,
-                                         duration: 0,
-                                         timingFunction: CAMediaTimingFunction(name: .default))
-
-        /// The new rect for the frame.
-        let frame: CGRect
-
-        /// The animation duration to update the frame with.
-        let duration: TimeInterval
-
-        /// The timing function to update the frame with (e.g. `easeInOut`).
-        let timingFunction: CAMediaTimingFunction
-    }
-
     // MARK: - Public properties
 
     /// Observable frame-animation for the mask layer.
-    var maskLayerFrameAnimation: Observable<FrameAnimation> {
+    var maskLayerFrameAnimation: AnyPublisher<FrameAnimation, Never> {
         maskLayerFrameAnimationSubject
+            .removeDuplicates()
+            .eraseToAnyPublisher()
     }
 
     /// The current bounds of the progress view.
     var bounds: CGRect = .zero {
         didSet {
-            guard bounds != oldValue else {
-                // Prevent unnecessary UI-updates.
-                return
-            }
-
             // Update mask-layer frame accordingly.
             maskLayerFrameAnimationSubject.value = maskLayerFrameAnimationForCurrentProgress(animated: false)
         }
@@ -73,7 +51,8 @@ final class MaskLayerViewModel {
 
     // MARK: - Private properties
 
-    private let maskLayerFrameAnimationSubject: Variable<FrameAnimation> = Variable(.zero)
+    private let maskLayerFrameAnimationSubject: CurrentValueSubject<FrameAnimation, Never>
+        = CurrentValueSubject(.zero)
 
     /// Boolean flag whether we should calculate a new frame for the mask-layer
     /// on setting the `progress` value.
@@ -110,5 +89,27 @@ final class MaskLayerViewModel {
         return FrameAnimation(frame: maskLayerFrame,
                               duration: animationDuration,
                               timingFunction: timingFunction)
+    }
+}
+
+// MARK: - Supporting Types
+
+extension MaskLayerViewModel {
+
+    /// Combines all properties for an animated update of a frame.
+    struct FrameAnimation: Equatable {
+        /// Initializes the struct with all values set to zero / default.
+        static let zero = FrameAnimation(frame: .zero,
+                                         duration: 0,
+                                         timingFunction: CAMediaTimingFunction(name: .default))
+
+        /// The new rect for the frame.
+        let frame: CGRect
+
+        /// The animation duration to update the frame with.
+        let duration: TimeInterval
+
+        /// The timing function to update the frame with (e.g. `easeInOut`).
+        let timingFunction: CAMediaTimingFunction
     }
 }

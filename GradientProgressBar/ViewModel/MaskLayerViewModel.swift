@@ -27,19 +27,16 @@ final class MaskLayerViewModel {
     var bounds: CGRect = .zero {
         didSet {
             // Update mask-layer frame accordingly.
-            maskLayerFrameAnimationSubject.value = maskLayerFrameAnimationForCurrentProgress(animated: false)
+            maskLayerFrameAnimationSubject.value = makeMaskLayerFrameAnimation(animated: false)
         }
     }
 
     /// The current progress.
-    var progress: Float = 0.5 {
-        didSet {
-            // Make sure progress value fits our bounds.
-            progress = min(1, max(0, progress))
-
-            if shouldUpdateMaskLayerFrameOnProgressChange {
-                maskLayerFrameAnimationSubject.value = maskLayerFrameAnimationForCurrentProgress(animated: false)
-            }
+    var progress: Float {
+        get { _progress }
+        set {
+            _progress = newValue.clamped(to: 0 ... 1)
+            maskLayerFrameAnimationSubject.value = makeMaskLayerFrameAnimation(animated: false)
         }
     }
 
@@ -51,31 +48,27 @@ final class MaskLayerViewModel {
 
     // MARK: - Private properties
 
-    private let maskLayerFrameAnimationSubject: CurrentValueSubject<FrameAnimation, Never>
-        = CurrentValueSubject(.zero)
-
-    /// Boolean flag whether we should calculate a new frame for the mask-layer
-    /// on setting the `progress` value.
+    /// The actual storage for our progress.
     ///
-    /// - SeeAlso: `setProgress(_:animated:)`
-    private var shouldUpdateMaskLayerFrameOnProgressChange = true
-    // swiftlint:disable:previous identifier_name
+    /// We store the value on a separate properties for two reasons:
+    /// - This makes sure the progress stays between zero and one.
+    /// - The setter of `progress` can set a progress and always update the frame of the layer without an animation.
+    ///   The method `setProgress(_:animated:)` can set a progress and afterwards update the frame with a possible animation.
+    private var _progress: Float = 0.5
+
+    private let maskLayerFrameAnimationSubject: CurrentValueSubject<FrameAnimation, Never> = CurrentValueSubject(.zero)
 
     // MARK: - Public methods
 
     /// Adjusts the current progress, optionally animating the change.
     func setProgress(_ progress: Float, animated: Bool = false) {
-        // We don't want to update the mask-layer frame on setting the progress value here, as we might have to do it animated.
-        shouldUpdateMaskLayerFrameOnProgressChange = false
-        self.progress = progress
-        shouldUpdateMaskLayerFrameOnProgressChange = true
-
-        maskLayerFrameAnimationSubject.value = maskLayerFrameAnimationForCurrentProgress(animated: animated)
+        _progress = progress.clamped(to: 0 ... 1)
+        maskLayerFrameAnimationSubject.value = makeMaskLayerFrameAnimation(animated: animated)
     }
 
     // MARK: - Private methods
 
-    private func maskLayerFrameAnimationForCurrentProgress(animated: Bool) -> FrameAnimation {
+    private func makeMaskLayerFrameAnimation(animated: Bool) -> FrameAnimation {
         var maskLayerFrame = bounds
         maskLayerFrame.size.width *= CGFloat(progress)
 
@@ -111,5 +104,17 @@ extension MaskLayerViewModel {
 
         /// The timing function to update the frame with (e.g. `easeInOut`).
         let timingFunction: CAMediaTimingFunction
+    }
+}
+
+// MARK: - Helper
+
+extension Comparable {
+
+    /// Clamps the current value to the boundaries of the given `limits`.
+    ///
+    /// - Source: https://stackoverflow.com/a/40868784
+    func clamped(to limits: ClosedRange<Self>) -> Self {
+        min(max(self, limits.lowerBound), limits.upperBound)
     }
 }

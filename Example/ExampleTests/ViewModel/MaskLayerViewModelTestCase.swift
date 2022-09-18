@@ -81,7 +81,7 @@ final class MaskLayerViewModelTestCase: XCTestCase {
         viewModel.bounds = bounds
 
         // Then
-        let expectedFrame = bounds.adaptedWidth(percent: progress)
+        let expectedFrame = bounds.adaptWidth(to: progress)
         let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
                                                              duration: 0,
                                                              timingFunction: timingFunction)
@@ -125,7 +125,7 @@ final class MaskLayerViewModelTestCase: XCTestCase {
         viewModel.progress = progress
 
         // Then
-        let expectedFrame = bounds.adaptedWidth(percent: progress)
+        let expectedFrame = bounds.adaptWidth(to: progress)
         let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
                                                              duration: 0,
                                                              timingFunction: timingFunction)
@@ -178,7 +178,7 @@ final class MaskLayerViewModelTestCase: XCTestCase {
         viewModel.setProgress(progress)
 
         // Then
-        let expectedFrame = bounds.adaptedWidth(percent: progress)
+        let expectedFrame = bounds.adaptWidth(to: progress)
         let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
                                                              duration: 0,
                                                              timingFunction: timingFunction)
@@ -207,7 +207,7 @@ final class MaskLayerViewModelTestCase: XCTestCase {
         viewModel.setProgress(progress, animated: true)
 
         // Then
-        let expectedFrame = bounds.adaptedWidth(percent: progress)
+        let expectedFrame = bounds.adaptWidth(to: progress)
         let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
                                                              duration: animationDuration,
                                                              timingFunction: timingFunction)
@@ -219,7 +219,7 @@ final class MaskLayerViewModelTestCase: XCTestCase {
 // MARK: - Helper
 
 private extension CGRect {
-    func adaptedWidth(percent: Float) -> CGRect {
+    func adaptWidth(to percent: Float) -> CGRect {
         var mutableCopy = self
         mutableCopy.size.width *= CGFloat(percent)
 

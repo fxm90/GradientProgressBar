@@ -12,8 +12,9 @@ import XCTest
 
 @testable import GradientProgressBar
 
-// swiftlint:disable:next type_name
+@available(iOS 15.0, *)
 final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
+    // swiftlint:disable:previous type_name
 
     // MARK: - Config
 

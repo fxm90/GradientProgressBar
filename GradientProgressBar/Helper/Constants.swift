@@ -18,8 +18,9 @@ public extension UIColor {
         static let backgroundColorForDarkMode = #colorLiteral(red: 0.1725490196, green: 0.1882352941, blue: 0.1843137255, alpha: 1)
 
         /// Default background color for the progress view.
-        static let backgroundColor: UIColor = .makeDynamicColor(lightVariant: backgroundColorForLightMode,
-                                                                darkVariant: backgroundColorForDarkMode)
+        static let backgroundColor = UIColor {
+            $0.userInterfaceStyle == .dark ? backgroundColorForDarkMode : backgroundColorForLightMode
+        }
 
         /// The default color palette for the gradient colors.
         ///

@@ -13,8 +13,6 @@
 		DC20E6E427AD09B300AE9158 /* WebViewExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC20E6E327AD09B300AE9158 /* WebViewExample.storyboard */; };
 		DC20E6E627AD18DE00AE9158 /* AdvancedExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC20E6E527AD18DE00AE9158 /* AdvancedExample.storyboard */; };
 		DC20E6E827AD192A00AE9158 /* BasicExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC20E6E727AD192A00AE9158 /* BasicExample.storyboard */; };
-		DC54A53527AD298100B14516 /* GradientProgressBarTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54A52F27AD298100B14516 /* GradientProgressBarTestCase.swift */; };
-		DC54A53627AD298100B14516 /* UIColorMakeDynamicColorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54A53127AD298100B14516 /* UIColorMakeDynamicColorTestCase.swift */; };
 		DC54A53727AD298100B14516 /* MaskLayerViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54A53327AD298100B14516 /* MaskLayerViewModelTestCase.swift */; };
 		DC54A53827AD298100B14516 /* GradientLayerViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54A53427AD298100B14516 /* GradientLayerViewModelTestCase.swift */; };
 		DC54A55427AD2B0900B14516 /* GradientProgressBarSnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54A54627AD2B0900B14516 /* GradientProgressBarSnapshotTestCase.swift */; };
@@ -61,8 +59,6 @@
 		DC20E6E327AD09B300AE9158 /* WebViewExample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebViewExample.storyboard; sourceTree = "<group>"; };
 		DC20E6E527AD18DE00AE9158 /* AdvancedExample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdvancedExample.storyboard; sourceTree = "<group>"; };
 		DC20E6E727AD192A00AE9158 /* BasicExample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BasicExample.storyboard; sourceTree = "<group>"; };
-		DC54A52F27AD298100B14516 /* GradientProgressBarTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientProgressBarTestCase.swift; sourceTree = "<group>"; };
-		DC54A53127AD298100B14516 /* UIColorMakeDynamicColorTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorMakeDynamicColorTestCase.swift; sourceTree = "<group>"; };
 		DC54A53327AD298100B14516 /* MaskLayerViewModelTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskLayerViewModelTestCase.swift; sourceTree = "<group>"; };
 		DC54A53427AD298100B14516 /* GradientLayerViewModelTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLayerViewModelTestCase.swift; sourceTree = "<group>"; };
 		DC54A53D27AD2AD700B14516 /* ExampleSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,14 +114,6 @@
 				B83154B34980384C1059122A /* Pods_ExampleSnapshotTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DC54A53027AD298100B14516 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				DC54A53127AD298100B14516 /* UIColorMakeDynamicColorTestCase.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DC54A53227AD298100B14516 /* ViewModel */ = {
@@ -247,9 +235,7 @@
 		DCC7AAEB27ABE71100B76102 /* ExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				DC54A53027AD298100B14516 /* Extensions */,
 				DC54A53227AD298100B14516 /* ViewModel */,
-				DC54A52F27AD298100B14516 /* GradientProgressBarTestCase.swift */,
 			);
 			path = ExampleTests;
 			sourceTree = "<group>";
@@ -572,8 +558,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC54A53527AD298100B14516 /* GradientProgressBarTestCase.swift in Sources */,
-				DC54A53627AD298100B14516 /* UIColorMakeDynamicColorTestCase.swift in Sources */,
 				DC54A53827AD298100B14516 /* GradientLayerViewModelTestCase.swift in Sources */,
 				DC54A53727AD298100B14516 /* MaskLayerViewModelTestCase.swift in Sources */,
 			);

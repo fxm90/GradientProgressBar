@@ -6,10 +6,10 @@
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
+import Combine
 import XCTest
 
 @testable import GradientProgressBar
-@testable import LightweightObservable
 
 final class MaskLayerViewModelTestCase: XCTestCase {
 
@@ -20,6 +20,7 @@ final class MaskLayerViewModelTestCase: XCTestCase {
     // MARK: - Private properties
 
     private var viewModel: MaskLayerViewModel!
+    private var subscriptions: Set<AnyCancellable>!
 
     // MARK: - Public methods
 
@@ -27,9 +28,11 @@ final class MaskLayerViewModelTestCase: XCTestCase {
         super.setUp()
 
         viewModel = MaskLayerViewModel()
+        subscriptions = Set()
     }
 
     override func tearDown() {
+        subscriptions = nil
         viewModel = nil
 
         super.tearDown()
@@ -38,14 +41,23 @@ final class MaskLayerViewModelTestCase: XCTestCase {
     // MARK: - Test initializer
 
     func test_initializer_shouldSetMaskLayerFrameAnimation_toZero() {
-        XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, .zero)
+        // Given
+        var receivedMaskLayerFrameAnimation: MaskLayerViewModel.FrameAnimation?
+        viewModel.maskLayerFrameAnimation.sink { maskLayerFrameAnimation in
+            receivedMaskLayerFrameAnimation = maskLayerFrameAnimation
+        }.store(in: &subscriptions)
+
+        // Then
+        XCTAssertEqual(receivedMaskLayerFrameAnimation, .zero)
     }
 
-    func test_initializer_shouldSetAnimationDuration_toStaticConfigurationProperty() {
+    func test_initializer_shouldSetAnimationDuration_toConfigurationProperty() {
+        // Then
         XCTAssertEqual(viewModel.animationDuration, TimeInterval.GradientProgressBar.progressAnimationDuration)
     }
 
-    func test_initializer_shouldSetTimingFunction_toStaticConfigurationProperty() {
+    func test_initializer_shouldSetTimingFunction_toConfigurationProperty() {
+        // Then
         XCTAssertEqual(viewModel.timingFunction, CAMediaTimingFunction.GradientProgressBar.progressAnimationFunction)
     }
 
@@ -59,41 +71,22 @@ final class MaskLayerViewModelTestCase: XCTestCase {
         let progress: Float = 0.25
         viewModel.setProgress(progress)
 
-        let bounds = CGRect(x: 2, y: 4, width: 6, height: 8)
+        var receivedMaskLayerFrameAnimation: MaskLayerViewModel.FrameAnimation?
+        viewModel.maskLayerFrameAnimation.sink { maskLayerFrameAnimation in
+            receivedMaskLayerFrameAnimation = maskLayerFrameAnimation
+        }.store(in: &subscriptions)
 
         // When
+        let bounds = CGRect(x: 2, y: 4, width: 6, height: 8)
         viewModel.bounds = bounds
 
         // Then
-        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: bounds.adaptedWidth(percent: progress),
+        let expectedFrame = bounds.adaptWidth(to: progress)
+        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
                                                              duration: 0,
                                                              timingFunction: timingFunction)
 
-        XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
-    }
-
-    func test_setBounds_withSameValue_shouldUpdateMaskLayerFrameAnimation_justOnce() {
-        // Given
-        let bounds = CGRect(x: 2, y: 4, width: 6, height: 8)
-
-        var observerCounter = 0
-        var disposeBag = DisposeBag()
-        viewModel.maskLayerFrameAnimation.subscribe { _, oldMaskLayerFrameAnimation in
-            guard oldMaskLayerFrameAnimation != nil else {
-                // Skip initial call to observer.
-                return
-            }
-
-            observerCounter += 1
-        }.disposed(by: &disposeBag)
-
-        // When
-        for _ in 1 ... 10 {
-            viewModel.bounds = bounds
-        }
-
-        // Then
-        XCTAssertEqual(observerCounter, 1)
+        XCTAssertEqual(receivedMaskLayerFrameAnimation, expectedMaskLayerFrameAnimation)
     }
 
     // MARK: - Test setting property `progress`
@@ -122,16 +115,22 @@ final class MaskLayerViewModelTestCase: XCTestCase {
         let bounds = CGRect(x: 2, y: 4, width: 6, height: 8)
         viewModel.bounds = bounds
 
+        var receivedMaskLayerFrameAnimation: MaskLayerViewModel.FrameAnimation?
+        viewModel.maskLayerFrameAnimation.sink { maskLayerFrameAnimation in
+            receivedMaskLayerFrameAnimation = maskLayerFrameAnimation
+        }.store(in: &subscriptions)
+
         // When
         let progress: Float = 0.75
         viewModel.progress = progress
 
         // Then
-        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: bounds.adaptedWidth(percent: progress),
+        let expectedFrame = bounds.adaptWidth(to: progress)
+        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
                                                              duration: 0,
                                                              timingFunction: timingFunction)
 
-        XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
+        XCTAssertEqual(receivedMaskLayerFrameAnimation, expectedMaskLayerFrameAnimation)
     }
 
     // MARK: - Test method `setProgress()`
@@ -169,16 +168,22 @@ final class MaskLayerViewModelTestCase: XCTestCase {
         let bounds = CGRect(x: 2, y: 4, width: 6, height: 8)
         viewModel.bounds = bounds
 
+        var receivedMaskLayerFrameAnimation: MaskLayerViewModel.FrameAnimation?
+        viewModel.maskLayerFrameAnimation.sink { maskLayerFrameAnimation in
+            receivedMaskLayerFrameAnimation = maskLayerFrameAnimation
+        }.store(in: &subscriptions)
+
         // When
         let progress: Float = 0.75
         viewModel.setProgress(progress)
 
         // Then
-        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: bounds.adaptedWidth(percent: progress),
+        let expectedFrame = bounds.adaptWidth(to: progress)
+        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
                                                              duration: 0,
                                                              timingFunction: timingFunction)
 
-        XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
+        XCTAssertEqual(receivedMaskLayerFrameAnimation, expectedMaskLayerFrameAnimation)
     }
 
     func test_setProgressAnimated_shouldUpdateMaskLayerFrameAnimation_withCorrectFrame_andTimingFunction_andDuration() {
@@ -186,29 +191,35 @@ final class MaskLayerViewModelTestCase: XCTestCase {
         let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         viewModel.timingFunction = timingFunction
 
-        let animationDuration = 123.456
-        viewModel.animationDuration = animationDuration
-
         let bounds = CGRect(x: 2, y: 4, width: 6, height: 8)
         viewModel.bounds = bounds
+
+        let animationDuration: TimeInterval = .random(in: 0 ... 100)
+        viewModel.animationDuration = animationDuration
+
+        var receivedMaskLayerFrameAnimation: MaskLayerViewModel.FrameAnimation?
+        viewModel.maskLayerFrameAnimation.sink { maskLayerFrameAnimation in
+            receivedMaskLayerFrameAnimation = maskLayerFrameAnimation
+        }.store(in: &subscriptions)
 
         // When
         let progress: Float = 1
         viewModel.setProgress(progress, animated: true)
 
         // Then
-        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: bounds.adaptedWidth(percent: progress),
+        let expectedFrame = bounds.adaptWidth(to: progress)
+        let expectedMaskLayerFrameAnimation = FrameAnimation(frame: expectedFrame,
                                                              duration: animationDuration,
                                                              timingFunction: timingFunction)
 
-        XCTAssertEqual(viewModel.maskLayerFrameAnimation.value, expectedMaskLayerFrameAnimation)
+        XCTAssertEqual(receivedMaskLayerFrameAnimation, expectedMaskLayerFrameAnimation)
     }
 }
 
 // MARK: - Helper
 
 private extension CGRect {
-    func adaptedWidth(percent: Float) -> CGRect {
+    func adaptWidth(to percent: Float) -> CGRect {
         var mutableCopy = self
         mutableCopy.size.width *= CGFloat(percent)
 

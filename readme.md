@@ -13,7 +13,7 @@ To run the example project, clone the repo, and open the workspace from the Exam
 ### Requirements
 - Swift 5.5
 - Xcode 13.2
-- iOS 9.0+
+- iOS 13.0+
 
 ### Integration
 ##### CocoaPods
@@ -28,7 +28,7 @@ pod 'GradientProgressBar', '~> 2.0'
 ```ogdl
 github "fxm90/GradientProgressBar" ~> 2.0
 ```
-Run carthage update to build the framework and drag the built `GradientProgressBar.framework`, as well as the dependency `LightweightObservable.framework`, into your Xcode project.
+Run carthage update to build the framework and drag the built `GradientProgressBar.framework` into your Xcode project.
 
 
 ##### Swift Package Manager

@@ -3,20 +3,15 @@
 import PackageDescription
 
 let package = Package(name: "GradientProgressBar",
-                      platforms: [.iOS(.v9)],
+                      platforms: [.iOS(.v13)],
                       products: [
                           .library(name: "GradientProgressBar",
                                    targets: ["GradientProgressBar"]),
                       ],
-                      dependencies: [
-                          .package(url: "https://github.com/fxm90/LightweightObservable",
-                                   .upToNextMajor(from: "2.0.0")),
-                      ],
                       targets: [
                           .target(name: "GradientProgressBar",
-                                  dependencies: ["LightweightObservable"],
                                   path: "GradientProgressBar/"),
                           .testTarget(name: "GradientProgressBarTests",
                                       dependencies: ["GradientProgressBar"],
-                                      path: "Example/Tests/"),
+                                      path: "Example/ExampleTests/"),
                       ])

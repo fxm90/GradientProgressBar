@@ -6,7 +6,7 @@
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
-import LightweightObservable
+import Combine
 import UIKit
 
 /// This view model keeps track of the gradient-colors and updates the `gradientLayer` accordingly.
@@ -15,33 +15,20 @@ final class GradientLayerViewModel {
     // MARK: - Public properties
 
     /// Observable color array for the gradient layer (of type `CGColor`).
-    var gradientLayerColors: Observable<[CGColor]> {
+    var gradientLayerColors: AnyPublisher<[CGColor], Never> {
         gradientLayerColorsSubject
+            .map { $0.map(\.cgColor) }
+            .eraseToAnyPublisher()
     }
 
     /// Color array used for the gradient progress bar (of type `UIColor`).
-    var gradientColors = UIColor.GradientProgressBar.gradientColors {
-        didSet {
-            gradientLayerColorsSubject.value = gradientColors.cgColor
-        }
+    var gradientColors: [UIColor] {
+        get { gradientLayerColorsSubject.value }
+        set { gradientLayerColorsSubject.value = newValue }
     }
 
     // MARK: - Private properties
 
-    private let gradientLayerColorsSubject: Variable<[CGColor]>
-
-    // MARK: - Instance Lifecycle
-
-    init() {
-        gradientLayerColorsSubject = Variable(gradientColors.cgColor)
-    }
-}
-
-// MARK: - Helper
-
-private extension Array where Element: UIColor {
-    /// The Quartz color that corresponds to the color objects.
-    var cgColor: [CGColor] {
-        map(\.cgColor)
-    }
+    private let gradientLayerColorsSubject: CurrentValueSubject<[UIColor], Never>
+        = CurrentValueSubject(UIColor.GradientProgressBar.gradientColors)
 }

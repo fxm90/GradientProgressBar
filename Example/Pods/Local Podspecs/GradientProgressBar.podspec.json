@@ -20,6 +20,18 @@
   "platforms": {
     "ios": "13.0"
   },
-  "source_files": "GradientProgressBar/**/*",
+  "source_files": "GradientProgressBar/Sources/**/*.swift",
+  "testspecs": [
+    {
+      "name": "Tests",
+      "test_type": "unit",
+      "source_files": "GradientProgressBar/Tests/**/*.{swift,md}",
+      "dependencies": {
+        "SnapshotTesting": [
+          "~> 1.9"
+        ]
+      }
+    }
+  ],
   "swift_version": "5.5"
 }

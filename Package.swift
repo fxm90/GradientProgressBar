@@ -10,8 +10,8 @@ let package = Package(name: "GradientProgressBar",
                       ],
                       targets: [
                           .target(name: "GradientProgressBar",
-                                  path: "GradientProgressBar/"),
+                                  path: "GradientProgressBar/Sources"),
                           .testTarget(name: "GradientProgressBarTests",
                                       dependencies: ["GradientProgressBar"],
-                                      path: "Example/ExampleTests/"),
+                                      path: "GradientProgressBar/Tests/"),
                       ])

@@ -1,4 +1,4 @@
 #  Snapshot-Tests
 
 ## Device
-Run test-cases with the `iPhone 13` using `iOS 15.5`.
+Run test-cases with the `iPhone 14 Pro` using `iOS 16`.

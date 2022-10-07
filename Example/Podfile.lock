@@ -1,6 +1,6 @@
 PODS:
-  - GradientProgressBar (2.1.1)
-  - GradientProgressBar/Tests (2.1.1):
+  - GradientProgressBar (3.0.0)
+  - GradientProgressBar/Tests (3.0.0):
     - SnapshotTesting (~> 1.9)
   - SnapshotTesting (1.9.0)
   - SwiftConfigurationFiles (0.0.1)
@@ -32,7 +32,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/fxm90/SwiftConfigurationFiles.git
 
 SPEC CHECKSUMS:
-  GradientProgressBar: 6ea6a14d882f2c86b903b98b9a230730c8e3a2c0
+  GradientProgressBar: 5447e7686fed1bd363507d817d533db8d43cb29e
   SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
   SwiftConfigurationFiles: 1cf2228a911ebed9f42f8dec077bb634f04ca6c8
   SwiftFormat: e73212c71908404e333da34e303772b9e516ac9b

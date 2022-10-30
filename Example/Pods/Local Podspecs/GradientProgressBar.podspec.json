@@ -25,12 +25,7 @@
     {
       "name": "Tests",
       "test_type": "unit",
-      "source_files": "GradientProgressBar/Tests/**/*.{swift,md}",
-      "dependencies": {
-        "SnapshotTesting": [
-          "~> 1.9"
-        ]
-      }
+      "source_files": "GradientProgressBar/Tests/**/*.{swift,md}"
     }
   ],
   "swift_version": "5.5"

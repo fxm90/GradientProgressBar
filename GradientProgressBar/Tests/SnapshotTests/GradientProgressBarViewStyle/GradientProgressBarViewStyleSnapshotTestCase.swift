@@ -6,12 +6,12 @@
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
-import SnapshotTesting
 import SwiftUI
 import XCTest
 
 @testable import GradientProgressBar
 
+@MainActor
 @available(iOS 15.0, *)
 final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
     // swiftlint:disable:previous type_name
@@ -41,7 +41,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
             .frame(width: Config.frame.width, height: Config.frame.height)
 
         // Then
-        assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: progressView)
     }
 
     func test_gradientProgressBarViewStyle_withProgress50Percent_andLightTraitCollection() {
@@ -51,7 +51,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
             .frame(width: Config.frame.width, height: Config.frame.height)
 
         // Then
-        assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: progressView)
     }
 
     func test_gradientProgressBarViewStyle_withProgress100Percent_andLightTraitCollection() {
@@ -61,7 +61,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
             .frame(width: Config.frame.width, height: Config.frame.height)
 
         // Then
-        assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: progressView)
     }
 
     // MARK: - Test `.dark` user interface style
@@ -73,7 +73,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
             .frame(width: Config.frame.width, height: Config.frame.height)
 
         // Then
-        assertSnapshot(matching: progressView, as: .image(traits: Config.darkTraitCollection))
+        assertSnapshot(matching: progressView)
     }
 
     func test_gradientProgressBarViewStyle_withProgress50Percent_andDarkTraitCollection() {
@@ -83,7 +83,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
             .frame(width: Config.frame.width, height: Config.frame.height)
 
         // Then
-        assertSnapshot(matching: progressView, as: .image(traits: Config.darkTraitCollection))
+        assertSnapshot(matching: progressView)
     }
 
     func test_gradientProgressBarViewStyle_withProgress100Percent_andDarkTraitCollection() {
@@ -93,7 +93,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
             .frame(width: Config.frame.width, height: Config.frame.height)
 
         // Then
-        assertSnapshot(matching: progressView, as: .image(traits: Config.darkTraitCollection))
+        assertSnapshot(matching: progressView)
     }
 
     // MARK: - Test custom background color
@@ -108,7 +108,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
             .frame(width: Config.frame.width, height: Config.frame.height)
 
         // Then
-        assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: progressView)
     }
 
     func test_gradientProgressBarViewStyle_withProgress50Percent_andCustomBackgroundColor() {
@@ -121,7 +121,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
             .frame(width: Config.frame.width, height: Config.frame.height)
 
         // Then
-        assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: progressView)
     }
 
     func test_gradientProgressBarViewStyle_withProgress100Percent_andCustomBackgroundColor() {
@@ -134,7 +134,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
             .frame(width: Config.frame.width, height: Config.frame.height)
 
         // Then
-        assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: progressView)
     }
 
     // MARK: - Test custom colors
@@ -146,7 +146,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
             .frame(width: Config.frame.width, height: Config.frame.height)
 
         // Then
-        assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: progressView)
     }
 
     func test_gradientProgressBarViewStyle_withProgress50Percent_andCustomColors() {
@@ -156,7 +156,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
             .frame(width: Config.frame.width, height: Config.frame.height)
 
         // Then
-        assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: progressView)
     }
 
     func test_gradientProgressBarViewStyle_withProgress100Percent_andCustomColors() {
@@ -166,7 +166,7 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
             .frame(width: Config.frame.width, height: Config.frame.height)
 
         // Then
-        assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: progressView)
     }
 
     // MARK: - Test custom corner radius
@@ -182,6 +182,6 @@ final class GradientProgressBarViewStyleSnapshotTestCase: XCTestCase {
             .frame(width: frame.width, height: frame.height)
 
         // Then
-        assertSnapshot(matching: progressView, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: progressView)
     }
 }

@@ -34,6 +34,7 @@ Inspired by https://codepen.io/marcobiedermann/pen/LExXWW
   s.source_files = 'GradientProgressBar/Sources/**/*.swift'
 
   s.test_spec 'Tests' do |test_spec|
+    test_spec.requires_app_host = true
     test_spec.source_files = 'GradientProgressBar/Tests/**/*.{swift,md}'
   end
 

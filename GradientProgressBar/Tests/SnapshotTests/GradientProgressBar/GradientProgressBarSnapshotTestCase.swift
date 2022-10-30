@@ -6,7 +6,6 @@
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
-import SnapshotTesting
 import XCTest
 
 @testable import GradientProgressBar
@@ -25,8 +24,8 @@ final class GradientProgressBarSnapshotTestCase: XCTestCase {
             #colorLiteral(red: 0.9490196078, green: 0.3215686275, blue: 0.431372549, alpha: 1), #colorLiteral(red: 0.9450980392, green: 0.4784313725, blue: 0.5921568627, alpha: 1), #colorLiteral(red: 0.9529411765, green: 0.737254902, blue: 0.7843137255, alpha: 1), #colorLiteral(red: 0.4274509804, green: 0.8666666667, blue: 0.9490196078, alpha: 1), #colorLiteral(red: 0.7568627451, green: 0.9411764706, blue: 0.9568627451, alpha: 1),
         ]
 
-        static let lightTraitCollection = UITraitCollection(userInterfaceStyle: .light)
-        static let darkTraitCollection = UITraitCollection(userInterfaceStyle: .dark)
+        /// As the gradient might look slightly different each time, we're using a reduced precision here.
+        static let precision = 0.98
     }
 
     // MARK: - Test `.light` user interface style
@@ -34,34 +33,37 @@ final class GradientProgressBarSnapshotTestCase: XCTestCase {
     func test_gradientProgressBar_withProgressZero_andLightTraitCollection() {
         // Given
         let gradientProgressBar = GradientProgressBar(frame: Config.frame)
+        gradientProgressBar.overrideUserInterfaceStyle = .light
 
         // When
         gradientProgressBar.progress = 0.0
 
         // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: gradientProgressBar, precision: Config.precision)
     }
 
     func test_gradientProgressBar_withProgress50Percent_andLightTraitCollection() {
         // Given
         let gradientProgressBar = GradientProgressBar(frame: Config.frame)
+        gradientProgressBar.overrideUserInterfaceStyle = .light
 
         // When
         gradientProgressBar.progress = 0.5
 
         // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: gradientProgressBar, precision: Config.precision)
     }
 
     func test_gradientProgressBar_withProgress100Percent_andLightTraitCollection() {
         // Given
         let gradientProgressBar = GradientProgressBar(frame: Config.frame)
+        gradientProgressBar.overrideUserInterfaceStyle = .light
 
         // When
         gradientProgressBar.progress = 1.0
 
         // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: gradientProgressBar, precision: Config.precision)
     }
 
     // MARK: - Test `.dark` user interface style
@@ -69,34 +71,37 @@ final class GradientProgressBarSnapshotTestCase: XCTestCase {
     func test_gradientProgressBar_withProgressZero_andDarkTraitCollection() {
         // Given
         let gradientProgressBar = GradientProgressBar(frame: Config.frame)
+        gradientProgressBar.overrideUserInterfaceStyle = .dark
 
         // When
         gradientProgressBar.progress = 0.0
 
         // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.darkTraitCollection))
+        assertSnapshot(matching: gradientProgressBar, precision: Config.precision)
     }
 
     func test_gradientProgressBar_withProgress50Percent_andDarkTraitCollection() {
         // Given
         let gradientProgressBar = GradientProgressBar(frame: Config.frame)
+        gradientProgressBar.overrideUserInterfaceStyle = .dark
 
         // When
         gradientProgressBar.progress = 0.5
 
         // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.darkTraitCollection))
+        assertSnapshot(matching: gradientProgressBar, precision: Config.precision)
     }
 
     func test_gradientProgressBar_withProgress100Percent_andDarkTraitCollection() {
         // Given
         let gradientProgressBar = GradientProgressBar(frame: Config.frame)
+        gradientProgressBar.overrideUserInterfaceStyle = .dark
 
         // When
         gradientProgressBar.progress = 1.0
 
         // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.darkTraitCollection))
+        assertSnapshot(matching: gradientProgressBar, precision: Config.precision)
     }
 
     // MARK: - Test custom colors
@@ -110,7 +115,7 @@ final class GradientProgressBarSnapshotTestCase: XCTestCase {
         gradientProgressBar.progress = 0.0
 
         // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: gradientProgressBar, precision: Config.precision)
     }
 
     func test_gradientProgressBar_withProgress50Percent_andCustomColors() {
@@ -122,7 +127,7 @@ final class GradientProgressBarSnapshotTestCase: XCTestCase {
         gradientProgressBar.progress = 0.5
 
         // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: gradientProgressBar, precision: Config.precision)
     }
 
     func test_gradientProgressBar_withProgress100Percent_andCustomColors() {
@@ -134,6 +139,6 @@ final class GradientProgressBarSnapshotTestCase: XCTestCase {
         gradientProgressBar.progress = 1.0
 
         // Then
-        assertSnapshot(matching: gradientProgressBar, as: .image(traits: Config.lightTraitCollection))
+        assertSnapshot(matching: gradientProgressBar, precision: Config.precision)
     }
 }

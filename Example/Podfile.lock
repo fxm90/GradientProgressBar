@@ -29,7 +29,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/fxm90/SwiftConfigurationFiles.git
 
 SPEC CHECKSUMS:
-  GradientProgressBar: 7fe2f6260a28618a9b08701afa9c6451bc850f07
+  GradientProgressBar: 84b671dd727f7a6c929913b8f360b80e1787b9e2
   SwiftConfigurationFiles: 1cf2228a911ebed9f42f8dec077bb634f04ca6c8
   SwiftFormat: e73212c71908404e333da34e303772b9e516ac9b
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5

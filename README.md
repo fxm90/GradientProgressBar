@@ -173,10 +173,10 @@ gradientProgressBar.timingFunction = .easeInOut
 #### Properties
 
 - **`animationDuration: TimeInterval`**\
-   Controls the duration for animated updates when calling `setProgress(_:animated:)`.
+  Controls the duration for animated updates when calling `setProgress(_:animated:)`.
 
 - **`gradientColors: [UIColor]`**\
-   The colors used for the gradient.
+  The colors used for the gradient.
 
 - **`timingFunction: TimingFunction`**\
   Adjusts the animation timing function for animated updates.\

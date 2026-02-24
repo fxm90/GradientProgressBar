@@ -41,8 +41,8 @@ public extension Color {
 
   /// Color related configuration values for `GradientProgressBar`.
   ///
-  /// - Note: Added in `UIColor` extension file, cause these values are derived from
-  ///         to the UIKit configuration values to ensure consistency across both frameworks.
+  /// - Note: Added in `UIColor` extension file, because these values are derived from
+  ///         the UIKit configuration values to ensure consistency across both frameworks.
   enum GradientProgressBar {
     /// The default background color for the progress view.
     public static let backgroundColor =

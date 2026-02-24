@@ -42,19 +42,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Added support for SwiftUI, by providing `.gradientProgressBar` as a `ProgressViewStyle`.
 
-## [2.0.3] - 2020-18-01
+## [2.0.3] - 2020-01-18
 
 ### Added
 
 - Added support for Swift Package Manager.
 
-## [2.0.2] - 2019-29-11
+## [2.0.2] - 2019-11-29
 
 ### Changed
 
 - Updated dependency [LightweightObservable](https://github.com/fxm90/LightweightObservable) to version 2 and adapt changes.
 
-## [2.0.1] - 2019-23-09
+## [2.0.1] - 2019-09-23
 
 ### Added
 
@@ -64,7 +64,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Set access control to `public` for layers on `GradientProgressBar`, in order to allow further configuration in subclasses ([#8])
 
-## [2.0.0] - 2019-28-08
+## [2.0.0] - 2019-08-28
 
 ### Changed
 
@@ -103,13 +103,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Remove dependency `Observable` in favour of a more lightweight implementation
 - Small internal refactorings and cleanup
 
-## [1.2.5] - 2018-16-11
+## [1.2.5] - 2018-11-16
 
 ### Changed
 
 - Adapt code to support new version from dependency `Observable`
 
-## [1.2.4] - 2018-22-09
+## [1.2.4] - 2018-09-22
 
 ### Changed
 
@@ -117,20 +117,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Removed `UIColor` initializers, as they're not required for the project to work (and it's not very common to use hex color codes in iOS)
   - If you need them in your project, feel free to copy & paste to following file into your project: https://gist.github.com/fxm90/1350d27abf92af3be59aaa9eb72c9310
 
-## [1.2.3] - 2018-29-08
+## [1.2.3] - 2018-08-29
 
 ### Changed
 
 - Refactored to observables
 
-## [1.2.2] - 2018-14-04
+## [1.2.2] - 2018-04-14
 
 ### Changed
 
 - Updates for Swift 4.1
 - Formatted code
 
-## [1.2.1] - 2018-27-01
+## [1.2.1] - 2018-01-27
 
 ### Added
 
@@ -141,20 +141,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Refactored code to use MVVM
 - Format code
 
-## [1.2.0] - 2018-14-01
+## [1.2.0] - 2018-01-14
 
 ### Added
 
 - Allow setting custom gradient colors
 - Allow setting custom animation timing function
 
-## [1.1.4] - 2017-27-12
+## [1.1.4] - 2017-12-27
 
 ### Changed
 
 - Updated to Swift 4.0
 
-## [1.1.3] - 2017-31-10
+## [1.1.3] - 2017-10-31
 
 ### Added
 
@@ -175,7 +175,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Refactored project structure to match "pod lib create" / TravisCI integration
 - Added example project
 
-## [1.1.1] - 2017-27-08
+## [1.1.1] - 2017-08-27
 
 ### Added
 
@@ -183,7 +183,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Refactored extension for UIColor initializer
 - Changelog
 
-## [1.1.0] - 2017-18-08
+## [1.1.0] - 2017-08-18
 
 ### Added
 
@@ -195,7 +195,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - Allow subclassing "GradientProgressBar()"
 - Lint code
 
-## [1.0.1] - 2017-15-08
+## [1.0.1] - 2017-08-15
 
 ### Fixed
 

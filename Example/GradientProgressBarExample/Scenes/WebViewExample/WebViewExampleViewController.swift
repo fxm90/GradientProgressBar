@@ -22,7 +22,6 @@ final class WebViewExampleViewController: UIViewController {
   private enum Config {
     /// The initial URL to load in the web view.
     static let initialUrl = URL(string: "https://felix.hamburg")!
-    // swiftlint:disable:previous force_unwrapping
 
     /// The duration of the fade-in/-out animation of the progress view.
     static let fadeDuration: TimeInterval = 0.33

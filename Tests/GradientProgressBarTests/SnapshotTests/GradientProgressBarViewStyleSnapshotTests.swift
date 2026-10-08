@@ -12,9 +12,10 @@ import SwiftUI
 import Testing
 @testable import GradientProgressBar
 
+// swiftformat:disable swiftTestingTestCaseNames
+
 /// - Note: For more readable reference file names, we don't use raw identifiers for test names here.
 @MainActor
-@Suite
 struct GradientProgressBarViewStyleSnapshotTests {
   // swiftlint:disable:previous type_name
 

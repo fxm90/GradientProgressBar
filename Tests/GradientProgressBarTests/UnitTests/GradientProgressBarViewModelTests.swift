@@ -11,7 +11,6 @@ import Testing
 @testable import GradientProgressBar
 
 @MainActor
-@Suite
 struct GradientProgressBarViewModelTests {
 
   // MARK: - Private Properties

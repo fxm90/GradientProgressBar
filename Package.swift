@@ -3,6 +3,11 @@
 
 import PackageDescription
 
+let swiftSettings: [SwiftSetting] = [
+  .enableUpcomingFeature("ExistentialAny"),
+  .enableUpcomingFeature("MemberImportVisibility"),
+]
+
 let package = Package(
   name: "GradientProgressBar",
   platforms: [.iOS(.v26)],
@@ -24,6 +29,7 @@ let package = Package(
     // Targets can depend on other targets in this package and products from dependencies.
     .target(
       name: "GradientProgressBar",
+      swiftSettings: swiftSettings,
     ),
     .testTarget(
       name: "GradientProgressBarTests",
@@ -40,6 +46,7 @@ let package = Package(
       resources: [
         .copy("SnapshotTests/__Snapshots__"),
       ],
+      swiftSettings: swiftSettings,
     ),
   ],
 )

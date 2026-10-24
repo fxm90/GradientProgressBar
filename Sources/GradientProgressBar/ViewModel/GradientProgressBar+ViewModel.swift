@@ -6,6 +6,7 @@
 //  Copyright © 2019 Felix Mau. All rights reserved.
 //
 
+import CoreGraphics
 import Foundation
 import Observation
 

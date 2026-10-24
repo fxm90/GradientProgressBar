@@ -6,7 +6,7 @@
 //  Copyright © 2017 Felix Mau. All rights reserved.
 //
 
-import UIKit
+public import UIKit
 
 /// A protocol that defines an interface for displaying and updating progress.
 ///

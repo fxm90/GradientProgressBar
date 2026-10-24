@@ -6,7 +6,7 @@
 //  Copyright © 2022 Felix Mau. All rights reserved.
 //
 
-import SwiftUI
+public import SwiftUI
 
 /// A custom `ProgressViewStyle` that displays progress as a horizontal gradient bar.
 ///

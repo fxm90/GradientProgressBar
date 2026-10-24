@@ -6,8 +6,8 @@
 //  Copyright © 2026 Felix Mau. All rights reserved.
 //
 
-import SwiftUI
-import UIKit
+public import SwiftUI
+public import UIKit
 
 public extension UIColor {
 
